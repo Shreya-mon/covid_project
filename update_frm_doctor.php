@@ -15,7 +15,27 @@
 	<h1> <center> Update records for Doctor Consultation</center></h1>
 	<form action="Update_doctor_data.php" method="post">
 		ID: <input type="text" name="id" value="<?=$row['id']?>"><br><br>
-		Category ID: <input type="number" name="cat_id" value="<?=$row['cat_id']?>"><br><br>
+		Category ID:
+		
+		
+		<select name="cat_id">
+			<?php
+
+				include("connection.php");
+
+				$qry = mysqli_query($link, "SELECT * FROM `doctor_category`");
+
+				while($row1 = mysqli_fetch_array($qry)) {
+					// print_r($row1);
+					?>
+						<option value="<?=$row1['cat_id']?>"><?=$row1['category_name']?></option>
+					<?php
+				}
+
+			?>
+		</select>
+		
+		<br><br>
 		Doctor's name:<input type="text" name="name" value="<?=$row['dname']?>"><br><br>
 		Doctor's Contact Number: <input type="text" name="phone_number" value="<?=$row['phno']?>"><br><br>
 		Email: <input type="email" name="email" value="<?=$row['email']?>"><br><br>
