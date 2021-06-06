@@ -1,5 +1,5 @@
 <?php  // Display hospital data 
-include("connection1.php");
+include("connection.php");
 echo '<h2><center>Hospital Records</center></h2><br>';
 echo '<center><a href="menu.html">Back to Home </a></center><br>';
 ?>
@@ -18,7 +18,7 @@ echo '<center><a href="menu.html">Back to Home </a></center><br>';
 	</tr>
     <?php
 		$sql = "SELECT * FROM `hospital_db`";
-		$result = mysqli_query($con,$sql);
+		$result = mysqli_query($link,$sql);
 		if(mysqli_num_rows($result) > 0)
 		{
 			while($row = mysqli_fetch_assoc($result))

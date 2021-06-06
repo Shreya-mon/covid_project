@@ -1,5 +1,5 @@
 <?php
-include("connection1.php");
+include("connection.php");
 ?>
 <?php //insert data query processing
 	echo '<a href="insert_hospital_data.html">Back</a>';
@@ -13,8 +13,8 @@ include("connection1.php");
 								 '".$_REQUEST['address']."',
 								 '".$_REQUEST['district']."',
 								 '".$_REQUEST['hospital_additional_info']."')";
-								 die();
-	mysqli_query($con, $sql);
+								 
+	mysqli_query($link, $sql);
 	echo '<h3> Record inserted successfully. </h3>';
 	echo '<br>';
 	echo '<br>';
