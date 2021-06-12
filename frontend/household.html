@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Covid-19</title>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css"
+    integrity="sha512-apX8rFN/KxJW8rniQbkvzrshQ3KvyEH+4szT3Sno5svdr6E/CP0QE862yEeLBMUnCqLko8QaugGkzvWS7uNfFQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div type="button" class="btn btn-floating rounded" id="btn-back-to-top">
+    <img src="./images/scroller.png" class="scroller w-100 " />
+  </div>
+  <header class="">
+    <nav class="navbar navbar-light   navbar-expand-lg" style="background-color: #e3f2fd;">
+      <a class="navbar-brand" href="index.html"><img class="logo w-100" src="./images/project_logo.png" /></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="household.html">Household Precautions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="#">Doctor Consultancy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="./HospitalAndSafehome/src/Hospital.html">Hospital</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="./BloodBank/blood_bank.html">Blood Bank</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="oxygen.html">Oxygen Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="vaccination.html">Covid Vaccination</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="meal and childcare.html">Healthcare volunteers Meal and Child
+              care
+              Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="#">Review of covid survivors and warriors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="ngo-charity.html">NGO and Charity</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="help.html">Help Desk</a>
+          </li>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container  ml-md-4 pr-md-1 mt-5 " style="min-width: 80%;">
+      <div class="row mt-2 ">
+        <div class="col-md-3 mb-5 sidebar row">
+          <!-- <div class="row"> -->
+          <div class="col-12">
+            <div class="list-group">
+              <a href="#row1" class="list-group-item list-group-item-action active">
+                Symptoms of Covid
+              </a>
+              <a href="#row2" class="list-group-item list-group-item-action">How to prevent Covid</a>
+              <a href="#row3" class="list-group-item list-group-item-action">What to do if you are
+                isolated</a>
+              <a href="#row4" class="list-group-item list-group-item-action">Instructions for caregivers</a>
+              <a href="#row5" class="list-group-item list-group-item-action">Home Remedies</a>
+              <a href="#row6" class="list-group-item list-group-item-action">What to do when oxygen level is
+                decreasing</a>
+              <a href="#row7" class="list-group-item list-group-item-action">Awarness of sanitizers</a>
+              <a href="#row8" class="list-group-item list-group-item-action">Different types of masks and
+                their
+                effectiveness</a>
+            </div>
+          </div>
+          <!-- </div> -->
+        </div>
+
+
+        <div class="col ml-md-2 ">
+          <div class="container m-0 p-0 ">
+            <h2 class="center" id="row1">
+              Symptoms of covid</h2>
+            <div class="row container mt-3 m-0">
+              <div class="row mb-3">
+                <div class="col-12">
+                  <h3>Most common symptoms:</h3>
+                </div>
+                <div class="col-12 row">
+                  <div class=" col-12 col-md-8">
+                    <ul>
+                      <li>fever</li>
+                      <li>dry cough</li>
+                      <li>tiredness</li>
+                    </ul>
+                  </div>
+                  <div class="col">
+                    <img class="w-100 rounded" src="./images/remedie1.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-12">
+                  <h3>Less common symptoms:</h3>
+                </div>
+                <div class="col-12 row">
+                  <div class="col-12 col-md-8">
+                    <ul>
+                      <li>aches and pains</li>
+                      <li>sore throat</li>
+                      <li>diarrhoea</li>
+                      <li>conjunctivitis</li>
+                      <li>headache</li>
+                      <li>loss of taste or smell</li>
+                      <li>a rash on skin, or discolouration of fingers or toes</li>
+                    </ul>
+                  </div>
+                  <div class="col center-center">
+                    <img class="w-100 rounded" src="./images/remedie2.png" alt="">
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <h3>Serious symptoms:</h3>
+              </div>
+              <div class="col-12 row">
+                <div class="col-12 col-md-8">
+                  <ul>
+                    <li>difficulty breathing or shortness of breath</li>
+                    <li>chest pain or pressure</li>
+                    <li>loss of speech or movement</li>
+                  </ul>
+                </div>
+                <div class="col center-center">
+                  <img src="./images/remedie3.jpg" alt="" class="w-100 rounded">
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3 pl-3">
+              <p>Seek immediate medical attention if you have serious symptoms. Always call before
+                visiting
+                your
+                doctor or
+                health
+                facility.<br><br>
+                People with mild symptoms who are otherwise healthy should manage their symptoms at
+                home.<br>
+                On average it takes 5–6 days from when someone is infected with the virus for symptoms
+                to
+                show,
+                however
+                it
+                can
+                take up to 14 days.</p>
+            </div>
+          </div>
+          <hr>
+          <h2 class="center" id="row2">How to prevent covid?</h2>
+          <div class="row container mt-3 ">
+            <div class="row ">
+              <div class="col-md-8">
+                <ul>
+                  <li>Clean your hands often. Use soap and water, or an alcohol-based hand rub.</li>
+                  <li>Maintain a safe distance from anyone who is coughing or sneezing.</li>
+                  <li>Wear a mask when physical distancing is not possible.</li>
+                  <li>Don’t touch your eyes, nose or mouth.</li>
+                  <li>Cover your nose and mouth with your bent elbow or a tissue when you cough or
+                    sneeze.</li>
+                  <li>Stay home if you feel unwell.</li>
+                  <li>If you have a fever, cough and difficulty breathing, seek medical attention.
+                  </li>
+                </ul>
+              </div>
+              <div class="col center-center">
+                <img src="./images/remedie4.png" alt="" class="w-100">
+              </div>
+            </div>
+          </div>
+          <hr>
+
+          <h2 class="center" id="row3">What to do if you are isolated?</h2>
+          <div class="row container  m-0 p-0">
+            <div class="row">
+              <div class="col-12">
+                <h3>Do:</h3>
+              </div>
+              <div class="col-12 row">
+                <div class="col-md-8">
+                  <ul>
+                    <li>Stay at home, in a room with a window you can open.</li>
+                    <li>Keep away from other people - especially older people or anyone with a
+                      long-term
+                      medical
+                      condition.</li>
+                    <li>Monitor temperature with a thermometer and oxygen saturation with a pulse
+                      oximeter daily.</li>
+                    <li>Use a different bathroom to others in your household, if possible.</li>
+                    <li>Cover your coughs and sneezes using a tissue - clean your hands properly
+                      after.
+                    </li>
+                    <li>Ask friends, family or delivery drivers to drop off food or supplies - if
+                      they
+                      stand
+                      back from
+                      the
+                      door,
+                      you
+                      can
+                      speak with them.</li>
+                    <li>Frequent hand washing with soap and water for at least 40 seconds or clean
+                      with
+                      alcohol-based sanitizer.</li>
+                    <li>Don’t share personal items with other people in the household.</li>
+                    <li>Clean your room every day with a household cleaner or disinfectant.</li>
+                    <li>Connect with the treating physician promptly if any deterioration of
+                      symptoms is
+                      noticed.</li>
+                  </ul>
+                </div>
+                <div class="col center-center">
+                  <img src="./images/remedie5.jpg" alt="" class="w-100 rounded ">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <h3>Don't:</h3>
+              </div>
+              <div class="col-12 row">
+                <div class="col-md-8">
+                  <ul>
+                    <li>Do not go outside unless you have your own outdoor space where you can get
+                      some
+                      fresh air away
+                      from
+                      other
+                      people.</li>
+                    <li>Do not go to work, school, religious services or public areas.</li>
+                    <li>Do not go to the shops or pharmacy for any reason - ask them to deliver or
+                      ask
+                      someone
+                      to go
+                      for
+                      you.</li>
+                    <li> Do not share your things. For example, food, dishes, drinking glasses or
+                      other
+                      household
+                      items.</li>
+                    <li>Do not use public transport or taxis.</li>
+                    <li>Do not have any visitors to your home.</li>
+                  </ul>
+                </div>
+                <div class="col center-center">
+                  <img src="./images/remedie6.png" alt="" class="w-100 rounded">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+          <h2 class="center" id="row4">Instructions for caregivers</h2>
+          <div class="row container m-0 p-0">
+            <div class="row">
+              <div class="col-12 col-md-8">
+                <h3>Mask:</h3>
+                <p>The caregiver should wear a triple layer medical mask. N95 mask may be
+                  considered
+                  when in the same room with the
+                  ill person.</p>
+                <h3>Hand hygiene:</h3>
+                <p>Hand hygiene must be ensured following contact with ill person or patient’s immediate
+                  environment.</p>
+                <h3>Exposure to patient/patient’s environment:</h3>
+                <p>Avoid direct contact with body fluids of the patient, particularly oral or
+                  respiratory secretions. Use disposable gloves while handling the patient. Perform
+                  hand hygiene before and after removing
+                  gloves.
+                </p>
+              </div>
+              <div class="col center-center">
+                <img src="./images/remedie7.jpg" alt="" class="w-100 rounded">
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <h2 class="center" id="row5">Home Remedies:</h2>
+          <div class="row container">
+            <div class="row">
+              <div class="col-12 col-md-8">
+                <h3>Steam Inhalation:</h3>
+                <p>A blocked or stuffy nose is triggered by inflammation in the blood vessels of the sinuses, where the
+                  blood vessels become irritated due to an acute upper respiratory infection like a cold or sinus
+                  infection.</p>
+                <p>The key benefit of inhaling in moist, warm steam is that it may help alleviate irritation and swollen
+                  blood vessels in the nasal passages. The vapour may also support thinning of the mucus in your
+                  sinuses, which permits them to clear out easily. It also relaxes throat muscles, lessen soreness and
+                  inflammation and dilates blood vessels improving blood circulation. This allows breathing to return to
+                  normal and help you to breathe well.</p>
+                <h3>Herbal Tea:</h3>
+                <p>The tea’s warm liquid alleviates your throat and helps with congestion. It also increases
+                  antibacterial properties that aid in promptly curing colds. When you add some honey to your tea, it
+                  helps with coughing and if you use a lemon in your tea, the body will receive a boost of vitamin C,
+                  weakening your cold.</p>
+                <p>Some teas contain properties that give the immune system a boost and get rid of bad germs. Herbal and
+                  true teas benefit colds as well as flu symptoms, so you’ll be back to your healthy self in no time.
+                </p>
+                <h3>Gargling with salt water:</h3>
+                <p>Gargling with salt water also helps to remove the mucus build-up in your respiratory tract and nasal
+                  cavity. The concoction reduces the inflammation and relieves the pain in the throat. Apart from that,
+                  it flushes out the bacteria and virus, which if left unattended can lead to congestion.</p>
+                <p>As per a study conducted in Japan, gargling with warm salt water three times a day can help to reduce
+                  the risk of developing an upper respiratory tract infection by 40 percent.</p>
+              </div>
+              <div class="col center-center">
+                <img src="./images/remedie8.png" alt="" class="w-100 rounded">
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <h2 class="center" id="row6">What to do when oxygen level decreasing</h2>
+          <div class="row container">
+            <div class="row">
+              <div class="col-12 col-md-8">
+                <p><i style="color: rgba(255, 0, 0, 0.671);" class="fas fa-star"></i>
+                  <u><strong>Proning</strong> is the most
+                    efficient way to
+                    increase the oxygen level
+                    primarily at
+                    home.</u>
+                </p>
+                <h3>What is proning?</h3>
+                <p>Proning a medically approved position — which is also being promoted by the Union
+                  Ministry of Health and Family Welfare
+                  — in which patients are made to lie on their abdomen to boost their oxygen levels.
+                  Proning has its immediate benefits,
+                  as in the recent case of an 82-year-old Covid positive patient from Gorakhpur, whose
+                  oxygen levels improved from 75 to
+                  94 after sleeping in a prone position, as per a news report published in an English
+                  daily. Proning as an exercise is
+                  being advised to Covid patients in hospitals, so that they may not require
+                  additional oxygen support.
+                </p>
+                <h3>What are proning positions?</h3>
+                <p>While proned, the patient is made to lie on his/her belly using pillows. One can also
+                  lie on their right side( right
+                  lateral), left side ( left lateral) or sit at a 60-90 degree angle in the ‘fowler
+                  position’.
+
+                  Medically, doctors suggest that a patient remain prone for a minimum of 30 minutes
+                  to a maximum of 2 hours. “This helps
+                  improve ventilation to the lungs and hence oxygen levels start improving,” said Dr
+                  Surendra Gupta, a Ludhiana-based
+                  doctor.</p>
+                <h3>What is needed for proning?</h3>
+                <p>All we need for proning are 4-5 pillows. One pillow is to be placed below the neck,
+                  1-2 pillows below the chest through
+                  upper thighs, and 2 pillows below the shins. A patient should lie on their belly,
+                  right and left side alternately.
+                  However, experts suggest that at least 30 minutes should be spent in each proned
+                  position for best results.</p>
+              </div>
+              <div class="col mt-md-5">
+                <img src="./images/remedie9.jpeg" alt="" class="w-100 rounded">
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <h2 class="center" id="row7">Awarness for sanitizers</h2>
+          <div class="row container">
+            <div class="col-12 col-md-8 ">
+              <div class="row">
+
+                <div class="col-12">
+                  <h3>Do:</h3>
+                </div>
+                <div class="col-12">
+                  <ul>
+                    <li>Choose hand sanitizers with at least 60% alcohol (often listed on the label
+                      as
+                      ethanol, ethyl alcohol, isopropanol, or
+                      2-propanol).</li>
+                    <li>Follow label directions for use.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <h3>Don't:</h3>
+                </div>
+                <div class="col-12">
+                  <ul>
+                    <li>Do not Choose hand sanitizers that contain less than 60% alcohol.</li>
+                    <li>Choose hand sanitizers labeled as “alcohol-free.”</li>
+                    <li>Choose alcohol-based hand sanitizers packaged in a container that resembles
+                      a
+                      food or beverage container.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col center-center">
+              <img src="./images/remedie10.jfif" alt="" class="w-100 rounded">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="container mt-5">
+      <h1 class="center" id="row8">Different type of mask and their effectiveness</h1>
+      <div class="row mt-3">
+        <div class="col-md-9">
+          <h2>Bandana</h2>
+          <p>A bandana is a triangular or square piece of cloth that’s often worn as a head or neck
+            covering.
+            Tying a
+            bandana over your mouth and nose is a time-honored way to keep dust and other particles
+            out of
+            the
+            respiratory
+            system.<br><br>Bandanas provide some protection against droplets and cough- or
+            sneeze-related
+            “spray.”
+            Without any kind of
+            nose or mouth covering, droplets can spray more than 8 feet, according to research from
+            Florida
+            Atlantic
+            University.Wearing a bandana can decrease that to about 4 feet.
+          </p>
+        </div>
+        <div class="col">
+          <img class="w-100 rounded-circle" src="images/mask1.jpg">
+        </div>
+      </div>
+
+      <div class="row mt-3" id="b2">
+        <div class="col-md-9">
+          <h2>Homemade Cloth Mask</h2>
+          <p>According to an article published in The Journal of Family Practice, single-layer masks
+            may only
+            provide 1%
+            particle filtration. A two-layer cotton mask filters out about 35% of small particles,
+            so they
+            offer
+            personal protection to the wearer. Cotton face masks can decrease droplet spray from 8
+            feet to 2
+            ½
+            inches,
+            which reduces the amount of potentially virus-containing particles you release into the
+            air
+            (were
+            you to be
+            infected and not know it.)<br>
+            Single-layer fabric masks are less effective than double-layer masks, which may be less
+            effective
+            than
+            triple-layer masks.
+          </p>
+        </div>
+        <div class="col">
+          <img class="w-100 rounded-circle" src="images/mask2.jpg">
+        </div>
+      </div>
+      <div class="row mt-3 mb-3">
+        <div class="col-md-9">
+          <h2>Disposable Surgical mask</h2>
+          <p>These flat, thin, paper-like masks are usually white and light blue. According to a 2013
+            study
+            published in
+            Aerosol Science and Technology, surgical face masks can filter out about 60% of smaller,
+            inhaled
+            particles.
+            They are primarily intended to stop droplets, sprays and splatters, and studies have
+            shown that
+            diligently
+            wearing surgical masks in public spaces can significantly reduce the spread of
+            respiratory
+            infection.
+            Surgical masks are not designed to be used more than once. Ideally, you should dispose
+            of a mask
+            after
+            wearing it.
+          </p>
+        </div>
+        <div class="col">
+          <img class="w-100 rounded-circle" src="images/mask3.jpg">
+        </div>
+      </div>
+      <div class="row mt-3 mb-3">
+        <div class="col-md-9" id="b">
+          <h2>N95,KN95 and other respirators</h2>
+          <p>
+            N95 face respirators offer the most protection against novel coronavirus and other
+            respiratory
+            diseases.
+            N95s protect the person wearing the mask because they filter out 95% of particles from
+            the air
+            breathed in.
+            Wearing any of the other masks in the list (cotton and disposable) are intended to
+            protect
+            others
+            around you
+            from your own respiratory droplets and “spray.” However, the CDC states that cloth and
+            disposable
+            masks also
+            filter particles at varying efficiencies, so they offer personal protection as
+            well.<br><br>
+            KN95 respirators are made to China specifications and standards and N95s are made to
+            U.S. design
+            standards.
+            Both are rated to filter out 95% of very small particles. Buy KN95s that meet the
+            National
+            Institute
+            of
+            Occupational Safety and Health (NIOSH) requirements. About 60% of KN95s in the U.S. may
+            be fake
+            according to
+            the CDC.<br><br>
+
+            Even more effective than N95 respirators are the N99 (99% filtration), N100 (99.97%
+            filtration),
+            R95
+            (95%
+            filtration, and partially resistant to oil), and P95, P99 and P100 (95%, 99% and 99.97%
+            filtration,
+            respectively, and strongly oil resistant).
+          </p>
+        </div>
+        <div class="col">
+          <img class="w-100 rounded-circle" src="images/mask4.jpg">
+        </div>
+      </div>
+    </div>
+  </main>
+  <hr>
+  <!-- Footer -->
+  <footer class="page-footer font-small mdb-color pt-4" style="background-color: #e3f2fd; z-index: 999;">
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
+
+      <!-- Footer links -->
+      <div class="row text-center text-md-left mt-3 pb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h6 class="text-uppercase mb-4 font-weight-bold">Covid-19</h6>
+          <p>Our team tried to do as much as they can to help you out in this pandemic situation. If this page is
+            benifical for you at some point then we will be very thankfull. Give us a review if you like it.</p>
+        </div>
+        <!-- Grid column -->
+
+        <hr class="w-100 clearfix d-md-none">
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h6 class="text-uppercase mb-4 font-weight-bold">About More information</h6>
+          <p>
+            <a href="#!">Covishield®</a>
+          </p>
+          <p>
+            <a href="#!">Covaxin®</a>
+          </p>
+          <p>
+            <a href="#!">Mucormycosis disease</a>
+          </p>
+          <p>
+            <a href="#!">W.H.O</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <hr class="w-100 clearfix d-md-none">
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
+          <p>
+            <a href="#!">Your Account</a>
+          </p>
+          <p>
+            <a href="#!">Cowin</a>
+          </p>
+          <p>
+            <a href="#!">Arogya Setu</a>
+          </p>
+          <p>
+            <a href="#!">Help</a>
+          </p>
+        </div>
+
+        <!-- Grid column -->
+        <hr class="w-100 clearfix d-md-none">
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+          <p>
+            <i class="fas fa-home mr-3"></i> Kolkata, Vivekanada College, Thakurpukur
+          </p>
+          <p>
+            <i class="fas fa-envelope mr-3"></i> info@gmail.com
+          </p>
+          <p>
+            <i class="fas fa-phone mr-3"></i> + 01 234 567 88
+          </p>
+          <p>
+            <i class="fas fa-print mr-3"></i> + 01 234 567 89
+          </p>
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Footer links -->
+
+      <hr>
+
+      <!-- Grid row -->
+      <div class="row d-flex align-items-center">
+
+        <!-- Grid column -->
+        <div class="col-md-7 col-lg-8">
+
+          <!--Copyright-->
+          <p class="text-center text-md-left">© 2021 Copyright:
+            <a href="https://mdbootstrap.com/">
+              <strong> Covid-19.com</strong>
+            </a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-5 col-lg-4 ml-lg-0">
+
+          <!-- Social buttons -->
+          <div class="text-center text-md-right">
+            <ul class="list-unstyled list-inline">
+              <li class="list-inline-item">
+                <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                  <i class="fab fa-google-plus-g"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+  </footer>
+  <!-- Footer -->
+
+  <script>
+    $(".list-group-item").click(function () {
+
+      // Select all list items
+      var listItems = $(".list-group-item");
+
+      // Remove 'active' tag for all list items
+      for (let i = 0; i < listItems.length; i++) {
+        listItems[i].classList.remove("active");
+      }
+
+      // Add 'active' tag for currently selected item
+      this.classList.add("active");
+    });
+  </script>
+  <script src="./js/scroller.js"></script>
+</body>
+
+</html>

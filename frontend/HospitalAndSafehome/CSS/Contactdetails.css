@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+header,
+section {
+    overflow: hidden;
+}
+
+:root {
+    --Snigle-font: "Sniglet", cursive;
+    --Rubik: "Rubik", cursive;
+    --Patua: "Patua One", cursive;
+    --Lobster: "Lobster", cursive;
+    --light-black: #2e2c2caf;
+    --bggradient: linear-gradient(to bottom,
+            rgb(139, 211, 163), #54ee2d);
+    --light-gray: rgba(255, 255, 255, 0);
+}
+
+/*heading*/
+header .container .col-md-12 h1 {
+    font-size: 6vmin;
+    font-weight: bold;
+    padding-top: 2vmin;
+    padding-bottom: 10vmin;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /*background: #20c997;
+    background: var(--bggradient);*/
+    /*box-shadow: 1px 2px 50px 0px rgba(119, 113, 113, 0.349);*/
+}
+
+/*back button*/
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    margin-left: 2vmin;
+}
+
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.previous {
+    background-color: #f1f1f1;
+    color: black;
+    border-radius: 50%;
+    margin-left: 2vmin;
+    margin-top: 2vmin;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+/*Section-1*/
+.section-1 {
+    margin-top: 20vmin;
+    padding-bottom: 80vmin;
+}
+
+.section-1 .row .col-md-12:last-child {
+    position: relative;
+}
+
+/*1st panel*/
+.section-1 .row .col-md-6 .panel {
+    position: absolute;
+    top: 35vmin;
+    left: 150vmin;
+    border-radius: 3px;
+    text-align: left;
+    padding: 5vmin 5vmin 20vmin 10vmin;
+    box-shadow: 0px 25px 42px rgba(0, 0, 0, 0.2);
+    font-family: var(--Rubik);
+    z-index: 1;
+    height: 25rem;
+    width: 20rem;
+    background: var(--bggradient);
+}
+
+/*2nd panel*/
+.section-1 .row .col-md-6 .panel1 {
+    position: absolute;
+    top: 25vmin;
+    right: 30vmin;
+    left: 10vmin;
+    height: 35rem;
+    width: 60rem;
+    border-radius: 3px;
+    padding: 28vmin 65vmin 2vmin 10vmin;
+    box-shadow: 0px 25px 42px rgb(0, 0, 0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    z-index: 1;
+    opacity: 0.8;
+    background-image: url(../asset/pexels-photomix-company-887751.jpg);
+    background-repeat: no-repeat;
+    background-size: 75rem 35rem;
+
+}
+
+.section-1 .row .col-md-6 .panel1 p {
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+
+/*2nd panel-select*/
+.section-1 .row .col-md-6 .panel .select {
+    font-size: 5vmin;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    padding-top: 6vmin;
+}
+
+.section-1 .row .col-md-6 .panel select {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 18px;
+    padding-left: 2vmin;
+    width: 230px;
+    height: 30px;
+}
+
+/*submit button*/
+.section-1 .row .col-md-6 .panel .btn {
+    background-color: lightseagreen;
+    font-size: 3vmin;
+    margin-top: 18vmin;
+}

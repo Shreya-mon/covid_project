@@ -1,0 +1,183 @@
+/*Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+header,
+section {
+  overflow: hidden;
+}
+
+
+:root {
+  --Snigle-font: 'Sniglet', cursive;
+  --Rubik: 'Rubik', cursive;
+  --Patua: 'Patua One', cursive;
+  --Lobster: 'Lobster', cursive;
+  --light-black: #2e2c2caf;
+  --bggradient: linear-gradient(to bottom, #dd2476, #ff512f);
+  --light-gray: rgba(255, 255, 255, 0);
+  --bgcolor1: linear-gradient(to bottom, #20c997, #ddd);
+}
+
+.navbar-brand{
+  max-width: 40px;
+}
+
+/*Heading styling*/
+header .container .col-md-10 h1 {
+  font-size: 6vmin;
+  font-weight: bold;
+  padding-top: 7vmin;
+  padding-bottom: 7vmin;
+  padding-right: 0vmin;
+  margin-left: 15rem;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  /*background: #20c997;
+    background: var(--bggradient);
+    box-shadow: 1px 2px 50px 0px rgba(119, 113, 113, 0.349);*/
+}
+
+/*side-bar*/
+.menu-bar {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  width: 210px;
+  height: 50%;
+  background: rgba(255, 255, 255, 0.767);
+}
+
+.menu-bar ul {
+  padding: 10px;
+  border: 1px solid lightgray;
+  /*margin-top: 40px;*/
+}
+
+.menu-bar ul li {
+  list-style: none;
+  padding-top: 10px;
+}
+
+.menu-bar ul li a {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 3vmin;
+  font-weight: bold;
+  padding: 10px 5px 10px;
+  color: #262626;
+  text-decoration: none;
+  display: inline-block;
+  letter-spacing: 0.2vmin;
+  border-bottom: 1px solid lightgray;
+}
+
+.menu-bar ul li a:hover {
+  color: #fff;
+  background: #262626;
+}
+
+/*Carousel margin for side-bar*/
+.section-1 {
+  margin-left: 210px;
+  padding: 1px 16px;
+}
+
+/*Section-1*/
+main .section-1 .carousel-inner {
+  height: 25rem;
+}
+
+main .section-1 .carousel-inner .carousel-item img {
+  height: 25rem;
+  width: 100%;
+}
+
+/*Section-2*/
+
+.numbers .rect {
+  position: relative;
+  z-index: 1;
+  background: white;
+  width: 17rem;
+  height: 12rem;
+  padding-top: 3.5vmin;
+  margin: 1rem;
+  border-radius: 0.5em;
+  box-shadow: 1px 2px 50px 0px rgba(26, 32, 156, 0.349);
+}
+
+.numbers {
+  margin-top: 5vmin;
+}
+
+.numbers .rect h1 {
+  font-size: 5rem;
+  color: rgb(104, 82, 199);
+}
+
+.numbers .rect p {
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*Section-3*/
+
+.section-3 .team {
+  padding-left: 8vmin;
+}
+
+.section-3 .card {
+  width: 15rem;
+  margin-top: 10vmin;
+  margin-bottom: 10vmin;
+  height: 23rem;
+}
+
+.section-3 .card .card-text {
+  padding: 2em;
+}
+
+.section-3 .card h3.nearby {
+  padding-top: 2rem;
+}
+
+.section-3 .card h3.admission {
+  padding-top: 1.5rem;
+}
+
+.border-radius {
+  border-radius: 4px;
+  width: 60%;
+}
+
+.heading {
+  margin: 5% 5%;
+}
+
+.carousel-img {
+  min-height: 360px;
+  max-height: 550px;
+  width: 100%;
+}
+
+.carousel-item {
+  background-color: black;
+}
+
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  z-index: 999;
+  width: 120px;
+}
+.scroller{
+  border-radius: 50%;
+   border: 1px solid black;
+   padding: 5px;
+    background-color: #e3f2fd;
+}
