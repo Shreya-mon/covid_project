@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css"
+    integrity="sha512-apX8rFN/KxJW8rniQbkvzrshQ3KvyEH+4szT3Sno5svdr6E/CP0QE862yEeLBMUnCqLko8QaugGkzvWS7uNfFQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+    integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <title>Covid-19</title>
+
+</head>
+
+<body>
+  <div type="button" class="btn btn-floating rounded" id="btn-back-to-top">
+    <img src="./images/scroller.png" class="scroller w-100 " />
+  </div>
+  <header>
+    <!--navbar-->
+    <nav class="navbar navbar-light   navbar-expand-lg" style="background-color: #e3f2fd;">
+      <a class="navbar-brand" href="index.html"><img class="logo w-100" src="./images/project_logo.png" /></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="household.html">Household Precautions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="#">Doctor Consultancy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="./HospitalAndSafehome/src/Hospital.html">Hospital</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="./BloodBank/blood_bank.html">Blood Bank</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="oxygen.html">Oxygen Supplier</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="vaccination.html">Covid Vaccination</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="meal and childcare.html">Healthcare volunteers Meal and Child
+              care
+              Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="#">Review of covid survivors and warriors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="ngo-charity.html">NGO and Charity</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="help.html">Help Desk</a>
+          </li>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  </header>
+  <!--Side navbar-->
+  <div class="container  ml-md-4 pr-md-1 mt-5 pt-2" style="min-width: 90%;">
+    <div class="row mt-2 ">
+      <div class="col-md-3 mb-5 sidebar">
+        <div class="list-group">
+          <a href="#row1" class="list-group-item list-group-item-action active">Procedure of vaccination</a>
+          <a href="#row2" class="list-group-item list-group-item-action">Who Will Get Vaccine?</a>
+          <a href="#row3" class="list-group-item list-group-item-action">Before and After Vaccination</a>
+          <a href="#row4" class="list-group-item list-group-item-action">Common Side-Effects</a>
+          <a href="#row5" class="list-group-item list-group-item-action">Contradictions For this Vaccine</a>
+          <a href="#row6" class="list-group-item list-group-item-action">FAQs</a>
+          <a href="#row7" class="list-group-item list-group-item-action">Register here to get vaccinated</a>
+        </div>
+      </div>
+
+      <div class="col-md-8  mb-5 w-100">
+        <div class="container m-0 p-0 ">
+          <h2 class="center" id="row1">Two vaccines that have been granted emergency use authorization by the
+            Central
+            Drugs Standard Control
+            Organization (CDSCO) in India
+          </h2>
+          <div class="col center-center"><img src="./images/vaccinemain.jfif" class=""
+              style="max-height: 300px; width: 90%;" /></div>
+          <div class="mt-4">
+            <a href="#" class="list-group-item list-group-item-action list-group-item-info">Covishield®
+              (AstraZeneca's
+              vaccine manufactured by Serum Institute of India)</a>
+            <p style="border: 1px solid black; padding: 2%;"> Covishield® vaccine, manufactured by the Serum
+              Institute
+              of India, is a Viral Vector-based Technology
+              which is also used to manufacture Ebola vaccine.</p>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-info">Covaxine
+              (manufactured by
+              Bharat Biotech Limited)</a>
+            <p style="border: 1px solid black; padding: 2%;"> Covaxin® vaccine, manufactured by the Bharat
+              Biotech, is a
+              Whole-virion Inactivated Coronavirus
+              Vaccine
+              which is also used to manufacture vaccines like Influenza, Rabies and Hepatitis- A.
+            </p>
+          </div>
+        </div>
+
+        <hr>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item ">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button btn btn-primary w-100" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Do I need to use the mask/other COVID-19 appropriate precautions after receiving the
+                vaccine?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                Yes, it is absolutely necessary that everyone who has received the COVID-19 vaccine
+                should continue to follow the COVID-19 appropriate behaviour i.e., mask, do gaj ki doori
+                and hand sanitization to protect themselves and those around from spreading the
+                infection.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed btn btn-primary w-100" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Can a person presently having COVID-19 (confirmed or suspected) infection be vaccinated?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                Person with confirmed or suspected COVID-19 infection may increase the risk of spreading
+                the same to others at vaccination site. For this reason, infected individuals should
+                defer vaccination for 14 days after symptoms resolution.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed btn btn-primary w-100" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Which vaccine is better between Covisheild and Covaxin?
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                There is no head-to-head comparison done between the two vaccines being used in India so
+                one cannot choose one over the other. Both would work fine in preventing the infection
+                as well as prevent a person from going into severe state of the disease. As a long-term
+                effect, it would be preventing death for elderly people or those who have comorbidities.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container m-0 p-0 mt-4">
+          <h2 class="center" id="row1">Procedure Of vaccination</h2>
+          <div class="row mt-2">
+            <div class="col-12 col-md-8">
+              Vaccines are available from Government and Private Health Facilities as notified, known as
+              COVID
+              Vaccination
+              Centres (CVCs)
+              The safety and efficacy data from clinical trials of vaccine candidates are examined by Drug
+              regulator of our
+              country before granting the license for the same. Hence, all the COVID-19 vaccines that
+              receive
+              license will
+              have comparable safety and efficacy. However, it must be ensured that the entire schedule of
+              vaccination is
+              completed by only one type of vaccine as different COVID-19 vaccines are not
+              interchangeable.
+              We request you to rest at the vaccination centre for atleast half an hour after taking the
+              COVID-19
+              vaccine.
+              Inform the nearest health authorities/ANM/ASHA in case you feel any discomfort or uneasiness
+              subsequently.
+              Remember to continue following key COVID-19 Appropriate Behaviours like wearing of mask,
+              maintaining
+              hand
+              sanitization and physical distance (or 6 feet or Do Gaj).
+            </div>
+            <div class="col center-center">
+              <img src="./images/vaacine1.jpg" alt="" class="w-100 rounded">
+            </div>
+          </div>
+          <hr>
+
+          <h2 class="center" id="row2">Who Will Get Vaccine?</h2>
+          <div class="row mt-2 ">
+            <div class="col-12 col-md-8 mb-2">
+              <h4>Will COVID-19 vaccine be given to everyone simultaneously?</h4>
+              <div class="row mb-2">
+                Based on the potential availability of vaccines the Government of India has selected the
+                priority
+                groups who
+                will be vaccinated on priority as they are at higher risk. The first group includes
+                healthcare and
+                frontline
+                workers. The second group to receive COVID-19 vaccine was the persons over 60 years of
+                age and
+                persons between
+                45 and 59 years of age with comorbid conditions. From April 1st, 2021, People above the
+                age of 45
+                years (born
+                before 1st Jan, 1977) are eligible to get the COVID-19 vaccine. From May 1, 2021, all
+                eligible
+                citizens above
+                the age of 18 years can get the COVID-19 vaccine.
+              </div>
+              <h4>Can a person presently having COVID-19 (confirmed or suspected) infection be vaccinated?
+              </h4>
+              <div class="row mb-2">
+                Person with confirmed or suspected COVID-19 infection may increase the risk of spreading
+                the same to
+                others
+                at vaccination site. For this reason, infected individuals should defer vaccination for
+                14 days
+                after symptoms
+                resolution.
+              </div>
+              <h4>How will I know if I am eligible for vaccination?
+              </h4>
+              <div class="row mb-2">
+                In the initial phase, COVID-19 vaccine was provided to the priority group - Health Care
+                and
+                Front-line
+                workers. The second phase vaccinations, which started on March 1, 2021 allowed for all
+                Indians above
+                the age
+                of 60 and Indians between the age of 45 and 59 with comorbidities to be vaccinated. From
+                April 1st,
+                2021,
+                People above the age of 45 years (born before 1st Jan, 1977) are eligible to get the
+                COVID-19
+                vaccine.From
+                May 1, 2021, all eligible citizens above the age of 18 years can get the COVID-19
+                vaccine.
+              </div>
+            </div>
+
+            <div class="col center-center">
+              <img src="./images/vaccine2.png" alt="" class="w-100 rounded">
+            </div>
+          </div>
+          <hr>
+
+          <h2 class="center" id="row3">Before And After Vaccination</h2>
+          <div class="row mt-2 ">
+            <div class="col-12 col-md-8 mb-2">
+              <h4>What medications should be avoided before taking COVID-19 vaccine and for how long?</h4>
+              <div class="row mb-2">
+                Currently, there is no such instruction. One can take one’s regular medication
+                uninterruptedly. Just
+                inform
+                the vaccinator about the medicines you consume.
+              </div>
+              </li>
+              <h4>Is the vaccine contraindicated in person with chronic diseases?
+              </h4>
+              <div class="row mb-2">
+                Chronic diseases and morbidities like the cardiac, neurological, pulmonary, metabolic,
+                renal and
+                malignancies
+                etc. are not contraindicated. In fact, the benefit of COVID-19 vaccines to reduce the
+                risk of severe
+                COVID-19
+                disease and death is for those who have these comorbidities.
+              </div>
+              <h4>If one is taking medicines for illnesses like Cancer, Diabetes, Hypertension etc, can
+                s/he take the
+                COVID-19
+                vaccine and/or If I suffer from HTN/DM/CKD/heart disease/lipid disorders etc., can I
+                safely take
+                this
+                vaccine?
+              </h4>
+              <div class="row mb-2">
+                Yes, persons with one or more of these comorbid conditions are considered among the high
+                risk
+                category.
+                They
+                need to get COVID-19 vaccination. Overall, the vaccine is safe and efficacious in adults
+                with
+                comorbidity.
+                The
+                maximum benefit of getting the COVID-19 vaccine is for those who have such
+                co-morbidities. However,
+                if you
+                are
+                concerned for any specific reason, please consult your doctor.
+              </div>
+              <h4>Do I need to use the mask/other COVID-19 appropriate precautions after receiving the
+                vaccine?
+              </h4>
+              <div class="row mb-2">
+                Yes, it is absolutely necessary that everyone who has received the COVID-19 vaccine
+                should continue
+                to
+                follow
+                the COVID-19 appropriate behaviour i.e., mask, do gaj ki doori and hand sanitization to
+                protect
+                themselves
+                and
+                those around from spreading the infection.
+              </div>
+            </div>
+            <div class="col center-center">
+              <img src="./images/vaacine3.jpeg" alt="" class="w-100 rounded">
+            </div>
+          </div>
+        </div>
+        <hr>
+        <h2 class="center" id="row4">Common Side Effets</h2>
+        <div class="row mt-2 ">
+          <div class="col-12 col-md-8 mb-2">
+            <p>According to the Centers for Disease Control and Prevention (CDC)Trusted Source and the World
+              Health
+              Organization (WHO)Trusted Source, common side effects of a COVID-19 vaccine include:</p>
+
+            <ul>
+              <li>Mild fever</li>
+              <li>pain or swelling at the injection site</li>
+              <li>fatigue</li>
+              <li>headaches</li>
+              <li>body aches</li>
+              <li>chills</li>
+              <li>nausea</li>
+              <li>Itchy rash, Redness, and other forms of mild irritation</li>
+            </ul>
+
+            <p>Health authorities recognize that each of the 15 authorized COVID-19 vaccines can cause side
+              effects.
+              These
+              are often mild and last for only a few days. They are not unexpected.<br>
+              Get the second dose even if you have side effects from the first dose unless any vaccination
+              provider or
+              your doctor advises you otherwise.
+            </p>
+
+          </div>
+
+          <div class="col center-center">
+            <img src="./images/vaccine4.jpeg" alt="" class="w-100 rounded">
+          </div>
+        </div>
+
+        <hr>
+        <h2 class="center" id="row5">Contraindication</h2>
+        <div class="row mt-2 ">
+          <div class="col-12 col-md-8 mb-2 container">
+            <h4>Persons with history of:</h4>
+            <div class="row">
+              <ul>
+                <li>Anaphylactic or allergic reaction to a previous dose of COVID-19 vaccine</li>
+                <li>Immediate or delayed-onset anaphylaxis or allergic reaction to vaccines or
+                  injectable
+                  therapies,
+                  pharmaceutical products, food-items etc.</li>
+              </ul>
+            </div>
+            <h4>Pregnancy & Lactation:</h4>
+            <div class="row">
+              <ul>
+                <li>Pregnant & Lactating women have not been part of any COVID-19 vaccine clinical trial
+                  so far.
+                  Therefore, women who are pregnant or not sure of their pregnancy; and lactating
+                  women should
+                  not receive
+                  COVID-19 vaccine at this time</li>
+              </ul>
+            </div>
+            <h4>Provisional / temporary contraindications:</h4>
+            <div class="row">
+              <ul>
+                <li>In these conditions, COVID-19 vaccination is to be deferred for 4-8 weeks after
+                  recovery</li>
+                <li>Persons having active symptoms of SARS-CoV-2 infection.</li>
+                <li>SARS-COV-2 patients who have been given anti-SARS-CoV-2 monoclonal antibodies or
+                  convalescent
+                  plasma</li>
+                <li>Acutely unwell and hospitalized (with or without intensive care) patients due to any
+                  illness.
+                </li>
+              </ul>
+
+
+            </div>
+          </div>
+
+          <div class="col center-center">
+            <img src="./images/vaccine5.jfif" alt="" class="w-100 rounded">
+          </div>
+
+        </div>
+        <hr>
+        <h2 class="center" id="row6">FAQs</h2>
+        <div class="row mt-2 ">
+          <div class="col-12 col-md-8 mb-2 container">
+            <h4>1. How long I will remain protected after vaccination?</h4>
+            <div class="row">
+              <p>Longevity of the immune response in vaccinated individuals is yet to be determined.
+                Hence, continuing
+                the use
+                of masks, handwashing, physical distancing and other COVID-19 appropriate behaviours
+                is
+                strongly
+                recommended.
+              </p>
+            </div>
+            <h4>2. Does vaccination protect me against newer strains / mutated virus of SARS-CoV 2?</h4>
+            <div class="row">
+              <p>The body responds to vaccination by making more than one type of antibodies to virus
+                parts including
+                spike
+                protein. Therefore, all vaccines are expected to provide reasonable amount of
+                protection
+                against the
+                mutated
+                virus also. Based on the available data the mutations as reported are unlikely to
+                make
+                the vaccine
+                ineffective.</p>
+            </div>
+            <h4>3. Should you avoid alcohol after receiving the COVID-19 vaccine?</h4>
+            <div class="row">
+              <p>
+                As per experts, there is no evidence of alcohol impairing the effectiveness of the
+                vaccine.
+              </p>
+            </div>
+          </div>
+
+          <div class="col center-center">
+            <img src="./images/vaccine6.jpg" alt="" class="w-100 rounded">
+          </div>
+        </div>
+        <div class="row">
+          <h3>For more queries submit your questions here: </h3><button class="btn btn-primary ml-2">Click</button>
+        </div>
+        <hr>
+        <div class="row">
+          <h3 id="row7">Register Here To Get Yourself vaccinated: </h3>
+          <a href="https://www.cowin.gov.in/home"><button class="btn btn-primary ml-2">Cowin</button></a>
+          <a href="https://www.mygov.in/aarogya-setu-app/"><button class="btn btn-primary ml-2">Arogya Setu</button></a>
+        </div>
+
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+
+  <hr>
+
+  <!-- Footer -->
+  <footer class="page-footer font-small mdb-color pt-4" style="background-color: #e3f2fd;">
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
+
+      <!-- Footer links -->
+      <div class="row text-center text-md-left mt-3 pb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h6 class="text-uppercase mb-4 font-weight-bold">Covid-19</h6>
+          <p>Our team tried to do as much as they can to help you out in this pandemic situation. If this page is
+            benifical for you at some point then we will be very thankfull. Give us a review if you like it.</p>
+        </div>
+        <!-- Grid column -->
+
+        <hr class="w-100 clearfix d-md-none">
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h6 class="text-uppercase mb-4 font-weight-bold">About More information</h6>
+          <p>
+            <a href="#!">Covishield®</a>
+          </p>
+          <p>
+            <a href="#!">Covaxin®</a>
+          </p>
+          <p>
+            <a href="#!">Mucormycosis disease</a>
+          </p>
+          <p>
+            <a href="#!">W.H.O</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <hr class="w-100 clearfix d-md-none">
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
+          <p>
+            <a href="#!">Your Account</a>
+          </p>
+          <p>
+            <a href="#!">Cowin</a>
+          </p>
+          <p>
+            <a href="#!">Arogya Setu</a>
+          </p>
+          <p>
+            <a href="#!">Help</a>
+          </p>
+        </div>
+
+        <!-- Grid column -->
+        <hr class="w-100 clearfix d-md-none">
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+          <p>
+            <i class="fas fa-home mr-3"></i> Kolkata, Vivekanada College, Thakurpukur
+          </p>
+          <p>
+            <i class="fas fa-envelope mr-3"></i> info@gmail.com
+          </p>
+          <p>
+            <i class="fas fa-phone mr-3"></i> + 01 234 567 88
+          </p>
+          <p>
+            <i class="fas fa-print mr-3"></i> + 01 234 567 89
+          </p>
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Footer links -->
+
+      <hr>
+
+      <!-- Grid row -->
+      <div class="row d-flex align-items-center">
+
+        <!-- Grid column -->
+        <div class="col-md-7 col-lg-8">
+
+          <!--Copyright-->
+          <p class="text-center text-md-left">© 2021 Copyright:
+            <a href="https://mdbootstrap.com/">
+              <strong> Covid-19.com</strong>
+            </a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-5 col-lg-4 ml-lg-0">
+
+          <!-- Social buttons -->
+          <div class="text-center text-md-right">
+            <ul class="list-unstyled list-inline">
+              <li class="list-inline-item">
+                <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                  <i class="fab fa-google-plus-g"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+  </footer>
+  <!-- Footer -->
+
+  <script>
+    $(".list-group-item").click(function () {
+
+      // Select all list items
+      var listItems = $(".list-group-item");
+
+      // Remove 'active' tag for all list items
+      for (let i = 0; i < listItems.length; i++) {
+        listItems[i].classList.remove("active");
+      }
+
+      // Add 'active' tag for currently selected item
+      this.classList.add("active");
+    });
+  </script>
+  <script src="./js/scroller.js"></script>
+</body>
+
+</html>
