@@ -1,34 +1,44 @@
+
 <!DOCTYPE html>
-<!--Insert data into hospital database-->
 <html>
 <head>
-	<title>Insert records</title> 
-	<style type="text/css">
-		.type{
-			margin-left: 15vmin;
-		}
-	</style>
+<link rel="stylesheet" href="style2.css">
 </head>
 <body>
-	<h1> <center> Insert records for COVID Hospital</center></h1>
-	<a href="menu.html">Back</a><br><br>
+	<center>
+	<h1>Insert Records of COVID Hospital</h1>
+	<a href="menu.html">Back to Menu</a></center>
+	<br><br>
 	<form action="insertdata.php" method="post" name="insert_frm">
-		Hospital ID: <input type="text" name="id" placeholder="ID"><br><br>
-		Hospital name:<input type="text" name="name" placeholder="Name"><br><br>
-		<lable>Hospital type:</lable>
-		<input type="radio" name="type" value="Government Hospital">Government Hospital<br>
-		<input type="radio" name="type" class="type" value="Govt. Requisitioned Pvt. Hospital">Govt. Requisitioned Pvt. Hospital<br>
-		<input type="radio" name="type" class="type" value="Private Hospital">Private Hospital
-		<br><br>
-		Hospital Bed Capacity: <input type="text" name="bed_capacity" placeholder="Total bed capacity"><br><br>
-		Hospital Bed Availability: <input type="text" name="bed_availability" placeholder="Total bed Available"><br><br>
-		Phone number: <input type="text" name="phone_number" placeholder="Phone no."><br><br>
-		Email: <input type="email" name="email" placeholder="Email"><br><br>
-		Address: <input type="text" name="address" placeholder="Address"><br><br>
-		District: <input type="text" name="district" placeholder="District"><br><br>
-	Hospital additional information: <input type="text" name="hospital_additional_info" placeholder="Add more information"><br><br>
-		<input type="submit" value="Submit">
+		<div class='container'>
+			<div class='window'>
+				<div class='overlay'>
+				</div>
+				<div class='content'>
+					<div class='input-fields'>
+						<br>
+						Hospital ID : <input type="text" name="id" placeholder="ID"><br><br>
+						Hospital name : <input type="text" name="name" placeholder="Name"><br><br>
+						<label>Hospital type : </label>
+							<input type="radio" name="type" class="type" value="Government Hospital">Government Hospital<br>
+							<input type="radio" name="type" class="type" value="Govt. Requisitioned Pvt. Hospital">Govt. Requisitioned Pvt. Hospital<br>
+							<input type="radio" name="type" class="type" value="Private Hospital">Private Hospital
+						<br><br>
+						Hospital Bed Capacity : <input type="text" name="bed_capacity" placeholder="Total bed capacity"><br><br>
+						Hospital Bed Availability : <input type="text" name="bed_availability" placeholder="Total bed Available"><br><br>
+						Phone number : <input type="text" name="phone_number" placeholder="Phone no."><br><br>
+						Email : <input type="email" name="email" placeholder="Email"><br><br>
+						Address : <input type="text" name="address" placeholder="Address"><br><br>
+						District : <input type="text" name="district" placeholder="District"><br><br>
+						Hospital additional information : <input type="text" name="hospital_additional_info" placeholder="Add more information"><br><br>
+						<center><input type="submit" value="Submit"></center>
+					</div>
+				</div>
+			</div>
+		</div>
 	</form>
-
 </body>
 </html>
+
+
+

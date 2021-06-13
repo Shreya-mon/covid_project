@@ -7,18 +7,45 @@
 		
 ?>
 
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+<link rel="stylesheet" href="style2.css">
 </head>
 <body>
-	<form action="update_doctor_category.php" method="post">
+	<center>
+	<h1>Updation Form of Doctor Category</h1>
+	<a href="menu.html">Back to Menu</a></center>
+	<br><br>
+	<form action="update_doctor_category.php" method="post" name="insert_frm">
+		<div class='container'>
+			<div class='window'>
+				<div class='overlay'>
+				</div>
+				<div class='content'>
+					<div class='input-fields'>
+						<br>
+						<form action="update_doctor_category.php" method="post">
 		 <input type="hidden" name="cat_id" value="<?=$row['cat_id']?>"><br><br>
 		Doctor Category name:<input type="text" name="category_name" value="<?=$row['category_name']?>"><br><br>
 		
 
 		<input type="submit" value="Update">
+	
+						
+
+
+					</div>
+				</div>
+			</div>
+		</div>
 	</form>
 </body>
 </html>
+
+
+

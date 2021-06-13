@@ -1,15 +1,47 @@
+
+<<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+	body	
+{
+	background-image: url("https://us.123rf.com/450wm/studiobarcelona/studiobarcelona2002/studiobarcelona200200083/140963977-dark-blue-gradient-background-vector-illustration-.jpg?ver=6");
+	background-position: center;
+	background-size: cover;
+	height: 700px;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+h3{ color: floralwhite; font-size: 38px;}
+a{
+color: forestgreen;
+font-size: 31px;
+align-items: center;
+}
+	</style>
+
+
+</head>
+<body>
+
+</body>
+
+
+
+
 <?php
 include("connection.php");
 ?>
 <?php
-	echo '<a href="insert_doctor_category.html">Back</a>';
+	
 	$sql = "INSERT INTO `doctor_category`(`cat_id`,`category_name`) VALUES('".$_REQUEST['cat_id']."',
 								 '".$_REQUEST['cat_name']."')";
-	mysqli_query($link, $sql);
-	echo '<h3> Record inserted successfully. </h3>';
-	echo '<br>';
-	echo '<br>';
-	echo '<br>';
-	echo '<a href="display_doctor_catergory.php">Click here to display records</a>';
+	mysqli_query($link, $sql);?>
+	<h3 align="center"> DATA RECORDED SUCCESSFULLY!!!</h3>
+	
+	<a href="insert_doctor_category.html">Back</a><br><br>
+	<a href="display_doctor_catergory.php">Click here to display records</a>';
 
-?>
+</html>

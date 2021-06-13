@@ -1,19 +1,40 @@
-<?php include_once "connection1.php"; // Record updation form
+<?php include_once "connection.php"; // Record updation form
 ?>
 
 <?php 
-	$qry = mysqli_query($con, "SELECT * FROM `hospital_db` WHERE `hid` = '".$_REQUEST['id']."'");
+	$qry = mysqli_query($link, "SELECT * FROM `hospital_db` WHERE `hid` = '".$_REQUEST['id']."'");
 		$row = mysqli_fetch_array($qry);
 		$type = isset($row['htype']) ? $row['htype']:'';
 ?>
 
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+<link rel="stylesheet" href="style2.css">
 </head>
 <body>
+	<center>
+	<h1>Insert Records of COVID Hospital</h1>
+	<a href="menu.html">Back to Menu</a></center>
+	<br><br>
 	<form action="updatedata.php" method="post">
+		<div class='container'>
+			<div class='window'>
+				<div class='overlay'>
+				</div>
+				<div class='content'>
+					<div class='input-fields'>
+						<br>
+
 		Hospital ID: <input type="text" name="id" value="<?=$row['hid']?>"><br><br>
 		Hospital name:<input type="text" name="name" value="<?=$row['hname']?>"><br><br>
 		<lable>Hospital type:</lable>
@@ -32,6 +53,15 @@
 		<br>
 
 		<input type="submit" value="Update">
+	
+						
+					</div>
+				</div>
+			</div>
+		</div>
 	</form>
 </body>
 </html>
+
+
+

@@ -1,0 +1,54 @@
+.type	
+{
+	margin-left: 15vmin;
+}
+body	
+{
+	background-image: url("https://i.pinimg.com/originals/d8/b6/ed/d8b6ede572b790b4208a294057d095e1.jpg");
+	background-position: center;
+	background-size: cover;
+	height: 800px;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+h1
+{
+	font-family: Verdana;
+	font-weight: bold;
+	color: #ffccff;
+	text-shadow:2px 2px 3px red;
+	margin-top: 3%;
+}
+label{
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: blue;
+}
+form{
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: rgba(0,0,0,.1);
+  padding: 100px;
+}
+input[type=text],
+input[type=email]
+{
+  display: inline-block;
+  border: none;
+  text-align: left;
+  box-shadow: 3px 2px rgba(121, 83, 210,.3 );
+  padding: 8px;
+  width: 200px;
+  background: transparent;
+  color: #FFF;
+}
+input[type=text]:focus{
+  background: none;
+  border: none;
+  color: #FFF;
+}

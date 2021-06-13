@@ -6,14 +6,32 @@
 		$row = mysqli_fetch_array($qry);
 ?>
 
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Update data</title>
+<link rel="stylesheet" href="style2.css">
 </head>
 <body>
-	<h1> <center> Update records for Doctor Consultation</center></h1>
+	<center>
+	<h1>Updation Form of Doctor Details</h1>
+	<a href="menu.html">Back to Menu</a></center>
+	<br><br>
 	<form action="Update_doctor_data.php" method="post">
+		<div class='container'>
+			<div class='window'>
+				<div class='overlay'>
+				</div>
+				<div class='content'>
+					<div class='input-fields'>
+						<br>
+						
 		ID: <input type="text" name="id" value="<?=$row['id']?>"><br><br>
 		Category ID:
 		
@@ -46,5 +64,13 @@
 
 		<input type="submit" value="Update">
 	</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
 </body>
 </html>
+
+
+
