@@ -32,7 +32,26 @@
 						<br>
 						
 		<label>ID : </label><input type="text" name="id" value="<?=$row['id']?>"><br><br>
-		<label>Service Id : </label><input type="text" name="service_id" value="<?=$row['service_id']?>"><br><br>
+		Service Id :
+		<select name="service_id">
+			<?php
+
+				include("connection.php");
+
+				$qry = mysqli_query($link, "SELECT * FROM `service`");
+
+				while($row1 = mysqli_fetch_array($qry)) {
+					// print_r($row1);
+					?>
+						<option value="<?=$row1['service_id']?>"><?=$row1['name']?></option>
+					<?php
+				}
+
+			?>
+		</select>
+
+
+		<br><br>
 	
 		Name:<input type="text" name="name" value="<?=$row['name']?>"><br><br>
 		
