@@ -34,6 +34,7 @@ align-items: center;
 						  VALUES('".$_REQUEST['name']."',
 								 '".$_REQUEST['description']."')";
 	mysqli_query($link, $sql);?>
+
 	<h3 align="center"> Record inserted successfully. </h3>
 	<br>
 	<br>
@@ -50,4 +51,3 @@ align-items: center;
 	<br>
 	<br>
 	<a href="display_service.php">Click here to display records</a>
-
