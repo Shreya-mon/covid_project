@@ -134,7 +134,7 @@ include("connection.php");?>
           </thead>
           <tbody>
            <?php
-    $sql = "SELECT * FROM `service_providers` WHERE `service_id`=";
+    $sql = "SELECT * FROM `service_providers` WHERE `service_id`=1";
     $result = mysqli_query($link,$sql);
     if(mysqli_num_rows($result) > 0)
     {

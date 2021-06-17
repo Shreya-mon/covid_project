@@ -43,7 +43,16 @@ include("connection.php");?>
 		
 	</tr>
     <?php
-		$sql = "SELECT * FROM `service_providers`";
+		$sql = "SELECT 
+		 `service_providers`.`id` AS `id`,
+		 `service_providers`.`service_id` AS `service_id`,
+		 `service_providers`.`name` AS `name`,
+		 `service_providers`.`contact` AS `contact`,
+		 `service_providers`.`email` AS `email`,
+		 `service_providers`.`description` AS `description`,
+		 `service_providers`.`address` AS `address`,
+		 `service`.`name` AS `service_name`
+		FROM `service_providers`,`service` where `service_providers`.`service_id`=`service`.`service_id`";
 		$result = mysqli_query($link,$sql);
 		if(mysqli_num_rows($result) > 0)
 		{
@@ -51,7 +60,7 @@ include("connection.php");?>
 			{
 				echo "<tr>";
 				echo "<td align = 'center'>".$row["id"]."</td>";
-				echo "<td align = 'center'>".$row["service_id"]."</td>";
+				echo "<td align = 'center'>".$row["service_name"]."</td>";
 				echo "<td align = 'center'>".$row["name"]."</td>";
 				echo "<td align = 'center'>".$row["contact"]."</td>";
 				echo "<td align = 'center'>".$row["email"]."</td>";
