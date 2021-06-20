@@ -6,9 +6,6 @@ body {
   padding: 0;
 }
 
-.navbar-brand {
-  max-width: 40px;
-}
 .carousel-img {
   min-height: 360px;
   max-height: 550px;
@@ -28,6 +25,9 @@ body {
   background-color: rgb(243, 238, 238);
 }
 
+.navbar-brand {
+  max-width: 40px;
+}
 .nav-item {
   display: flex;
   align-items: center;

@@ -28,8 +28,15 @@ include("connection.php");?>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles.css">
 
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+    integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/styles.css">
 
 </head>
 
@@ -48,7 +55,7 @@ include("connection.php");?>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="index.html">Home</a>
+            <a class="nav-link " aria-current="page" href="index.php">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link " aria-current="page" href="household.html">Household Precautions</a>
@@ -57,10 +64,10 @@ include("connection.php");?>
             <a class="nav-link " aria-current="page" href="#">Doctor Consultancy</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="./HospitalAndSafehome/src/Hospital.html">Hospital</a>
+            <a class="nav-link " aria-current="page" href="./HospitalAndSafehome/src/hospital.php">Hospital</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="./BloodBank/blood_bank.html">Blood Bank</a>
+            <a class="nav-link " aria-current="page" href="./BloodBank/blood_bank.php">Blood Bank</a>
           </li>
           <li class="nav-item">
             <a class="nav-link " aria-current="page" href="oxygen.php">Oxygen Services</a>
@@ -74,19 +81,222 @@ include("connection.php");?>
               care Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="#">Review of covid survivors and warriors</a>
+            <a class="nav-link " aria-current="page" href="./ReviewOfCovidSurvivorsAndWarriors/src/reviews.php">Review of covid survivors and warriors</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="ngo-charity.html">NGO and Charity</a>
+            <a class="nav-link" aria-current="page" href="ngo-charity.php">NGO and Charity</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="help.html">Help Desk</a>
+            <a class="nav-link " aria-current="page" href="help.php">Help Desk</a>
           </li>
           </li>
         </ul>
       </div>
     </nav>
   </header>
+  <!--Healthcare Modal-->
+   <div class="modal fade" id="HealthcareModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">REGISTER AS AN HEALTHCARE VOLUNTEER</h5>
+          <button type="button" class=" btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+          <form class="row">
+            <div class="col-12 mt-1 ">
+              <label for="Name of volunteer" class="form-label">Name: </label>
+              <input type="text" class="form-control" name="nameOfvolunteer" required>
+            </div>
+            <div class="col-12 mt-1">
+              Applying as a: &nbsp;individual person <input type="radio" name="person"> Team <input type="radio" name="person">
+            </div>
+            <div class="col-12 mt-1">
+              <label for="Address" class="form-label">Address</label>
+              <input type="text" class="form-control" name="addressOfvolunteer" required>
+            </div>
+            <div class="col-12 mt-1">
+              <label for="district">District</label>
+              <select name="dist" id="dist">
+                <option value="Alipurduar">Alipurduar</option>
+                <option value="Bankura">Bankura</option>
+                <option value="Paschim Bardhaman">Paschim Bardhaman</option>
+                <option value="Purba Bardhaman">Purba Bardhaman</option>
+                <option value="Birbhum">Birbhum</option>
+                <option value="Cooch Behar">Cooch Behar</option>
+                <option value="Dakshin Dinajpu">Dakshin Dinajpur</option>
+                <option value="Darjeeling">Darjeeling</option>
+                <option value="Hooghly">Hooghly</option>
+                <option value="Howrah">Howrah</option>
+                <option value="Jalpaiguri">Jalpaiguri</option>
+                <option value="Jhargram">Jhargram</option>
+                <option value="Kalimpong">Kalimpong</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Maldah">Maldah</option>
+                <option value="Murshidabad">Murshidabad</option>
+                <option value="Nadia">Nadia</option>
+                <option value="North 24 Parganas">North 24 Parganas</option>
+                <option value="Paschim Medinipur">Paschim Medinipur</option>
+                <option value="Purba Medinipur">Purba Medinipur</option>
+                <option value="Purulia">Purulia</option>
+                <option value="South 24 Parganas">South 24 Parganas</option>
+                <option value="Uttar Dinajpur">Uttar Dinajpur</option>
+              </select>
+            </div>
+            <div class="col-12 mt-1">
+              <label for="Email" class="form-label">Email</label>
+              <input type="email" class="form-control" name="emailOfvolunteer" required>
+            </div>
+            <div class="col-12 mt-1">
+              <label for="Phone Number" class="form-label">Phone Number</label>
+              <input type="number" class="form-control" name="phoneOfvolunteer" required>
+            </div>
+            <div class="col-12 mt-1">
+              <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
+              <input type="file" class="form-control" name="certificateOfvolunteer" id="formFile">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" type="submit" class="btn btn-primary">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--modal close-->
+ <!--Meal Modals -->
+ <div class="modal fade" id="MealModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">REGISTER FOR MEAL SERVICE</h5>
+          <button type="button" class=" btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+          <form class="row">
+            <div class="col-12 mt-1 ">
+              <label for="Name of NGO" class="form-label">Name: </label>
+              <input type="text" class="form-control" name="nameOfNGO" required>
+            </div>
+            <div class="col-12 mt-1">
+              <label for="Address" class="form-label">Address</label>
+              <input type="text" class="form-control" name="addressOfNGO" required>
+            </div>
+            <div class="col-12 mt-1">
+              <label for="district">District</label>
+              <select name="dist" id="dist">
+                <option value="Alipurduar">Alipurduar</option>
+                <option value="Bankura">Bankura</option>
+                <option value="Paschim Bardhaman">Paschim Bardhaman</option>
+                <option value="Purba Bardhaman">Purba Bardhaman</option>
+                <option value="Birbhum">Birbhum</option>
+                <option value="Cooch Behar">Cooch Behar</option>
+                <option value="Dakshin Dinajpu">Dakshin Dinajpur</option>
+                <option value="Darjeeling">Darjeeling</option>
+                <option value="Hooghly">Hooghly</option>
+                <option value="Howrah">Howrah</option>
+                <option value="Jalpaiguri">Jalpaiguri</option>
+                <option value="Jhargram">Jhargram</option>
+                <option value="Kalimpong">Kalimpong</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Maldah">Maldah</option>
+                <option value="Murshidabad">Murshidabad</option>
+                <option value="Nadia">Nadia</option>
+                <option value="North 24 Parganas">North 24 Parganas</option>
+                <option value="Paschim Medinipur">Paschim Medinipur</option>
+                <option value="Purba Medinipur">Purba Medinipur</option>
+                <option value="Purulia">Purulia</option>
+                <option value="South 24 Parganas">South 24 Parganas</option>
+                <option value="Uttar Dinajpur">Uttar Dinajpur</option>
+              </select>
+            </div>
+            <div class="col-12 mt-1">
+              <label for="Email" class="form-label">Email</label>
+              <input type="email" class="form-control" name="emailOfvolunteer" required>
+            </div>
+            <div class="col-12 mt-1">
+              <label for="Phone Number" class="form-label">Phone Number</label>
+              <input type="number" class="form-control" name="phoneNoOfNGO" required>
+            </div>
+            <div class="col-12 mt-1">
+              <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
+              <input type="file" class="form-control" name="certificateOfNGO" id="formFile">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" type="submit" class="btn btn-primary">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--modal close-->
+ <!--childcare Modals -->
+ <div class="modal fade" id="ChildcareModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">REGISTER FOR CHILDCARE SERVICE</h5>
+          <button type="button" class=" btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+          <form class="row">
+            <div class="col-12 mt-1 ">
+              <label for="Name of NGO" class="form-label">Name</label>
+              <input type="text" class="form-control" name="nameOfNGO" required>
+            </div>
+            <div class="col-12 mt-1">
+              <label for="Address" class="form-label">Address</label>
+              <input type="text" class="form-control" name="addressOfNGO" required>
+            </div>
+            <div class="col-12 mt-1">
+              <label for="district">District</label>
+              <select name="dist" id="dist">
+                <option value="Alipurduar">Alipurduar</option>
+                <option value="Bankura">Bankura</option>
+                <option value="Paschim Bardhaman">Paschim Bardhaman</option>
+                <option value="Purba Bardhaman">Purba Bardhaman</option>
+                <option value="Birbhum">Birbhum</option>
+                <option value="Cooch Behar">Cooch Behar</option>
+                <option value="Dakshin Dinajpu">Dakshin Dinajpur</option>
+                <option value="Darjeeling">Darjeeling</option>
+                <option value="Hooghly">Hooghly</option>
+                <option value="Howrah">Howrah</option>
+                <option value="Jalpaiguri">Jalpaiguri</option>
+                <option value="Jhargram">Jhargram</option>
+                <option value="Kalimpong">Kalimpong</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Maldah">Maldah</option>
+                <option value="Murshidabad">Murshidabad</option>
+                <option value="Nadia">Nadia</option>
+                <option value="North 24 Parganas">North 24 Parganas</option>
+                <option value="Paschim Medinipur">Paschim Medinipur</option>
+                <option value="Purba Medinipur">Purba Medinipur</option>
+                <option value="Purulia">Purulia</option>
+                <option value="South 24 Parganas">South 24 Parganas</option>
+                <option value="Uttar Dinajpur">Uttar Dinajpur</option>
+              </select>
+            </div>
+            <div class="col-12 mt-1">
+              <label for="Phone Number" class="form-label">Phone Number</label>
+              <input type="number" class="form-control" name="phoneNoOfNGO" required>
+            </div>
+            <div class="col-12 mt-1">
+              <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
+              <input type="file" class="form-control" name="certificateOfNGO" id="formFile">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" type="submit" class="btn btn-primary">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--modal close-->
   <!--Side navbar-->
   <div class="container  ml-md-4 pr-md-1 mt-5 pt-2 " style="min-width: 90%;">
     <div class="row mt-2 ">
@@ -107,7 +317,9 @@ include("connection.php");?>
           <img src="./images/health1.gif" class="setphoto w-100">
           <div class="h3 col-12 mt-1">
             <div class="h3 mt-5 mb-5 ml-3">Register as a Healthcare volunteer team/ an individual: </div>
-            <a href="#"><button class="btn btn-primary ml-4">Register Here</button></a>
+            <button type="button" class="btn btn-primary ml-4" data-bs-toggle="modal" data-bs-target="#HealthcareModal">
+            Register Here
+           </button>
           </div>
           <div class="container  mt-5">
             <div class="row" style="text-align: center; align-items: center; justify-content: center;">
@@ -127,27 +339,25 @@ include("connection.php");?>
                 </thead>
                 <tbody>
                   <?php
-    $sql = "SELECT * FROM `service_providers` WHERE `service_id`=6";
-    $result = mysqli_query($link,$sql);
-    if(mysqli_num_rows($result) > 0)
-    {
-      $count=1;
-      while($row = mysqli_fetch_assoc($result))
-      {
-        echo "<tr>";
-       echo "<td align = 'center'>".$count."</td>";
-        echo "<td align = 'center'>".$row["name"]."</td>";
-        echo "<td align = 'center'>".$row["contact"]."</td>";
-        echo "<td align = 'center'>".$row["email"]."</td>";
-        echo "<td align = 'center'>".$row["description"]."</td>";
-        echo "<td align = 'center'>".$row["address"]."</td>";
-        
-       
-        echo "</tr>";
-        $count++;
-      }
-    }
-     ?>
+                    $sql = "SELECT * FROM `service_providers` WHERE `service_id`=6";
+                    $result = mysqli_query($link,$sql);
+                    if(mysqli_num_rows($result) > 0)
+                    {
+                      $count=1;
+                      while($row = mysqli_fetch_assoc($result))
+                      {
+                         echo "<tr>";
+                         echo "<td align = 'center'>".$count."</td>";
+                         echo "<td align = 'center'>".$row["name"]."</td>";
+                         echo "<td align = 'center'>".$row["contact"]."</td>";
+                         echo "<td align = 'center'>".$row["email"]."</td>";
+                         echo "<td align = 'center'>".$row["description"]."</td>";
+                         echo "<td align = 'center'>".$row["address"]."</td>";
+                         echo "</tr>";
+                         $count++;
+                       }
+                    }
+                  ?>
                 </tbody>
               </table>
             </div>
@@ -170,7 +380,9 @@ include("connection.php");?>
             <img src="./images/health2.jpg" class="w-100">
             <div class="h3 col-12 mt-1">
               <div class="h3 mt-5 mb-5 ml-3">Register as a meal service Organisation/ an individual: </div>
-              <a href="#"><button class="btn btn-primary ml-4">Register Here</button></a>
+              <button type="button" class="btn btn-primary ml-4" data-bs-toggle="modal" data-bs-target="#MealModal">
+            Register Here
+             </button>
             </div>
             <div class="container  mt-5">
               <div class="row" style="text-align: center; align-items: center; justify-content: center;">
@@ -200,7 +412,7 @@ include("connection.php");?>
       while($row = mysqli_fetch_assoc($result))
       {
         echo "<tr>";
-       echo "<td align = 'center'>".$count."</td>";
+        echo "<td align = 'center'>".$count."</td>";
         echo "<td align = 'center'>".$row["name"]."</td>";
         echo "<td align = 'center'>".$row["contact"]."</td>";
         echo "<td align = 'center'>".$row["email"]."</td>";
@@ -213,12 +425,6 @@ include("connection.php");?>
       }
     }
      ?>
-
-                    
-
-
-
-
                   </tbody>
                 </table>
 
@@ -253,7 +459,9 @@ include("connection.php");?>
             <img src="./images/health3.jpg" class="w-100">
             <div class="h3 col-12 mt-1">
               <div class="h3 mt-5 mb-5 ml-3">Register as a Childcare Organisation/ an individual:</div>
-              <a href="#"><button class="btn btn-primary ml-4">Register Here</button></a>
+                 <button type="button" class="btn btn-primary ml-4" data-bs-toggle="modal" data-bs-target="#ChildcareModal">
+                  Register Here
+                 </button>
             </div>
             <div class="container  mt-5">
               <div class="row" style="text-align: center; align-items: center; justify-content: center;">

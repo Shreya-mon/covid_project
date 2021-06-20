@@ -1,0 +1,249 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #76f776, #fab908);
+    color: rgb(7, 4, 4);
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    margin-left: 2vmin;
+}
+
+a:hover {
+    background-color: rgb(115, 122, 116);
+    color: black;
+}
+
+.previous {
+    background-color: #619250;
+    color: black;
+    border-radius: 50%;
+    margin-left: 2vmin;
+    margin-top: 2vmin;
+    height: 38px;
+    width: 38px;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+div {
+    padding: 5vw;
+}
+
+h1 {
+    margin-top: -15vmin;
+    padding: 0;
+    font-size: 3vw;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.content1 {
+    margin-top: -10vmin;
+    margin-left: 50vmin;
+}
+
+p {
+    margin-top: -20vmin;
+    padding: 3vmin;
+    font-size: 20px;
+    margin-right: -20vmin;
+    margin-left: -20vmin;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+img {
+    height: 100vmin;
+    width: 50%;
+    /*margin-left: -10vmin;*/
+}
+
+.description-container .floating-image {
+    max-width: 500px;
+}
+
+.description-container .floating-image.left1 {
+    float: left;
+    margin-left: -30vmin;
+    margin-bottom: 10px;
+    margin-top: 2vmin;
+    margin-right: 5vmin;
+}
+
+.banner {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.heading {
+    position: absolute;
+    margin-top: 102vmin;
+    margin-left: -32vmin;
+}
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 30px;
+        margin-left: 8vmin;
+        padding-bottom: 10vmin;
+        margin-top: -10vmin;
+    }
+
+    .content1 {
+        margin-top: -5vmin;
+        margin-left: 28vmin;
+    }
+
+    p {
+        padding: 3vmin;
+        margin-left: -5vmin;
+        margin-right: -3vmin;
+    }
+
+    .description-container .floating-image.left1 {
+        margin-left: -10vmin;
+
+    }
+
+    img {
+        width: 400px;
+    }
+
+    .heading {
+        margin-left: -3vmin;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 20px;
+        margin-left: 9vmin;
+        padding-bottom: 5vmin;
+    }
+
+    .content1 {
+        margin-top: -5vmin;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    .description-container .floating-image.left1 {
+        margin-left: -15vmin;
+    }
+
+    img {
+        width: 300px;
+        padding-bottom: 2vmin;
+    }
+
+    .heading {
+        margin-left: -12vmin;
+        font-size: 17px;
+        margin-top: 100vmin;
+    }
+}
+
+@media (max-width: 425px) {
+    h1 {
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 2vmin;
+        margin-left: -8vmin;
+        padding-bottom: 10vmin;
+        align-items: center;
+    }
+
+    .content1 {
+        margin-top: -9vmin;
+        margin-left: 18vmin;
+    }
+
+    p {
+        font-size: 13px;
+        margin-left: -15vmin;
+    }
+
+    .description-container .floating-image.left1 {
+        margin-left: -10vmin;
+    }
+
+    img {
+        width: 300px;
+        padding-bottom: 2vmin;
+        margin-bottom: 10vmin;
+    }
+
+    .heading {
+        margin-left: -8vmin;
+        font-size: 16px;
+        font-weight: bold;
+        padding-bottom: 10vmin;
+    }
+}
+
+@media (max-width: 375px) {
+    body {
+        width: 100%;
+    }
+
+    h1 {
+
+        margin-top: 2vmin;
+        margin-left: -2vmin;
+        padding-bottom: 10vmin;
+
+    }
+
+    .content1 {
+        margin-top: -9.5vmin;
+        margin-left: 31.5vmin;
+    }
+
+    .description-container .floating-image.left1 {
+        margin-left: -15vmin;
+    }
+
+    .heading {
+        margin-left: -15vmin;
+    }
+}
+
+@media (max-width: 320px) {
+    h1 {
+        margin-top: 2vmin;
+        margin-left: -5vmin;
+    }
+
+    .content1 {
+        margin-top: -10vmin;
+        margin-left: 38vmin;
+    }
+
+    .description-container .floating-image.left1 {
+        margin-left: -20vmin;
+    }
+
+    .heading {
+        margin-left: -15vmin;
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    margin-left: 2vmin;
+}
+
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.previous {
+    background-color: #f1f1f1;
+    color: black;
+    border-radius: 50%;
+    margin-left: 2vmin;
+    margin-top: 2vmin;
+    height: 20px;
+    width: 7px;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.form-box {
+    width: 500px;
+    background: rgba(0, 0, 0, 0.8);
+    margin: 1% auto;
+    padding: 50px 0;
+    color: #fff;
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.input-box {
+    margin: 31px auto;
+    width: 80%;
+    border-bottom: 1px solid #fff;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.input-box input {
+    width: 90%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+}
+
+::placeholder {
+    color: #ccc;
+    font-size: 15px;
+}
+
+.fa {
+    margin-right: 10px;
+
+}
+
+.eye {
+    position: absolute;
+
+}
+
+#hide1 {
+    display: none;
+
+}
+
+#hide3 {
+    display: none;
+
+}
+
+.register-btn {
+    margin: 40px auto 20px;
+    width: 80%;
+    display: block;
+    outline: none;
+    padding: 10px 0;
+    border: 1px solid #fff;
+    cursor: pointer;
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+}
+
+.choice {
+    margin-left: 10vmin;
+
+}
+
+.details {
+    font-size: 15px;
+}
+
+.type {
+    padding-left: 2vmin;
+    padding-right: 2vmin;
+    font-size: 15px;
+}
+
+@media(max-width:425px) {
+    .form-box {
+        width: 370px;
+        margin-top: 10vmin;
+    }
+}
+
+@media(max-width:375px) {
+    .form-box {
+        width: 340px;
+    }
+}
+
+@media(max-width:320px) {
+    .form-box {
+        width: 296px;
+    }
+
+    .choice {
+        margin-left: 5vmin;
+
+    }
+}
