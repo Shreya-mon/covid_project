@@ -101,37 +101,37 @@ include("../connection.php");?>
           <button type="button" class=" btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
         </div>
         <div class="modal-body">
-          <form class="row">
+          <form class="row" action="donor_regt.php" method="POST">
             <div class="col-12 mt-1 ">
-              <label for="Name of NGO" class="form-label">Name</label>
-              <input type="text" class="form-control" name="nameOfNGO" required>
+              <label for="Name" class="form-label">Name</label>
+              <input type="text" class="form-control" name="name" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Address" class="form-label">Address</label>
-              <input type="text" class="form-control" name="addressOfNGO" required>
+              <input type="text" class="form-control" name="address" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Phone Number" class="form-label">Phone Number</label>
-              <input type="number" class="form-control" name="phoneNoOfNGO" required>
+              <input type="text" class="form-control" name="phno" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Date Of Birth" class="form-label">Date Of Birth</label>
-              <input type="date" class="form-control" name="phoneNoOfNGO" required>
+              <input type="date" class="form-control" name="dob" required>
             </div>
             <div class="col-12 mt-1">
-              Gender: &nbsp;Male <input type="radio" name="gender"> Female <input type="radio" name="gender"> Other <input type="radio" name="gender">
+              Gender: &nbsp;Male <input type="radio" value="Male" name="gender"> Female <input type="radio" value="Female" name="gender"> Other <input type="radio" value="Other" name="gender">
             </div>
             <div class="col-12 mt-1">
               <label for="">Blood Group</label>
-              <select name="">
-                <option value="">A+</option>
-                <option value="">B+</option>
-                <option value="">AB+</option>
-                <option value="">O+</option>
-                <option value="">A-</option>
-                <option value="">B-</option>
-                <option value="">AB-</option>
-                <option value="">O-</option>
+              <select name="bgrp">
+                <option value="A+">A+</option>
+                <option value="B+">B+</option>
+                <option value="AB+">AB+</option>
+                <option value="O+">O+</option>
+                <option value="A-">A-</option>
+                <option value="B-">B-</option>
+                <option value="AB-">AB-</option>
+                <option value="O-">O-</option>
               </select>
             </div>
             <div class="col-12 mt-1">
@@ -164,21 +164,18 @@ include("../connection.php");?>
             </div>
             <div class="col-12 mt-1">
               <label for="">Frequency of blood donation</label>
-              <select name="">
-                <option value="">Regular Donor</option>
-                <option value="">On need basis</option>
-                <option value="">Yet to donate</option>
+              <select name="freq">
+                <option value="Regular Donor">Regular Donor</option>
+                <option value="On need basis">On need basis</option>
+                <option value="Yet to donate">Yet to donate</option>
               </select>
             </div>
             <div class="col-12 mt-1">
               <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
-              <input type="file" class="form-control" name="certificateOfNGO" id="formFile">
+              <input type="file" class="form-control" name="cert" id="formFile">
             </div>
+			<input type="submit" value="Register" name="submit">
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <button type="button" type="submit" class="btn btn-primary">Register</button>
         </div>
       </div>
     </div>
@@ -193,37 +190,37 @@ include("../connection.php");?>
           <button type="button" class=" btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
         </div>
         <div class="modal-body">
-          <form class="row">
+          <form class="row" action="receiver_regt.php" method="POST">
             <div class="col-12 mt-1 ">
               <label for="Name of NGO" class="form-label">Name</label>
-              <input type="text" class="form-control" name="nameOfNGO" required>
+              <input type="text" class="form-control" name="name" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Address" class="form-label">Address</label>
-              <input type="text" class="form-control" name="addressOfNGO" required>
+              <input type="text" class="form-control" name="address" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Phone Number" class="form-label">Phone Number</label>
-              <input type="number" class="form-control" name="phoneNoOfNGO" required>
+              <input type="text" class="form-control" name="phno" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Date Of Birth" class="form-label">Date Of Birth</label>
-              <input type="date" class="form-control" name="phoneNoOfNGO" required>
+              <input type="date" class="form-control" name="dob" required>
             </div>
             <div class="col-12 mt-1">
-              Gender: &nbsp;Male <input type="radio" name="gender"> Female <input type="radio" name="gender"> Other <input type="radio" name="gender">
+              Gender: &nbsp;Male <input type="radio" value="Male" name="gender"> Female <input type="radio" value="Female" name="gender"> Other <input type="radio" value="Other" name="gender">
             </div>
             <div class="col-12 mt-1">
               <label for="">Blood Group</label>
-              <select name="">
-                <option value="">A+</option>
-                <option value="">B+</option>
-                <option value="">AB+</option>
-                <option value="">O+</option>
-                <option value="">A-</option>
-                <option value="">B-</option>
-                <option value="">AB-</option>
-                <option value="">O-</option>
+              <select name="bgrp">
+                <option value="A+">A+</option>
+                <option value="B+">B+</option>
+                <option value="AB+">AB+</option>
+                <option value="O+">O+</option>
+                <option value="A-">A-</option>
+                <option value="B-">B-</option>
+                <option value="AB-">AB-</option>
+                <option value="O-">O-</option>
               </select>
             </div>
             <div class="col-12 mt-1">
@@ -256,13 +253,10 @@ include("../connection.php");?>
             </div>
             <div class="col-12 mt-1">
               <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
-              <input type="file" class="form-control" name="certificateOfNGO" id="formFile">
+              <input type="file" class="form-control" name="cert" id="formFile">
             </div>
+			<input type="submit" value="Register" name="submit">
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <button type="button" type="submit" class="btn btn-primary">Register</button>
         </div>
       </div>
     </div>

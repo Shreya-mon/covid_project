@@ -107,17 +107,17 @@ include("connection.php");?>
           <button type="button" class=" btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
         </div>
         <div class="modal-body">
-          <form class="row">
+          <form class="row" action="oxygen_regt.php" method="POST">
             <div class="col-12 mt-1 ">
-              <label for="Name of NGO" class="form-label">Name: </label>
-              <input type="text" class="form-control" name="nameOfoxygen" required>
+              <label for="Name" class="form-label">Name: </label>
+              <input type="text" class="form-control" name="name" required>
             </div>
             <div class="col-12 mt-1">
-              Applying as a: &nbsp;individual person <input type="radio" name="person"> Organisation <input type="radio" name="person">
+              Applying as a : &nbsp;Individual person <input type="radio" value="Individual person" name="person"> Organisation <input type="radio" value="Organisation" name="person">
             </div>
             <div class="col-12 mt-1">
               <label for="Address" class="form-label">Address</label>
-              <input type="text" class="form-control" name="addressOfoxygen" required>
+              <input type="text" class="form-control" name="address" required>
             </div>
             <div class="col-12 mt-1">
               <label for="district">District</label>
@@ -149,21 +149,18 @@ include("connection.php");?>
             </div>
             <div class="col-12 mt-1">
               <label for="Email" class="form-label">Email</label>
-              <input type="email" class="form-control" name="emailOfoxygen" required>
+              <input type="email" class="form-control" name="email" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Phone Number" class="form-label">Phone Number</label>
-              <input type="number" class="form-control" name="phoneNoOfoxygen" required>
+              <input type="text" class="form-control" name="phno" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
-              <input type="file" class="form-control" name="certificateOfoxygen" id="formFile">
+              <input type="file" class="form-control" name="cert" id="formFile">
             </div>
+			<input type="submit" value="Register" name="submit">
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <button type="button" type="submit" class="btn btn-primary">Register</button>
         </div>
       </div>
     </div>
