@@ -3,12 +3,12 @@
 <?php  // For deleting record
 	
 	
-	$qry = mysqli_query($link, "DELETE FROM `hospital_db` WHERE `id` = '".$_REQUEST['id']."'");
+	$qry = mysqli_query($link, "DELETE FROM `admission_cell_db` WHERE `id` = '".$_REQUEST['id']."'");
 	//$qry = mysqli_query($con, "UPDATE `users` SET `isDeleted` = 'inactive' WHERE `id` = ".$_REQUEST['id']);
 
 	if ($qry) {
 		// echo "successfully Deleted";
-		header('location:display.php');
+		header('location:display_admissioncell.php');
 	} else {
 		echo "Failed";
 	}

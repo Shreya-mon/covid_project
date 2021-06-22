@@ -22,8 +22,13 @@ section {
   --bgcolor1: linear-gradient(to bottom, #20c997, #ddd);
 }
 
-.navbar-brand{
+.navbar-brand {
   max-width: 40px;
+}
+
+header li.nav-item:hover {
+  background-color: rgba(190, 189, 189, 0.404);
+  border-radius: 20px;
 }
 
 /*Heading styling*/
@@ -175,9 +180,10 @@ main .section-1 .carousel-inner .carousel-item img {
   z-index: 999;
   width: 120px;
 }
-.scroller{
+
+.scroller {
   border-radius: 50%;
-   border: 1px solid black;
-   padding: 5px;
-    background-color: #e3f2fd;
+  border: 1px solid black;
+  padding: 5px;
+  background-color: #e3f2fd;
 }

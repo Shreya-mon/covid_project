@@ -1,16 +1,19 @@
-.nav{
+.nav-link {
 
-    font-family: Arial,'Helvetica Neue', Helvetica, sans-serif;
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 }
+
 .nav-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .nav-item:hover {
-    background-color: rgba(190, 189, 189, 0.404);
-    border-radius: 20px;
-  }
-  .navbar-brand {
-    max-width: 40px;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-item:hover {
+  background-color: rgba(190, 189, 189, 0.404);
+  border-radius: 20px;
+}
+
+.navbar-brand {
+  max-width: 40px;
+}

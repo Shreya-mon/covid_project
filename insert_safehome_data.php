@@ -1,12 +1,14 @@
 <?php
 include("connection.php");
 ?>
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html>
 <head>
 	<style>
-	body
-		{
+		h3{ color: floralwhite; font-size: 38px;}
+
+		body	
+{
 	background-image: url("https://us.123rf.com/450wm/studiobarcelona/studiobarcelona2002/studiobarcelona200200083/140963977-dark-blue-gradient-background-vector-illustration-.jpg?ver=6");
 	background-position: center;
 	background-size: cover;
@@ -14,7 +16,7 @@ include("connection.php");
 	margin-left: 10%;
 	margin-right: 10%;
 }
-h3{ color: floralwhite; font-size: 38px;}
+
 a{
 color: forestgreen;
 font-size: 31px;
@@ -25,26 +27,26 @@ align-items: center;
 <body>
 
 </body>
-
+</html>
 <?php //insert data query processing
-	echo '';
-	 $sql = "INSERT INTO `hospital_db`(`id`,`hid`,`hname`,`htype`,`bed_capacity`,`bed_available`,`phno`,`email`,`address`,`district`,`additional_info`) VALUES('','".$_REQUEST['hid']."',
+	
+	$sql = "INSERT INTO `safehome_db`(`id`,`shid`,`shname`,`bed_capacity`,`bed_available`,`phno`,`email`,`address`,`district`) 
+						  VALUES('','".$_REQUEST['id']."',
 								 '".$_REQUEST['name']."',
-								 '".$_REQUEST['type']."',
-								 '".$_REQUEST['bed_capacity']."',
+                                 '".$_REQUEST['bed_capacity']."',
 								 '".$_REQUEST['bed_availability']."',
 								 '".$_REQUEST['phone_number']."',
 								 '".$_REQUEST['email']."',
 								 '".$_REQUEST['address']."',
-								 '".$_REQUEST['district']."',
-								 '".$_REQUEST['hospital_additional_info']."')";
-								 
+                                 '".$_REQUEST['district']."')";
 	mysqli_query($link, $sql);?>
+	<h3 align="center"> Record inserted successfully. </h3>';
+	<br>;
+	<br>;
+	<br>;
+	<a href="insert_safehome.html">Back</a>
+	<br>;
+	<br>;
+	<br>;
+	<a href="display_safehome_data.php">Click here to display records</a>';
 
-	<h3 align="center"> DATA RECORDED SUCESSFULLY ! ! </h3>
-	<br>
-	<br>
-	<a href="insert_hospital_data.html">Back</a>
-	<br>
-	<a href="display.php">Click here to display records</a>
-</html>

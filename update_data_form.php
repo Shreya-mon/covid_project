@@ -2,7 +2,7 @@
 ?>
 
 <?php 
-	$qry = mysqli_query($link, "SELECT * FROM `hospital_db` WHERE `hid` = '".$_REQUEST['id']."'");
+	$qry = mysqli_query($link, "SELECT * FROM `hospital_db` WHERE `id` = '".$_REQUEST['id']."'");
 		$row = mysqli_fetch_array($qry);
 		$type = isset($row['htype']) ? $row['htype']:'';
 ?>
@@ -34,8 +34,8 @@
 				<div class='content'>
 					<div class='input-fields'>
 						<br>
-
-		Hospital ID: <input type="text" name="id" value="<?=$row['hid']?>"><br><br>
+		<input type="hidden" name="id" value="<?=$row['id']?>"><br><br>
+		Hospital ID: <input type="text" name="hid" value="<?=$row['hid']?>"><br><br>
 		Hospital name:<input type="text" name="name" value="<?=$row['hname']?>"><br><br>
 		<lable>Hospital type:</lable>
 		<input type="radio" name="type" value="Government Hospital"<?php if($type == 'Government Hospital'){echo "checked";}?>/>

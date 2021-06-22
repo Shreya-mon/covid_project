@@ -1,7 +1,7 @@
 <?php
 $dbhost="localhost";
 $dbname="covid_project";
-$dbpassword="shreya123";
+$dbpassword="";
 $dbusername="root";
 $link=new mysqli($dbhost,$dbusername,$dbpassword,$dbname);
 

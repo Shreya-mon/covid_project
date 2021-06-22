@@ -24,41 +24,37 @@ a{
 <body>
 
 
-<h2 style="font-size: 39px;"><center>Hospital Records</center></h2><br>
+<h2 style="font-size: 39px;"><center>Safehome Records</center></h2><br>
 <h3 style="color:darkgreen;"><center><a href="menu.html">Back to Home </a></center><br>
 <table width = "80%" border="1" cellspacing="2" cellpadding="5" align="center" style="background-color: darkSlategray; color: white;">
 	<tr>
-		<td align="center"><strong>Hospital ID</strong></td>
-		<td><strong>Hospital Name</strong></td>
-		<td><strong>Hospital type</strong></td>
-		<td><strong>Hospital Bed Capacity</strong></td>
-		<td><strong>Hospital Bed Availability</strong></td>
+		<td align="center"><strong>Safehome ID</strong></td>
+		<td><strong>Safehome Name</strong></td>
+		<td><strong>Safehome Bed Capacity</strong></td>
+		<td><strong>Safehome Bed Availability</strong></td>
 		<td><strong>Phone number</strong></td>
 		<td><strong>Email</strong></td>
 		<td><strong>Address</strong></td>
 		<td><strong>District</strong></td>
-		<td><strong>Hospital additional information</strong></td>
 	</tr>
     <?php
-		$sql = "SELECT * FROM `hospital_db`";
+		$sql = "SELECT * FROM `safehome_db`";
 		$result = mysqli_query($link,$sql);
 		if(mysqli_num_rows($result) > 0)
 		{
 			while($row = mysqli_fetch_assoc($result))
 			{
 				echo "<tr>";
-				echo "<td align = 'center'>".$row["hid"]."</td>";
-				echo "<td>".$row["hname"]."</td>";
-				echo "<td>".$row["htype"]."</td>";
+				echo "<td align = 'center'>".$row["shid"]."</td>";
+				echo "<td>".$row["shname"]."</td>";
 				echo "<td>".$row["bed_capacity"]."</td>";
 				echo "<td>".$row["bed_available"]."</td>";
 				echo "<td>".$row["phno"]."</td>";
 				echo "<td>".$row["email"]."</td>";
 				echo "<td>".$row["address"]."</td>";
 				echo "<td>".$row["district"]."</td>";
-				echo "<td>".$row["additional_info"]."</td>";
-				echo "<td><a href='update_data_form.php?id=".$row['id']."'>Update</a></td>";
-				echo "<td><a href='delete.php?id=".$row['id']."'>Delete</a></td>";
+				echo "<td><a href='update_safehome_data_form.php?id=".$row['id']."'>Update</a></td>";
+				echo "<td><a href='delete_safehome.php?id=".$row['id']."'>Delete</a></td>";
 				echo "</tr>";
 			}
 		}

@@ -1,3 +1,6 @@
+<?php
+include("connection.php");
+?>
 <!DOCTYPE html><!--3rd page or 2nd subpage-->
 <html lang="en">
 <head>
@@ -34,54 +37,95 @@
                     </div>
                     <div class="col-md-6">
                         <div class="panel text-left"><!--2nd panel-->
-                            <form>
+                            <form action="#table" method="post">
                                 <label class="select">Select district:</label>
-                                    <select>
-                                        <option>Select</option>
-                                        <option>ALIPURDUAR</option>
-                                        <option>BANKURA</option>
-                                        <option>BIRBHUM</option>
-                                        <option>COOCHBEHAR</option>
-                                        <option>DAKSHIN 24 PARGANA</option>
-                                        <option>DAKSHIN DINAJPUR</option>
-                                        <option>DARJEELING</option>
-                                        <option>HOOGHLY</option>
-                                        <option>HOWRAH</option>
-                                        <option>JALPAIGURI</option>
-                                        <option>JHARGRAM</option>
-                                        <option>KALIMPONG</option>
-                                        <option>KOLKATA</option>
-                                        <option>MALDA</option>
-                                        <option>MURSHIDABAD</option>
-                                        <option>NADIA</option>
-                                        <option>PASCHIM BARDHAMAN</option>
-                                        <option>PASCHIM MEDINIPUR</option>
-                                        <option>PURBA BARDHAMAN</option>
-                                        <option>PURBA MEDINIPUR</option>
-                                        <option>PURULIA</option>
-                                        <option>UTTAR 24 PARGANA</option>
-                                        <option>UTTAR DINAJPUR</option>
+                                    <select name="choice">
+                                        <option value="">Select</option>
+                                        <option value="alipurduar">ALIPURDUAR</option>
+                                        <option value="bankura">BANKURA</option>
+                                        <option value="birbhum">BIRBHUM</option>
+                                        <option value="coochbehar">COOCHBEHAR</option>
+                                        <option value="dakshin 24 pargana">DAKSHIN 24 PARGANA</option>
+                                        <option value="dakshin dinajpur">DAKSHIN DINAJPUR</option>
+                                        <option value="darjeeling">DARJEELING</option>
+                                        <option value="hooghly">HOOGHLY</option>
+                                        <option value="howrah">HOWRAH</option>
+                                        <option value="jalpaiguri">JALPAIGURI</option>
+                                        <option value="jhargram">JHARGRAM</option>
+                                        <option value="kalimpong">KALIMPONG</option>
+                                        <option value="kolkata">KOLKATA</option>
+                                        <option value="malda">MALDA</option>
+                                        <option value="murshidabad">MURSHIDABAD</option>
+                                        <option value="nadia">NADIA</option>
+                                        <option value="paschim bardhaman">PASCHIM BARDHAMAN</option>
+                                        <option value="paschim medinipur">PASCHIM MEDINIPUR</option>
+                                        <option value="purba bardhaman">PURBA BARDHAMAN</option>
+                                        <option value="purba medinipur">PURBA MEDINIPUR</option>
+                                        <option value="purulia">PURULIA</option>
+                                        <option value="uttar 24 pargana">UTTAR 24 PARGANA</option>
+                                        <option value="uttar dinajpur">UTTAR DINAJPUR</option>
                                     </select><br><br>
                                 <label class="select">Select Hospital type: </label><br><br>
                                 <label class="container">
-                                <input type="radio" name="hospitaltype" checked="checked">Government Hospital
+                                <input type="radio" name="hospitaltype" checked="checked" value="Government Hospital">Government Hospital
                                 <span class="checkmark"></span>
                                  </label><br>
                                  <label class="container">
-                                <input type="radio" name="hospitaltype">Govt. Requisitioned Pvt. Hospital<br>
+                                <input type="radio" name="hospitaltype" value="Govt. Requisitioned Pvt. Hospital">Govt. Requisitioned Pvt. Hospital<br>
                                 <span class="checkmark"></span>
                                 </label><br>
                                 <label class="container">
-                                <input type="radio" name="hospitaltype">Private Hospital<br><br><br>
+                                <input type="radio" name="hospitaltype" value="Private Hospital">Private Hospital<br><br><br>
                                 <span class="checkmark"></span>
                                 </label><br>
-                                <input type="submit" name="submit" class="btn btn-dark px-5 py-2 mb-5">
+                                <input type="submit" name="submit" value="Submit" class="btn btn-dark px-5 py-2 mb-5">
                             </form>
                         </div>
                     </div>
                 </div>
             </div> 
         </section>
+        <?php 
+            if(isset($_REQUEST['submit']) && ($_REQUEST['submit']=='Submit')){
+                $district=$_POST['choice'];
+                $type=$_POST['hospitaltype'];
+            $sql="SELECT * FROM `hospital_db` WHERE `district`= '$district' AND `htype`='$type'";
+            $result=mysqli_query($link,$sql);
+        ?>
+        <table id="table" class="table" border="1" style="border: 1px solid green;">
+		 <thead class="thead-light" style="background-color:rgb(51, 216, 114); color:white; font-size:18px; font-family:ans-serif; text-align:center;">
+		    <th scope="col"><strong>Hospital name</strong></th>
+		    <th scope="col"><strong>Hospital type</strong></th>
+			<th scope="col"><strong>Bed Capacity</strong></th>
+			<th scope="col"><strong>Bed Available</strong></th>
+		    <th scope="col"><strong>Contact number</strong></th>
+		    <th scope="col"><strong>Email</strong></th>
+		    <th scope="col"><strong>Address</strong></th>
+		    <th scope="col"><strong>District</strong></th>
+          </thead>
+        <tbody style="border: 1px solid green; font-size:15px; font-family:ans-serif; text-align:center;font-weight:bold;">
+            <?php
+                if(mysqli_num_rows($result)>0){
+
+                    while($row = mysqli_fetch_assoc($result)){
+                        echo "<tr>";
+                        echo "<td>".$row["hname"]."</td>";
+                        echo "<td>".$row["htype"]."</td>";
+						echo "<td>".$row["bed_capacity"]."</td>";
+						echo "<td>".$row["bed_available"]."</td>";
+                        echo "<td>".$row["phno"]."</td>";
+                        echo "<td>".$row["email"]."</td>";
+                        echo "<td>".$row["address"]."</td>";
+                        echo "<td>".$row["district"]."</td>";
+                        echo "</tr>";
+                    }
+           ?>
+	        <?php }
+                else {  echo '<tr><td align="center" colspan="7" style="color:red;">No record found</td></tr>'; }
+            }
+            ?>
+        </tbody>
+        </table>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>

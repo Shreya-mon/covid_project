@@ -46,7 +46,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-light   navbar-expand-lg" style="background-color: #e3f2fd; position: relative">
+        <nav class="navbar navbar-light   navbar-expand-lg" style="background-color: #e3f2fd;">
             <a class="navbar-brand" href="../../index.php"><img class="logo w-100"
                     src="../../images/project_logo.png" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -57,41 +57,41 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="../../index.php">Home</a>
+                        <a class="nav-link " aria-current="page" href="../../index.php" style="font-size:15px;">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="../../household.html">Household Precautions</a>
+                        <a class="nav-link " aria-current="page" href="../../household.html" style="font-size:15px;">Household Precautions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="#">Doctor Consultancy</a>
+                        <a class="nav-link " aria-current="page" href="#" style="font-size:15px;">Doctor Consultancy</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " aria-current="page"
-                            href="../../HospitalAndSafehome/src/hospital.php">Hospital</a>
+                            href="../../HospitalAndSafehome/src/hospital.php" style="font-size:15px;">Hospital</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="../../BloodBank/blood_bank.php">Blood Bank</a>
+                        <a class="nav-link " aria-current="page" href="../../BloodBank/blood_bank.php" style="font-size:15px;">Blood Bank</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="../../oxygen.php">Oxygen Services</a>
+                        <a class="nav-link " aria-current="page" href="../../oxygen.php" style="font-size:15px;">Oxygen Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="../../vaccination.html">Covid Vaccination</a>
+                        <a class="nav-link " aria-current="page" href="../../vaccination.html" style="font-size:15px;">Covid Vaccination</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../../meal and childcare.php">Healthcare
+                        <a class="nav-link" aria-current="page" href="../../meal and childcare.php" style="font-size:16px;">Healthcare
                             volunteers Meal and
                             Child
                             care Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="#">Review of covid survivors and warriors</a>
+                        <a class="nav-link active" aria-current="page" href="#" style="font-size:15px;">Review of covid survivors and warriors</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../../ngo-charity.php">NGO and Charity</a>
+                        <a class="nav-link" aria-current="page" href="../../ngo-charity.php" style="font-size:15px;">NGO and Charity</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="../../help.php">Help Desk</a>
+                        <a class="nav-link " aria-current="page" href="../../help.php" style="font-size:15px;">Help Desk</a>
                     </li>
                     </li>
                 </ul>
