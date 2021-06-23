@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 23, 2021 at 10:42 AM
+-- Generation Time: Jun 23, 2021 at 02:31 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -66,6 +66,28 @@ INSERT INTO `admission_cell_db` (`id`, `district`, `phno`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `childcareprovider_db`
+--
+
+CREATE TABLE `childcareprovider_db` (
+  `id` int(10) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `district` varchar(255) NOT NULL,
+  `phno` varchar(255) NOT NULL,
+  `proof` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `childcareprovider_db`
+--
+
+INSERT INTO `childcareprovider_db` (`id`, `name`, `address`, `district`, `phno`, `proof`) VALUES
+(1, 'Riya Mithia', 'Sahararhat,Falta, South 24 Parganas,743504, West Bengal', 'Alipurduar', '09002092950', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `doctor_category`
 --
 
@@ -101,6 +123,32 @@ CREATE TABLE `doctor_db` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `donor_db`
+--
+
+CREATE TABLE `donor_db` (
+  `id` int(10) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `phone number` varchar(255) NOT NULL,
+  `date of birth` date NOT NULL,
+  `gender` varchar(255) NOT NULL,
+  `blood group` varchar(30) NOT NULL,
+  `district` varchar(255) NOT NULL,
+  `frequency` varchar(255) NOT NULL,
+  `proof` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `donor_db`
+--
+
+INSERT INTO `donor_db` (`id`, `name`, `address`, `phone number`, `date of birth`, `gender`, `blood group`, `district`, `frequency`, `proof`) VALUES
+(2, 'SNEHA PAUL', '220/1 RAMCHANDRA PALLY PURBA BARISHA', '7003172952', '2021-06-22', 'Female', 'A+', 'Alipurduar', 'Regular Donor', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `hospital_db`
 --
 
@@ -131,6 +179,29 @@ INSERT INTO `hospital_db` (`id`, `hid`, `hname`, `htype`, `bed_capacity`, `bed_a
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `mealprovider_db`
+--
+
+CREATE TABLE `mealprovider_db` (
+  `id` int(10) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `district` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phno` varchar(255) NOT NULL,
+  `proof` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mealprovider_db`
+--
+
+INSERT INTO `mealprovider_db` (`id`, `name`, `address`, `district`, `email`, `phno`, `proof`) VALUES
+(1, 'Riya Mithia', 'Sahararhat,Falta, South 24 Parganas,743504, West Bengal', 'Alipurduar', 'riya.mithia8167@gmail.com', '09002092950', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `ngo_help_db`
 --
 
@@ -150,7 +221,8 @@ CREATE TABLE `ngo_help_db` (
 --
 
 INSERT INTO `ngo_help_db` (`id`, `name`, `address`, `district`, `ph_no`, `file`, `description`, `category`) VALUES
-(3, 'test', 'ttttttttttttttttttttttttttttttttttt', 'Alipurduar', '000000000000000000000000', 'wallpaper.png', '', '');
+(3, 'test', 'ttttttttttttttttttttttttttttttttttt', 'Alipurduar', '000000000000000000000000', 'wallpaper.png', '', ''),
+(4, 'neha', '324, akashbani kolkata-700034', 'Kolkata', '3672838390', '', 'hello', 'food');
 
 -- --------------------------------------------------------
 
@@ -173,7 +245,8 @@ CREATE TABLE `ngo_registration` (
 --
 
 INSERT INTO `ngo_registration` (`id`, `name`, `address`, `district`, `ph_no`, `file`, `category`) VALUES
-(1, 'test', 'testtttttttttttttt', 'Alipurduar', '00000000000000', '', '');
+(1, 'test', 'testtttttttttttttt', 'Alipurduar', '00000000000000', '', ''),
+(2, 'hello', '342, akashbani kolkata-700045', 'Kolkata', '6473847552', '', 'medicine');
 
 -- --------------------------------------------------------
 
@@ -197,6 +270,79 @@ CREATE TABLE `ngo_registration_individual` (
 
 INSERT INTO `ngo_registration_individual` (`id`, `name`, `address`, `district`, `ph_no`, `file`, `category`) VALUES
 (1, 'test', 'tesy667', 'Alipurduar', '000000000000', '', 'books');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `oxygen_db`
+--
+
+CREATE TABLE `oxygen_db` (
+  `id` int(10) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `application type` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `district` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone number` varchar(255) NOT NULL,
+  `proof` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `oxygen_db`
+--
+
+INSERT INTO `oxygen_db` (`id`, `name`, `application type`, `address`, `district`, `email`, `phone number`, `proof`) VALUES
+(1, 'SNEHA PAUL', 'Individual person', '220/1 RAMCHANDRA PALLY PURBA BARISHA', 'Darjeeling', 'snehapaul12182000@gmail.com', '7003172952', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `receiver_db`
+--
+
+CREATE TABLE `receiver_db` (
+  `id` int(10) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `phone number` varchar(255) NOT NULL,
+  `date of birth` date NOT NULL,
+  `gender` varchar(15) NOT NULL,
+  `blood group` varchar(30) NOT NULL,
+  `district` varchar(255) NOT NULL,
+  `proof` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `receiver_db`
+--
+
+INSERT INTO `receiver_db` (`id`, `name`, `address`, `phone number`, `date of birth`, `gender`, `blood group`, `district`, `proof`) VALUES
+(1, 'SNEHA PAUL', '220/1 RAMCHANDRA PALLY PURBA BARISHA', '9339285384', '2021-06-26', 'Female', 'A+', 'Alipurduar', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `register_db`
+--
+
+CREATE TABLE `register_db` (
+  `id` int(10) NOT NULL,
+  `user_type` varchar(30) NOT NULL,
+  `uname` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `n_password` varchar(255) NOT NULL,
+  `con_password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `register_db`
+--
+
+INSERT INTO `register_db` (`id`, `user_type`, `uname`, `email`, `n_password`, `con_password`) VALUES
+(1, 'warrior', 'Tina', 'tina@gmail.com', 'dGluYQ==', 'tina'),
+(2, 'survivor', 'Lipi', 'lipi@gmail.com', 'bGlwaQ==', 'lipi'),
+(3, 'warrior', 'rina', 'rina@gmail.com', 'cmluYQ==', 'rina');
 
 -- --------------------------------------------------------
 
@@ -276,6 +422,82 @@ INSERT INTO `service_providers` (`id`, `service_id`, `name`, `contact`, `email`,
 (7, 8, 'The Calcutta Orphanage', '7947435862', '', 'opening : 10a.m to 8p.m, Monday - sunday', '12/1, Balaram ghosh Street, Shyambazar kolkata -700004'),
 (8, 1, 'Jibandeep', '033-24550926 / 09874118925', '', 'open :Monday- sunday(24 hrs)  ; Payment mode :Cash/ debit cards/ credit cards/ cheques', '114/B, Hazra Rd Kalighat kolkata -700026  ');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `survivor_db`
+--
+
+CREATE TABLE `survivor_db` (
+  `id` int(10) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `age` varchar(30) NOT NULL,
+  `profession` varchar(255) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `district` varchar(255) NOT NULL,
+  `experience` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `video` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `survivor_db`
+--
+
+INSERT INTO `survivor_db` (`id`, `email`, `age`, `profession`, `city`, `district`, `experience`, `title`, `video`) VALUES
+(1, 'lipi@gmail.com', '23', 'Student', 'Kolkata', 'Kolkata', 'Very Bad..', 'My Covid Days', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `volunteer_db`
+--
+
+CREATE TABLE `volunteer_db` (
+  `id` int(10) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `user_type` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `district` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phno` varchar(255) NOT NULL,
+  `proof` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `volunteer_db`
+--
+
+INSERT INTO `volunteer_db` (`id`, `name`, `user_type`, `address`, `district`, `email`, `phno`, `proof`) VALUES
+(1, 'Riya Mithia', 'on', 'Sahararhat,Falta, South 24 Parganas,743504, West Bengal', 'Alipurduar', 'riya.mithia8167@gmail.com', '09002092950', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `warrior_db`
+--
+
+CREATE TABLE `warrior_db` (
+  `id` int(10) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `age` varchar(30) NOT NULL,
+  `profession` varchar(255) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `district` varchar(255) NOT NULL,
+  `experience` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `photo` varchar(255) NOT NULL,
+  `video` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `warrior_db`
+--
+
+INSERT INTO `warrior_db` (`id`, `email`, `age`, `profession`, `city`, `district`, `experience`, `title`, `photo`, `video`) VALUES
+(1, 'tina@gmail.com', '34', 'Doctor', 'Kolkata', 'Kolkata', 'Worst Experience..', 'Keep Fighting', '', ''),
+(2, 'rina@gmail.com', '52', 'Nurse', 'Kolkata', 'Kolkata', 'Terrific Experience.', 'My experience as a Covid warrior', '', '');
+
 --
 -- Indexes for dumped tables
 --
@@ -293,6 +515,12 @@ ALTER TABLE `admission_cell_db`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `childcareprovider_db`
+--
+ALTER TABLE `childcareprovider_db`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `doctor_category`
 --
 ALTER TABLE `doctor_category`
@@ -306,9 +534,21 @@ ALTER TABLE `doctor_db`
   ADD KEY `cat_id` (`cat_id`);
 
 --
+-- Indexes for table `donor_db`
+--
+ALTER TABLE `donor_db`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `hospital_db`
 --
 ALTER TABLE `hospital_db`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `mealprovider_db`
+--
+ALTER TABLE `mealprovider_db`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -327,6 +567,24 @@ ALTER TABLE `ngo_registration`
 -- Indexes for table `ngo_registration_individual`
 --
 ALTER TABLE `ngo_registration_individual`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `oxygen_db`
+--
+ALTER TABLE `oxygen_db`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `receiver_db`
+--
+ALTER TABLE `receiver_db`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `register_db`
+--
+ALTER TABLE `register_db`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -349,6 +607,24 @@ ALTER TABLE `service_providers`
   ADD KEY `service_id` (`service_id`);
 
 --
+-- Indexes for table `survivor_db`
+--
+ALTER TABLE `survivor_db`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `volunteer_db`
+--
+ALTER TABLE `volunteer_db`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `warrior_db`
+--
+ALTER TABLE `warrior_db`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -359,10 +635,22 @@ ALTER TABLE `admission_cell_db`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `childcareprovider_db`
+--
+ALTER TABLE `childcareprovider_db`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `doctor_category`
 --
 ALTER TABLE `doctor_category`
   MODIFY `cat_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `donor_db`
+--
+ALTER TABLE `donor_db`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `hospital_db`
@@ -371,22 +659,46 @@ ALTER TABLE `hospital_db`
   MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `mealprovider_db`
+--
+ALTER TABLE `mealprovider_db`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `ngo_help_db`
 --
 ALTER TABLE `ngo_help_db`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `ngo_registration`
 --
 ALTER TABLE `ngo_registration`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `ngo_registration_individual`
 --
 ALTER TABLE `ngo_registration_individual`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `oxygen_db`
+--
+ALTER TABLE `oxygen_db`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `receiver_db`
+--
+ALTER TABLE `receiver_db`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `register_db`
+--
+ALTER TABLE `register_db`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `safehome_db`
@@ -405,6 +717,24 @@ ALTER TABLE `service`
 --
 ALTER TABLE `service_providers`
   MODIFY `id` int(23) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `survivor_db`
+--
+ALTER TABLE `survivor_db`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `volunteer_db`
+--
+ALTER TABLE `volunteer_db`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `warrior_db`
+--
+ALTER TABLE `warrior_db`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables

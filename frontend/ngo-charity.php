@@ -204,7 +204,7 @@ include("connection.php");?>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <input type="submit" type="submit" class="btn btn-primary" placeholder="Register">
+          <input type="submit" name="submit" class="btn btn-primary" value="Register">
         </div>
       </div>
     </div>
@@ -307,7 +307,7 @@ include("connection.php");?>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <input type="submit" type="submit" class="btn btn-primary" placeholder="Register">
+          <input type="submit" name="submit" class="btn btn-primary" value="Register">
         </div>
       </div>
     </div>
@@ -329,7 +329,7 @@ include("connection.php");?>
 
           <form class="row" action="insert_ngo_help_form_data.php" method="post">
             <div class="col-12 mt-1 ">
-              <label for="First Name" class="form-label">First Name</label>
+              <label for="First Name" class="form-label">Name</label>
               <input type="text" class="form-control" name="firstNameOfInd" required>
             </div>
             <div class="col-12 mt-1">
@@ -373,8 +373,8 @@ include("connection.php");?>
               <input type="file" class="form-control" name="certificateOfInd" id="formFile">
             </div>
             <div class="col-12 mt-1">
-              <label for="description" class="form-label">Description:</label>
-              <input type="text" name="description" placeholder="Enter Your Problems here">
+              <label for="description" class="form-label">Description:</label><br>
+              <textarea name="description" rows="5" cols="40"></textarea>
               
             </div>
             <div class="col-12 mt-1">
@@ -414,7 +414,7 @@ include("connection.php");?>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <input type="submit" type="submit" class="btn btn-primary" placeholder="Register">
+          <input type="submit" name="submit" class="btn btn-primary" value="Register"> 
         </div>
       </div>
     </div>

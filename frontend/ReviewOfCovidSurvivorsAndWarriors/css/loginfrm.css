@@ -14,7 +14,7 @@ a {
     margin-left: 2vmin;
 }
 
-.previous:hover {
+a:hover {
     background-color: #ddd;
     color: black;
 }
@@ -53,7 +53,6 @@ a {
 h1 {
     text-align: center;
     margin-bottom: 40px;
-
 }
 
 .input-box {
@@ -115,51 +114,6 @@ h1 {
     color: black;
 }
 
-.errmsg {
-    margin-right: 100vmin;
-    margin-left: 30vmin;
-    justify-content: center;
-    float: left;
-    border-radius: 5px;
-    border: 1px solid red;
-    background: pink;
-    text-align: left;
-    color: brown;
-    padding: 3px;
-}
-
-.msg {
-    margin-left: 60vmin;
-    margin-top: 3vmin;
-    font-size: 4vw;
-    font-weight: bold;
-    color: teal;
-}
-
-.successmsg {
-    margin-left: 68vmin;
-    margin-top: 10vmin;
-    width: 30%;
-    border-radius: 5px;
-    border: 1px solid green;
-    background: #33CC00;
-    background-size: 100% 100%;
-    text-align: left;
-    color: white;
-    padding: 10px;
-    font-size: 20px;
-    box-shadow: 0 0 20px 2px rgba(150, 247, 111, 0.5);
-}
-
-.login-btn {
-    background: rgb(4, 94, 1);
-}
-
-.login-btn:hover {
-    background: transparent;
-    border: 1px solid rgb(7, 5, 5);
-}
-
 .choice {
     margin-left: 10vmin;
 
@@ -175,18 +129,11 @@ h1 {
     font-size: 15px;
 }
 
-.login {
-    margin-left: 5vmin;
-    font-size: 18px;
-}
-
-.button {
-    color: white;
-}
-
-.button:hover {
-    background: white;
-    color: black;
+.logout {
+    margin-left: 59vmin;
+    margin-top: 5vmin;
+    font-size: 3vw;
+    color: indigo;
 }
 
 @media(max-width:425px) {

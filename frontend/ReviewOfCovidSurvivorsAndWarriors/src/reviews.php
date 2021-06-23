@@ -114,7 +114,7 @@
         </div>
         <div class="nav">
             <a href="#" class="review active a">Reviews</a>
-            <a href="photogallery.php" class="photo">Photo Gallery</a>
+            <a href="photogallery.html" class="photo">Photo Gallery</a>
             <a href="videogallery.php" class="video">Video Gallery</a>
         </div>
     </header>

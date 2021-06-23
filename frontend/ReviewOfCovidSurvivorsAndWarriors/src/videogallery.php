@@ -17,7 +17,7 @@
     </div>
 	<div class="nav">
         <a href="reviews.php" class="review">Reviews</a>
-        <a href="photogallery.php" class="photo">Photo Gallery</a>
+        <a href="photogallery.html" class="photo">Photo Gallery</a>
         <a href="#" class="video active a">Video Gallery</a>
     </div>
 	<div class="container">
