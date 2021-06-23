@@ -120,7 +120,9 @@ include("connection.php");?>
           <button type="button" class=" btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
         </div>
         <div class="modal-body">
-          <form class="row">
+
+
+          <form class="row" action="insert_ngo_registration_form_data.php" method="post" name="insert_ngo_registraion_frm">
             <div class="col-12 mt-1 ">
               <label for="Name of NGO" class="form-label">Name of NGO</label>
               <input type="text" class="form-control" name="nameOfNGO" required>
@@ -159,7 +161,7 @@ include("connection.php");?>
             </div>
             <div class="col-12 mt-1">
               <label for="Phone Number" class="form-label">Phone Number</label>
-              <input type="number" class="form-control" name="phoneNoOfNGO" required>
+              <input type="text" class="form-control" name="phoneNoOfNGO" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
@@ -198,15 +200,19 @@ include("connection.php");?>
                 </label>
               </div>
             </div>
-          </form>
+         
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <button type="button" type="submit" class="btn btn-primary">Register</button>
+          <input type="submit" type="submit" class="btn btn-primary" placeholder="Register">
         </div>
       </div>
     </div>
   </div>
+   </form>
+
+
+
 
   <!-- INDIVIDUAL MODEL -->
   <div class="modal fade" id="indModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -217,7 +223,9 @@ include("connection.php");?>
           <button type="button" class=" btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
         </div>
         <div class="modal-body">
-          <form class="row">
+
+
+          <form class="row" action="insert_ngo_registration_form_individual_data.php" method="post" name="insert_ngo_registraion_individual_frm">
             <div class="col-12 mt-1 ">
               <label for="First Name" class="form-label">First Name</label>
               <input type="text" class="form-control" name="firstNameOfInd" required>
@@ -256,7 +264,7 @@ include("connection.php");?>
             </div>
             <div class="col-12 mt-1">
               <label for="Phone Number" class="form-label">Phone Number</label>
-              <input type="number" class="form-control" name="phoneNoOfInd" required>
+              <input type="text" class="form-control" name="phoneNoOfInd" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
@@ -295,15 +303,18 @@ include("connection.php");?>
                 </label>
               </div>
             </div>
-          </form>
+          
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <button type="button" type="submit" class="btn btn-primary">Register</button>
+          <input type="submit" type="submit" class="btn btn-primary" placeholder="Register">
         </div>
       </div>
     </div>
   </div>
+</form>
+
+
 
   <!-- HELP MODEL -->
   <div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -314,7 +325,9 @@ include("connection.php");?>
           <button type="button" class=" btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
         </div>
         <div class="modal-body">
-          <form class="row">
+
+
+          <form class="row" action="insert_ngo_help_form_data.php" method="post">
             <div class="col-12 mt-1 ">
               <label for="First Name" class="form-label">First Name</label>
               <input type="text" class="form-control" name="firstNameOfInd" required>
@@ -353,15 +366,16 @@ include("connection.php");?>
             </div>
             <div class="col-12 mt-1">
               <label for="Phone Number" class="form-label">Phone Number</label>
-              <input type="number" class="form-control" name="phoneNoOfInd" required>
+              <input type="text" class="form-control" name="phoneNoOfInd" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
               <input type="file" class="form-control" name="certificateOfInd" id="formFile">
             </div>
             <div class="col-12 mt-1">
-              <label for="Address" class="form-label">Description:</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Your Problems here"></textarea>
+              <label for="description" class="form-label">Description:</label>
+              <input type="text" name="description" placeholder="Enter Your Problems here">
+              
             </div>
             <div class="col-12 mt-1">
               <label for="Helping Categories" class="form-label">What Kind Of Help You Need: </label>
@@ -396,15 +410,16 @@ include("connection.php");?>
                 </label>
               </div>
             </div>
-          </form>
+         
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <button type="button" type="submit" class="btn btn-primary">Register</button>
+          <input type="submit" type="submit" class="btn btn-primary" placeholder="Register">
         </div>
       </div>
     </div>
   </div>
+   </form>
 
   <div class="container mt-3 mb-5 ">
 

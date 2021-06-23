@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 21, 2021 at 09:59 PM
+-- Generation Time: Jun 23, 2021 at 10:42 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -131,6 +131,76 @@ INSERT INTO `hospital_db` (`id`, `hid`, `hname`, `htype`, `bed_capacity`, `bed_a
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `ngo_help_db`
+--
+
+CREATE TABLE `ngo_help_db` (
+  `id` int(255) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `district` varchar(40) NOT NULL,
+  `ph_no` varchar(200) NOT NULL,
+  `file` varchar(255) NOT NULL,
+  `description` varchar(200) NOT NULL,
+  `category` varchar(55) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ngo_help_db`
+--
+
+INSERT INTO `ngo_help_db` (`id`, `name`, `address`, `district`, `ph_no`, `file`, `description`, `category`) VALUES
+(3, 'test', 'ttttttttttttttttttttttttttttttttttt', 'Alipurduar', '000000000000000000000000', 'wallpaper.png', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ngo_registration`
+--
+
+CREATE TABLE `ngo_registration` (
+  `id` int(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `district` varchar(30) NOT NULL,
+  `ph_no` varchar(200) NOT NULL,
+  `file` varchar(255) NOT NULL,
+  `category` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ngo_registration`
+--
+
+INSERT INTO `ngo_registration` (`id`, `name`, `address`, `district`, `ph_no`, `file`, `category`) VALUES
+(1, 'test', 'testtttttttttttttt', 'Alipurduar', '00000000000000', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ngo_registration_individual`
+--
+
+CREATE TABLE `ngo_registration_individual` (
+  `id` int(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `district` varchar(25) NOT NULL,
+  `ph_no` varchar(200) NOT NULL,
+  `file` varchar(255) NOT NULL,
+  `category` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ngo_registration_individual`
+--
+
+INSERT INTO `ngo_registration_individual` (`id`, `name`, `address`, `district`, `ph_no`, `file`, `category`) VALUES
+(1, 'test', 'tesy667', 'Alipurduar', '000000000000', '', 'books');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `safehome_db`
 --
 
@@ -242,6 +312,24 @@ ALTER TABLE `hospital_db`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `ngo_help_db`
+--
+ALTER TABLE `ngo_help_db`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `ngo_registration`
+--
+ALTER TABLE `ngo_registration`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `ngo_registration_individual`
+--
+ALTER TABLE `ngo_registration_individual`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `safehome_db`
 --
 ALTER TABLE `safehome_db`
@@ -281,6 +369,24 @@ ALTER TABLE `doctor_category`
 --
 ALTER TABLE `hospital_db`
   MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `ngo_help_db`
+--
+ALTER TABLE `ngo_help_db`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `ngo_registration`
+--
+ALTER TABLE `ngo_registration`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `ngo_registration_individual`
+--
+ALTER TABLE `ngo_registration_individual`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `safehome_db`
