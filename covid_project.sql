@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 23, 2021 at 02:31 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.3
+-- Generation Time: Jun 23, 2021 at 06:36 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -29,8 +28,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin_details` (
+  `id` int(10) NOT NULL,
   `name` varchar(22) DEFAULT NULL,
-  `id` int(3) NOT NULL,
   `email` varchar(26) DEFAULT NULL,
   `password` varchar(23) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -39,10 +38,9 @@ CREATE TABLE `admin_details` (
 -- Dumping data for table `admin_details`
 --
 
-INSERT INTO `admin_details` (`name`, `id`, `email`, `password`) VALUES
-('SUPRAVA KARMAKAR', 0, 'hello@hello.com', '1234'),
-('shreya', 1, 'monshreya123@gmail.com', 'shreya123'),
-('Shreya Mondal', 2, 'monshreya123@gmail.com', 'shreya123');
+INSERT INTO `admin_details` (`id`, `name`, `email`, `password`) VALUES
+(1, 'SNEHA PAUL', 'snehapaul12182000@gmail.co', '1234'),
+(2, 'SUPRAVA KARMAKAR', 'harry@gmail.com', '123');
 
 -- --------------------------------------------------------
 
@@ -627,6 +625,12 @@ ALTER TABLE `warrior_db`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `admin_details`
+--
+ALTER TABLE `admin_details`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `admission_cell_db`

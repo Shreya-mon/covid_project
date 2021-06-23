@@ -20,7 +20,7 @@ a{
 </style>
 
 <?php
-$sql = "INSERT INTO `admin_details`(`name`,`email`, `password`) VALUES('".$_REQUEST['name']."',
+$sql = "INSERT INTO `admin_details`(`id`,`name`,`email`,`password`) VALUES ('','".$_REQUEST['name']."',
 								 
 								 '".$_REQUEST['email']."',
 								 '".$_REQUEST['pass']."')";
