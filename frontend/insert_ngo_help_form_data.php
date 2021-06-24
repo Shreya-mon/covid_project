@@ -1,7 +1,7 @@
 <?php
 include("connection.php");
 ?>
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<style>
@@ -40,13 +40,13 @@ align-items: center;
                                  '".$_REQUEST['description']."',
                                  '".$_REQUEST['helpingCategoriesOfInd']."')";
 	mysqli_query($link, $sql);?>
-	<h3 align="center"> Record inserted successfully. </h3>';
-	<br>;
-	<br>;
-	<br>;
+	<h3 align="center"> Record inserted successfully. </h3>
+	<br>
+	<br>
+	<br>
 	<a href="ngo-charity.php">Back</a>
-	<br>;
-	<br>;
-	<br>;
-	<a href="display_ngo_help_form_data.php">Click here to display records</a>';
+	<br>
+	<br>
+	<br>
+	<a href="display_ngo_help_form_data.php">Click here to display records</a>
 

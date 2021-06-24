@@ -28,7 +28,7 @@ include("connection.php");?>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
@@ -36,8 +36,15 @@ include("connection.php");?>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
     integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
     crossorigin="anonymous"></script>
+    <script src="jqueryV3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
 
   <link rel="stylesheet" href="css/styles.css">
+  <style type="text/css">
+    #rating{
+      margin-left:3vmin;
+    }
+  </style>
 </head>
 
 <body>
@@ -103,36 +110,48 @@ include("connection.php");?>
           <button type="button" class=" btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
         </div>
         <div class="modal-body">
-          <form class="row">
+          <form class="row" action="feedback_data_insert.php" method="post">
             <div class="col-12 mt-1 ">
               <label for="Name of NGO" class="form-label">Name: </label>
-              <input type="text" class="form-control" name="nameOfoxygen" required>
+              <input type="text" class="form-control" name="name" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Address" class="form-label">Address</label>
-              <input type="text" class="form-control" name="addressOfoxygen" required>
+              <input type="text" class="form-control" name="address" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Email" class="form-label">Email</label>
-              <input type="email" class="form-control" name="emailOfoxygen" required>
+              <input type="email" class="form-control" name="email" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Phone Number" class="form-label">Phone Number</label>
-              <input type="number" class="form-control" name="phoneNoOfoxygen" required>
+              <input type="text" class="form-control" name="phno" required>
             </div>
             <div class="col-12 mt-1">
-              <label for="Address" class="form-label">Description:</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Give Your Valuable Suggestions Here"></textarea>           
+              <label for="rating" class="form-label">Rate Our Website</label>
             </div>
-          </form>
+            <div class="rateyo" id="rating" 
+				          data-rateyo-rating="0"
+				          data-rateyo-num-stars="5"
+				          data-rateyo-score="3">
+		        </div>
+		        <br><br>
+		        <input type="hidden" name="rating">
+
+            <div class="col-12 mt-1">
+              <label for="Address" class="form-label">Description:</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3" placeholder="Give Your Valuable Suggestions Here"></textarea>           
+            </div>
+         
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <button type="button" type="submit" class="btn btn-primary">Submit</button>
+          <input type="submit" name="submit" class="btn btn-primary" value="Submit">
         </div>
       </div>
     </div>
   </div>
+  </form>
   <!--modal close-->
   <!--Fake information Modals -->
   <div class="modal fade" id="FakeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -440,6 +459,22 @@ include("connection.php");?>
   <!-- Footer -->
   
   <script src="./js/scroller.js"></script>
+<!--Rating using jquery-->
+  <script>
+	$(function(){
+		$(".rateyo").rateYo().on("rateyo.change", function(e,data){
+			//var starWidth = $(".rateyo").rateYo("option", "starWidth"); 
+			//$(".rateyo").rateYo("option", "starWidth", "30px");
+
+			var rating = data.rating;
+			$(this).parent().find('.score').text('score:'+ $(this).attr('data-rateyo-score'));
+			//$(this).parent().find('.result').text('rating:' + rating);
+			$(this).parent().find('input[name=rating]').val(rating);
+			
+		});
+
+	});
+</script>
  
 </body>
 

@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 23, 2021 at 06:36 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
+-- Generation Time: Jun 24, 2021 at 09:42 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -40,7 +41,7 @@ CREATE TABLE `admin_details` (
 
 INSERT INTO `admin_details` (`id`, `name`, `email`, `password`) VALUES
 (1, 'SNEHA PAUL', 'snehapaul12182000@gmail.co', '1234'),
-(2, 'SUPRAVA KARMAKAR', 'harry@gmail.com', '123');
+(2, 'SUPRAVA KARMAKAR', 'suprava@gmail.com', '12345');
 
 -- --------------------------------------------------------
 
@@ -143,6 +144,30 @@ CREATE TABLE `donor_db` (
 
 INSERT INTO `donor_db` (`id`, `name`, `address`, `phone number`, `date of birth`, `gender`, `blood group`, `district`, `frequency`, `proof`) VALUES
 (2, 'SNEHA PAUL', '220/1 RAMCHANDRA PALLY PURBA BARISHA', '7003172952', '2021-06-22', 'Female', 'A+', 'Alipurduar', 'Regular Donor', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedback_db`
+--
+
+CREATE TABLE `feedback_db` (
+  `id` int(10) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phno` varchar(255) NOT NULL,
+  `rating` float NOT NULL,
+  `description` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `feedback_db`
+--
+
+INSERT INTO `feedback_db` (`id`, `name`, `address`, `email`, `phno`, `rating`, `description`) VALUES
+(1, 'Lipi', '23, S.N Roy Road Kolkata-700052', 'lipi@gmail.com', '5378291072', 3.5, 'Nice experience..'),
+(2, 'Tom', '365,ygevdhd', 'tom@gmail.com', '6728374820', 4.5, 'Good. Try to improve.');
 
 -- --------------------------------------------------------
 
@@ -538,6 +563,12 @@ ALTER TABLE `donor_db`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `feedback_db`
+--
+ALTER TABLE `feedback_db`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `hospital_db`
 --
 ALTER TABLE `hospital_db`
@@ -654,6 +685,12 @@ ALTER TABLE `doctor_category`
 -- AUTO_INCREMENT for table `donor_db`
 --
 ALTER TABLE `donor_db`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `feedback_db`
+--
+ALTER TABLE `feedback_db`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
