@@ -3,8 +3,9 @@ body {
     padding: 0;
     display: flex;
     min-height: 100vh;
-    background: linear-gradient(135deg, #e9e6f5, #c46d91);
+    background: linear-gradient(#e9e6f5, #c46d91);
     color: rgb(7, 4, 4);
+    background-size: 100% 100%;
 }
 
 a {
@@ -15,12 +16,12 @@ a {
 }
 
 a:hover {
-    background-color: rgb(122, 115, 115);
+    background-color: rgb(148, 61, 219);
     color: black;
 }
 
 .previous {
-    background-color: #6d6565;
+    background-color: #d58cf7;
     color: black;
     border-radius: 50%;
     margin-left: 2vmin;
@@ -163,7 +164,7 @@ img {
     }
 }
 
-@media (max-width: 425px) {
+@media only screen and (max-width: 425px) {
     h1 {
         font-size: 15px;
         font-weight: bold;
@@ -179,7 +180,7 @@ img {
     }
 
     p {
-        font-size: 13px;
+        font-size: 18px;
         margin-left: -15vmin;
     }
 
@@ -232,10 +233,11 @@ img {
     h1 {
         margin-top: 2vmin;
         margin-left: -5vmin;
+        margin-right: -5vmin;
     }
 
     .content1 {
-        margin-top: -10vmin;
+        margin-top: -10.5vmin;
         margin-left: 38vmin;
     }
 

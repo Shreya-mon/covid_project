@@ -10,8 +10,8 @@ include("connection.php");
     <title>Check Bed Availability</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-    <link rel="stylesheet" href="../CSS/BedAvailable.css">
-    <link rel="stylesheet" href="../CSS/BedAvailableMobile.css">
+    <link rel="stylesheet" href="../CSS/BedAvailable.css?V=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../CSS/BedAvailableMobile.css?V=<?php echo time(); ?>">
 </head>
 <body>
     <header>
@@ -92,19 +92,18 @@ include("connection.php");
             $sql="SELECT * FROM `hospital_db` WHERE `district`= '$district' AND `htype`='$type'";
             $result=mysqli_query($link,$sql);
         ?>
-        <table id="table" class="table" border="1" style="border: 1px solid green;">
-		 <thead class="thead-light" style="background-color:rgb(51, 216, 114); color:white; font-size:18px; font-family:ans-serif; text-align:center;">
-		    <th scope="col"><strong>Hospital name</strong></th>
-		    <th scope="col"><strong>Hospital type</strong></th>
-			<th scope="col"><strong>Bed Capacity</strong></th>
-			<th scope="col"><strong>Bed Available</strong></th>
-		    <th scope="col"><strong>Contact number</strong></th>
-		    <th scope="col"><strong>Email</strong></th>
-		    <th scope="col"><strong>Address</strong></th>
-		    <th scope="col"><strong>District</strong></th>
-          </thead>
-        <tbody style="border: 1px solid green; font-size:15px; font-family:ans-serif; text-align:center;font-weight:bold;">
-            <?php
+        <table id="table">
+		 <tr id="header">
+		    <th>Hospital name</th>
+		    <th>Hospital type</th>
+			<th>Bed Capacity</th>
+			<th>Bed Available</th>
+		    <th>Contact number</th>
+		    <th>Email</th>
+		    <th>Address</th>
+		    <th>District</th>
+          </tr>
+         <?php
                 if(mysqli_num_rows($result)>0){
 
                     while($row = mysqli_fetch_assoc($result)){
@@ -121,7 +120,7 @@ include("connection.php");
                     }
            ?>
 	        <?php }
-                else {  echo '<tr><td align="center" colspan="7" style="color:red;">No record found</td></tr>'; }
+                else {  echo '<tr><td colspan="7" style="color:red; text-align:center;">No record found</td></tr>'; }
             }
             ?>
         </tbody>

@@ -10,8 +10,8 @@ include("connection.php");
     <title>Nearby COVID Hospital</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-    <link rel="stylesheet" href="../CSS/NearbyHospital.css">
-    <link rel="stylesheet" href="../CSS/NearbyHospitalMobile.css">
+    <link rel="stylesheet" href="../CSS/NearbyHospital.css?V=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../CSS/NearbyHospitalMobile.css?V=<?php echo time(); ?>">
 </head>
 <body>
     <header>
@@ -96,38 +96,38 @@ include("connection.php");
             $sql="SELECT * FROM `hospital_db` WHERE `district`= '$district' AND `htype`='$type'";
             $result=mysqli_query($link,$sql);
         ?>
-        <table id="table" class="table" border="1" style="border: 1px solid green;">
-		 <thead class="thead-light" style="background-color:rgb(51, 216, 114); color:white; font-size:18px; font-family:ans-serif; text-align:center;">
-		    <th scope="col"><strong>Hospital name</strong></th>
-		    <th scope="col"><strong>Hospital type</strong></th>
-		    <th scope="col"><strong>Contact number</strong></th>
-		    <th scope="col"><strong>Email</strong></th>
-		    <th scope="col"><strong>Address</strong></th>
-		    <th scope="col"><strong>District</strong></th>
-		    <th scope="col"><strong>Additional information</strong></th>
-          </thead>
-        <tbody style="border: 1px solid green; font-size:15px; font-family:ans-serif; text-align:center;font-weight:bold;">
-            <?php
+        <table id="table">
+		<tr id="header">
+			<th>Hospital Name</th>
+			<th>Hospital Type</th>
+			<th>Contact Number</th>
+			<th>Email</th>
+			<th>Address</th>
+			<th>District</th>
+			<th>Additional information</th>
+		</tr>
+		 <?php
                 if(mysqli_num_rows($result)>0){
 
                     while($row = mysqli_fetch_assoc($result)){
-                        echo "<tr>";
-                        echo "<td>".$row["hname"]."</td>";
-                        echo "<td>".$row["htype"]."</td>";
-                        echo "<td>".$row["phno"]."</td>";
-                        echo "<td>".$row["email"]."</td>";
-                        echo "<td>".$row["address"]."</td>";
-                        echo "<td>".$row["district"]."</td>";
-                        echo "<td>".$row["additional_info"]."</td>";
+                        echo "<tr class='tr'>";
+                        echo "<td class='td'>".$row["hname"]."</td>";
+                        echo "<td class='td'>".$row["htype"]."</td>";
+                        echo "<td class='td'>".$row["phno"]."</td>";
+                        echo "<td class='td'>".$row["email"]."</td>";
+                        echo "<td class='td'>".$row["address"]."</td>";
+                        echo "<td class='td'>".$row["district"]."</td>";
+                        echo "<td class='td'>".$row["additional_info"]."</td>";
                         echo "</tr>";
                     }
            ?>
 	        <?php }
-                else {  echo '<tr><td align="center" colspan="7" style="color:red;">No record found</td></tr>'; }
+                else {  echo '<tr><td colspan="7" style="color:red; text-align:center;">No record found</td></tr>'; }
             }
             ?>
-        </tbody>
-        </table>
+	</table>
+
+    
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>

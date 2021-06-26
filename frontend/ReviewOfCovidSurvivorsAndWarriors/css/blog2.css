@@ -3,7 +3,7 @@ body {
     padding: 0;
     display: flex;
     min-height: 100vh;
-    background: linear-gradient(135deg, #faea5d, #c94e1e);
+    background: linear-gradient(#faea5d, #c94e1e);
     color: rgb(7, 4, 4);
 }
 
@@ -15,12 +15,12 @@ a {
 }
 
 a:hover {
-    background-color: rgb(122, 115, 115);
+    background-color: #af9937;
     color: black;
 }
 
 .previous {
-    background-color: #af9937;
+    background-color: #ebc310;
     color: black;
     border-radius: 50%;
     margin-left: 2vmin;
@@ -172,7 +172,7 @@ img {
     }
 
     p {
-        font-size: 13px;
+        font-size: 18px;
         margin-left: -15vmin;
     }
 

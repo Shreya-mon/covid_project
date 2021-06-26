@@ -36,8 +36,8 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="../CSS/Hospital.css" />
-  <link rel="stylesheet" href="../CSS/HospitalMobile.css" />
+  <link rel="stylesheet" href="../CSS/Hospital.css?V=<?php echo time(); ?>" />
+  <link rel="stylesheet" href="../CSS/HospitalMobile.css?V=<?php echo time(); ?>" />
 </head>
 
 <body>
@@ -211,7 +211,7 @@
             </div>
             <div class="card-body">
               <h3 class="card-title">Check Safe Home Availability</h3>
-              <p class="card-text">Search for Safe Home Availability</p>
+              <p class="card-text safe">Search for Safe Home Availability</p>
             </div>
           </div>
         </div>

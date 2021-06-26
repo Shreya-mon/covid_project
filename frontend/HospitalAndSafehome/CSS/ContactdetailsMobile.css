@@ -70,6 +70,12 @@
     .section-1 .row .col-md-6 .panel .btn {
         margin-top: 30vmin;
     }
+
+    table {
+        top: 1050px;
+        width: 80%;
+        left: 10%;
+    }
 }
 
 @media only screen and (max-width:425px) {
@@ -137,13 +143,17 @@
         height: 20rem;
         opacity: 0.8;
         width: 100%;
-        background-size: 30rem 20rem;
+        background-size: 100% 100%;
 
     }
 
     .section-1 .row .col-md-6 .panel1 p {
         font-size: 13px;
         text-align: center;
+    }
+
+    table {
+        top: 850px;
     }
 }
 
@@ -166,6 +176,10 @@
     .section-1 .row .col-md-6 .panel .btn {
         font-size: 15px;
         margin-left: 5vmin;
+    }
+
+    table {
+        top: 800px;
     }
 }
 

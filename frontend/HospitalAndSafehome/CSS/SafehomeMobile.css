@@ -64,6 +64,11 @@
         font-size: 15px;
         text-align: center;
     }
+
+    table {
+        top: 1200px;
+        width: 80%;
+    }
 }
 
 @media only screen and (max-width:425px) {
@@ -131,7 +136,7 @@
         height: 28rem;
         opacity: 0.8;
         width: 100%;
-        background-size: 20rem 28rem;
+        background-size: 100% 100%;
 
     }
 
@@ -144,6 +149,11 @@
     .section-1 .row .col-md-6 .panel1 p {
         font-size: 11px;
         text-align: center;
+    }
+
+    table {
+        top: 1000px;
+        width: 50%;
     }
 }
 
@@ -199,5 +209,9 @@
     .section-1 .row .col-md-6 .panel .btn {
         font-size: 15px;
         margin-left: 12vmin;
+    }
+
+    table {
+        top: 900px;
     }
 }
