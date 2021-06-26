@@ -24,8 +24,8 @@ a{
 <body>
 
 
-<h2 style="font-size: 39px;"><center>NGO Help Form Records</center></h2><br>
-<h3 style="color:darkgreen;"><center><a href="ngo-charity.php">Back to Page </a></center><br>
+<h2 style="font-size: 39px;"><center>NGO Registration Form Records for individuals</center></h2><br>
+<h3 style="color:darkgreen;"><center><a href="menu.html">Back to Home </a></center><br>
 <table width = "80%" border="1" cellspacing="2" cellpadding="5" align="center" style="background-color: darkSlategray; color: white;">
 	<tr>
 		<td align="center"><strong>ID</strong></td>
@@ -34,12 +34,11 @@ a{
 		<td><strong>District</strong></td>
 		<td><strong>Phone number</strong></td>
 		<td><strong>Proof Certificate</strong></td>
-		<td><strong>Description</strong></td>
 		<td><strong>Category</strong></td>
 		
 	</tr>
     <?php
-		$sql = "SELECT * FROM `ngo_help_db`";
+		$sql = "SELECT * FROM `ngo_registration_individual`";
 		$result = mysqli_query($link,$sql);
 		if(mysqli_num_rows($result) > 0)
 		{
@@ -52,11 +51,10 @@ a{
 				echo "<td>".$row["district"]."</td>";
 				echo "<td>".$row["ph_no"]."</td>";
 				echo "<td>".$row["file"]."</td>";
-				echo "<td>".$row["description"]."</td>";
 				echo "<td>".$row["category"]."</td>";
 				
 				
-				//echo "<td><a href='#.php?id=".$row['id']."'>Delete</a></td>";
+				echo "<td><a href='delete_ngo_individual.php?id=".$row['id']."'>Delete</a></td>";
 				echo "</tr>";
 			}
 		}

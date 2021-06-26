@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2021 at 09:42 AM
+-- Generation Time: Jun 26, 2021 at 08:36 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -244,8 +244,7 @@ CREATE TABLE `ngo_help_db` (
 --
 
 INSERT INTO `ngo_help_db` (`id`, `name`, `address`, `district`, `ph_no`, `file`, `description`, `category`) VALUES
-(3, 'test', 'ttttttttttttttttttttttttttttttttttt', 'Alipurduar', '000000000000000000000000', 'wallpaper.png', '', ''),
-(4, 'neha', '324, akashbani kolkata-700034', 'Kolkata', '3672838390', '', 'hello', 'food');
+(3, 'test', 'ttttttttttttttttttttttttttttttttttt', 'Alipurduar', '000000000000000000000000', 'wallpaper.png', '', '');
 
 -- --------------------------------------------------------
 
@@ -268,8 +267,7 @@ CREATE TABLE `ngo_registration` (
 --
 
 INSERT INTO `ngo_registration` (`id`, `name`, `address`, `district`, `ph_no`, `file`, `category`) VALUES
-(1, 'test', 'testtttttttttttttt', 'Alipurduar', '00000000000000', '', ''),
-(2, 'hello', '342, akashbani kolkata-700045', 'Kolkata', '6473847552', '', 'medicine');
+(1, 'test', 'testtttttttttttttt', 'Alipurduar', '00000000000000', '', '');
 
 -- --------------------------------------------------------
 
@@ -351,7 +349,6 @@ INSERT INTO `receiver_db` (`id`, `name`, `address`, `phone number`, `date of bir
 
 CREATE TABLE `register_db` (
   `id` int(10) NOT NULL,
-  `user_type` varchar(30) NOT NULL,
   `uname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `n_password` varchar(255) NOT NULL,
@@ -362,10 +359,9 @@ CREATE TABLE `register_db` (
 -- Dumping data for table `register_db`
 --
 
-INSERT INTO `register_db` (`id`, `user_type`, `uname`, `email`, `n_password`, `con_password`) VALUES
-(1, 'warrior', 'Tina', 'tina@gmail.com', 'dGluYQ==', 'tina'),
-(2, 'survivor', 'Lipi', 'lipi@gmail.com', 'bGlwaQ==', 'lipi'),
-(3, 'warrior', 'rina', 'rina@gmail.com', 'cmluYQ==', 'rina');
+INSERT INTO `register_db` (`id`, `uname`, `email`, `n_password`, `con_password`) VALUES
+(1, 'Tina', 'tina@gmail.com', 'dGluYQ==', 'tina'),
+(2, 'Lipi', 'lipi@gmail.com', 'bGlwaQ==', 'lipi');
 
 -- --------------------------------------------------------
 
@@ -468,7 +464,7 @@ CREATE TABLE `survivor_db` (
 --
 
 INSERT INTO `survivor_db` (`id`, `email`, `age`, `profession`, `city`, `district`, `experience`, `title`, `video`) VALUES
-(1, 'lipi@gmail.com', '23', 'Student', 'Kolkata', 'Kolkata', 'Very Bad..', 'My Covid Days', '');
+(2, 'lipi@gmail.com', '45', 'Student', 'Kolkata', 'Kolkata', 'Very bad..', 'My COVID Experience', '');
 
 -- --------------------------------------------------------
 
@@ -518,7 +514,6 @@ CREATE TABLE `warrior_db` (
 --
 
 INSERT INTO `warrior_db` (`id`, `email`, `age`, `profession`, `city`, `district`, `experience`, `title`, `photo`, `video`) VALUES
-(1, 'tina@gmail.com', '34', 'Doctor', 'Kolkata', 'Kolkata', 'Worst Experience..', 'Keep Fighting', '', ''),
 (2, 'rina@gmail.com', '52', 'Nurse', 'Kolkata', 'Kolkata', 'Terrific Experience.', 'My experience as a Covid warrior', '', '');
 
 --
@@ -691,7 +686,7 @@ ALTER TABLE `donor_db`
 -- AUTO_INCREMENT for table `feedback_db`
 --
 ALTER TABLE `feedback_db`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `hospital_db`
@@ -721,7 +716,7 @@ ALTER TABLE `ngo_registration`
 -- AUTO_INCREMENT for table `ngo_registration_individual`
 --
 ALTER TABLE `ngo_registration_individual`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `oxygen_db`
@@ -763,7 +758,7 @@ ALTER TABLE `service_providers`
 -- AUTO_INCREMENT for table `survivor_db`
 --
 ALTER TABLE `survivor_db`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `volunteer_db`
