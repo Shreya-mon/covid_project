@@ -53,10 +53,10 @@ include("connection.php");?>
           <a class="nav-link " aria-current="page" href="household.html">Household Precautions</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="#">Doctor Consultancy</a>
+          <a class="nav-link " aria-current="page" href="./Doctor/consult.php">Doctor Consultancy</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="./HospitalAndSafehome/src/hospital.php">Hospital</a>
+          <a class="nav-link " aria-current="page" href="./HospitalAndSafehome/src/hospital.php">Hospital and Safe Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link " aria-current="page" href="./BloodBank/blood_bank.php">Blood Bank</a>
@@ -123,7 +123,7 @@ include("connection.php");?>
   <div type="button" class="btn btn-floating rounded" id="btn-back-to-top">
     <img src="./images/scroller.png" class="scroller w-100 " />
   </div>
-  <figure class="text-center mt-5 mb-5">
+  <figure class="text-center mt-5 mb-5 p-2">
     <blockquote class="blockquote">
       <p class="h1 quote">“No matter how much falls on us, we keep plowing ahead. That’s the only way to keep the roads
         clear.”</p>

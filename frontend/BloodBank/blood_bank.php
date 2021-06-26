@@ -56,10 +56,10 @@ include("../connection.php");?>
             <a class="nav-link" aria-current="page" href="../household.html">Household Precautions</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="#">Doctor Consultancy</a>
+            <a class="nav-link " aria-current="page" href="../Doctor/consult.php">Doctor Consultancy</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="../HospitalAndSafehome/src/hospital.php">Hospital</a>
+            <a class="nav-link " aria-current="page" href="../HospitalAndSafehome/src/hospital.php">Hospital and Safe Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="blood_bank.php">Blood Bank</a>
@@ -174,7 +174,9 @@ include("../connection.php");?>
               <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
               <input type="file" class="form-control" name="cert" id="formFile">
             </div>
-			<input type="submit" value="Register" name="submit">
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary" value="Register" name="submit">Submit</button>
+            </div>
           </form>
         </div>
       </div>
@@ -255,7 +257,9 @@ include("../connection.php");?>
               <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
               <input type="file" class="form-control" name="cert" id="formFile">
             </div>
-			<input type="submit" value="Register" name="submit">
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary" value="Register" name="submit">Submit</button>
+            </div>
           </form>
         </div>
       </div>
@@ -270,7 +274,7 @@ include("../connection.php");?>
 
   <div class="container-fluid text-center pt-2">
     <div class="row content mt-5">
-      <div class="col-12 col-md-2 ml-4 ">
+      <div class="col-12 col-md-2 ml-md-4 ">
 
         <div class="list-group w-100 ">
           <a href="#how" class="list-group-item list-group-item-action active">How to donate blood ?</a>
@@ -445,14 +449,16 @@ include("../connection.php");?>
     <div class="container mt-2 " style="border: 1px solid gray">
       <div class="row text-center p-2" style="background-color:rgb(174, 219, 236);"><h2 class="col-12">Registration Forms</h2></div>
       <div class="row">
-        <div class="col-6"  >
-          <button type="button" class="btn btn-success btn-block mt-4 mb-2" data-bs-toggle="modal" data-bs-target="#DonorModal" >
-            DONATE BLOOD
+        <div class="col-6 text-center pt-2"  >
+            <h4>DONATE BLOOD</h4>
+            <button type="button" class="btn btn-success btn-block mt-4 mb-2" data-bs-toggle="modal" data-bs-target="#DonorModal" >
+            Click Here
           </button>
         </div>
-        <div class="col-6" >
-          <button type="button" class="btn btn-success btn-block mt-4 mb-2" data-bs-toggle="modal" data-bs-target="#ReceiverModal">
-            REQUEST FOR BLOOD
+        <div class="col-6 text-center pt-2"  >
+            <h4>REQUEST FOR BLOOD</h4>
+            <button type="button" class="btn btn-success btn-block mt-4 mb-2" data-bs-toggle="modal" data-bs-target="#ReceiverModal">
+            Click Here
           </button>
         </div>
 
@@ -880,11 +886,15 @@ include("../connection.php");?>
           B antigen, causing a transfusion reaction. Similarly, a person having the RhD antigen will not make
           antibodies against RhD antigen, but the RhD negative
           person will make antibodies against blood with RhD positive red cells.</p>
-        <center><video width="350" height="350" loop="true" autoplay="autoplay" controls muted>
-            <source src="video.mp4" type="video/mp4">
-            <source src="video.ogg" type="video/ogg">
-            Your browser doesn't support the video tag
-          </video></center><br>
+        <div>
+          <center class="w-100">
+            <video  style="max-height: 300px " autoplay controls >
+              <source src="video.mp4" type="video/mp4" >
+              Your browser doesn't support the video tag
+            </video>
+          </center>
+        </div>
+          <br>
         <center>
           <table style="width:70%">
             <tr>

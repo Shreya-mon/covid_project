@@ -63,10 +63,10 @@ include("connection.php");?>
             <a class="nav-link" aria-current="page" href="household.html">Household Precautions</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="#">Doctor Consultancy</a>
+            <a class="nav-link " aria-current="page" href="./Doctor/consult.php">Doctor Consultancy</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="./HospitalAndSafehome/src/hospital.php">Hospital</a>
+            <a class="nav-link " aria-current="page" href="./HospitalAndSafehome/src/hospital.php">Hospital and Safe Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link " aria-current="page" href="./BloodBank/blood_bank.php">Blood Bank</a>
@@ -159,7 +159,10 @@ include("connection.php");?>
               <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
               <input type="file" class="form-control" name="cert" id="formFile">
             </div>
-			<input type="submit" value="Register" name="submit">
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary" value="Register" name="submit">Submit</button>
+            </div>
+			      <!--<input type="submit" value="Register" name="submit">-->
           </form>
         </div>
       </div>
@@ -223,7 +226,7 @@ include("connection.php");?>
       <div class="row" style="text-align: center; align-items: center; justify-content: center;">
         <h3>Oxygen Supplier List</h3>
       </div>
-      <div class="row mt-3">
+      <div class="row mt-3 mytable">
         <table class="table">
           <thead class="thead-light">
             <tr>

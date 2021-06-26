@@ -55,10 +55,10 @@ include("connection.php");?>
             <a class="nav-link " aria-current="page" href="household.html">Household Precautions</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="#">Doctor Consultancy</a>
+            <a class="nav-link " aria-current="page" href="./Doctor/consult.php">Doctor Consultancy</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="./HospitalAndSafehome/src/hospital.php">Hospital</a>
+            <a class="nav-link " aria-current="page" href="./HospitalAndSafehome/src/hospital.php">Hospital and Safe Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link " aria-current="page" href="./BloodBank/blood_bank.php">Blood Bank</a>
@@ -133,7 +133,7 @@ include("connection.php");?>
             </div>
             <div class="col-12 mt-1">
               <label for="district">District</label>
-              <select name="dist" id="dist">
+              <select name="dist" id="dist" class="form-control">
                 <option value="Alipurduar">Alipurduar</option>
                 <option value="Bankura">Bankura</option>
                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -224,7 +224,6 @@ include("connection.php");?>
         </div>
         <div class="modal-body">
 
-
           <form class="row" action="insert_ngo_registration_form_individual_data.php" method="post" name="insert_ngo_registraion_individual_frm">
             <div class="col-12 mt-1 ">
               <label for="First Name" class="form-label">First Name</label>
@@ -236,7 +235,7 @@ include("connection.php");?>
             </div>
             <div class="col-12 mt-1">
               <label for="district">District</label>
-              <select name="dist" id="dist">
+              <select name="dist" id="dist" class="form-control">
                 <option value="Alipurduar">Alipurduar</option>
                 <option value="Bankura">Bankura</option>
                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -338,7 +337,7 @@ include("connection.php");?>
             </div>
             <div class="col-12 mt-1">
               <label for="district">District</label>
-              <select name="dist" id="dist">
+              <select name="dist" class="form-control" id="dist">
                 <option value="Alipurduar">Alipurduar</option>
                 <option value="Bankura">Bankura</option>
                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -374,7 +373,7 @@ include("connection.php");?>
             </div>
             <div class="col-12 mt-1">
               <label for="description" class="form-label">Description:</label><br>
-              <textarea name="description" rows="5" cols="40"></textarea>
+              <textarea name="description" rows="5" class="form-control"></textarea>
               
             </div>
             <div class="col-12 mt-1">
@@ -503,6 +502,46 @@ include("connection.php");?>
         </p>
       </div>
     </div>
+
+    <div class="h3 mt-5 p-2">
+          Search Here for your nearby NGO Services:</div>
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+          <div class="input-group md-form form-sm form-2 pl-0">
+          <select class="form-control">
+              <option value="Alipurduar">Alipurduar</option>
+                <option value="Bankura">Bankura</option>
+                <option value="Paschim Bardhaman">Paschim Bardhaman</option>
+                <option value="Purba Bardhaman">Purba Bardhaman</option>
+                <option value="Birbhum">Birbhum</option>
+                <option value="Cooch Behar">Cooch Behar</option>
+                <option value="Dakshin Dinajpu">Dakshin Dinajpur</option>
+                <option value="Darjeeling">Darjeeling</option>
+                <option value="Hooghly">Hooghly</option>
+                <option value="Howrah">Howrah</option>
+                <option value="Jalpaiguri">Jalpaiguri</option>
+                <option value="Jhargram">Jhargram</option>
+                <option value="Kalimpong">Kalimpong</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Maldah">Maldah</option>
+                <option value="Murshidabad">Murshidabad</option>
+                <option value="Nadia">Nadia</option>
+                <option value="North 24 Parganas">North 24 Parganas</option>
+                <option value="Paschim Medinipur">Paschim Medinipur</option>
+                <option value="Purba Medinipur">Purba Medinipur</option>
+                <option value="Purulia">Purulia</option>
+                <option value="South 24 Parganas">South 24 Parganas</option>
+                <option value="Uttar Dinajpur">Uttar Dinajpur</option>
+              </select>
+              <div class="input-group-append">
+              <span class="input-group-text amber lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
+                  aria-hidden="true"></i></span>
+            </div>
+          </div>
+        </div>
+
+
+
     <div class="container  mt-5">
       <div class="row" style="text-align: center; align-items: center; justify-content: center;">
         <h3>Some NGO List</h3>

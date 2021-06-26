@@ -63,11 +63,11 @@
                         <a class="nav-link " aria-current="page" href="../../household.html" style="font-size:15px;">Household Precautions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="#" style="font-size:15px;">Doctor Consultancy</a>
+                        <a class="nav-link " aria-current="page" href="../../Doctor/consult.php" style="font-size:15px;">Doctor Consultancy</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " aria-current="page"
-                            href="../../HospitalAndSafehome/src/hospital.php" style="font-size:15px;">Hospital</a>
+                            href="../../HospitalAndSafehome/src/hospital.php" style="font-size:15px;">Hospital and Safe Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " aria-current="page" href="../../BloodBank/blood_bank.php" style="font-size:15px;">Blood Bank</a>
@@ -85,7 +85,7 @@
                             care Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#" style="font-size:15px;">Review of covid survivors and warriors</a>
+                        <a class="nav-link active" aria-current="page" href="./reviews.php" style="font-size:15px;">Review of covid survivors and warriors</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="../../ngo-charity.php" style="font-size:15px;">NGO and Charity</a>

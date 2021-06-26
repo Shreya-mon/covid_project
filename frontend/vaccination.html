@@ -33,7 +33,21 @@
   <link rel="stylesheet" href="css/styles.css">
 
   <title>Covid-19</title>
+  <style>
+    .accordion-item {
+      margin-bottom: 1%;
+    }
 
+    .accordion-header {
+      color: #0c5460;
+      background-color: #bee5eb;
+      border: 1px solid #0c5460;
+      padding: 1%;
+      border-radius: 5px;
+      margin: 0 1%;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
@@ -58,10 +72,11 @@
             <a class="nav-link " aria-current="page" href="household.html">Household Precautions</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="#">Doctor Consultancy</a>
+            <a class="nav-link " aria-current="page" href="./Doctor/consult.php">Doctor Consultancy</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="./HospitalAndSafehome/src/hospital.php">Hospital</a>
+            <a class="nav-link " aria-current="page" href="./HospitalAndSafehome/src/hospital.php">Hospital and Safe
+              Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link " aria-current="page" href="./BloodBank/blood_bank.php">Blood Bank</a>
@@ -140,13 +155,13 @@
         <hr>
         <div class="accordion" id="accordionExample">
           <div class="accordion-item ">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button btn btn-primary w-100" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <div class="accordion-header" id="headingOne">
+              <div class="accordion-button w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
                 Do I need to use the mask/other COVID-19 appropriate precautions after receiving the
                 vaccine?
-              </button>
-            </h2>
+              </div>
+            </div>
             <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne"
               data-bs-parent="#accordionExample">
               <div class="accordion-body">
@@ -158,12 +173,12 @@
             </div>
           </div>
           <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed btn btn-primary w-100" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <div class="accordion-header" id="headingTwo">
+              <div class="accordion-button w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                aria-expanded="false" aria-controls="collapseTwo">
                 Can a person presently having COVID-19 (confirmed or suspected) infection be vaccinated?
-              </button>
-            </h2>
+              </div>
+            </div>
             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
               data-bs-parent="#accordionExample">
               <div class="accordion-body">
@@ -174,12 +189,12 @@
             </div>
           </div>
           <div class="accordion-item">
-            <h2 class="accordion-header" id="headingThree">
-              <button class="accordion-button collapsed btn btn-primary w-100" type="button" data-bs-toggle="collapse"
+            <div class="accordion-header" id="headingThree">
+              <div class="accordion-button w-100" type="button" data-bs-toggle="collapse"
                 data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                 Which vaccine is better between Covisheild and Covaxin?
-              </button>
-            </h2>
+              </div>
+            </div>
             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
               data-bs-parent="#accordionExample">
               <div class="accordion-body">
@@ -228,7 +243,7 @@
           <div class="row mt-2 ">
             <div class="col-12 col-md-8 mb-2">
               <h4>Will COVID-19 vaccine be given to everyone simultaneously?</h4>
-              <div class="row mb-2">
+              <div class="row mb-2 p-2">
                 Based on the potential availability of vaccines the Government of India has selected the
                 priority
                 groups who
@@ -248,7 +263,7 @@
               </div>
               <h4>Can a person presently having COVID-19 (confirmed or suspected) infection be vaccinated?
               </h4>
-              <div class="row mb-2">
+              <div class="row mb-2 p-2">
                 Person with confirmed or suspected COVID-19 infection may increase the risk of spreading
                 the same to
                 others
@@ -259,7 +274,7 @@
               </div>
               <h4>How will I know if I am eligible for vaccination?
               </h4>
-              <div class="row mb-2">
+              <div class="row mb-2 p-2">
                 In the initial phase, COVID-19 vaccine was provided to the priority group - Health Care
                 and
                 Front-line
@@ -287,7 +302,7 @@
           <div class="row mt-2 ">
             <div class="col-12 col-md-8 mb-2">
               <h4>What medications should be avoided before taking COVID-19 vaccine and for how long?</h4>
-              <div class="row mb-2">
+              <div class="row mb-2 p-2">
                 Currently, there is no such instruction. One can take one’s regular medication
                 uninterruptedly. Just
                 inform
@@ -296,7 +311,7 @@
               </li>
               <h4>Is the vaccine contraindicated in person with chronic diseases?
               </h4>
-              <div class="row mb-2">
+              <div class="row mb-2 p-2">
                 Chronic diseases and morbidities like the cardiac, neurological, pulmonary, metabolic,
                 renal and
                 malignancies
@@ -313,7 +328,7 @@
                 this
                 vaccine?
               </h4>
-              <div class="row mb-2">
+              <div class="row mb-2 p-2">
                 Yes, persons with one or more of these comorbid conditions are considered among the high
                 risk
                 category.
@@ -331,7 +346,7 @@
               <h4>Do I need to use the mask/other COVID-19 appropriate precautions after receiving the
                 vaccine?
               </h4>
-              <div class="row mb-2">
+              <div class="row mb-2 p-2">
                 Yes, it is absolutely necessary that everyone who has received the COVID-19 vaccine
                 should continue
                 to
@@ -398,7 +413,7 @@
               </ul>
             </div>
             <h4>Pregnancy & Lactation:</h4>
-            <div class="row">
+            <div class="row p-2">
               <ul>
                 <li>Pregnant & Lactating women have not been part of any COVID-19 vaccine clinical trial
                   so far.
@@ -409,7 +424,7 @@
               </ul>
             </div>
             <h4>Provisional / temporary contraindications:</h4>
-            <div class="row">
+            <div class="row p-2">
               <ul>
                 <li>In these conditions, COVID-19 vaccination is to be deferred for 4-8 weeks after
                   recovery</li>
@@ -436,7 +451,7 @@
         <div class="row mt-2 ">
           <div class="col-12 col-md-8 mb-2 container">
             <h4>1. How long I will remain protected after vaccination?</h4>
-            <div class="row">
+            <div class="row p-2">
               <p>Longevity of the immune response in vaccinated individuals is yet to be determined.
                 Hence, continuing
                 the use
@@ -447,7 +462,7 @@
               </p>
             </div>
             <h4>2. Does vaccination protect me against newer strains / mutated virus of SARS-CoV 2?</h4>
-            <div class="row">
+            <div class="row p-2">
               <p>The body responds to vaccination by making more than one type of antibodies to virus
                 parts including
                 spike
@@ -461,7 +476,7 @@
                 ineffective.</p>
             </div>
             <h4>3. Should you avoid alcohol after receiving the COVID-19 vaccine?</h4>
-            <div class="row">
+            <div class="row p-2">
               <p>
                 As per experts, there is no evidence of alcohol impairing the effectiveness of the
                 vaccine.
@@ -473,12 +488,12 @@
             <img src="./images/vaccine6.jpg" alt="" class="w-100 rounded">
           </div>
         </div>
-        <div class="row">
+        <div class="row p-2">
           <h3>For more queries submit your questions here: </h3><a href="help.php #query"><button
               class="btn btn-primary ml-2">Click</button></a>
         </div>
         <hr>
-        <div class="row">
+        <div class="row p-2">
           <h3 id="row7">Register Here To Get Yourself vaccinated: </h3>
           <a href="https://www.cowin.gov.in/home"><button class="btn btn-primary ml-2">Cowin</button></a>
           <a href="https://www.mygov.in/aarogya-setu-app/"><button class="btn btn-primary ml-2">Arogya Setu</button></a>

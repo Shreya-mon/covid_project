@@ -109,3 +109,7 @@ body {
 .quote{
   font-family: 'Bree Serif', serif;
 }
+
+.mytable{
+  overflow-x: scroll;
+}

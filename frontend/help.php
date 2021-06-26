@@ -68,10 +68,10 @@ include("connection.php");?>
             <a class="nav-link " aria-current="page" href="household.html">Household Precautions</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="#">Doctor Consultancy</a>
+            <a class="nav-link " aria-current="page" href="./Doctor/consult.php">Doctor Consultancy</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="./HospitalAndSafehome/src/hospital.php">Hospital</a>
+            <a class="nav-link " aria-current="page" href="./HospitalAndSafehome/src/hospital.php">Hospital and Safe Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link " aria-current="page" href="./BloodBank/blood_bank.php">Blood Bank</a>
@@ -238,22 +238,18 @@ include("connection.php");?>
   <!--modal close-->
   <div class="container mt-3 center">
     <div class="row center-center p-2">
-      <div class="col-10">
-       <h1 class="mt-2"><b>Help Desk</b></h1>
+      <div class="col-12 col-md-10">
+       <h1 class="mt-2"><b>Help Desk</b> </h1>
       </div>
-      <div class="col-1">
-       <a href="../admin.html"><h3>Admin Login</h3></a>
-      </div>
-      <div class="col-1">
-       <img src="images/help5.png" style="width: 120%">
+      <div class="col-12 col-md-2 ">
+       <a href="../admin.html"><h3>Admin Login  <img src="./images/help5.png" style="width: 50px"></h3></a>
       </div>
       <div class="center-center">
         <img src="images/help1.gif" style="width: 70%;">
       </div>
-      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae facilis dolorem beatae accusantium optio
-        vero hic accusamus explicabo repudiandae, quia sit perspiciatis assumenda molestiae? Perferendis repellendus
-        exercitationem quae vel non beatae a saepe voluptatem quisquam, voluptatum, iste eum commodi impedit maiores
-        soluta recusandae consectetur voluptatibus fuga quam aliquid deleniti. Dicta!
+      <div>Thank you for using our website. We hope that this website helps you a little bit more and that is where we are successfull.
+       We tried to help you as much we can and Yess! we are improving our website day by day. So if you have any kind of queries of if 
+       there is some thing we can add to make our website more usefull, please give some suggestions.
       </div>
     </div>
     <br>
@@ -265,12 +261,11 @@ include("connection.php");?>
     </div>
     <div class="row col-md-12">
       <div class="col-md-6">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In culpa omnis quidem repudiandae ducimus.
-          Perspiciatis, recusandae? Nesciunt totam beatae, minus, voluptas veritatis quos blanditiis molestiae
-          mollitia
-          in
-          deserunt distinctio perspiciatis quaerat unde dignissimos dolore vero debitis, laborum asperiores fugiat
-          velit!
+        <p>We tried to help you with all the necessary things that are needed specially in this time. Although we know that 
+        nothing is perfect in the world, mistakes are made by everyone. So we want review form you to know about the pros and cons 
+        of our website. Feedback is the only thing from where we can connect with you. We would love to hear your experiences in 
+        our website with us. If there is any kind of help you need or have any kind of complaint, tell us without any hesitation.
+        So if you take some time out of your busy routine, it will be very helpful for us to improve.
         </p>
       </div>
       <div class="col-md-6 ">
@@ -284,16 +279,15 @@ include("connection.php");?>
       </button>
     </div>
     <div class="row col-md-12">
-      <div class="col-md-6">
+      <div class="col-md-6 ">
         <img src="./images/help3.jpg" class=" w-100">
       </div>
       <div class="col-md-6 ">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In culpa omnis quidem repudiandae ducimus.
-          Perspiciatis, recusandae? Nesciunt totam beatae, minus, voluptas veritatis quos blanditiis molestiae
-          mollitia
-          in
-          deserunt distinctio perspiciatis quaerat unde dignissimos dolore vero debitis, laborum asperiores fugiat
-          velit!
+        <p>In many of our pages we provides so many providers details whether a oxygen supplier or a donor or a ngo etc. 
+        In this difficult time we all are trying to help everyone as much as we can, but at this hard time also there are some 
+        bad people who are cheating others for their own benifit. We are strongly against of that. So if you find any kind of 
+        fake informations or someone harrassed you by taking money and not giving services report here. Tell all the details that 
+        happened to you in the description. We could try as much as we can. 
         </p>
       </div>
     </div>
@@ -305,18 +299,17 @@ include("connection.php");?>
     </div>
     <div class="row col-md-12">
       <div class="col-md-6">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In culpa omnis quidem repudiandae ducimus.
-          Perspiciatis, recusandae? Nesciunt totam beatae, minus, voluptas veritatis quos blanditiis molestiae
-          mollitia
-          in
-          deserunt distinctio perspiciatis quaerat unde dignissimos dolore vero debitis, laborum asperiores fugiat
-          velit!
+        <p>We know there are plenty of questions you have in your head about Covid. We tried to solve all queries as much as we can,
+         specially those most asked questions. If you still have some questions please let us know. We will try to solve all your 
+         queries if we can. We will upload the answers in our website or sending you through mail. Please keep a look on our website
+         frequently. 
         </p>
       </div>
       <div class="col-md-6 mb-5 ">
         <img src="./images/help4.jpg" style="width: 60%;">
       </div>
     </div>
+  </div>
   </div>
   <hr>
   <!-- Footer -->
