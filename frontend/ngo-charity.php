@@ -122,7 +122,7 @@ include("connection.php");?>
         <div class="modal-body">
 
 
-          <form class="row" action="insert_ngo_registration_form_data.php" method="post" name="insert_ngo_registraion_frm">
+          <form class="row" action="insert_ngo_registration_form_data.php" method="post" name="insert_ngo_registraion_frm" enctype="multipart/form-data">
             <div class="col-12 mt-1 ">
               <label for="Name of NGO" class="form-label">Name of NGO</label>
               <input type="text" class="form-control" name="nameOfNGO" required>

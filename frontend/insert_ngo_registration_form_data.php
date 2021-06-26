@@ -29,8 +29,7 @@ align-items: center;
 </body>
 </html>
 <?php //insert data query processing
-	
-	$sql = " INSERT INTO `ngo_registration`( `name`, `address`, `district`, `ph_no`, `file`, `category`)
+	$sql = " INSERT INTO `ngo_registration`( `name`, `address`, `district`, `ph_no`,`file`, `category`)
 						  VALUES('".$_REQUEST['nameOfNGO']."',
 								 '".$_REQUEST['addressOfNGO']."',
                                  '".$_REQUEST['dist']."',
@@ -38,7 +37,14 @@ align-items: center;
 								 '".$_REQUEST['certificateOfNGO']."',
 								 
                                  '".$_REQUEST['helpingCategoriesOfNGO']."')";
-	mysqli_query($link, $sql);?>
+	mysqli_query($link, $sql);
+	
+
+								//echo $tmp = $_FILES["certificateOfNGO"]["tmp_name"];
+ 								$path = "upload_file/".$_FILES["certificateOfNGO"]["name"];
+								$temp = $_FILES["certificateOfNGO"]["tmp_name"];
+								move_uploaded_file($temp, $path);
+	?>
 	<h3 align="center"> Record inserted successfully. </h3>';
 	<br>;
 	<br>;
