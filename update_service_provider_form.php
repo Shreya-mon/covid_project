@@ -4,7 +4,9 @@
 <?php 
 	$qry = mysqli_query($link, "SELECT * FROM `service_providers` WHERE `id` = '".$_REQUEST['id']."'");
 		$row = mysqli_fetch_array($qry);
-		//$type = isset($row['htype']) ? $row['htype']:'';
+	$qry1 = mysqli_query($link, "SELECT * FROM `service` WHERE `name` = '".$_REQUEST['name']."'");
+	$row2 = mysqli_fetch_array($qry1);
+	$name = isset($row2['service_id']) ? $row2['service_id']:'';
 ?>
 
 
@@ -43,7 +45,7 @@
 				while($row1 = mysqli_fetch_array($qry)) {
 					// print_r($row1);
 					?>
-						<option value="<?=$row1['service_id']?>"><?=$row1['name']?></option>
+						<option value="<?=$row1['service_id']?>"<?php if($name == $row1['service_id']){echo "selected";} ?>><?=$row1['name']?></option>
 					<?php
 				}
 

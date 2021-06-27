@@ -477,6 +477,7 @@ include("../connection.php");?>
         <center>
           <h3 style="font-weight:bold;font-family:verdana;color:red;text-shadow:2px 2px 3px black;" id="bank">
             Blood Banks</h3>
+            <form action="#bank" method="POST">
             <div class="col-12 col-md-7 row">
         <div class="h3  ">
           Search Here for your nearby blood bank:</div>
@@ -484,8 +485,9 @@ include("../connection.php");?>
         <div class="col-12 mb-4">
           <div class="input-group md-form form-sm form-2 pl-0">
             <!-- <input class="form-control my-0 py-1 amber-border" type="text" placeholder="Search" aria-label="Search"> -->
-              <select class="form-control">
-              <option value="Alipurduar">Alipurduar</option>
+              <select class="form-control" name="district_choice">
+                <option value="">Select District</option>
+                <option value="Alipurduar">Alipurduar</option>
                 <option value="Bankura">Bankura</option>
                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
                 <option value="Purba Bardhaman">Purba Bardhaman</option>
@@ -516,6 +518,8 @@ include("../connection.php");?>
           </div>
         </div>
       </div>
+      <input type="submit" class="btn btn-primary" value="Search" name="submit">
+        </form>
       <div class="container  mt-5">
       <div class="row" style="text-align: center; align-items: center; justify-content: center;">
         <h3>Blood Bank List</h3>
@@ -526,29 +530,41 @@ include("../connection.php");?>
             <tr>
               <th scope="col">Serial No.</th>
               <th scope="col">Name</th>
+              <th scope="col">Contact Number</th>
+              <th scope="col">Email</th>
+              <th scope="col">District</th>
               <th scope="col">Address</th>
-              <th scope="col">Contact Details</th>
+              <th scope="col">Description</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
+                 <?php
+                    if(isset($_REQUEST['submit']) && ($_REQUEST['submit']=='Search'))
+                    {
+                      $dis = $_REQUEST['district_choice'];
+                      $sql = "SELECT * FROM `service_providers` WHERE `service_id`= 9 and `district`='$dis'";}
+                    else{ $sql = "SELECT * FROM `service_providers` WHERE `service_id`= 9";}  
+                      $result = mysqli_query($link,$sql);
+                      if(mysqli_num_rows($result) > 0)
+                      {
+                          $count=1;
+                          while($row = mysqli_fetch_assoc($result))
+                          {
+                            echo "<tr>";
+                            echo "<td align = 'center'>".$count."</td>";
+                            echo "<td align = 'center'>".$row["name"]."</td>";
+                            echo "<td align = 'center'>".$row["contact"]."</td>";
+                            echo "<td align = 'center'>".$row["email"]."</td>";
+                            echo "<td align = 'center'>".$row["district"]."</td>";
+                            echo "<td align = 'center'>".$row["address"]."</td>";
+                            echo "<td align = 'center'>".$row["description"]."</td>";
+                            echo "</tr>";
+                            $count++;
+                          }
+                      }
+                      else{echo '<tr><td colspan="7" style="color:red; text-align:center;">No record found</td></tr>';}
+                    
+                  ?>
           </tbody>
         </table>
 

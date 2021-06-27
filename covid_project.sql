@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 27, 2021 at 11:29 AM
+-- Generation Time: Jun 27, 2021 at 02:03 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin_details` (
+  `id` int(10) NOT NULL,
   `name` varchar(22) DEFAULT NULL,
-  `id` int(3) NOT NULL,
   `email` varchar(26) DEFAULT NULL,
   `password` varchar(23) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -39,10 +39,10 @@ CREATE TABLE `admin_details` (
 -- Dumping data for table `admin_details`
 --
 
-INSERT INTO `admin_details` (`name`, `id`, `email`, `password`) VALUES
-('SUPRAVA KARMAKAR', 0, 'hello@hello.com', '1234'),
-('shreya', 1, 'monshreya123@gmail.com', 'shreya123'),
-('Shreya Mondal', 2, 'monshreya123@gmail.com', 'shreya123');
+INSERT INTO `admin_details` (`id`, `name`, `email`, `password`) VALUES
+(1, 'SNEHA PAUL', 'snehapaul12182000@gmail.co', '1234'),
+(2, 'SUPRAVA KARMAKAR', 'suprava@gmail.com', '12345'),
+(3, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -78,6 +78,13 @@ CREATE TABLE `childcareprovider_db` (
   `proof` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `childcareprovider_db`
+--
+
+INSERT INTO `childcareprovider_db` (`id`, `name`, `address`, `district`, `phno`, `proof`) VALUES
+(1, 'Riya Mithia', 'Sahararhat,Falta, South 24 Parganas,743504, West Bengal', 'Alipurduar', '09002092950', '');
+
 -- --------------------------------------------------------
 
 --
@@ -94,7 +101,8 @@ CREATE TABLE `doctor_category` (
 --
 
 INSERT INTO `doctor_category` (`cat_id`, `category_name`) VALUES
-(1, '1234');
+(1, 'COVID Consultant'),
+(2, 'Counseling Consultant');
 
 -- --------------------------------------------------------
 
@@ -103,15 +111,23 @@ INSERT INTO `doctor_category` (`cat_id`, `category_name`) VALUES
 --
 
 CREATE TABLE `doctor_db` (
-  `id` varchar(20) NOT NULL,
+  `id` int(20) NOT NULL,
   `cat_id` int(10) NOT NULL,
   `dname` varchar(30) NOT NULL,
   `phno` varchar(12) NOT NULL,
   `email` varchar(50) NOT NULL,
   `address` varchar(255) NOT NULL,
-  `location` varchar(50) NOT NULL,
+  `district` varchar(50) NOT NULL,
   `doctors_additional_info` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `doctor_db`
+--
+
+INSERT INTO `doctor_db` (`id`, `cat_id`, `dname`, `phno`, `email`, `address`, `district`, `doctors_additional_info`) VALUES
+(1, 1, 'Dr. A K Bardhan', '5628890', '', 'Appollo Gleneagles Hospital Limited, Canal Circular Road', 'Kolkata', 'Open-Sun-Sat(12.00pm-12.01pm)'),
+(2, 2, 'Dr. Rupa Talukdar', '9051815449', 'rupa.talukdar@yahoo.com', '74, R.K.Ghosh Road Kolkata-700042(Kasba))', 'Kolkata', 'Open-Mon-Sat(11.00am-7.00pm)');
 
 -- --------------------------------------------------------
 
@@ -209,6 +225,13 @@ CREATE TABLE `mealprovider_db` (
   `proof` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `mealprovider_db`
+--
+
+INSERT INTO `mealprovider_db` (`id`, `name`, `address`, `district`, `email`, `phno`, `proof`) VALUES
+(1, 'Riya Mithia', 'Sahararhat,Falta, South 24 Parganas,743504, West Bengal', 'Alipurduar', 'riya.mithia8167@gmail.com', '09002092950', '');
+
 -- --------------------------------------------------------
 
 --
@@ -254,8 +277,7 @@ CREATE TABLE `ngo_registration` (
 --
 
 INSERT INTO `ngo_registration` (`id`, `name`, `address`, `district`, `ph_no`, `file`, `category`) VALUES
-(1, 'test', 'testtttttttttttttt', 'Alipurduar', '00000000000000', '', ''),
-(2, 'test', 'testtttttttttttttt', 'Alipurduar', '99999999999999', '', '');
+(1, 'test', 'testtttttttttttttt', 'Alipurduar', '00000000000000', '', '');
 
 -- --------------------------------------------------------
 
@@ -394,10 +416,11 @@ CREATE TABLE `service` (
 
 INSERT INTO `service` (`service_id`, `name`, `description`) VALUES
 (1, 'oxygen service', ''),
-(2, 'ngo & charity', ''),
+(2, 'ngo and charity', ''),
 (6, 'Health-Care-Heroes', ''),
 (7, 'Meal Services', ''),
-(8, 'Child -Care Services', '');
+(8, 'Child -Care Services', ''),
+(9, 'Blood Bank', '');
 
 -- --------------------------------------------------------
 
@@ -421,15 +444,17 @@ CREATE TABLE `service_providers` (
 --
 
 INSERT INTO `service_providers` (`id`, `service_id`, `name`, `contact`, `email`, `description`, `district`, `address`) VALUES
-(1, 1, 'Smile-Society-Voluntary', '9830150249', '', '', '', 'Dr. Ambedkar Sarani, Madhyamgram, West B'),
-(2, 1, 'Hope Home calcutta', '3324383193 /', 'shalom@vsnl.com', '', '', 'Gopal Lane, Srijoni, thakurani Chak, Kolka'),
+(1, 1, 'Smile-Society-Voluntary', '9830150249', '', '', 'Kolkata', 'Dr. Ambedkar Sarani, Madhyamgram, West B'),
+(2, 1, 'Hope Home calcutta', '3324383193 /', 'shalom@vsnl.com', '', 'Kolkata', 'Gopal Lane, Srijoni, thakurani Chak, Kolka'),
 (3, 1, 'You N Society', '9681747006', '', '', 'kolkata', '23/1 , Atul Krishna Bose Lane , Baranagar , kolkata 700036'),
-(4, 7, 'JustMyRoot', '6290096678 / 8240048803 / 8777708468', '', 'Meal: lunch and dinner ; Price : Rs.375 for a vegetarian meal and Rs.430 for non-vegetarian meal ; Delivery all over kolkata', '', ''),
-(5, 7, 'Pepperberries by Sujata', '9831704091', '', 'Meal : Lunch and Dinner ; Price : Free of Cost ; Delivery : In and around Park Street', '', ''),
-(6, 8, 'National Welfare team', '7947407934', '', 'Open 24 hrs(Monday - Sunday)', '', 'Rohanda Panchayat , PS- Madhyamgram , Rajbati Baganbari, Kajial para , Rajarhat , kolkata - 700135'),
-(7, 8, 'The Calcutta Orphanage', '7947435862', '', 'opening : 10a.m to 8p.m, Monday - sunday', '', '12/1, Balaram ghosh Street, Shyambazar kolkata -700004'),
-(8, 1, 'Jibandeep', '033-24550926 / 09874118925', '', 'open :Monday- sunday(24 hrs)  ; Payment mode :Cash/ debit cards/ credit cards/ cheques', '', '114/B, Hazra Rd Kalighat kolkata -700026  '),
-(9, 2, 'shree kashi vishwanath seva samity', '6384438794', '', '', 'kolkata', 'Building No 42, Burtolla Street Burrabazar kolkata-700007');
+(4, 7, 'JustMyRoot', '6290096678 / 8240048803 / 8777708468', '', 'Meal: lunch and dinner ; Price : Rs.375 for a vegetarian meal and Rs.430 for non-vegetarian meal ; Delivery all over kolkata', 'Kolkata', ''),
+(5, 7, 'Pepperberries by Sujata', '9831704091', '', 'Meal : Lunch and Dinner ; Price : Free of Cost ; Delivery : In and around Park Street', 'Kolkata', ''),
+(6, 8, 'National Welfare team', '7947407934', '', 'Open 24 hrs(Monday - Sunday)', 'Kolkata', 'Rohanda Panchayat , PS- Madhyamgram , Rajbati Baganbari, Kajial para , Rajarhat , kolkata - 700135'),
+(7, 8, 'The Calcutta Orphanage', '7947435862', '', 'opening : 10a.m to 8p.m, Monday - sunday', 'Kolkata', '12/1, Balaram ghosh Street, Shyambazar kolkata -700004'),
+(8, 1, 'Jibandeep', '033-24550926 / 09874118925', '', 'open :Monday- sunday(24 hrs)  ; Payment mode :Cash/ debit cards/ credit cards/ cheques', 'Kolkata', '114/B, Hazra Rd Kalighat kolkata -700026  '),
+(16, 9, 'SSKM Hospital Blood Center-BCSU', '03322041233', '', '', 'Kolkata', ''),
+(17, 9, 'Howrah Dist. Hospital Blood Center', '9432401182', '', '', 'Howrah', ''),
+(18, 9, 'Canning S.D. Hospital Blood Center', '9434319374', '', '', 'South 24 parganas', '');
 
 -- --------------------------------------------------------
 
@@ -472,6 +497,13 @@ CREATE TABLE `volunteer_db` (
   `phno` varchar(255) NOT NULL,
   `proof` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `volunteer_db`
+--
+
+INSERT INTO `volunteer_db` (`id`, `name`, `user_type`, `address`, `district`, `email`, `phno`, `proof`) VALUES
+(1, 'Riya Mithia', 'on', 'Sahararhat,Falta, South 24 Parganas,743504, West Bengal', 'Alipurduar', 'riya.mithia8167@gmail.com', '09002092950', '');
 
 -- --------------------------------------------------------
 
@@ -516,6 +548,12 @@ ALTER TABLE `admission_cell_db`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `childcareprovider_db`
+--
+ALTER TABLE `childcareprovider_db`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `doctor_category`
 --
 ALTER TABLE `doctor_category`
@@ -529,9 +567,27 @@ ALTER TABLE `doctor_db`
   ADD KEY `cat_id` (`cat_id`);
 
 --
+-- Indexes for table `donor_db`
+--
+ALTER TABLE `donor_db`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `feedback_db`
+--
+ALTER TABLE `feedback_db`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `hospital_db`
 --
 ALTER TABLE `hospital_db`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `mealprovider_db`
+--
+ALTER TABLE `mealprovider_db`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -550,6 +606,24 @@ ALTER TABLE `ngo_registration`
 -- Indexes for table `ngo_registration_individual`
 --
 ALTER TABLE `ngo_registration_individual`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `oxygen_db`
+--
+ALTER TABLE `oxygen_db`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `receiver_db`
+--
+ALTER TABLE `receiver_db`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `register_db`
+--
+ALTER TABLE `register_db`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -572,8 +646,32 @@ ALTER TABLE `service_providers`
   ADD KEY `service_id` (`service_id`);
 
 --
+-- Indexes for table `survivor_db`
+--
+ALTER TABLE `survivor_db`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `volunteer_db`
+--
+ALTER TABLE `volunteer_db`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `warrior_db`
+--
+ALTER TABLE `warrior_db`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `admin_details`
+--
+ALTER TABLE `admin_details`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `admission_cell_db`
@@ -582,10 +680,34 @@ ALTER TABLE `admission_cell_db`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `childcareprovider_db`
+--
+ALTER TABLE `childcareprovider_db`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `doctor_category`
 --
 ALTER TABLE `doctor_category`
   MODIFY `cat_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `doctor_db`
+--
+ALTER TABLE `doctor_db`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `donor_db`
+--
+ALTER TABLE `donor_db`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `feedback_db`
+--
+ALTER TABLE `feedback_db`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `hospital_db`
@@ -594,10 +716,16 @@ ALTER TABLE `hospital_db`
   MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `mealprovider_db`
+--
+ALTER TABLE `mealprovider_db`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `ngo_help_db`
 --
 ALTER TABLE `ngo_help_db`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `ngo_registration`
@@ -609,7 +737,25 @@ ALTER TABLE `ngo_registration`
 -- AUTO_INCREMENT for table `ngo_registration_individual`
 --
 ALTER TABLE `ngo_registration_individual`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `oxygen_db`
+--
+ALTER TABLE `oxygen_db`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `receiver_db`
+--
+ALTER TABLE `receiver_db`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `register_db`
+--
+ALTER TABLE `register_db`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `safehome_db`
@@ -621,13 +767,31 @@ ALTER TABLE `safehome_db`
 -- AUTO_INCREMENT for table `service`
 --
 ALTER TABLE `service`
-  MODIFY `service_id` int(23) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `service_id` int(23) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `service_providers`
 --
 ALTER TABLE `service_providers`
-  MODIFY `id` int(23) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(23) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `survivor_db`
+--
+ALTER TABLE `survivor_db`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `volunteer_db`
+--
+ALTER TABLE `volunteer_db`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `warrior_db`
+--
+ALTER TABLE `warrior_db`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables

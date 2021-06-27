@@ -30,14 +30,14 @@ align-items: center;
 </html>
 <?php //insert data query processing
 	
-	$sql = "INSERT INTO `doctor_db`(`id`,`cat_id`,`dname`,`phno`,`email`,`address`,`location`,`doctors_additional_info`) 
-						  VALUES('".$_REQUEST['id']."',
+	$sql = "INSERT INTO `doctor_db`(`id`,`cat_id`,`dname`,`phno`,`email`,`address`,`district`,`doctors_additional_info`) 
+						  VALUES('',
 						         '".$_REQUEST['cat_id']."',
 								 '".$_REQUEST['name']."',
 								 '".$_REQUEST['phone_number']."',
 								 '".$_REQUEST['email']."',
 								 '".$_REQUEST['address']."',
-								 '".$_REQUEST['location']."',
+								 '".$_REQUEST['district']."',
 								 '".$_REQUEST['doctor_additional_info']."')";
 	mysqli_query($link, $sql);?>
 	<h3 align="center"> Record inserted successfully. </h3>';

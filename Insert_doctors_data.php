@@ -15,7 +15,6 @@
 	</center>
 	<br><br><br>
 	<form action="insert_data.php" method="post" name="insert_frm">
-		<label>ID : </label><input type="text" name="id" placeholder="ID"><br><br>
 		<label>Category ID : 
 		<select name="cat_id">
 			<?php
@@ -36,7 +35,7 @@
 		<label>Doctor's Contact Number : </label><input type="text" name="phone_number" placeholder="Contact Number"><br><br>
 		<label>Email-id : </label><input type="email" name="email" placeholder="Email"><br><br>
 		<label>Address : </label><input type="text" name="address" placeholder="Address"><br><br>
-		<label>Location : </label><input type="text" name="location" placeholder="Location"><br><br>
+		<label>District : </label><input type="text" name="district" placeholder="District"><br><br>
 		<label>Doctor's additional information : </label><input type="text" name="doctor_additional_info" placeholder="Add more information">
 		<br><br><br>
 		<center><input type="submit" value="Submit"></center>

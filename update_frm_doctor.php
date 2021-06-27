@@ -4,6 +4,9 @@
 <?php 
 	$qry = mysqli_query($link, "SELECT * FROM `doctor_db` WHERE `id` = '".$_REQUEST['id']."'");
 		$row = mysqli_fetch_array($qry);
+	$qry1 = mysqli_query($link, "SELECT * FROM `doctor_category` WHERE `category_name` = '".$_REQUEST['name']."'");
+	$row2 = mysqli_fetch_array($qry1);
+	$name = isset($row2['cat_id']) ? $row2['cat_id']:'';
 ?>
 
 
@@ -32,7 +35,7 @@
 					<div class='input-fields'>
 						<br>
 						
-		ID: <input type="text" name="id" value="<?=$row['id']?>"><br><br>
+		ID: <input type="text" name="id" value="<?=$row['id']?>" readonly /><br><br>
 		Category ID:
 		
 		
@@ -46,7 +49,7 @@
 				while($row1 = mysqli_fetch_array($qry)) {
 					// print_r($row1);
 					?>
-						<option value="<?=$row1['cat_id']?>"><?=$row1['category_name']?></option>
+						<option value="<?=$row1['cat_id']?>"<?php if($name == $row1['cat_id']){echo "selected";} ?>><?=$row1['category_name']?></option>
 					<?php
 				}
 
@@ -58,7 +61,7 @@
 		Doctor's Contact Number: <input type="text" name="phone_number" value="<?=$row['phno']?>"><br><br>
 		Email: <input type="email" name="email" value="<?=$row['email']?>"><br><br>
 		Address: <input type="text" name="address" value="<?=$row['address']?>"><br><br>
-		Location: <input type="text" name="location" value="<?=$row['location']?>"><br><br>
+		Location: <input type="text" name="district" value="<?=$row['district']?>"><br><br>
 		Doctor's additional information: <input type="text" name="doctor_additional_info" value="<?=$row['doctors_additional_info']?>"><br>
 		<br>
 

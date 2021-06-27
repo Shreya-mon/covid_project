@@ -1,9 +1,9 @@
 <?php  // Display service data 
 include("connection.php");?>
-<h2 style="font-size:29px;"><center>Service Record</center></h2><br>';
-<center><a href="menu.html">Back to Home </a></center><br>';
+<h2 style="font-size:29px;"><center>Service Record</center></h2><br>
+<center><a href="menu.html">Back to Home </a></center><br>
 
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">

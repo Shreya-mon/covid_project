@@ -1,9 +1,9 @@
 <?php  // Display service provider data 
 include("connection.php");?>
-<h2 style="font-size:29px;"><center>Service Providers Records</center></h2><br>';
-<center><a href="menu.html">Back to Home </a></center><br>';
+<h2 style="font-size:29px;"><center>Service Providers Records</center></h2><br>
+<center><a href="menu.html">Back to Home </a></center><br>
 
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -57,10 +57,11 @@ include("connection.php");?>
 		$result = mysqli_query($link,$sql);
 		if(mysqli_num_rows($result) > 0)
 		{
+			$count=1;
 			while($row = mysqli_fetch_assoc($result))
 			{
 				echo "<tr>";
-				echo "<td align = 'center'>".$row["id"]."</td>";
+				echo "<td align = 'center'>".$count."</td>";
 				echo "<td align = 'center'>".$row["service_name"]."</td>";
 				echo "<td align = 'center'>".$row["name"]."</td>";
 				echo "<td align = 'center'>".$row["contact"]."</td>";
@@ -69,10 +70,11 @@ include("connection.php");?>
 				echo "<td align = 'center'>".$row["district"]."</td>";
 				echo "<td align = 'center'>".$row["address"]."</td>";
 				
-				echo "<td><a href='update_service_provider_form.php?id=".$row['id']."'>Update</a></td>";
+				echo "<td><a href='update_service_provider_form.php?id=".$row['id']."&name=".$row['service_name']."'>Update</a></td>";
 				echo "<td><a href='delete_service_provider.php?id=".$row['id']."'>Delete</a></td>";
 				
 				echo "</tr>";
+				$count++;
 			}
 		}
      ?>
