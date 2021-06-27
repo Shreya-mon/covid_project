@@ -32,24 +32,50 @@ include("connection.php");?>
 
 <link rel="stylesheet" href="css/styles.css">
 
-</style>
+<style>
+    .nav-link {
+      color: white !important;
+    }
+
+    .active {
+      color: black;
+      background-color: #148496;
+    }
+  </style>
 
 <body>
   <div type="button" class="btn btn-floating rounded" id="btn-back-to-top">
     <img src="./images/scroller.png" class="scroller w-100 " />
   </div>
   <header>
-    <nav class="navbar navbar-light   navbar-expand-lg" style="background-color: #e3f2fd;">
+       <!-- Top Navbar -->
+    <nav class="navbar navbar-light navbar-expand-lg pb-0" style="background-color: #17a2b8;">
       <a class="navbar-brand" href="index.html"><img class="logo w-100" src="./images/project_logo.png" /></a>
+      <ul class="nav navbar-nav d-none d-lg-flex w-100">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="sign.html">Sign in/Sign up</a>
+        </li>
+        <div class="d-flex ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" aria-current="page" href="../admin.html">Admin Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="help.php">Help Desk</a>
+          </li>
+        </div>
+      </ul>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+    </nav>
 
+    <!-- Bottom Navbar -->
+    <nav class="navbar navbar-light navbar-expand-lg pt-0" style="background-color: #17a2b8">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.php">Home</a>
+            <a class="nav-link " aria-current="page" href="index.php">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link " aria-current="page" href="household.html">Household Precautions</a>
@@ -79,12 +105,19 @@ include("connection.php");?>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="ngo-charity.php">NGO and Charity</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="help.php">Help Desk</a>
+          <li class="nav-item d-sm-flex d-lg-none">
+            <a class="nav-link" aria-current="page" href="index.php">Help Desk</a>
           </li>
+          <li class="nav-item d-sm-flex d-lg-none">
+            <a class="nav-link" aria-current="page" href="sign.html">Sign in/Sign up</a>
+          </li>
+          <li class="nav-item d-sm-flex d-lg-none">
+            <a class="nav-link" aria-current="page" href="index.php">Admin Login</a>
           </li>
         </ul>
       </div>
+    </nav>
+    
     </nav>
 
     <div class="container mt-3 center">
@@ -122,7 +155,7 @@ include("connection.php");?>
         <div class="modal-body">
 
 
-          <form class="row" action="insert_ngo_registration_form_data.php" method="post" name="insert_ngo_registraion_frm" enctype="multipart/form-data">
+          <form class="row" action="insert_ngo_registration_form_data.php" method="post" name="insert_ngo_registraion_frm">
             <div class="col-12 mt-1 ">
               <label for="Name of NGO" class="form-label">Name of NGO</label>
               <input type="text" class="form-control" name="nameOfNGO" required>
@@ -506,11 +539,9 @@ include("connection.php");?>
     <div class="h3 mt-5 p-2">
           Search Here for your nearby NGO Services:</div>
         <!--Grid column-->
-        <form action="" method="POST">
         <div class="col-md-6 mb-4">
           <div class="input-group md-form form-sm form-2 pl-0">
-            
-          <select class="form-control" name="district_choice">
+          <select class="form-control">
               <option value="Alipurduar">Alipurduar</option>
                 <option value="Bankura">Bankura</option>
                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -540,13 +571,9 @@ include("connection.php");?>
                   aria-hidden="true"></i></span>
             </div>
           </div>
-          <br>
-          <input type="submit" name="submit" class="btn btn-primary" value="Submit"> 
         </div>
-      </form>
-  <?php 
-           
-        ?>
+
+
 
     <div class="container  mt-5">
       <div class="row" style="text-align: center; align-items: center; justify-content: center;">
@@ -558,45 +585,30 @@ include("connection.php");?>
             <tr>
               <th scope="col">Serial No.</th>
               <th scope="col">Name</th>
-              <th scope="col">Contact Number</th>
-              <th scope="col">Email</th>
-              <th scope="col">Description</th>
-              <th scope="col">District</th>
               <th scope="col">Address</th>
+              <th scope="col">Contact Details</th>
             </tr>
           </thead>
-          <?php
-    
-           if(isset($_REQUEST['submit']) && ($_REQUEST['submit']=='Submit')){
-                $district=$_POST['district_choice'];
-                
-            $sql="SELECT * FROM `service_providers` WHERE `district`= '$district' AND `service_id`=2";
-            $result=mysqli_query($link,$sql);
-          
-    if(mysqli_num_rows($result) > 0)
-    {
-      $count=1;
-      while($row = mysqli_fetch_assoc($result))
-      {
-        echo "<tr>";
-       echo "<td align = 'center'>".$count."</td>";
-        echo "<td align = 'center'>".$row["name"]."</td>";
-        echo "<td align = 'center'>".$row["contact"]."</td>";
-        echo "<td align = 'center'>".$row["email"]."</td>";
-        echo "<td align = 'center'>".$row["description"]."</td>";
-        echo "<td align = 'center'>".$row["district"]."</td>";
-        echo "<td align = 'center'>".$row["address"]."</td>";
-        
-       
-        echo "</tr>";
-        $count++;
-      }
-    }
-    else echo"NO RECORDS FOUND !! ";
-  }
-     ?>
-
-
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
         </table>
 
     <div class="row mt-4">

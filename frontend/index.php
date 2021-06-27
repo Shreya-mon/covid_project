@@ -34,57 +34,90 @@ include("connection.php");?>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
 </head>
-
-<body></body>
+<style>
+  .nav-link{
+    color: white !important;
+  }
+  .active{
+    color: black;
+    background-color: #148496;
+  }
+  
+</style>
+<body>
 <header>
-  <nav class="navbar navbar-light   navbar-expand-lg" style="background-color: #e3f2fd;">
-    <a class="navbar-brand" href="index.html"><img class="logo w-100" src="./images/project_logo.png" /></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <!-- Navbar -->
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-light navbar-expand-lg pb-0" style="background-color: #17a2b8;">
+      <a class="navbar-brand" href="index.html"><img class="logo w-100" src="./images/project_logo.png" /></a>
+      <ul class="nav navbar-nav d-none d-lg-flex w-100">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+          <a class="nav-link" aria-current="page" href="sign.html">Sign in/Sign up</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="household.html">Household Precautions</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="./Doctor/consult.php">Doctor Consultancy</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="./HospitalAndSafehome/src/hospital.php">Hospital and Safe Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="./BloodBank/blood_bank.php">Blood Bank</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="oxygen.php">Oxygen Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="vaccination.html">Covid Vaccination</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="meal and childcare.php">Healthcare volunteers Meal and Child
-            care Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="./ReviewOfCovidSurvivorsAndWarriors/src/reviews.php">Review of covid survivors and warriors</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="ngo-charity.php">NGO and Charity</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="help.php">Help Desk</a>
-        </li>
-        </li>
+        <div class="d-flex ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" aria-current="page" href="../admin.html">Admin Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="help.php">Help Desk</a>
+          </li>
+        </div>
       </ul>
-    </div>
-  </nav>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
 
+    <!-- Bottom Navbar -->
+    <nav class="navbar navbar-light navbar-expand-lg pt-0" style="background-color: #17a2b8">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="household.html">Household Precautions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="./Doctor/consult.php">Doctor Consultancy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="./HospitalAndSafehome/src/hospital.php">Hospital and Safe Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="./BloodBank/blood_bank.php">Blood Bank</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="oxygen.php">Oxygen Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="vaccination.html">Covid Vaccination</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="meal and childcare.php">Healthcare volunteers Meal and Child
+              care Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="./ReviewOfCovidSurvivorsAndWarriors/src/reviews.php">Review of covid survivors and warriors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="ngo-charity.php">NGO and Charity</a>
+          </li>
+          <li class="nav-item d-sm-flex d-lg-none">
+            <a class="nav-link" aria-current="page" href="index.php">Help Desk</a>
+          </li>
+          <li class="nav-item d-sm-flex d-lg-none">
+            <a class="nav-link" aria-current="page" href="sign.html">Sign in/Sign up</a>
+          </li>
+          <li class="nav-item d-sm-flex d-lg-none">
+            <a class="nav-link" aria-current="page" href="index.php">Admin Login</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>

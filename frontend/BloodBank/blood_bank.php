@@ -35,25 +35,52 @@ include("../connection.php");?>
   integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="styles1.css" />
+  <style>
+    .nav-link {
+      color: white !important;
+    }
+
+    .active {
+      color: black;
+      background-color: #148496;
+    }
+  </style>
 </head>
 
 <body>
 
-  <header class="">
-    <nav class="navbar navbar-light   navbar-expand-lg" style="background-color: #e3f2fd;">
+  <header>
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-light navbar-expand-lg pb-0" style="background-color: #17a2b8;">
       <a class="navbar-brand" href="index.html"><img class="logo w-100" src="../images/project_logo.png" /></a>
+      <ul class="nav navbar-nav d-none d-lg-flex w-100">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="../sign.html">Sign in/Sign up</a>
+        </li>
+        <div class="d-flex ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" aria-current="page" href="../../admin.html">Admin Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="../help.php">Help Desk</a>
+          </li>
+        </div>
+      </ul>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+    </nav>
 
+    <!-- Bottom Navbar -->
+    <nav class="navbar navbar-light navbar-expand-lg pt-0" style="background-color: #17a2b8">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <a class="nav-link " aria-current="page" href="../index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="../household.html">Household Precautions</a>
+            <a class="nav-link " aria-current="page" href="../household.html">Household Precautions</a>
           </li>
           <li class="nav-item">
             <a class="nav-link " aria-current="page" href="../Doctor/consult.php">Doctor Consultancy</a>
@@ -71,9 +98,8 @@ include("../connection.php");?>
             <a class="nav-link " aria-current="page" href="../vaccination.html">Covid Vaccination</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="../meal and childcare.php">Healthcare volunteers
-              Meal and Child care
-              Services</a>
+            <a class="nav-link " aria-current="page" href="../meal and childcare.php">Healthcare volunteers Meal and Child
+              care Services</a>
           </li>
           <li class="nav-item">
             <a class="nav-link " aria-current="page" href="../ReviewOfCovidSurvivorsAndWarriors/src/reviews.php">Review of covid survivors and warriors</a>
@@ -81,9 +107,14 @@ include("../connection.php");?>
           <li class="nav-item">
             <a class="nav-link " aria-current="page" href="../ngo-charity.php">NGO and Charity</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="../help.php">Help Desk</a>
+          <li class="nav-item d-sm-flex d-lg-none">
+            <a class="nav-link" aria-current="page" href="../index.php">Help Desk</a>
           </li>
+          <li class="nav-item d-sm-flex d-lg-none">
+            <a class="nav-link" aria-current="page" href="../sign.html">Sign in/Sign up</a>
+          </li>
+          <li class="nav-item d-sm-flex d-lg-none">
+            <a class="nav-link" aria-current="page" href="../../admin.html">Admin Login</a>
           </li>
         </ul>
       </div>
@@ -477,7 +508,6 @@ include("../connection.php");?>
         <center>
           <h3 style="font-weight:bold;font-family:verdana;color:red;text-shadow:2px 2px 3px black;" id="bank">
             Blood Banks</h3>
-            <form action="#bank" method="POST">
             <div class="col-12 col-md-7 row">
         <div class="h3  ">
           Search Here for your nearby blood bank:</div>
@@ -485,9 +515,8 @@ include("../connection.php");?>
         <div class="col-12 mb-4">
           <div class="input-group md-form form-sm form-2 pl-0">
             <!-- <input class="form-control my-0 py-1 amber-border" type="text" placeholder="Search" aria-label="Search"> -->
-              <select class="form-control" name="district_choice">
-                <option value="">Select District</option>
-                <option value="Alipurduar">Alipurduar</option>
+              <select class="form-control">
+              <option value="Alipurduar">Alipurduar</option>
                 <option value="Bankura">Bankura</option>
                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
                 <option value="Purba Bardhaman">Purba Bardhaman</option>
@@ -518,8 +547,6 @@ include("../connection.php");?>
           </div>
         </div>
       </div>
-      <input type="submit" class="btn btn-primary" value="Search" name="submit">
-        </form>
       <div class="container  mt-5">
       <div class="row" style="text-align: center; align-items: center; justify-content: center;">
         <h3>Blood Bank List</h3>
@@ -530,41 +557,29 @@ include("../connection.php");?>
             <tr>
               <th scope="col">Serial No.</th>
               <th scope="col">Name</th>
-              <th scope="col">Contact Number</th>
-              <th scope="col">Email</th>
-              <th scope="col">District</th>
               <th scope="col">Address</th>
-              <th scope="col">Description</th>
+              <th scope="col">Contact Details</th>
             </tr>
           </thead>
           <tbody>
-                 <?php
-                    if(isset($_REQUEST['submit']) && ($_REQUEST['submit']=='Search'))
-                    {
-                      $dis = $_REQUEST['district_choice'];
-                      $sql = "SELECT * FROM `service_providers` WHERE `service_id`= 9 and `district`='$dis'";}
-                    else{ $sql = "SELECT * FROM `service_providers` WHERE `service_id`= 9";}  
-                      $result = mysqli_query($link,$sql);
-                      if(mysqli_num_rows($result) > 0)
-                      {
-                          $count=1;
-                          while($row = mysqli_fetch_assoc($result))
-                          {
-                            echo "<tr>";
-                            echo "<td align = 'center'>".$count."</td>";
-                            echo "<td align = 'center'>".$row["name"]."</td>";
-                            echo "<td align = 'center'>".$row["contact"]."</td>";
-                            echo "<td align = 'center'>".$row["email"]."</td>";
-                            echo "<td align = 'center'>".$row["district"]."</td>";
-                            echo "<td align = 'center'>".$row["address"]."</td>";
-                            echo "<td align = 'center'>".$row["description"]."</td>";
-                            echo "</tr>";
-                            $count++;
-                          }
-                      }
-                      else{echo '<tr><td colspan="7" style="color:red; text-align:center;">No record found</td></tr>';}
-                    
-                  ?>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
           </tbody>
         </table>
 
@@ -904,7 +919,7 @@ include("../connection.php");?>
           person will make antibodies against blood with RhD positive red cells.</p>
         <div>
           <center class="w-100">
-            <video  style="max-height: 300px " autoplay controls muted>
+            <video  style="max-height: 300px " autoplay controls >
               <source src="video.mp4" type="video/mp4" >
               Your browser doesn't support the video tag
             </video>

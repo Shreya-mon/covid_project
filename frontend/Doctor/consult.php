@@ -32,31 +32,58 @@ include("../connection.php");?>
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="styles1.css" />
+  <style>
+    .nav-link {
+      color: white !important;
+    }
+
+    .active {
+      color: black;
+      background-color: #148496;
+    }
+  </style>
 </head>
 
 <body>
 
   <header class="">
-    <nav class="navbar navbar-light   navbar-expand-lg" style="background-color: #e3f2fd;">
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-light navbar-expand-lg pb-0" style="background-color: #17a2b8;">
       <a class="navbar-brand" href="index.html"><img class="logo w-100" src="../images/project_logo.png" /></a>
+      <ul class="nav navbar-nav d-none d-lg-flex w-100">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="../sign.html">Sign in/Sign up</a>
+        </li>
+        <div class="d-flex ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" aria-current="page" href="../../admin.html">Admin Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="../help.php">Help Desk</a>
+          </li>
+        </div>
+      </ul>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+    </nav>
 
+    <!-- Bottom Navbar -->
+    <nav class="navbar navbar-light navbar-expand-lg pt-0" style="background-color: #17a2b8">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <a class="nav-link " aria-current="page" href="../index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="../household.html">Household Precautions</a>
+            <a class="nav-link " aria-current="page" href="../household.html">Household Precautions</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./consult.php">Doctor Consultancy</a>
+            <a class="nav-link active" aria-current="page" href="consult.php">Doctor Consultancy</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="../HospitalAndSafehome/src/Hospital.php">Hospital and Safe Home</a>
+            <a class="nav-link " aria-current="page" href="../HospitalAndSafehome/src/hospital.php">Hospital and Safe Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link " aria-current="page" href="../BloodBank/blood_bank.php">Blood Bank</a>
@@ -68,19 +95,23 @@ include("../connection.php");?>
             <a class="nav-link " aria-current="page" href="../vaccination.html">Covid Vaccination</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="../meal and childcare.php">Healthcare volunteers Meal and
-              Child care Services</a>
+            <a class="nav-link " aria-current="page" href="../meal and childcare.php">Healthcare volunteers Meal and Child
+              care Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="../ReviewOfCovidSurvivorsAndWarriors/src/reviews.php">Review
-              of covid survivors and warriors</a>
+            <a class="nav-link " aria-current="page" href="../ReviewOfCovidSurvivorsAndWarriors/src/reviews.php">Review of covid survivors and warriors</a>
           </li>
           <li class="nav-item">
             <a class="nav-link " aria-current="page" href="../ngo-charity.php">NGO and Charity</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="../help.php">Help Desk</a>
+          <li class="nav-item d-sm-flex d-lg-none">
+            <a class="nav-link" aria-current="page" href="../index.php">Help Desk</a>
           </li>
+          <li class="nav-item d-sm-flex d-lg-none">
+            <a class="nav-link" aria-current="page" href="../sign.html">Sign in/Sign up</a>
+          </li>
+          <li class="nav-item d-sm-flex d-lg-none">
+            <a class="nav-link" aria-current="page" href="../../admin.html">Admin Login</a>
           </li>
         </ul>
       </div>
@@ -216,7 +247,7 @@ include("../connection.php");?>
                 <img src="doc8.jpg" alt="Avatar" style="width:100%">
                 <div class="container">
                   <h4><b>COVID Consultants</b></h4>
-                  <p><a href="covid.php">Nearby COVID consultants</a></p>
+                  <p><a href="covid.html">Nearby COVID consultants</a></p>
                 </div>
               </div>
             </div>
@@ -225,7 +256,7 @@ include("../connection.php");?>
                 <img src="doc9.jpg" alt="Avatar" style="width:100%">
                 <div class="container">
                   <h4><b>Counseling Consultants</b></h4>
-                  <p><a href="counseling.php">Nearby Counseling consultants</a></p>
+                  <p><a href="counseling.html">Nearby Counseling consultants</a></p>
                 </div>
               </div>
             </div>

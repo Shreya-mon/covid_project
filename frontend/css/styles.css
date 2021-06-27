@@ -32,6 +32,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 .nav-item:hover {
   background-color: rgba(190, 189, 189, 0.404);

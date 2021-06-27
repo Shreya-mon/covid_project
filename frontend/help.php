@@ -44,6 +44,14 @@ include("connection.php");?>
     #rating{
       margin-left:3vmin;
     }
+  .nav-link{
+    color: white !important;
+  }
+  .active{
+    color: black;
+    background-color: #148496;
+  }
+  
   </style>
 </head>
 
@@ -52,13 +60,30 @@ include("connection.php");?>
     <img src="./images/scroller.png" class="scroller w-100 " />
   </div>
   <header>
-    <nav class="navbar navbar-light   navbar-expand-lg" style="background-color: #e3f2fd;">
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-light navbar-expand-lg pb-0" style="background-color: #17a2b8;">
       <a class="navbar-brand" href="index.html"><img class="logo w-100" src="./images/project_logo.png" /></a>
+      <ul class="nav navbar-nav d-none d-lg-flex w-100">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="sign.html">Sign in/Sign up</a>
+        </li>
+        <div class="d-flex ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" aria-current="page" href="../admin.html">Admin Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="help.php">Help Desk</a>
+          </li>
+        </div>
+      </ul>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+    </nav>
 
+    <!-- Bottom Navbar -->
+    <nav class="navbar navbar-light navbar-expand-lg pt-0" style="background-color: #17a2b8">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
@@ -83,8 +108,7 @@ include("connection.php");?>
             <a class="nav-link " aria-current="page" href="vaccination.html">Covid Vaccination</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="meal and childcare.php">Healthcare volunteers
-              Meal and Child
+            <a class="nav-link " aria-current="page" href="meal and childcare.php">Healthcare volunteers Meal and Child
               care Services</a>
           </li>
           <li class="nav-item">
@@ -93,9 +117,14 @@ include("connection.php");?>
           <li class="nav-item">
             <a class="nav-link " aria-current="page" href="ngo-charity.php">NGO and Charity</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="help.php">Help Desk</a>
+          <li class="nav-item d-sm-flex d-lg-none">
+            <a class="nav-link active" aria-current="page" href="index.php">Help Desk</a>
           </li>
+          <li class="nav-item d-sm-flex d-lg-none">
+            <a class="nav-link" aria-current="page" href="sign.html">Sign in/Sign up</a>
+          </li>
+          <li class="nav-item d-sm-flex d-lg-none">
+            <a class="nav-link" aria-current="page" href="index.php">Admin Login</a>
           </li>
         </ul>
       </div>
