@@ -359,15 +359,12 @@ include("connection.php");?>
             </div>
           </div>
         </div>
-
+        <input type="submit" class="btn btn-primary" value="Submit">
         </form>
 
 
         <?php
-
-        $dis=$_POST['district_choice'];
-        $sql = "SELECT * FROM `service_providers` WHERE `service_id`=6 and `district`='$dis'";
-                    $result = mysqli_query($link,$sql);
+        
         ?>
 
 
@@ -390,7 +387,12 @@ include("connection.php");?>
                 </thead>
                 <tbody>
                   <?php
-                    
+                     if(isset($_REQUEST['submit']) && ($_REQUEST['submit']=='Submit'))
+         {
+
+        $dis=$_POST['district_choice'];
+        $sql = "SELECT * FROM `service_providers` WHERE `service_id`=6 and `district`='$dis'";
+                    $result = mysqli_query($link,$sql);
                     if(mysqli_num_rows($result) > 0)
                     {
                       $count=1;
@@ -408,6 +410,7 @@ include("connection.php");?>
                          $count++;
                        }
                     }
+                  }
                   ?>
                 </tbody>
               </table>
@@ -439,9 +442,10 @@ include("connection.php");?>
             <div class="h3 mt-5 p-2">
           Search Here for your nearby Meal Services:</div>
         <!--Grid column-->
+        <form action="" method="POST">
         <div class="col-md-6 mb-4">
           <div class="input-group md-form form-sm form-2 pl-0">
-          <select class="form-control">
+          <select class="form-control" name="district_choice">
               <option value="Alipurduar">Alipurduar</option>
                 <option value="Bankura">Bankura</option>
                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -472,7 +476,8 @@ include("connection.php");?>
             </div>
           </div>
         </div>
-
+        <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
 
 
 
@@ -489,6 +494,7 @@ include("connection.php");?>
                     <th scope="col">Contact Number</th>
                     <th scope="col">Email</th>
                     <th scope="col">Description</th>
+                    <th scope="col">District</th>
                      <th scope="col">Address</th>
                     </tr>
                   </thead>
@@ -496,8 +502,13 @@ include("connection.php");?>
 
 
                     <?php
-    $sql = "SELECT * FROM `service_providers` WHERE `service_id`=7";
-    $result = mysqli_query($link,$sql);
+                     if(isset($_REQUEST['submit']) && ($_REQUEST['submit']=='Submit')){
+                $district=$_POST['district_choice'];
+                
+            $sql = "SELECT * FROM `service_providers` WHERE `service_id`=7 AND `district`='$district'";}
+            else
+              $sql = "SELECT * FROM `service_providers` WHERE `service_id`=7";
+            $result = mysqli_query($link,$sql);
     if(mysqli_num_rows($result) > 0)
     {
       $count=1;
@@ -509,6 +520,7 @@ include("connection.php");?>
         echo "<td align = 'center'>".$row["contact"]."</td>";
         echo "<td align = 'center'>".$row["email"]."</td>";
         echo "<td align = 'center'>".$row["description"]."</td>";
+        echo "<td align = 'center'>".$row["district"]."</td>";
         echo "<td align = 'center'>".$row["address"]."</td>";
         
        
@@ -516,6 +528,7 @@ include("connection.php");?>
         $count++;
       }
     }
+  
      ?>
                   </tbody>
                 </table>
