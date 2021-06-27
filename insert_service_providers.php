@@ -36,14 +36,14 @@ include("connection.php");
 
 
 <?php
-	$sql = "INSERT INTO `service_providers`(`service_id`,`name`,`contact`,`email`,`description`,`address`) 
+	$sql = "INSERT INTO `service_providers`(`service_id`,`name`,`contact`,`email`,`description`,`district`,`address`) 
 						  VALUES('".$_REQUEST['service_id']."',
 						         '".$_REQUEST['name']."',
 								 '".$_REQUEST['contact']."',
 								 
 								 '".$_REQUEST['email']."',
 								 '".$_REQUEST['description']."',
-								 
+								 '".$_REQUEST['district']."',
 								 '".$_REQUEST['address']."')";
 	mysqli_query($link, $sql);
 	?>

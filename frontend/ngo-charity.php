@@ -506,9 +506,11 @@ include("connection.php");?>
     <div class="h3 mt-5 p-2">
           Search Here for your nearby NGO Services:</div>
         <!--Grid column-->
+        <form action="" method="POST">
         <div class="col-md-6 mb-4">
           <div class="input-group md-form form-sm form-2 pl-0">
-          <select class="form-control">
+            
+          <select class="form-control" name="district_choice">
               <option value="Alipurduar">Alipurduar</option>
                 <option value="Bankura">Bankura</option>
                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -538,9 +540,13 @@ include("connection.php");?>
                   aria-hidden="true"></i></span>
             </div>
           </div>
+          <br>
+          <input type="submit" name="submit" class="btn btn-primary" value="Submit"> 
         </div>
-
-
+      </form>
+  <?php 
+           
+        ?>
 
     <div class="container  mt-5">
       <div class="row" style="text-align: center; align-items: center; justify-content: center;">
@@ -552,30 +558,45 @@ include("connection.php");?>
             <tr>
               <th scope="col">Serial No.</th>
               <th scope="col">Name</th>
+              <th scope="col">Contact Number</th>
+              <th scope="col">Email</th>
+              <th scope="col">Description</th>
+              <th scope="col">District</th>
               <th scope="col">Address</th>
-              <th scope="col">Contact Details</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
+          <?php
+    
+           if(isset($_REQUEST['submit']) && ($_REQUEST['submit']=='Submit')){
+                $district=$_POST['district_choice'];
+                
+            $sql="SELECT * FROM `service_providers` WHERE `district`= '$district' AND `service_id`=2";
+            $result=mysqli_query($link,$sql);
+          
+    if(mysqli_num_rows($result) > 0)
+    {
+      $count=1;
+      while($row = mysqli_fetch_assoc($result))
+      {
+        echo "<tr>";
+       echo "<td align = 'center'>".$count."</td>";
+        echo "<td align = 'center'>".$row["name"]."</td>";
+        echo "<td align = 'center'>".$row["contact"]."</td>";
+        echo "<td align = 'center'>".$row["email"]."</td>";
+        echo "<td align = 'center'>".$row["description"]."</td>";
+        echo "<td align = 'center'>".$row["district"]."</td>";
+        echo "<td align = 'center'>".$row["address"]."</td>";
+        
+       
+        echo "</tr>";
+        $count++;
+      }
+    }
+    else echo"NO RECORDS FOUND !! ";
+  }
+     ?>
+
+
         </table>
 
     <div class="row mt-4">

@@ -322,13 +322,13 @@ include("connection.php");?>
            </button>
           </div>
  
-
+          <form action="#table" method="POST">
         <div class="h3 mt-5 p-2">
           Search Here for your nearby healthcare volunteers:</div>
         <!--Grid column-->
         <div class="col-md-6 mb-4">
           <div class="input-group md-form form-sm form-2 pl-0">
-          <select class="form-control">
+          <select class="form-control" name="district_choice">
               <option value="Alipurduar">Alipurduar</option>
                 <option value="Bankura">Bankura</option>
                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -360,10 +360,15 @@ include("connection.php");?>
           </div>
         </div>
 
+        </form>
 
 
+        <?php
 
-
+        $dis=$_POST['district_choice'];
+        $sql = "SELECT * FROM `service_providers` WHERE `service_id`=6 and `district`='$dis'";
+                    $result = mysqli_query($link,$sql);
+        ?>
 
 
           <div class="container  mt-5">
@@ -379,13 +384,13 @@ include("connection.php");?>
                     <th scope="col">Contact Number</th>
                     <th scope="col">Email</th>
                     <th scope="col">Description</th>
+                     <th scope="col">District</th>
                      <th scope="col">Address</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php
-                    $sql = "SELECT * FROM `service_providers` WHERE `service_id`=6";
-                    $result = mysqli_query($link,$sql);
+                    
                     if(mysqli_num_rows($result) > 0)
                     {
                       $count=1;
@@ -397,6 +402,7 @@ include("connection.php");?>
                          echo "<td align = 'center'>".$row["contact"]."</td>";
                          echo "<td align = 'center'>".$row["email"]."</td>";
                          echo "<td align = 'center'>".$row["description"]."</td>";
+                          echo "<td align = 'center'>".$row["district"]."</td>";
                          echo "<td align = 'center'>".$row["address"]."</td>";
                          echo "</tr>";
                          $count++;

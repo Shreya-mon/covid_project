@@ -59,6 +59,7 @@
 		Contact: <input type="text" name="contact" value="<?=$row['contact']?>"><br><br>
 		Email: <input type="email" name="email" value="<?=$row['email']?>"><br><br>
 		Description: <input type="text" name="description" value="<?=$row['description']?>"><br><br>
+		District: <input type="text" name="district" value="<?=$row['district']?>"><br><br>
 		Address: <input type="text" name="address" value="<?=$row['address']?>"><br><br>
 		
 		<br>

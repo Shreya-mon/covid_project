@@ -38,7 +38,7 @@ include("connection.php");?>
 		<td align="center"><strong>Contact Number</strong></td>
 		<td align="center"><strong>Email</strong></td>
 		<td align="center"><strong>Description</strong></td>
-		
+		<td align="center"><strong>District</strong></td>
 		<td align="center"><strong>Address</strong></td>
 		
 	</tr>
@@ -50,6 +50,7 @@ include("connection.php");?>
 		 `service_providers`.`contact` AS `contact`,
 		 `service_providers`.`email` AS `email`,
 		 `service_providers`.`description` AS `description`,
+		 `service_providers`.`district` AS `district`,
 		 `service_providers`.`address` AS `address`,
 		 `service`.`name` AS `service_name`
 		FROM `service_providers`,`service` where `service_providers`.`service_id`=`service`.`service_id`";
@@ -65,6 +66,7 @@ include("connection.php");?>
 				echo "<td align = 'center'>".$row["contact"]."</td>";
 				echo "<td align = 'center'>".$row["email"]."</td>";
 				echo "<td align = 'center'>".$row["description"]."</td>";
+				echo "<td align = 'center'>".$row["district"]."</td>";
 				echo "<td align = 'center'>".$row["address"]."</td>";
 				
 				echo "<td><a href='update_service_provider_form.php?id=".$row['id']."'>Update</a></td>";
