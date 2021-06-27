@@ -1,6 +1,7 @@
 html {
   scroll-behavior: smooth;
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -28,21 +29,25 @@ body {
 .navbar-brand {
   max-width: 40px;
 }
+
 .nav-item {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
+
 .nav-item:hover {
   background-color: rgba(190, 189, 189, 0.404);
   border-radius: 20px;
 }
+
 .center-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 #id {
   background-color: rgb(84, 238, 238);
 }
@@ -53,6 +58,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .carousel-searchbar {
   position: absolute;
   margin-top: 15%;
@@ -61,11 +67,13 @@ body {
   width: 60%;
   max-width: 700px;
 }
+
 .search-input {
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 4px 7px;
 }
+
 .accordion-header {
   margin: 0;
 }
@@ -73,6 +81,7 @@ body {
 .margin-top {
   margin-top: 15vh;
 }
+
 .accordion-collapse {
   padding: 2% 5%;
 }
@@ -84,14 +93,17 @@ body {
     width: 17vw;
   }
 }
+
 .setphoto {
   width: 400px;
   height: 500px;
 }
+
 .setphoto1 {
   width: 500px;
   height: 300px;
 }
+
 #btn-back-to-top {
   position: fixed;
   bottom: 20px;
@@ -100,17 +112,19 @@ body {
   z-index: 999;
   width: 120px;
 }
-.scroller{
+
+.scroller {
   border-radius: 50%;
-   border: 1px solid black;
-   padding: 5px;
-    background-color: #e3f2fd;
+  border: 1px solid black;
+  padding: 5px;
+  background-color: #e3f2fd;
 }
 
-.quote{
+.quote {
   font-family: 'Bree Serif', serif;
 }
 
-.mytable{
+.mytable {
   overflow-x: scroll;
+  width: 100%;
 }

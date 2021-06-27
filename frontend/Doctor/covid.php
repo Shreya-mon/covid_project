@@ -1,3 +1,5 @@
+<?php  // Display doctor data 
+include("../connection.php");?>
 <!DOCTYPE html>
 <html>
 
@@ -29,7 +31,7 @@
 
 
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="styles2.css">
+  <link rel="stylesheet" href="styles2.css?V=<?php echo time(); ?>">
 </head>
 
 <body>
@@ -63,10 +65,10 @@
       <div class="col-12 col-md-6 s6">
         <div id="grad1">
           <center>
-            <form style="margin-top:55px;">
+            <form style="margin-top:55px;" action="#table" method="POST">
               <div style="padding-top:120px;">
                 <label>Select district:</label>
-                <select>
+                <select name="district_choice">
                   <option>Select</option>
                   <option>ALIPURDUAR</option>
                   <option>BANKURA</option>
@@ -92,7 +94,7 @@
                   <option>UTTAR 24 PARGANA</option>
                   <option>UTTAR DINAJPUR</option>
                 </select><br>
-                <input type="submit" name="submit" class="btn">
+                <input type="submit" name="submit" class="btn" value="Submit">
               </div>
             </form>
           </center>
@@ -109,6 +111,51 @@
     </div>
   </div>
   <br><br>
+            <?php
+              if(isset($_REQUEST['submit']) && ($_REQUEST['submit']=='Submit')){
+                    $district = $_REQUEST['district_choice'];
+                    $sql="SELECT * FROM `doctor_db` WHERE `cat_id`=1 AND `district`= '$district'";
+                    $result = mysqli_query($link,$sql);
+            ?>
+                <div class="container  mt-5">
+                    <div class="row mt-3 mytable">
+                            <table class="table" id="table">
+                                <thead class="thead-light" style="text-align:center;">
+                                    <tr>
+                                        <th scope="col">Serial No.</th>
+                                        <th scope="col">Doctor's Name</th>
+                                        <th scope="col">Contact Number</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Address</th>
+                                        <th scope="col">District</th>
+                                        <th scope="col">Additional information</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                           <?php   if(mysqli_num_rows($result) > 0)
+                                    {
+                                        $count=1;
+                                        while($row = mysqli_fetch_assoc($result))
+                                        {
+                                            echo "<tr>";
+                                            echo "<td align = 'center'>".$count."</td>";
+                                            echo "<td align = 'center'>".$row["dname"]."</td>";
+                                            echo "<td align = 'center'>".$row["phno"]."</td>";
+                                            echo "<td align = 'center'>".$row["email"]."</td>";
+                                            echo "<td align = 'center'>".$row["address"]."</td>";
+                                            echo "<td align = 'center'>".$row["district"]."</td>";
+                                            echo "<td align = 'center'>".$row["doctors_additional_info"]."</td>";
+                                            echo "</tr>";
+                                            $count++;
+                                        }
+                                    }
+                                    else {  echo '<tr><td colspan="7" style="color:red; text-align:center;">No record found</td></tr>'; }
+                                }
+                            ?>
+                                </tbody>
+                            </table>
+                    </div>
+                </div>
 </body>
 
 </html>

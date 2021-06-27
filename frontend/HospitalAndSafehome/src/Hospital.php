@@ -89,7 +89,7 @@
             <a class="nav-link " aria-current="page" href="../../household.html">Household Precautions</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="../Doctor/consult.php">Doctor Consultancy</a>
+            <a class="nav-link " aria-current="page" href="../../Doctor/consult.php">Doctor Consultancy</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="hospital.php">Hospital and Safe Home</a>

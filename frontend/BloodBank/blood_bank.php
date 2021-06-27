@@ -34,7 +34,7 @@ include("../connection.php");?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
   integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="styles1.css" />
+  <link rel="stylesheet" href="styles1.css?V=<?php echo time(); ?>" />
   <style>
     .nav-link {
       color: white !important;
@@ -508,6 +508,7 @@ include("../connection.php");?>
         <center>
           <h3 style="font-weight:bold;font-family:verdana;color:red;text-shadow:2px 2px 3px black;" id="bank">
             Blood Banks</h3>
+            <form action="#bank" method="POST">
             <div class="col-12 col-md-7 row">
         <div class="h3  ">
           Search Here for your nearby blood bank:</div>
@@ -515,8 +516,9 @@ include("../connection.php");?>
         <div class="col-12 mb-4">
           <div class="input-group md-form form-sm form-2 pl-0">
             <!-- <input class="form-control my-0 py-1 amber-border" type="text" placeholder="Search" aria-label="Search"> -->
-              <select class="form-control">
-              <option value="Alipurduar">Alipurduar</option>
+              <select class="form-control" name="district_choice">
+                <option value="">Select District</option>
+                <option value="Alipurduar">Alipurduar</option>
                 <option value="Bankura">Bankura</option>
                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
                 <option value="Purba Bardhaman">Purba Bardhaman</option>
@@ -547,39 +549,52 @@ include("../connection.php");?>
           </div>
         </div>
       </div>
+      <input type="submit" name="submit" value="Search" class="btn btn-primary">
+      </form>
       <div class="container  mt-5">
       <div class="row" style="text-align: center; align-items: center; justify-content: center;">
         <h3>Blood Bank List</h3>
       </div>
-      <div class="row mt-3">
+      <div class="row mt-3 mytable">
         <table class="table">
           <thead class="thead-light">
             <tr>
               <th scope="col">Serial No.</th>
               <th scope="col">Name</th>
+              <th scope="col">Contact Number</th>
+              <th scope="col">Email</th>
               <th scope="col">Address</th>
-              <th scope="col">Contact Details</th>
+              <th scope="col">District</th>
+              <th scope="col">Description</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
+          <?php
+                  if(isset($_REQUEST['submit']) && ($_REQUEST['submit']=='Search')){
+                    $district = $_REQUEST['district_choice'];
+                    $sql="SELECT * FROM `service_providers` WHERE `service_id`=9 AND `district`= '$district'";}
+                else{
+                    $sql = "SELECT * FROM `service_providers` WHERE `service_id`=9";}
+                    $result = mysqli_query($link,$sql);
+                    if(mysqli_num_rows($result) > 0)
+                    {
+                      $count=1;
+                      while($row = mysqli_fetch_assoc($result))
+                      {
+                         echo "<tr>";
+                         echo "<td align = 'center'>".$count."</td>";
+                         echo "<td align = 'center'>".$row["name"]."</td>";
+                         echo "<td align = 'center'>".$row["contact"]."</td>";
+                         echo "<td align = 'center'>".$row["email"]."</td>";
+                         echo "<td align = 'center'>".$row["address"]."</td>";
+                         echo "<td align = 'center'>".$row["district"]."</td>";
+                         echo "<td align = 'center'>".$row["description"]."</td>";
+                         echo "</tr>";
+                         $count++;
+                       }
+                    }
+                    else {  echo '<tr><td colspan="7" style="color:red; text-align:center;">No record found</td></tr>'; }
+                  ?>
           </tbody>
         </table>
 
@@ -919,7 +934,7 @@ include("../connection.php");?>
           person will make antibodies against blood with RhD positive red cells.</p>
         <div>
           <center class="w-100">
-            <video  style="max-height: 300px " autoplay controls >
+            <video  style="max-height: 300px " autoplay controls muted>
               <source src="video.mp4" type="video/mp4" >
               Your browser doesn't support the video tag
             </video>
