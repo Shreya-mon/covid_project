@@ -216,7 +216,7 @@ include("../connection.php");?>
                 <img src="doc8.jpg" alt="Avatar" style="width:100%">
                 <div class="container">
                   <h4><b>COVID Consultants</b></h4>
-                  <p><a href="covid.html">Nearby COVID consultants</a></p>
+                  <p><a href="covid.php">Nearby COVID consultants</a></p>
                 </div>
               </div>
             </div>
@@ -225,7 +225,7 @@ include("../connection.php");?>
                 <img src="doc9.jpg" alt="Avatar" style="width:100%">
                 <div class="container">
                   <h4><b>Counseling Consultants</b></h4>
-                  <p><a href="counseling.html">Nearby Counseling consultants</a></p>
+                  <p><a href="counseling.php">Nearby Counseling consultants</a></p>
                 </div>
               </div>
             </div>

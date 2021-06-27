@@ -904,7 +904,7 @@ include("../connection.php");?>
           person will make antibodies against blood with RhD positive red cells.</p>
         <div>
           <center class="w-100">
-            <video  style="max-height: 300px " autoplay controls >
+            <video  style="max-height: 300px " autoplay controls muted>
               <source src="video.mp4" type="video/mp4" >
               Your browser doesn't support the video tag
             </video>
