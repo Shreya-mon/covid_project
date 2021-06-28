@@ -196,7 +196,7 @@ include("connection.php");?>
     </div>
   </div>
   <!--modal close-->
-
+  <form>
   <div class="container  pt-2">
     <div class="row mt-5">
       <div class="col-12 col-md-7 row">
@@ -205,7 +205,7 @@ include("connection.php");?>
         <!--Grid column-->
         <div class="col-md-6 mb-4">
           <div class="input-group md-form form-sm form-2 pl-0">
-          <select class="form-control">
+          <select class="form-control" name="district_choice">
               <option value="Alipurduar">Alipurduar</option>
                 <option value="Bankura">Bankura</option>
                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -236,6 +236,9 @@ include("connection.php");?>
             </div>
           </div>
         </div>
+        <input type="submit" class="btn btn-primary" value="Search" name="submit">
+
+        </form>
         <div class="h3 col-12 col-md-9 mt-1">
           <div class="h3 mt-5 mb-5 ml-3">Are you a Oxygen Supplier? Or do you know any verified oxygen supplier or
             oxygen parlour in your area? Then Register the details now!!</div>
@@ -261,32 +264,40 @@ include("connection.php");?>
                     <th scope="col">Name</th>
                     <th scope="col">Contact Number</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">District</th>
                     <th scope="col">Description</th>
-                     <th scope="col">Address</th>
             </tr>
           </thead>
           <tbody>
            <?php
-    $sql = "SELECT * FROM `service_providers` WHERE `service_id`=1";
-    $result = mysqli_query($link,$sql);
-    if(mysqli_num_rows($result) > 0)
-    {
-      $count=1;
-      while($row = mysqli_fetch_assoc($result))
-      {
-        echo "<tr>";
-       echo "<td align = 'center'>".$count."</td>";
-        echo "<td align = 'center'>".$row["name"]."</td>";
-        echo "<td align = 'center'>".$row["contact"]."</td>";
-        echo "<td align = 'center'>".$row["email"]."</td>";
-        echo "<td align = 'center'>".$row["description"]."</td>";
-        echo "<td align = 'center'>".$row["address"]."</td>";
-        
-       
-        echo "</tr>";
-        $count++;
-      }
-    }
+
+            if(isset($_REQUEST['submit']) && ($_REQUEST['submit']=='Search')){
+                        $district = $_REQUEST['district_choice'];
+                        $sql="SELECT * FROM `service_providers` WHERE `service_id`=1 AND `district`= '$district'";}
+                      else{
+                        $sql = "SELECT * FROM `service_providers` WHERE `service_id`=1";}
+                        $result = mysqli_query($link,$sql);
+                        if(mysqli_num_rows($result) > 0)
+                        {
+                          $count=1;
+                          while($row = mysqli_fetch_assoc($result))
+                          {
+                            echo "<tr>";
+                            echo "<td align = 'center'>".$count."</td>";
+                            echo "<td align = 'center'>".$row["name"]."</td>";
+                            echo "<td align = 'center'>".$row["contact"]."</td>";
+                            echo "<td align = 'center'>".$row["email"]."</td>";
+                            echo "<td align = 'center'>".$row["address"]."</td>";
+                            echo "<td align = 'center'>".$row["district"]."</td>";
+                            echo "<td align = 'center'>".$row["description"]."</td>";
+                            echo "</tr>";
+                            $count++;
+                          }
+                        }
+                        else {  echo '<tr><td colspan="7" style="color:red; text-align:center;">No record found</td></tr>'; }
+                  ?>
+   
      ?>
           </tbody>
         </table>
