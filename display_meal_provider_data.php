@@ -1,4 +1,4 @@
-<?php  // Display hospital data
+<?php  // Display meal provider data
 include("connection.php");?>
 <!DOCTYPE html>
 <html>

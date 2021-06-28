@@ -1,4 +1,4 @@
-<?php  // Display doctor category data 
+<?php  // Display admission cell data 
 include("connection.php");?>
 <!DOCTYPE html>
 <html>

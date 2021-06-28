@@ -1,4 +1,4 @@
-<?php  // Display survivor's data
+<?php  // Display warrior's data
 include("connection.php");?>
 <!DOCTYPE html>
 <html>

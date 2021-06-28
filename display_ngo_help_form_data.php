@@ -1,4 +1,4 @@
-<?php  // Display hospital data
+<?php  // Display ngo help form data
 include("connection.php");?>
 <!DOCTYPE html>
 <html>
