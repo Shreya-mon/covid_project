@@ -42,7 +42,7 @@
                             <h3>Sign In</h3>
                         </div>
                         <div class="card-body">
-                            <form action="login-acc.php" method="POST">
+                            <form action="login.php" method="POST">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-envelope"></i></span>
@@ -56,7 +56,7 @@
                                     <input type="password" name="password" class="form-control" placeholder="Password">
                                 </div>
                                 <div class="row align-items-center remember">
-                                    <input type="checkbox">Remember Me
+                                    <input type="checkbox" name="remember" value="1">Remember Me
                                 </div>
                                 <div class="form-group">
                                     <input type="submit" name="submit" value="Login" class="btn float-right login_btn">
