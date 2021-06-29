@@ -80,7 +80,7 @@
                         aria-label="Close"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="modal-body">
-                    <form class="row" action="donor_regt.php" method="POST">
+                    <form class="row" action="#" method="POST">
                         <div class="col-12 mt-1 ">
                             <label for="Name" class="form-label">Name</label>
                             <input type="text" class="form-control" name="name" required>
@@ -156,7 +156,7 @@
                             <input type="file" class="form-control" name="cert" id="formFile">
                         </div>
                         <div class="modal-footer">
-                           <input type="submit" name="submit" class="btn btn-primary" value="Register">
+                            <button type="submit" class="btn btn-primary" value="Register" name="submit">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -174,7 +174,7 @@
                         aria-label="Close"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="modal-body">
-                    <form class="row" action="receiver_regt.php" method="POST">
+                    <form class="row" action="#" method="POST">
                         <div class="col-12 mt-1 ">
                             <label for="Name of NGO" class="form-label">Name</label>
                             <input type="text" class="form-control" name="name" required>
@@ -242,7 +242,7 @@
                             <input type="file" class="form-control" name="cert" id="formFile">
                         </div>
                         <div class="modal-footer">
-                           <input type="submit" name="submit" class="btn btn-primary" value="Register">
+                            <button type="submit" class="btn btn-primary" value="Register" name="submit1">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -259,7 +259,7 @@
                         aria-label="Close"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="modal-body">
-                    <form class="row" action="oxygen_regt.php" method="POST">
+                    <form class="row" action="#" method="POST">
                         <div class="col-12 mt-1 ">
                             <label for="Name" class="form-label">Name: </label>
                             <input type="text" class="form-control" name="name" required>
@@ -313,7 +313,7 @@
                             <input type="file" class="form-control" name="cert" id="formFile">
                         </div>
                         <div class="modal-footer">
-                            <input type="submit" name="submit" class="btn btn-primary" value="Register">
+                            <button type="submit" class="btn btn-primary" value="Register" name="submit2">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -332,7 +332,7 @@
                         aria-label="Close"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="modal-body">
-                    <form class="row" action="volunteer_regn.php" method="POST">
+                    <form class="row">
                         <div class="col-12 mt-1 ">
                             <label for="Name of volunteer" class="form-label">Name: </label>
                             <input type="text" class="form-control" name="nameOfvolunteer" required>
@@ -389,7 +389,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                   <input type="submit" name="submit" class="btn btn-primary" value="Register">
+                    <button type="button" type="submit" class="btn btn-primary">Register</button>
                 </div>
             </div>
         </div>
@@ -405,7 +405,7 @@
                         aria-label="Close"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="modal-body">
-                    <form class="row" action="mealprovider_regn.php" method="POST">
+                    <form class="row">
                         <div class="col-12 mt-1 ">
                             <label for="Name of NGO" class="form-label">Name: </label>
                             <input type="text" class="form-control" name="nameOfNGO" required>
@@ -458,7 +458,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <input type="submit" name="submit" class="btn btn-primary" value="Register">
+                    <button type="button" type="submit" class="btn btn-primary">Register</button>
                 </div>
             </div>
         </div>
@@ -474,7 +474,7 @@
                         aria-label="Close"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="modal-body">
-                    <form class="row" action="childcare_regn.php" method="POST">
+                    <form class="row">
                         <div class="col-12 mt-1 ">
                             <label for="Name of NGO" class="form-label">Name</label>
                             <input type="text" class="form-control" name="nameOfNGO" required>
@@ -523,7 +523,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                   <input type="submit" name="submit" class="btn btn-primary" value="Register">
+                    <button type="button" type="submit" class="btn btn-primary">Register</button>
                 </div>
             </div>
         </div>
@@ -540,6 +540,10 @@
                 </div>
                 <div class="modal-body">
                     <form class="row" action="#" method="POST">
+                    <div class="col-12 mt-1 ">
+                        <label for="Email" class="form-label">Email</label>
+                        <input type="email" class="form-control" name="email" required>
+                    </div>
                         <div class="col-12 mt-1 ">
                             <label for="Age" class="form-label">Age</label>
                             <input type="text" class="form-control" name="age" required>
@@ -581,7 +585,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <input type="submit" name="submit" class="btn btn-primary" value="Share">
+                    <input type="submit" name="submit6" id="submit6" class="btn btn-primary" value="Share">
                 </div>
             </div>
         </div>
@@ -599,6 +603,10 @@
             </div>
             <div class="modal-body">
                 <form class="row" action="#" method="POST">
+                <div class="col-12 mt-1 ">
+                        <label for="Email" class="form-label">Email</label>
+                        <input type="email" class="form-control" name="email" required>
+                    </div>
                     <div class="col-12 mt-1 ">
                         <label for="Age" class="form-label">Age</label>
                         <input type="text" class="form-control" name="age" required>
@@ -635,7 +643,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <input type="submit" name="submit" class="btn btn-primary" value="Share">
+                <input type="submit" name="submit7" class="btn btn-primary" value="Share">
             </div>
         </div>
     </div>
@@ -743,7 +751,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <input type="submit" name="submit" class="btn btn-primary" value="Register">
+                    <input type="submit" name="submit8" class="btn btn-primary" value="Register">
                 </div>
             </div>
         </div>
@@ -849,7 +857,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <input type="submit" name="submit" class="btn btn-primary" value="Register">
+                    <input type="submit" name="submit9" class="btn btn-primary" value="Register">
                 </div>
             </div>
         </div>
@@ -962,7 +970,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <input type="submit" name="submit" class="btn btn-primary" value="Register">
+                    <input type="submit" name="submit10" class="btn btn-primary" value="Register">
                 </div>
             </div>
         </div>
@@ -1177,3 +1185,40 @@
 </body>
 
 </html>
+<?php  // Display service provider data 
+include("connection.php");?>
+<?php 
+//Donor data insertion
+if(isset($_POST['submit'])){
+    $sql = "INSERT INTO `donor_db`(`id`,`name`,`address`,`phone number`,`date of birth`,`gender`,`blood group`,`district`,`frequency`,`proof`) VALUES('',
+'".$_REQUEST['name']."','".$_REQUEST['address']."','".$_REQUEST['phno']."','".$_REQUEST['dob']."','".$_REQUEST['gender']."',
+'".$_REQUEST['bgrp']."','".$_REQUEST['dist']."','".$_REQUEST['freq']."','".$_REQUEST['cert']."')";
+    mysqli_query($link, $sql);
+}
+//Receiver data insertion
+if(isset($_POST['submit1'])){
+    $sql = "INSERT INTO `receiver_db`(`id`,`name`,`address`,`phone number`,`date of birth`,`gender`,`blood group`,`district`,`proof`) VALUES('','".$_REQUEST['name']."',
+								 '".$_REQUEST['address']."','".$_REQUEST['phno']."','".$_REQUEST['dob']."','".$_REQUEST['gender']."','".$_REQUEST['bgrp']."','".$_REQUEST['dist']."',
+								 '".$_REQUEST['cert']."')";
+	mysqli_query($link, $sql);
+}
+//Oxygen data insertion
+if(isset($_POST['submit2'])){
+    $sql = "INSERT INTO `oxygen_db`(`id`,`name`,`application type`,`address`,`district`,`email`,`phone number`,`proof`) VALUES('','".$_REQUEST['name']."',
+								 '".$_REQUEST['person']."','".$_REQUEST['address']."','".$_REQUEST['dist']."','".$_REQUEST['email']."','".$_REQUEST['phno']."',
+								 '".$_REQUEST['cert']."')";
+	mysqli_query($link, $sql);
+}
+
+
+//Warrior data insertion
+if(isset($_POST['submit6'])){
+    $result = mysqli_query($link,"INSERT INTO `warrior_db`(`id`,`email`,`age`,`profession`,`city`,`district`,`experience`,`title`,`photo`,`video`) VALUES('','".$_REQUEST['email']."','".$_REQUEST['age']."',
+        '".$_REQUEST['profession']."','".$_REQUEST['city']."','".$_REQUEST['district']."','".$_REQUEST['experience']."','".$_REQUEST['title']."','".$_REQUEST['photo']."','".$_REQUEST['video']."')");
+}
+//Survivor data insertion
+if(isset($_POST['submit7'])){
+    $result = mysqli_query($link,"INSERT INTO `survivor_db`(`id`,`email`,`age`,`profession`,`city`,`district`,`experience`,`title`,`video`) VALUES('','".$_REQUEST['email']."','".$_REQUEST['age']."',
+        '".$_REQUEST['profession']."','".$_REQUEST['city']."','".$_REQUEST['district']."','".$_REQUEST['experience']."','".$_REQUEST['title']."','".$_REQUEST['video']."')");
+}
+?>

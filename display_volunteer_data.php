@@ -1,4 +1,4 @@
-<?php  // Display hospital data
+<?php  // Display healthcare volunteer data
 include("connection.php");?>
 <!DOCTYPE html>
 <html>

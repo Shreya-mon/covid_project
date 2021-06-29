@@ -1,4 +1,4 @@
-<?php  // Display ngo help form data
+<?php  // Display receiver data
 include("connection.php");?>
 <!DOCTYPE html>
 <html>
@@ -24,22 +24,23 @@ a{
 <body>
 
 
-<h2 style="font-size: 39px;"><center>NGO Help Form Records</center></h2><br>
-<h3 style="color:darkgreen;"><center><a href="menu.html">Back to Page </a></center><br>
-<table width = "80%" border="1" cellspacing="2" cellpadding="5" align="center" style="background-color: darkSlategray; color: white;">
+<h2 style="font-size: 39px;"><center> Records of Blood Receivers  </center></h2><br>
+<h3 style="color:darkgreen;"><center><a href="menu.html">Back to Home </a></center><br>
+<table width = "100%" border="1" cellspacing="1" cellpadding="3" align="center" style="background-color: pink; color: black;">
 	<tr>
 		<td align="center"><strong>ID</strong></td>
 		<td><strong>Name</strong></td>
 		<td><strong>Address</strong></td>
+		<td><strong>Phone Number</strong></td>
+		<td><strong>Date of Birth</strong></td>
+		<td><strong>Gender</strong></td>
+		<td><strong>Blood Group</strong></td>
 		<td><strong>District</strong></td>
-		<td><strong>Phone number</strong></td>
-		<td><strong>Proof Certificate</strong></td>
-		<td><strong>Description</strong></td>
-		<td><strong>Category</strong></td>
+		<td><strong>Proof</strong></td>
 		
 	</tr>
     <?php
-		$sql = "SELECT * FROM `ngo_help_db`";
+		$sql = "SELECT * FROM `receiver_db`";
 		$result = mysqli_query($link,$sql);
 		if(mysqli_num_rows($result) > 0)
 		{
@@ -49,19 +50,19 @@ a{
 				echo "<td align = 'center'>".$row["id"]."</td>";
 				echo "<td>".$row["name"]."</td>";
 				echo "<td>".$row["address"]."</td>";
+				echo "<td>".$row["phone number"]."</td>";
+				echo "<td>".$row["date of birth"]."</td>";
+				echo "<td>".$row["gender"]."</td>";
+				echo "<td>".$row["blood group"]."</td>";
 				echo "<td>".$row["district"]."</td>";
-				echo "<td>".$row["ph_no"]."</td>";
-				echo "<td>".$row["file"]."</td>";
-				echo "<td>".$row["description"]."</td>";
-				echo "<td>".$row["category"]."</td>";
+				echo "<td>".$row["proof"]."</td>";
 				
 				
-				echo "<td><a href='delete_ngo_help.php?id=".$row['id']."'>Delete</a></td>";
+				echo "<td><a href='delete_receiver_regt_data.php?id=".$row['id']."'>Delete</a></td>";
 				echo "</tr>";
 			}
 		}
      ?>
-     
 </table>
 </div>
 </body>
