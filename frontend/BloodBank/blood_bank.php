@@ -511,36 +511,41 @@ include("../connection.php");?>
             <form action="#bank" method="POST">
             <div class="col-12 col-md-7 row">
         <div class="h3  ">
-          Search Here for your nearby blood bank:</div>
+          Search for your nearby Blood Banks :</div>
         <!--Grid column-->
         <div class="col-12 mb-4">
           <div class="input-group md-form form-sm form-2 pl-0">
             <!-- <input class="form-control my-0 py-1 amber-border" type="text" placeholder="Search" aria-label="Search"> -->
               <select class="form-control" name="district_choice">
-                <option value="">Select District</option>
-                <option value="Alipurduar">Alipurduar</option>
-                <option value="Bankura">Bankura</option>
-                <option value="Paschim Bardhaman">Paschim Bardhaman</option>
-                <option value="Purba Bardhaman">Purba Bardhaman</option>
-                <option value="Birbhum">Birbhum</option>
-                <option value="Cooch Behar">Cooch Behar</option>
-                <option value="Dakshin Dinajpu">Dakshin Dinajpur</option>
-                <option value="Darjeeling">Darjeeling</option>
+                <option selected disabled>Select District</option>
+                <option value="Alipurduar">Alipurduar</option>	
+                <option value="Bankura">Bankura</option>	
+                <option value="Paschim Bardhaman">Bardhaman (Paschim)</option>	
+                <option value="Purba Bardhaman">Bardhaman (Purba)</option>	
+				<option value="Basirhat HD">Basirhat HD</option>
+                <option value="Birbhum">Birbhum</option>	
+				<option value="Bishnupur HD">Bishnupur HD</option>	
+                <option value="Coochbehar">Coochbehar</option>	
+                <option value="Darjeeling">Darjeeling</option>	
+				<option value="Diamond Harbour HD">Diamond Harbour HD</option>	
+				<option value="Dakshin Dinajpur">Dinajpur (Dakshin)</option>	
+				<option value="Uttar Dinajpur">Dinajpur (Uttar)</option>	
                 <option value="Hooghly">Hooghly</option>
-                <option value="Howrah">Howrah</option>
-                <option value="Jalpaiguri">Jalpaiguri</option>
-                <option value="Jhargram">Jhargram</option>
-                <option value="Kalimpong">Kalimpong</option>
-                <option value="Kolkata">Kolkata</option>
-                <option value="Maldah">Maldah</option>
-                <option value="Murshidabad">Murshidabad</option>
-                <option value="Nadia">Nadia</option>
-                <option value="North 24 Parganas">North 24 Parganas</option>
-                <option value="Paschim Medinipur">Paschim Medinipur</option>
-                <option value="Purba Medinipur">Purba Medinipur</option>
-                <option value="Purulia">Purulia</option>
-                <option value="South 24 Parganas">South 24 Parganas</option>
-                <option value="Uttar Dinajpur">Uttar Dinajpur</option>
+                <option value="Howrah">Howrah</option>	
+                <option value="Jalpaiguri">Jalpaiguri</option>	
+                <option value="Jhargram">Jhargram</option>	
+                <option value="Kalimpong">Kalimpong</option>	
+                <option value="Kolkata">Kolkata</option>	
+                <option value="Malda">Maldah</option>	
+				<option value="Paschim Medinipur">Medinipur (Paschim)</option>
+                <option value="Purba Medinipur">Medinipur (Purba)</option>	
+                <option value="Murshidabad">Murshidabad</option>	
+                <option value="Nadia">Nadia</option>	
+				<option value="Nandigram HD">Nandigram HD</option>	                
+                <option value="Purulia">Purulia</option>	
+				<option value="Rampurhat HD">Rampurhat HD</option>	
+                <option value="North 24 Pgs">24 Parganas (North)</option>
+				<option value="South 24 Pgs">24 Parganas (South)</option>
               </select>
             <div class="input-group-append">
               <span class="input-group-text amber lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
@@ -559,13 +564,10 @@ include("../connection.php");?>
         <table class="table">
           <thead class="thead-light">
             <tr>
-              <th scope="col">Serial No.</th>
+              <th scope="col">Sl No.</th>
               <th scope="col">Name</th>
               <th scope="col">Contact Number</th>
-              <th scope="col">Email</th>
-              <th scope="col">Address</th>
               <th scope="col">District</th>
-              <th scope="col">Description</th>
             </tr>
           </thead>
           <tbody>
@@ -585,10 +587,7 @@ include("../connection.php");?>
                          echo "<td align = 'center'>".$count."</td>";
                          echo "<td align = 'center'>".$row["name"]."</td>";
                          echo "<td align = 'center'>".$row["contact"]."</td>";
-                         echo "<td align = 'center'>".$row["email"]."</td>";
-                         echo "<td align = 'center'>".$row["address"]."</td>";
                          echo "<td align = 'center'>".$row["district"]."</td>";
-                         echo "<td align = 'center'>".$row["description"]."</td>";
                          echo "</tr>";
                          $count++;
                        }

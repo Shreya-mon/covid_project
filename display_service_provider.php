@@ -30,7 +30,7 @@ include("connection.php");?>
 </body>
 </html>
 
-<table width = "80%" border="1" cellspacing="2" cellpadding="5" align="center" style="background-color:black; color:floralwhite;">
+<table width = "100%" border="1" cellspacing="1" cellpadding="3" align="center" style="background-color:black; color:floralwhite;">
 	<tr>
 		<td align="center"><strong>ID</strong></td>
 		<td align="center"><strong>Service ID</strong></td>
