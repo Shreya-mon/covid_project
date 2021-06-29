@@ -1,3 +1,8 @@
+<?php  // Display service provider data 
+include("connection.php");
+session_start();
+$email= $_SESSION['email'];
+?>
 <!DOCTYPE html>
 <html>
 
@@ -379,7 +384,7 @@
                         </div>
                         <div class="col-12 mt-1">
                             <label for="Phone Number" class="form-label">Phone Number</label>
-                            <input type="number" class="form-control" name="phoneOfvolunteer" required>
+                            <input type="text" class="form-control" name="phoneOfvolunteer" required>
                         </div>
                         <div class="col-12 mt-1">
                             <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
@@ -452,7 +457,7 @@
                         </div>
                         <div class="col-12 mt-1">
                             <label for="Phone Number" class="form-label">Phone Number</label>
-                            <input type="number" class="form-control" name="phoneNoOfNGO" required>
+                            <input type="text" class="form-control" name="phoneNoOfNGO" required>
                         </div>
                         <div class="col-12 mt-1">
                             <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
@@ -519,7 +524,7 @@
                         </div>
                         <div class="col-12 mt-1">
                             <label for="Phone Number" class="form-label">Phone Number</label>
-                            <input type="number" class="form-control" name="phoneNoOfNGO" required>
+                            <input type="text" class="form-control" name="phoneNoOfNGO" required>
                         </div>
                         <div class="col-12 mt-1">
                             <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
@@ -547,10 +552,6 @@
                 </div>
                 <div class="modal-body">
                     <form class="row" action="#" method="POST">
-                    <div class="col-12 mt-1 ">
-                        <label for="Email" class="form-label">Email</label>
-                        <input type="email" class="form-control" name="email" required>
-                    </div>
                         <div class="col-12 mt-1 ">
                             <label for="Age" class="form-label">Age</label>
                             <input type="text" class="form-control" name="age" required>
@@ -610,10 +611,6 @@
             </div>
             <div class="modal-body">
                 <form class="row" action="#" method="POST">
-                <div class="col-12 mt-1 ">
-                        <label for="Email" class="form-label">Email</label>
-                        <input type="email" class="form-control" name="email" required>
-                    </div>
                     <div class="col-12 mt-1 ">
                         <label for="Age" class="form-label">Age</label>
                         <input type="text" class="form-control" name="age" required>
@@ -991,13 +988,13 @@
                 <h1>USER PANEL</h1>
             </div>
             <div class="col-6 mt-5">
-                <h3>WELCOME USER</h2>
+                <h3>WELCOME <?php echo $_SESSION['name']; ?></h2>
             </div>
             <div class="col-3 mt-5 d-flex justify-content-center align-items-center">
                 <a href="./usertable.html"><button class="btn btn-info">Your Submitted Data</button></a>
             </div>
             <div class="col-3 mt-5 d-flex justify-content-center align-items-center">
-                <a href="./index.php"><button class="btn btn-info">Log out</button></a>
+                <a href="logout.php"><button class="btn btn-info">Log out</button></a>
             </div>
         </div>
 
@@ -1192,8 +1189,6 @@
 </body>
 
 </html>
-<?php  // Display service provider data 
-include("connection.php");?>
 <?php 
 //Donor data insertion
 if(isset($_POST['submit'])){
@@ -1220,12 +1215,12 @@ if(isset($_POST['submit2'])){
 
 //Warrior data insertion
 if(isset($_POST['submit6'])){
-    $result = mysqli_query($link,"INSERT INTO `warrior_db`(`id`,`email`,`age`,`profession`,`city`,`district`,`experience`,`title`,`photo`,`video`) VALUES('','".$_REQUEST['email']."','".$_REQUEST['age']."',
+    $result = mysqli_query($link,"INSERT INTO `warrior_db`(`id`,`email`,`age`,`profession`,`city`,`district`,`experience`,`title`,`photo`,`video`) VALUES('','".$email."','".$_REQUEST['age']."',
         '".$_REQUEST['profession']."','".$_REQUEST['city']."','".$_REQUEST['district']."','".$_REQUEST['experience']."','".$_REQUEST['title']."','".$_REQUEST['photo']."','".$_REQUEST['video']."')");
 }
 //Survivor data insertion
 if(isset($_POST['submit7'])){
-    $result = mysqli_query($link,"INSERT INTO `survivor_db`(`id`,`email`,`age`,`profession`,`city`,`district`,`experience`,`title`,`video`) VALUES('','".$_REQUEST['email']."','".$_REQUEST['age']."',
+    $result = mysqli_query($link,"INSERT INTO `survivor_db`(`id`,`email`,`age`,`profession`,`city`,`district`,`experience`,`title`,`video`) VALUES('','".$email."','".$_REQUEST['age']."',
         '".$_REQUEST['profession']."','".$_REQUEST['city']."','".$_REQUEST['district']."','".$_REQUEST['experience']."','".$_REQUEST['title']."','".$_REQUEST['video']."')");
 }
 
