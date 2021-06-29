@@ -332,7 +332,7 @@
                         aria-label="Close"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="modal-body">
-                    <form class="row">
+                    <form class="row" action="#" method="POST">
                         <div class="col-12 mt-1 ">
                             <label for="Name of volunteer" class="form-label">Name: </label>
                             <input type="text" class="form-control" name="nameOfvolunteer" required>
@@ -389,7 +389,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" type="submit" class="btn btn-primary">Register</button>
+                    <button type="button" type="submit" class="btn btn-primary" name="Submit3">Register</button>
                 </div>
             </div>
         </div>
@@ -405,7 +405,7 @@
                         aria-label="Close"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="modal-body">
-                    <form class="row">
+                    <form class="row" action="#" method="POST">
                         <div class="col-12 mt-1 ">
                             <label for="Name of NGO" class="form-label">Name: </label>
                             <input type="text" class="form-control" name="nameOfNGO" required>
@@ -458,7 +458,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" type="submit" class="btn btn-primary">Register</button>
+                    <button type="button" type="submit" class="btn btn-primary" name="Submit4">Register</button>
                 </div>
             </div>
         </div>
@@ -474,7 +474,7 @@
                         aria-label="Close"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="modal-body">
-                    <form class="row">
+                    <form class="row" action="#" method="POST">
                         <div class="col-12 mt-1 ">
                             <label for="Name of NGO" class="form-label">Name</label>
                             <input type="text" class="form-control" name="nameOfNGO" required>
@@ -523,7 +523,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" type="submit" class="btn btn-primary">Register</button>
+                   <input type="submit" name="submit5" id="submit " class="btn btn-primary" value="Register">
                 </div>
             </div>
         </div>
@@ -663,7 +663,7 @@
                 <div class="modal-body">
 
 
-                    <form class="row" action="insert_ngo_registration_form_data.php" method="post"
+                    <form class="row" action="#" method="post"
                         name="insert_ngo_registraion_frm">
                         <div class="col-12 mt-1 ">
                             <label for="Name of NGO" class="form-label">Name of NGO</label>
@@ -769,7 +769,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <form class="row" action="insert_ngo_registration_form_individual_data.php" method="post"
+                    <form class="row" action="#" method="post"
                         name="insert_ngo_registraion_individual_frm">
                         <div class="col-12 mt-1 ">
                             <label for="First Name" class="form-label">First Name</label>
@@ -878,7 +878,7 @@
                 <div class="modal-body">
 
 
-                    <form class="row" action="insert_ngo_help_form_data.php" method="post">
+                    <form class="row" action="#" method="post">
                         <div class="col-12 mt-1 ">
                             <label for="First Name" class="form-label">Name</label>
                             <input type="text" class="form-control" name="firstNameOfInd" required>
@@ -1221,4 +1221,61 @@ if(isset($_POST['submit7'])){
     $result = mysqli_query($link,"INSERT INTO `survivor_db`(`id`,`email`,`age`,`profession`,`city`,`district`,`experience`,`title`,`video`) VALUES('','".$_REQUEST['email']."','".$_REQUEST['age']."',
         '".$_REQUEST['profession']."','".$_REQUEST['city']."','".$_REQUEST['district']."','".$_REQUEST['experience']."','".$_REQUEST['title']."','".$_REQUEST['video']."')");
 }
+
+//Child care data insertion
+if(isset($_POST['submit5'])){
+
+
+
+    $sql = "INSERT INTO `childcareprovider_db`(`id`, `name`, `address`, `district`, `phno`, `proof`) VALUES('',
+                                 '".$_REQUEST['nameOfNGO']."','".$_REQUEST['address']."','".$_REQUEST['district']."',
+                                 '".$_REQUEST['phno']."','".$_REQUEST['proof']."')";
+    mysqli_query($link, $sql);}
+//Health care data insertion
+    if(isset($_POST['submit3'])){
+        $sql = "INSERT INTO `volunteer_db`(`id`,`name`,`user_type`,`address`,`district`,`email`,`phno`,`proof`) VALUES('',
+                                 '".$_REQUEST['name']."','".$_REQUEST['person']."','".$_REQUEST['address']."','".$_REQUEST['district']."','".$_REQUEST['email']."',
+                                 '".$_REQUEST['phno']."','".$_REQUEST['proof']."')";
+    mysqli_query($link, $sql);}
+//Meal Provider data insertion
+    if(isset($_POST['submit4'])){
+            $sql = "INSERT INTO `mealprovider_db`(`id`,`name`,`address`,`district`,`email`,`phno`,`proof`) VALUES('',
+                                 '".$_REQUEST['name']."','".$_REQUEST['address']."','".$_REQUEST['district']."','".$_REQUEST['email']."',
+                                 '".$_REQUEST['phno']."','".$_REQUEST['proof']."')";
+    mysqli_query($link, $sql);}
+    //NGO registration
+     if(isset($_POST['submit8'])){
+$sql = " INSERT INTO `ngo_registration`( `name`, `address`, `district`, `ph_no`, `file`, `category`)
+                          VALUES('".$_REQUEST['nameOfNGO']."',
+                                 '".$_REQUEST['addressOfNGO']."',
+                                 '".$_REQUEST['dist']."',
+                                 '".$_REQUEST['phoneNoOfNGO']."',
+                                 '".$_REQUEST['certificateOfNGO']."',
+                                 
+                                 '".$_REQUEST['helpingCategoriesOfNGO']."')";
+    mysqli_query($link, $sql);}
+    //NGO individual registration
+     if(isset($_POST['submit9'])){
+        $sql = " INSERT INTO `ngo_registration_individual`( `name`, `address`, `district`, `ph_no`, `file`, `category`)
+                          VALUES('".$_REQUEST['firstNameOfInd']."',
+                                 '".$_REQUEST['addressOfInd']."',
+                                 '".$_REQUEST['dist']."',
+                                 '".$_REQUEST['phoneNoOfInd']."',
+                                 '".$_REQUEST['certificateOfInd']."',
+                                 
+                                 '".$_REQUEST['helpingCategoriesOfInd']."')";
+    mysqli_query($link, $sql);}
+//Help
+     if(isset($_POST['submit10'])){
+        $sql = "INSERT INTO `ngo_help_db`( `name`, `address`, `district`, `ph_no`, `file`, `description`, `category`)
+                          VALUES('".$_REQUEST['firstNameOfInd']."',
+                                 '".$_REQUEST['addressOfInd']."',
+                                 '".$_REQUEST['dist']."',
+                                 '".$_REQUEST['phoneNoOfInd']."',
+                                 '".$_REQUEST['certificateOfInd']."',
+                                 
+                                 '".$_REQUEST['description']."',
+                                 '".$_REQUEST['helpingCategoriesOfInd']."')";
+    mysqli_query($link, $sql);}
+
 ?>

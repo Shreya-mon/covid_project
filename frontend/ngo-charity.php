@@ -536,7 +536,7 @@ include("connection.php");?>
       </div>
     </div>
 
-    <form>
+    <form action="#table">
     <div class="h3 mt-5 p-2">
           Search Here for your nearby NGO Services:</div>
         <!--Grid column-->
@@ -582,7 +582,7 @@ include("connection.php");?>
         <h3>Some NGO List</h3>
       </div>
       <div class="row mt-3">
-        <table class="table">
+        <table class="table" id="table">
           <thead class="thead-light">
             <tr>
              <th scope="col">Serial No.</th>

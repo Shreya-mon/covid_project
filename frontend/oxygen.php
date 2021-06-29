@@ -196,7 +196,7 @@ include("connection.php");?>
     </div>
   </div>
   <!--modal close-->
-  <form>
+  <form action="#table">
   <div class="container  pt-2">
     <div class="row mt-5">
       <div class="col-12 col-md-7 row">
