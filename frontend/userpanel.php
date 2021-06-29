@@ -385,11 +385,15 @@
                             <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
                             <input type="file" class="form-control" name="certificateOfvolunteer" id="formFile">
                         </div>
+                         <div class="modal-footer">
+                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    
+                     <input type="submit" name="submit3" id="submit " class="btn btn-primary" value="Register">
+                     </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" type="submit" class="btn btn-primary" name="Submit3">Register</button>
+               
+               
+                   
                 </div>
             </div>
         </div>
@@ -454,12 +458,14 @@
                             <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
                             <input type="file" class="form-control" name="certificateOfNGO" id="formFile">
                         </div>
+                        <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    
+                     <input type="submit" name="submit4" id="submit " class="btn btn-primary" value="Register">
+                </div>
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" type="submit" class="btn btn-primary" name="Submit4">Register</button>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -519,12 +525,13 @@
                             <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
                             <input type="file" class="form-control" name="certificateOfNGO" id="formFile">
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
+                         <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                    <input type="submit" name="submit5" id="submit " class="btn btn-primary" value="Register">
                 </div>
+                    </form>
+                </div>
+               
             </div>
         </div>
     </div>
@@ -1225,15 +1232,13 @@ if(isset($_POST['submit7'])){
 //Child care data insertion
 if(isset($_POST['submit5'])){
 
-
-
    $sql = "INSERT INTO `childcareprovider_db`(`id`,`name`,`address`,`district`,`phno`,`proof`) VALUES('',
                                  '".$_REQUEST['nameOfNGO']."','".$_REQUEST['addressOfNGO']."','".$_REQUEST['dist']."',
                                  '".$_REQUEST['phoneNoOfNGO']."','".$_REQUEST['certificateOfNGO']."')";
     mysqli_query($link, $sql);}
 //Health care data insertion
     if(isset($_POST['submit3'])){
-       $sql = "INSERT INTO `volunteer_db`(`id`,`name`,`user_type`,`address`,`district`,`email`,`phno`,`proof`) VALUES('',
+       $sql = "INSERT INTO `volunteer_db`(`id`,`name`,`user_type`,`address`,`district`,`email`,`phno`,`proof`)                                VALUES('',
                                  '".$_REQUEST['nameOfvolunteer']."','".$_REQUEST['person']."','".$_REQUEST['addressOfvolunteer']."','".$_REQUEST['dist']."','".$_REQUEST['emailOfvolunteer']."',
                                  '".$_REQUEST['phoneOfvolunteer']."','".$_REQUEST['certificateOfvolunteer']."')";
     mysqli_query($link, $sql);}
