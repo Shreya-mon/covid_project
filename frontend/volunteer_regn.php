@@ -3,8 +3,8 @@ include("connection.php");?>
 <?php
 	
 	$sql = "INSERT INTO `volunteer_db`(`id`,`name`,`user_type`,`address`,`district`,`email`,`phno`,`proof`) VALUES('',
-								 '".$_REQUEST['name']."','".$_REQUEST['person']."','".$_REQUEST['address']."','".$_REQUEST['district']."','".$_REQUEST['email']."',
-								 '".$_REQUEST['phno']."','".$_REQUEST['proof']."')";
+								 '".$_REQUEST['nameOfvolunteer']."','".$_REQUEST['person']."','".$_REQUEST['addressOfvolunteer']."','".$_REQUEST['dist']."','".$_REQUEST['emailOfvolunteer']."',
+								 '".$_REQUEST['phoneOfvolunteer']."','".$_REQUEST['certificateOfvolunteer']."')";
 	mysqli_query($link, $sql);?>
 	<h3 align="center"> DATA RECORDED SUCCESSFULLY!!!</h3>
 	

@@ -3,8 +3,8 @@ include("connection.php");?>
 <?php
 	
 	$sql = "INSERT INTO `childcareprovider_db`(`id`,`name`,`address`,`district`,`phno`,`proof`) VALUES('',
-								 '".$_REQUEST['name']."','".$_REQUEST['address']."','".$_REQUEST['district']."',
-								 '".$_REQUEST['phno']."','".$_REQUEST['proof']."')";
+								 '".$_REQUEST['nameOfNGO']."','".$_REQUEST['addressOfNGO']."','".$_REQUEST['dist']."',
+								 '".$_REQUEST['phoneNoOfNGO']."','".$_REQUEST['certificateOfNGO']."')";
 	mysqli_query($link, $sql);?>
 	<h3 align="center"> DATA RECORDED SUCCESSFULLY!!!</h3>
 	

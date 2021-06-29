@@ -1227,21 +1227,21 @@ if(isset($_POST['submit5'])){
 
 
 
-    $sql = "INSERT INTO `childcareprovider_db`(`id`, `name`, `address`, `district`, `phno`, `proof`) VALUES('',
-                                 '".$_REQUEST['nameOfNGO']."','".$_REQUEST['address']."','".$_REQUEST['district']."',
-                                 '".$_REQUEST['phno']."','".$_REQUEST['proof']."')";
+   $sql = "INSERT INTO `childcareprovider_db`(`id`,`name`,`address`,`district`,`phno`,`proof`) VALUES('',
+                                 '".$_REQUEST['nameOfNGO']."','".$_REQUEST['addressOfNGO']."','".$_REQUEST['dist']."',
+                                 '".$_REQUEST['phoneNoOfNGO']."','".$_REQUEST['certificateOfNGO']."')";
     mysqli_query($link, $sql);}
 //Health care data insertion
     if(isset($_POST['submit3'])){
-        $sql = "INSERT INTO `volunteer_db`(`id`,`name`,`user_type`,`address`,`district`,`email`,`phno`,`proof`) VALUES('',
-                                 '".$_REQUEST['name']."','".$_REQUEST['person']."','".$_REQUEST['address']."','".$_REQUEST['district']."','".$_REQUEST['email']."',
-                                 '".$_REQUEST['phno']."','".$_REQUEST['proof']."')";
+       $sql = "INSERT INTO `volunteer_db`(`id`,`name`,`user_type`,`address`,`district`,`email`,`phno`,`proof`) VALUES('',
+                                 '".$_REQUEST['nameOfvolunteer']."','".$_REQUEST['person']."','".$_REQUEST['addressOfvolunteer']."','".$_REQUEST['dist']."','".$_REQUEST['emailOfvolunteer']."',
+                                 '".$_REQUEST['phoneOfvolunteer']."','".$_REQUEST['certificateOfvolunteer']."')";
     mysqli_query($link, $sql);}
 //Meal Provider data insertion
     if(isset($_POST['submit4'])){
             $sql = "INSERT INTO `mealprovider_db`(`id`,`name`,`address`,`district`,`email`,`phno`,`proof`) VALUES('',
-                                 '".$_REQUEST['name']."','".$_REQUEST['address']."','".$_REQUEST['district']."','".$_REQUEST['email']."',
-                                 '".$_REQUEST['phno']."','".$_REQUEST['proof']."')";
+                                 '".$_REQUEST['nameOfNGO']."','".$_REQUEST['addressOfNGO']."','".$_REQUEST['dist']."','".$_REQUEST['email']."',
+                                 '".$_REQUEST['phoneNoOfNGO']."','".$_REQUEST['certificateOfNGO']."')";
     mysqli_query($link, $sql);}
     //NGO registration
      if(isset($_POST['submit8'])){
