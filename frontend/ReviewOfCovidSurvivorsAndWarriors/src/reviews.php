@@ -81,44 +81,44 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="../../index.php">Home</a>
+            <a class="nav-link " aria-current="page" href="../../index.php" style="font-size:15px">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="../../household.html">Household Precautions</a>
+            <a class="nav-link " aria-current="page" href="../../household.html" style="font-size:15px">Household Precautions</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="../Doctor/consult.php">Doctor Consultancy</a>
+            <a class="nav-link " aria-current="page" href="../../Doctor/consult.php" style="font-size:15px">Doctor Consultancy</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="hospital.php">Hospital and Safe Home</a>
+            <a class="nav-link " aria-current="page" href="../../HospitalAndSafehome/src/hospital.php" style="font-size:15px">Hospital and Safe Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="../../BloodBank/blood_bank.php">Blood Bank</a>
+            <a class="nav-link " aria-current="page" href="../../BloodBank/blood_bank.php" style="font-size:15px">Blood Bank</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="../../oxygen.php">Oxygen Services</a>
+            <a class="nav-link " aria-current="page" href="../../oxygen.php" style="font-size:15px">Oxygen Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="../../vaccination.html">Covid Vaccination</a>
+            <a class="nav-link " aria-current="page" href="../../vaccination.html" style="font-size:15px">Covid Vaccination</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="../../meal and childcare.php">Healthcare volunteers Meal and Child
+            <a class="nav-link " aria-current="page" href="../../meal and childcare.php" style="font-size:15px">Healthcare volunteers Meal and Child
               care Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-active" aria-current="page" href="../../ReviewOfCovidSurvivorsAndWarriors/src/reviews.php">Review of covid survivors and warriors</a>
+            <a class="nav-link nav-active" aria-current="page" href="../../ReviewOfCovidSurvivorsAndWarriors/src/reviews.php" style="font-size:15px">Review of covid survivors and warriors</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="../../ngo-charity.php">NGO and Charity</a>
+            <a class="nav-link " aria-current="page" href="../../ngo-charity.php" style="font-size:15px">NGO and Charity</a>
           </li>
           <li class="nav-item d-sm-flex d-lg-none">
-            <a class="nav-link" aria-current="page" href="../../index.php">Help Desk</a>
+            <a class="nav-link" aria-current="page" href="../../index.php" style="font-size:16px">Help Desk</a>
           </li>
           <li class="nav-item d-sm-flex d-lg-none">
-            <a class="nav-link" aria-current="page" href="../../sign.php">Sign in/Sign up</a>
+            <a class="nav-link" aria-current="page" href="../../sign.php" style="font-size:16px">Sign in/Sign up</a>
           </li>
           <li class="nav-item d-sm-flex d-lg-none">
-            <a class="nav-link" aria-current="page" href="../../../admin.html">Admin Login</a>
+            <a class="nav-link" aria-current="page" href="../../../admin.html" style="font-size:16px">Admin Login</a>
           </li>
         </ul>
       </div>
@@ -131,7 +131,7 @@
                     <h1>Review Of COVID</h1>
                     <h1>Survivors And Warriors</h1><br><br>
                     <!--<a href="registerfrm.php"><button class="btn btn-dark px-5 py-2">Share Your Experience</button></a>-->
-                    <button type="button" class="btn btn-primary ml-4" data-bs-toggle="modal" data-bs-target="#userpanelmodel">
+                    <button type="button" class="btn btn-primary ml-4 px-5 py-2" data-bs-toggle="modal" data-bs-target="#userpanelmodel">
                       Share Your Experience
                     </button>
                 </div>
