@@ -1,4 +1,4 @@
-<?php  // Display service provider data 
+<?php  // userpanel 
 include("connection.php");
 session_start();
 $email= $_SESSION['email'];
@@ -50,7 +50,7 @@ if(isset($_POST['submit2'])){
 
 //Warrior data insertion
 if(isset($_POST['submit6'])){
-    if(mysqli_query($link,"INSERT INTO `warrior_db`(`id`,`email`,`age`,`profession`,`city`,`district`,`experience`,`title`,`photo`,`video`) VALUES('','".$email."','".$_REQUEST['age']."',
+    if(mysqli_query($link,"INSERT INTO `warrior_db`(`id`,`name`,`email`,`age`,`profession`,`city`,`district`,`experience`,`title`,`photo`,`video`) VALUES('','".$_REQUEST['name']."','".$email."','".$_REQUEST['age']."',
         '".$_REQUEST['profession']."','".$_REQUEST['city']."','".$_REQUEST['district']."','".$_REQUEST['experience']."','".$_REQUEST['title']."','".$_REQUEST['photo']."','".$_REQUEST['video']."')"))
     {
         $_SESSION['success'] = "Your form submitted successfully for Covid warrior!";
@@ -62,7 +62,7 @@ if(isset($_POST['submit6'])){
 }
 //Survivor data insertion
 if(isset($_POST['submit7'])){
-    if(mysqli_query($link,"INSERT INTO `survivor_db`(`id`,`email`,`age`,`profession`,`city`,`district`,`experience`,`title`,`video`) VALUES('','".$email."','".$_REQUEST['age']."',
+    if(mysqli_query($link,"INSERT INTO `survivor_db`(`id`,`name`,`email`,`age`,`profession`,`city`,`district`,`experience`,`title`,`video`) VALUES('','".$_REQUEST['name']."','".$email."','".$_REQUEST['age']."',
         '".$_REQUEST['profession']."','".$_REQUEST['city']."','".$_REQUEST['district']."','".$_REQUEST['experience']."','".$_REQUEST['title']."','".$_REQUEST['video']."')"))
     {
         $_SESSION['success'] = "Your form submitted successfully for Covid survivor!";
