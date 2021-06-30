@@ -1,11 +1,19 @@
-<?php  // Display service provider data 
-include("connection.php");?>
+<?php  
+include("connection.php");
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 
 <head>
+ <script>function showmessage()
+{ var mess="Data submitted !"; alert(mess);}
+
+function showmessage1()
+{ var mess="Your feedback Received!";alert(mess);}
+</script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -139,7 +147,7 @@ include("connection.php");?>
           <button type="button" class=" btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
         </div>
         <div class="modal-body">
-          <form class="row" action="feedback_data_insert.php" method="post">
+          <form class="row" action="#" method="post">
             <div class="col-12 mt-1 ">
               <label for="Name of NGO" class="form-label">Name: </label>
               <input type="text" class="form-control" name="name" required>
@@ -175,12 +183,14 @@ include("connection.php");?>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <input type="submit" name="submit" class="btn btn-primary" value="Submit">
+          <input type="submit" name="submit" class="btn btn-primary" value="Submit" onclick="showmessage1()">
         </div>
       </div>
     </div>
+    
   </div>
   </form>
+
   <!--modal close-->
   <!--Fake information Modals -->
   <div class="modal fade" id="FakeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -191,7 +201,7 @@ include("connection.php");?>
           <button type="button" class=" btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
         </div>
         <div class="modal-body">
-          <form class="row">
+          <form class="row" action="#" method="POST">
             <div class="col-12 mt-1 ">
               <label for="Name" class="form-label">Name: </label>
               <input type="text" class="form-control" name="nameOfoxygen" required>
@@ -210,18 +220,19 @@ include("connection.php");?>
             </div>
             <div class="col-12 mt-1">
               <label for="Address" class="form-label">Description:</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Describe the problem you faced"></textarea>
+              <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3" placeholder="Describe the problem you faced"></textarea>
             </div>
             <div class="col-12 mt-1">
               <label for="Certificate as a proof" class="form-label">Photo as a proof</label>
               <input type="file" class="form-control" name="certificateOfoxygen" id="formFile">
             </div>
+             <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <input type="submit" name="submit1" class="btn btn-primary" onclick="showmessage()">
+        </div>
           </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <button type="button" type="submit" class="btn btn-primary">Submit</button>
-        </div>
+       
       </div>
     </div>
   </div>
@@ -235,7 +246,7 @@ include("connection.php");?>
           <button type="button" class=" btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
         </div>
         <div class="modal-body">
-          <form class="row">
+          <form class="row" action="#" method="POST">
             <div class="col-12 mt-1 ">
               <label for="Name of NGO" class="form-label">Name: </label>
               <input type="text" class="form-control" name="nameOfoxygen" required>
@@ -254,13 +265,14 @@ include("connection.php");?>
             </div>
             <div class="col-12 mt-1">
               <label for="Address" class="form-label">Description:</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Your Quries here"></textarea>            </div>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" placeholder="Enter Your Quries here"></textarea>            </div>
+               <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <input type="submit"  name="submit2" class="btn btn-primary" onclick="showmessage()">
+        </div>
           </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <button type="button" type="submit" class="btn btn-primary">Submit</button>
-        </div>
+       
       </div>
     </div>
   </div>
@@ -494,7 +506,50 @@ include("connection.php");?>
 		});
 
 	});
+  
 </script>
+ 
+<?php
+//Fake data insertion
+if(isset($_POST['submit1'])){
+    $sql = "INSERT INTO `query_db`(`id`, `name`, `address`, `email`, `ph_no`, `description`, `proof`) VALUES('','".$_REQUEST['nameOfoxygen']."',
+                 '".$_REQUEST['addressOfoxygen']."','".$_REQUEST['emailOfoxygen']."','".$_REQUEST['phoneNoOfoxygen']."','".$_REQUEST['description']."',
+                 '".$_REQUEST['certificateOfoxygen']."')";
+  
+    if (mysqli_query($link, $sql)) {
+      
+        $_SESSION['success'] = "Your opinion is submitted successfully !";
+        
+      } else {
+        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
+        
+      }
+}
+
+//query insertion
+ if(isset($_POST['submit2'])){
+    $sql = "INSERT INTO `query_db`(`id`, `name`, `address`, `email`, `ph_no`, `description`) VALUES('','".$_REQUEST['nameOfoxygen']."',
+                 '".$_REQUEST['addressOfoxygen']."','".$_REQUEST['emailOfoxygen']."','".$_REQUEST['phoneNoOfoxygen']."','".$_REQUEST['description']."')";
+                 
+  
+    if (mysqli_query($link, $sql)) {
+        
+        $flag=1;
+        
+      } else {
+        echo "Form submission failed " . mysqli_error($link);
+        
+      }
+}
+//feedback insertion
+ if(isset($_POST['submit'])){
+    if($_SERVER["REQUEST_METHOD"]=="POST")
+  {
+    $rating = $_POST["rating"];
+
+    $sql = "INSERT INTO `feedback_db` (`id`,`name`,`address`,`email`,`phno`,`rating`,`description`) VALUES ('','".$_REQUEST['name']."','".$_REQUEST['address']."','".$_REQUEST['email']."','".$_REQUEST['phno']."', '$rating','".$_REQUEST['description']."')";
+    $qry = mysqli_query($link, $sql);}}
+?>
  
 </body>
 
