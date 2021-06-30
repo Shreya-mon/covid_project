@@ -2,6 +2,174 @@
 include("connection.php");
 session_start();
 $email= $_SESSION['email'];
+// $_SESSION['success'] ="FORM SUBMITTED!";
+?>
+<?php 
+//Donor data insertion
+if(isset($_POST['submit'])){
+    $sql = "INSERT INTO `donor_db`(`id`,`name`,`address`,`phone number`,`date of birth`,`gender`,`blood group`,`district`,`frequency`,`proof`) VALUES('',
+'".$_REQUEST['name']."','".$_REQUEST['address']."','".$_REQUEST['phno']."','".$_REQUEST['dob']."','".$_REQUEST['gender']."',
+'".$_REQUEST['bgrp']."','".$_REQUEST['dist']."','".$_REQUEST['freq']."','".$_REQUEST['cert']."')";
+    if (mysqli_query($link, $sql)) {
+        $_SESSION['success'] = "Your form submitted successfully for donate blood!";
+        
+      } else {
+        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
+        
+      }
+}
+//Receiver data insertion
+if(isset($_POST['submit1'])){
+    $sql = "INSERT INTO `receiver_db`(`id`,`name`,`address`,`phone number`,`date of birth`,`gender`,`blood group`,`district`,`proof`) VALUES('','".$_REQUEST['name']."',
+								 '".$_REQUEST['address']."','".$_REQUEST['phno']."','".$_REQUEST['dob']."','".$_REQUEST['gender']."','".$_REQUEST['bgrp']."','".$_REQUEST['dist']."',
+								 '".$_REQUEST['cert']."')";
+	
+    if (mysqli_query($link, $sql)) {
+        $_SESSION['success'] = "Your form submitted successfully for request for blood!";
+        
+      } else {
+        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
+        
+      }
+}
+//Oxygen data insertion
+if(isset($_POST['submit2'])){
+    $sql = "INSERT INTO `oxygen_db`(`id`,`name`,`application type`,`address`,`district`,`email`,`phone number`,`proof`) VALUES('','".$_REQUEST['name']."',
+								 '".$_REQUEST['person']."','".$_REQUEST['address']."','".$_REQUEST['dist']."','".$_REQUEST['email']."','".$_REQUEST['phno']."',
+								 '".$_REQUEST['cert']."')";
+    if (mysqli_query($link, $sql)) {
+        $_SESSION['success'] = "Your form submitted successfully for oxygen supply!";
+        
+      } else {
+        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
+        
+      }
+    
+}
+
+
+//Warrior data insertion
+if(isset($_POST['submit6'])){
+    if(mysqli_query($link,"INSERT INTO `warrior_db`(`id`,`email`,`age`,`profession`,`city`,`district`,`experience`,`title`,`photo`,`video`) VALUES('','".$email."','".$_REQUEST['age']."',
+        '".$_REQUEST['profession']."','".$_REQUEST['city']."','".$_REQUEST['district']."','".$_REQUEST['experience']."','".$_REQUEST['title']."','".$_REQUEST['photo']."','".$_REQUEST['video']."')"))
+    {
+        $_SESSION['success'] = "Your form submitted successfully for Covid warrior!";
+        
+    } else {
+      $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
+      
+    }
+}
+//Survivor data insertion
+if(isset($_POST['submit7'])){
+    if(mysqli_query($link,"INSERT INTO `survivor_db`(`id`,`email`,`age`,`profession`,`city`,`district`,`experience`,`title`,`video`) VALUES('','".$email."','".$_REQUEST['age']."',
+        '".$_REQUEST['profession']."','".$_REQUEST['city']."','".$_REQUEST['district']."','".$_REQUEST['experience']."','".$_REQUEST['title']."','".$_REQUEST['video']."')"))
+    {
+        $_SESSION['success'] = "Your form submitted successfully for Covid survivor!";
+    } else {
+        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
+        
+      }
+}
+
+//Child care data insertion
+if(isset($_POST['submit5'])){
+
+   $sql = "INSERT INTO `childcareprovider_db`(`id`,`name`,`address`,`district`,`phno`,`proof`) VALUES('',
+                                 '".$_REQUEST['nameOfNGO']."','".$_REQUEST['addressOfNGO']."','".$_REQUEST['dist']."',
+                                 '".$_REQUEST['phoneNoOfNGO']."','".$_REQUEST['certificateOfNGO']."')";
+    
+    if (mysqli_query($link, $sql)) {
+        $_SESSION['success'] = "Your form submitted successfully for childcare service!";
+        
+      } else {
+        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
+        
+      }
+}
+//Health care data insertion
+    if(isset($_POST['submit3'])){
+       $sql = "INSERT INTO `volunteer_db`(`id`,`name`,`user_type`,`address`,`district`,`email`,`phno`,`proof`)                                VALUES('',
+                                 '".$_REQUEST['nameOfvolunteer']."','".$_REQUEST['person']."','".$_REQUEST['addressOfvolunteer']."','".$_REQUEST['dist']."','".$_REQUEST['emailOfvolunteer']."',
+                                 '".$_REQUEST['phoneOfvolunteer']."','".$_REQUEST['certificateOfvolunteer']."')";
+   
+     if (mysqli_query($link, $sql)) {
+        $_SESSION['success'] = "Your form submitted successfully for health care service!";
+        
+      } else {
+        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
+        
+      }
+    }
+//Meal Provider data insertion
+    if(isset($_POST['submit4'])){
+            $sql = "INSERT INTO `mealprovider_db`(`id`,`name`,`address`,`district`,`email`,`phno`,`proof`) VALUES('',
+                                 '".$_REQUEST['nameOfNGO']."','".$_REQUEST['addressOfNGO']."','".$_REQUEST['dist']."','".$_REQUEST['email']."',
+                                 '".$_REQUEST['phoneNoOfNGO']."','".$_REQUEST['certificateOfNGO']."')";
+    if (mysqli_query($link, $sql)) {
+        $_SESSION['success'] = "Your form submitted successfully for meal service!";
+        
+      } else {
+        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
+        
+      }
+    }
+    //NGO registration
+     if(isset($_POST['submit8'])){
+$sql = " INSERT INTO `ngo_registration`( `name`, `address`, `district`, `ph_no`, `file`, `category`)
+                          VALUES('".$_REQUEST['nameOfNGO']."',
+                                 '".$_REQUEST['addressOfNGO']."',
+                                 '".$_REQUEST['dist']."',
+                                 '".$_REQUEST['phoneNoOfNGO']."',
+                                 '".$_REQUEST['certificateOfNGO']."',
+                                 
+                                 '".$_REQUEST['helpingCategoriesOfNGO']."')";
+    if (mysqli_query($link, $sql)) {
+        $_SESSION['success'] = "Your form submitted successfully for NGO service!";
+        
+      } else {
+        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
+        
+      }
+    }
+    //NGO individual registration
+     if(isset($_POST['submit9'])){
+        $sql = " INSERT INTO `ngo_registration_individual`( `name`, `address`, `district`, `ph_no`, `file`, `category`)
+                          VALUES('".$_REQUEST['firstNameOfInd']."',
+                                 '".$_REQUEST['addressOfInd']."',
+                                 '".$_REQUEST['dist']."',
+                                 '".$_REQUEST['phoneNoOfInd']."',
+                                 '".$_REQUEST['certificateOfInd']."',
+                                 
+                                 '".$_REQUEST['helpingCategoriesOfInd']."')";
+    if (mysqli_query($link, $sql)) {
+        $_SESSION['success'] = "Your form submitted successfully for individual helper!";
+        
+      } else {
+        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
+        
+      }
+    }
+//Help
+     if(isset($_POST['submit10'])){
+        $sql = "INSERT INTO `ngo_help_db`( `name`, `address`, `district`, `ph_no`, `file`, `description`, `category`)
+                          VALUES('".$_REQUEST['firstNameOfInd']."',
+                                 '".$_REQUEST['addressOfInd']."',
+                                 '".$_REQUEST['dist']."',
+                                 '".$_REQUEST['phoneNoOfInd']."',
+                                 '".$_REQUEST['certificateOfInd']."',
+                                 
+                                 '".$_REQUEST['description']."',
+                                 '".$_REQUEST['helpingCategoriesOfInd']."')";
+    if (mysqli_query($link, $sql)) {
+        $_SESSION['success'] = "Your form submitted successfully for help seeker!";
+        
+      } else {
+        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
+        
+      }
+    }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -109,7 +277,7 @@ $email= $_SESSION['email'];
                         </div>
                         <div class="col-12 mt-1">
                             <label for="">Blood Group</label>
-                            <select name="bgrp">
+                            <select class="form-control" name="bgrp">
                                 <option value="A+">A+</option>
                                 <option value="B+">B+</option>
                                 <option value="AB+">AB+</option>
@@ -122,7 +290,7 @@ $email= $_SESSION['email'];
                         </div>
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
-                            <select name="dist" id="dist">
+                            <select class="form-control" name="dist" id="dist">
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
                                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -150,7 +318,7 @@ $email= $_SESSION['email'];
                         </div>
                         <div class="col-12 mt-1">
                             <label for="">Frequency of blood donation</label>
-                            <select name="freq">
+                            <select class="form-control" name="freq">
                                 <option value="Regular Donor">Regular Donor</option>
                                 <option value="On need basis">On need basis</option>
                                 <option value="Yet to donate">Yet to donate</option>
@@ -203,7 +371,7 @@ $email= $_SESSION['email'];
                         </div>
                         <div class="col-12 mt-1">
                             <label for="">Blood Group</label>
-                            <select name="bgrp">
+                            <select class="form-control" name="bgrp">
                                 <option value="A+">A+</option>
                                 <option value="B+">B+</option>
                                 <option value="AB+">AB+</option>
@@ -216,7 +384,7 @@ $email= $_SESSION['email'];
                         </div>
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
-                            <select name="dist" id="dist">
+                            <select class="form-control" name="dist" id="dist">
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
                                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -270,8 +438,8 @@ $email= $_SESSION['email'];
                             <input type="text" class="form-control" name="name" required>
                         </div>
                         <div class="col-12 mt-1">
-                            Applying as a : &nbsp;Individual person <input type="radio" value="Individual person"
-                                name="person"> Organisation <input type="radio" value="Organisation" name="person">
+                            Applying as a : &nbsp;Individual person <input type="radio"  value="Individual person"
+                                name="person"> Organisation <input type="radio"  value="Organisation" name="person">
                         </div>
                         <div class="col-12 mt-1">
                             <label for="Address" class="form-label">Address</label>
@@ -279,7 +447,7 @@ $email= $_SESSION['email'];
                         </div>
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
-                            <select name="dist" id="dist">
+                            <select class="form-control" name="dist" id="dist">
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
                                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -352,7 +520,7 @@ $email= $_SESSION['email'];
                         </div>
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
-                            <select name="dist" id="dist">
+                            <select class="form-control" name="dist" id="dist">
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
                                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -425,7 +593,7 @@ $email= $_SESSION['email'];
                         </div>
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
-                            <select name="dist" id="dist">
+                            <select class="form-control" name="dist" id="dist">
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
                                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -496,7 +664,7 @@ $email= $_SESSION['email'];
                         </div>
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
-                            <select name="dist" id="dist">
+                            <select class="form-control" name="dist" id="dist">
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
                                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -553,6 +721,10 @@ $email= $_SESSION['email'];
                 <div class="modal-body">
                     <form class="row" action="#" method="POST">
                         <div class="col-12 mt-1 ">
+                            <label for="Name" class="form-label">Name</label>
+                            <input type="text" class="form-control" name="name" required>
+                        </div>
+                        <div class="col-12 mt-1 ">
                             <label for="Age" class="form-label">Age</label>
                             <input type="text" class="form-control" name="age" required>
                         </div>
@@ -575,11 +747,11 @@ $email= $_SESSION['email'];
                         </div>
                         <div class="col-12 mt-1">
                             <label for="Share Your Experience" class="form-label">Share Your Experience</label><br>
-                            <textarea name="experience" rows="8" cols="40" required></textarea> 
+                            <textarea name="experience" rows="5" class="form-control" required></textarea>
                         </div>
                         <div class="col-12 mt-1">
                             <label for="Add A Title" class="form-label">Add A Title</label><br>
-                            <textarea name="title" required rows="5" cols="40"></textarea>
+                            <textarea name="title" rows="5" class="form-control" required></textarea>
                         </div>
 
                         <div class="col-12 mt-1">
@@ -612,6 +784,10 @@ $email= $_SESSION['email'];
             <div class="modal-body">
                 <form class="row" action="#" method="POST">
                     <div class="col-12 mt-1 ">
+                            <label for="Name" class="form-label">Name</label>
+                            <input type="text" class="form-control" name="name" required>
+                        </div>
+                    <div class="col-12 mt-1 ">
                         <label for="Age" class="form-label">Age</label>
                         <input type="text" class="form-control" name="age" required>
                     </div>
@@ -634,11 +810,13 @@ $email= $_SESSION['email'];
                     </div>
                     <div class="col-12 mt-1">
                         <label for="Share Your Experience" class="form-label">Share Your Experience</label><br>
-                        <textarea name="experience" rows="8" cols="40" required></textarea> 
+                        <textarea name="experience" rows="5" class="form-control" required></textarea>
+
                     </div>
                     <div class="col-12 mt-1">
                         <label for="Add A Title" class="form-label">Add A Title</label><br>
-                        <textarea name="title" required rows="5" cols="40"></textarea>
+                        <textarea name="title" rows="5" class="form-control" required></textarea>
+
                     </div>
                     <div class="col-12 mt-1">
                         <label for="Upload Video" class="form-label">Upload Video</label>
@@ -679,7 +857,7 @@ $email= $_SESSION['email'];
                         </div>
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
-                            <select name="dist" id="dist" class="form-control">
+                            <select class="form-control" name="dist" id="dist" class="form-control">
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
                                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -785,7 +963,7 @@ $email= $_SESSION['email'];
                         </div>
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
-                            <select name="dist" id="dist" class="form-control">
+                            <select class="form-control" name="dist" id="dist" class="form-control">
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
                                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -893,7 +1071,7 @@ $email= $_SESSION['email'];
                         </div>
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
-                            <select name="dist" class="form-control" id="dist">
+                            <select class="form-control" name="dist" class="form-control" id="dist">
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
                                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -990,12 +1168,27 @@ $email= $_SESSION['email'];
             <div class="col-6 mt-5">
                 <h3>WELCOME <?php echo $_SESSION['name']; ?></h2>
             </div>
-            <div class="col-3 mt-5 d-flex justify-content-center align-items-center">
+            <div class="col-3 mt-5 d-flex justify-content-between align-items-center">
                 <a href="./usertable.html"><button class="btn btn-info">Your Submitted Data</button></a>
             </div>
-            <div class="col-3 mt-5 d-flex justify-content-center align-items-center">
+            <div class="col-3 mt-5 d-flex justify-content-between align-items-center">
                 <a href="logout.php"><button class="btn btn-info">Log out</button></a>
             </div>
+        </div>
+
+        <div class="row mt-3 pl-3">
+            <?php if(isset($_SESSION['success'])) { 
+                    echo ('<div class="alert alert-success w-100" role="alert">');
+                    echo( $_SESSION['success']); 
+                    echo('</div>');
+                    unset($_SESSION['success']);
+                } else if(isset($_SESSION['error'])) {
+                    echo ('<div class="alert alert-danger w-100" role="alert">');
+                    echo( $_SESSION['error']); 
+                    echo('</div>');
+                    unset($_SESSION['error']);
+                }
+            ?>
         </div>
 
         <div class="row d-flex justify-content-around mt-5">
@@ -1103,7 +1296,7 @@ $email= $_SESSION['email'];
         <div class="row d-flex justify-content-around mt-5">
             <div class="col-12 col-md-3">
                 <div class="card w-100">
-                    <img src="./images/card8.jpg" class="card-img-top" alt="blood donor">
+                    <img src="./images/card11.jfif" class="card-img-top" alt="blood donor">
                     <div class="card-body">
                         <h5 class="card-title">Share Experience As COVID Warrior</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk
@@ -1189,93 +1382,3 @@ $email= $_SESSION['email'];
 </body>
 
 </html>
-<?php 
-//Donor data insertion
-if(isset($_POST['submit'])){
-    $sql = "INSERT INTO `donor_db`(`id`,`name`,`address`,`phone number`,`date of birth`,`gender`,`blood group`,`district`,`frequency`,`proof`) VALUES('',
-'".$_REQUEST['name']."','".$_REQUEST['address']."','".$_REQUEST['phno']."','".$_REQUEST['dob']."','".$_REQUEST['gender']."',
-'".$_REQUEST['bgrp']."','".$_REQUEST['dist']."','".$_REQUEST['freq']."','".$_REQUEST['cert']."')";
-    mysqli_query($link, $sql);
-}
-//Receiver data insertion
-if(isset($_POST['submit1'])){
-    $sql = "INSERT INTO `receiver_db`(`id`,`name`,`address`,`phone number`,`date of birth`,`gender`,`blood group`,`district`,`proof`) VALUES('','".$_REQUEST['name']."',
-								 '".$_REQUEST['address']."','".$_REQUEST['phno']."','".$_REQUEST['dob']."','".$_REQUEST['gender']."','".$_REQUEST['bgrp']."','".$_REQUEST['dist']."',
-								 '".$_REQUEST['cert']."')";
-	mysqli_query($link, $sql);
-}
-//Oxygen data insertion
-if(isset($_POST['submit2'])){
-    $sql = "INSERT INTO `oxygen_db`(`id`,`name`,`application type`,`address`,`district`,`email`,`phone number`,`proof`) VALUES('','".$_REQUEST['name']."',
-								 '".$_REQUEST['person']."','".$_REQUEST['address']."','".$_REQUEST['dist']."','".$_REQUEST['email']."','".$_REQUEST['phno']."',
-								 '".$_REQUEST['cert']."')";
-	mysqli_query($link, $sql);
-}
-
-
-//Warrior data insertion
-if(isset($_POST['submit6'])){
-    $result = mysqli_query($link,"INSERT INTO `warrior_db`(`id`,`email`,`age`,`profession`,`city`,`district`,`experience`,`title`,`photo`,`video`) VALUES('','".$email."','".$_REQUEST['age']."',
-        '".$_REQUEST['profession']."','".$_REQUEST['city']."','".$_REQUEST['district']."','".$_REQUEST['experience']."','".$_REQUEST['title']."','".$_REQUEST['photo']."','".$_REQUEST['video']."')");
-}
-//Survivor data insertion
-if(isset($_POST['submit7'])){
-    $result = mysqli_query($link,"INSERT INTO `survivor_db`(`id`,`email`,`age`,`profession`,`city`,`district`,`experience`,`title`,`video`) VALUES('','".$email."','".$_REQUEST['age']."',
-        '".$_REQUEST['profession']."','".$_REQUEST['city']."','".$_REQUEST['district']."','".$_REQUEST['experience']."','".$_REQUEST['title']."','".$_REQUEST['video']."')");
-}
-
-//Child care data insertion
-if(isset($_POST['submit5'])){
-
-   $sql = "INSERT INTO `childcareprovider_db`(`id`,`name`,`address`,`district`,`phno`,`proof`) VALUES('',
-                                 '".$_REQUEST['nameOfNGO']."','".$_REQUEST['addressOfNGO']."','".$_REQUEST['dist']."',
-                                 '".$_REQUEST['phoneNoOfNGO']."','".$_REQUEST['certificateOfNGO']."')";
-    mysqli_query($link, $sql);}
-//Health care data insertion
-    if(isset($_POST['submit3'])){
-       $sql = "INSERT INTO `volunteer_db`(`id`,`name`,`user_type`,`address`,`district`,`email`,`phno`,`proof`)                                VALUES('',
-                                 '".$_REQUEST['nameOfvolunteer']."','".$_REQUEST['person']."','".$_REQUEST['addressOfvolunteer']."','".$_REQUEST['dist']."','".$_REQUEST['emailOfvolunteer']."',
-                                 '".$_REQUEST['phoneOfvolunteer']."','".$_REQUEST['certificateOfvolunteer']."')";
-    mysqli_query($link, $sql);}
-//Meal Provider data insertion
-    if(isset($_POST['submit4'])){
-            $sql = "INSERT INTO `mealprovider_db`(`id`,`name`,`address`,`district`,`email`,`phno`,`proof`) VALUES('',
-                                 '".$_REQUEST['nameOfNGO']."','".$_REQUEST['addressOfNGO']."','".$_REQUEST['dist']."','".$_REQUEST['email']."',
-                                 '".$_REQUEST['phoneNoOfNGO']."','".$_REQUEST['certificateOfNGO']."')";
-    mysqli_query($link, $sql);}
-    //NGO registration
-     if(isset($_POST['submit8'])){
-$sql = " INSERT INTO `ngo_registration`( `name`, `address`, `district`, `ph_no`, `file`, `category`)
-                          VALUES('".$_REQUEST['nameOfNGO']."',
-                                 '".$_REQUEST['addressOfNGO']."',
-                                 '".$_REQUEST['dist']."',
-                                 '".$_REQUEST['phoneNoOfNGO']."',
-                                 '".$_REQUEST['certificateOfNGO']."',
-                                 
-                                 '".$_REQUEST['helpingCategoriesOfNGO']."')";
-    mysqli_query($link, $sql);}
-    //NGO individual registration
-     if(isset($_POST['submit9'])){
-        $sql = " INSERT INTO `ngo_registration_individual`( `name`, `address`, `district`, `ph_no`, `file`, `category`)
-                          VALUES('".$_REQUEST['firstNameOfInd']."',
-                                 '".$_REQUEST['addressOfInd']."',
-                                 '".$_REQUEST['dist']."',
-                                 '".$_REQUEST['phoneNoOfInd']."',
-                                 '".$_REQUEST['certificateOfInd']."',
-                                 
-                                 '".$_REQUEST['helpingCategoriesOfInd']."')";
-    mysqli_query($link, $sql);}
-//Help
-     if(isset($_POST['submit10'])){
-        $sql = "INSERT INTO `ngo_help_db`( `name`, `address`, `district`, `ph_no`, `file`, `description`, `category`)
-                          VALUES('".$_REQUEST['firstNameOfInd']."',
-                                 '".$_REQUEST['addressOfInd']."',
-                                 '".$_REQUEST['dist']."',
-                                 '".$_REQUEST['phoneNoOfInd']."',
-                                 '".$_REQUEST['certificateOfInd']."',
-                                 
-                                 '".$_REQUEST['description']."',
-                                 '".$_REQUEST['helpingCategoriesOfInd']."')";
-    mysqli_query($link, $sql);}
-
-?>

@@ -59,7 +59,7 @@
       <a class="navbar-brand" href="index.html"><img class="logo w-100" src="../../images/project_logo.png" /></a>
       <ul class="nav navbar-nav d-none d-lg-flex w-100">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="../../sign.html">Sign in/Sign up</a>
+          <a class="nav-link" aria-current="page" href="../../sign.php">Sign in/Sign up</a>
         </li>
         <div class="d-flex ml-auto">
           <li class="nav-item ">
@@ -115,7 +115,7 @@
             <a class="nav-link" aria-current="page" href="../../index.php">Help Desk</a>
           </li>
           <li class="nav-item d-sm-flex d-lg-none">
-            <a class="nav-link" aria-current="page" href="../../sign.html">Sign in/Sign up</a>
+            <a class="nav-link" aria-current="page" href="../../sign.php">Sign in/Sign up</a>
           </li>
           <li class="nav-item d-sm-flex d-lg-none">
             <a class="nav-link" aria-current="page" href="../../../admin.html">Admin Login</a>
@@ -130,7 +130,10 @@
                 <div class="col-md-10 col-sm-12 heading">
                     <h1>Review Of COVID</h1>
                     <h1>Survivors And Warriors</h1><br><br>
-                    <a href="registerfrm.php"><button class="btn btn-dark px-5 py-2">Share Your Experience</button></a>
+                    <!--<a href="registerfrm.php"><button class="btn btn-dark px-5 py-2">Share Your Experience</button></a>-->
+                    <button type="button" class="btn btn-primary ml-4" data-bs-toggle="modal" data-bs-target="#userpanelmodel">
+                      Share Your Experience
+                    </button>
                 </div>
             </div>
         </div>
@@ -145,6 +148,28 @@
             <a href="videogallery.php" class="video">Video Gallery</a>
         </div>
     </header>
+
+
+    <!-- Modal -->
+<div class="modal fade" id="userpanelmodel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Alert</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        Please go to your user panel for this functionality.<br/>
+        (You must sign in first)
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a type="button" href="../../sign.php" class="btn btn-primary">SignIn</a>
+      </div>
+    </div>
+  </div>
+</div>
+
     <div type="button" class="btn btn-floating rounded" id="btn-back-to-top" style="
   
 

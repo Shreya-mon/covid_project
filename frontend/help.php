@@ -65,7 +65,7 @@ include("connection.php");?>
       <a class="navbar-brand" href="index.html"><img class="logo w-100" src="./images/project_logo.png" /></a>
       <ul class="nav navbar-nav d-none d-lg-flex w-100">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="sign.html">Sign in/Sign up</a>
+          <a class="nav-link" aria-current="page" href="sign.php">Sign in/Sign up</a>
         </li>
         <div class="d-flex ml-auto">
           <li class="nav-item ">
@@ -121,7 +121,7 @@ include("connection.php");?>
             <a class="nav-link active" aria-current="page" href="index.php">Help Desk</a>
           </li>
           <li class="nav-item d-sm-flex d-lg-none">
-            <a class="nav-link" aria-current="page" href="sign.html">Sign in/Sign up</a>
+            <a class="nav-link" aria-current="page" href="sign.php">Sign in/Sign up</a>
           </li>
           <li class="nav-item d-sm-flex d-lg-none">
             <a class="nav-link" aria-current="page" href="index.php">Admin Login</a>
@@ -270,9 +270,7 @@ include("connection.php");?>
       <div class="col-12 col-md-10">
        <h1 class="mt-2"><b>Help Desk</b> </h1>
       </div>
-      <div class="col-12 col-md-2 ">
-       <a href="../admin.html"><h3>Admin Login  <img src="./images/help5.png" style="width: 50px"></h3></a>
-      </div>
+      
       <div class="center-center">
         <img src="images/help1.gif" style="width: 70%;">
       </div>

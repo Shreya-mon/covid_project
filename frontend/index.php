@@ -42,7 +42,21 @@ include("connection.php");?>
     color: black;
     background-color: #148496;
   }
-  
+  .carousel-caption{
+  background-color: rgba(0,0,0,.5);
+  text-shadow: 1px 1px 2px #000, 0 0 25px #383a3a, 0 0 5px #fff;
+}
+.carousel-caption{
+  position: absolute;
+  right: 15%;
+  bottom: 20px;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
 </style>
 <body>
 <header>
@@ -109,7 +123,7 @@ include("connection.php");?>
             <a class="nav-link" aria-current="page" href="index.php">Help Desk</a>
           </li>
           <li class="nav-item d-sm-flex d-lg-none">
-            <a class="nav-link" aria-current="page" href="sign.html">Sign in/Sign up</a>
+            <a class="nav-link" aria-current="page" href="sign.php">Sign in/Sign up</a>
           </li>
           <li class="nav-item d-sm-flex d-lg-none">
             <a class="nav-link" aria-current="page" href="index.php">Admin Login</a>
@@ -128,16 +142,31 @@ include("connection.php");?>
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="./images/desk1.jpg" class="d-block carousel-img" alt="image not found">
-
+        <div class="carousel-caption">
+          <h3>Covid Care</h3>
+          <p>Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
       </div>
       <div class="carousel-item">
         <img src="./images/desk2.jpg" class="d-block carousel-img" alt="image not found">
+        <div class="carousel-caption">
+          <h3>Covid Care</h3>
+          <p>Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
       </div>
       <div class="carousel-item">
         <img src="./images/desk3.jpg" class="d-block carousel-img" alt="image not found">
+        <div class="carousel-caption">
+          <h3>Covid Care</h3>
+          <p>Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
       </div>
       <div class="carousel-item">
         <img src="./images/desk4.png" class="d-block carousel-img" alt="image not found">
+        <div class="carousel-caption">
+          <h3>Covid Care</h3>
+          <p>Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
