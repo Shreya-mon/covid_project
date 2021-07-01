@@ -9,11 +9,14 @@ session_start();
 
 <head>
  <script>function showmessage()
-{ var mess="Data submitted !"; alert(mess);}
+{ var mess="Data submitted !"; alert(mess); 
+}
 
 function showmessage1()
 { var mess="Your feedback Received!";alert(mess);}
 </script>
+
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -150,19 +153,19 @@ function showmessage1()
           <form class="row" action="#" method="post">
             <div class="col-12 mt-1 ">
               <label for="Name of NGO" class="form-label">Name: </label>
-              <input type="text" class="form-control" name="name" required>
+              <input type="text" class="form-control"  id="nameoffdbk" name="name" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Address" class="form-label">Address</label>
-              <input type="text" class="form-control" name="address" required>
+              <input type="text" class="form-control" id="addressoffdbk" name="address" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Email" class="form-label">Email</label>
-              <input type="email" class="form-control" name="email" required>
+              <input type="email" class="form-control" id="emailoffdbk"  name="email" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Phone Number" class="form-label">Phone Number</label>
-              <input type="text" class="form-control" name="phno" required>
+              <input type="text" class="form-control" id="ph_nooffdbk" name="phno" required>
             </div>
             <div class="col-12 mt-1">
               <label for="rating" class="form-label">Rate Our Website</label>
@@ -173,7 +176,7 @@ function showmessage1()
 				          data-rateyo-score="3">
 		        </div>
 		        <br><br>
-		        <input type="hidden" name="rating">
+		        <input type="hidden" name="rating" id="rating">
 
             <div class="col-12 mt-1">
               <label for="Address" class="form-label">Description:</label>
@@ -183,13 +186,41 @@ function showmessage1()
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <input type="submit" name="submit" class="btn btn-primary" value="Submit" onclick="showmessage1()">
+          <input type="submit" name="submit" class="btn btn-primary" value="Submit" onclick="validateform2()">
         </div>
       </div>
     </div>
     
   </div>
   </form>
+  <script>
+  function validateform2()
+  {
+    var name=document.getElementById('nameoffdbk').value;
+    var add=document.getElementById('addressoffdbk').value;
+    var email=document.getElementById('emailoffdbk').value;
+    var ph_no=document.getElementById('ph_nooffdbk').value;
+     var rate=document.getElementById('rating').value;
+    var flag=1;
+    if(!name)
+      flag=0;
+    if(!add)
+      flag=0;
+      
+    if(!email)
+        flag=0;
+    if(!ph_no)
+        flag=0;
+      if(!rate)
+        { alert("Please Rate us !");flag=0;}
+
+      if(flag==0)
+             alert("fill up the fields !");
+          
+      else
+        alert("Data received !");
+  }
+</script>
 
   <!--modal close-->
   <!--Fake information Modals -->
@@ -201,22 +232,22 @@ function showmessage1()
           <button type="button" class=" btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
         </div>
         <div class="modal-body">
-          <form class="row" action="#" method="POST">
+          <form class="row" action="#" method="POST" onsubmit="return validateform()">
             <div class="col-12 mt-1 ">
               <label for="Name" class="form-label">Name: </label>
-              <input type="text" class="form-control" name="nameOfoxygen" required>
+              <input type="text" class="form-control"  id="name" name="nameOfoxygen" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Address" class="form-label">Address</label>
-              <input type="text" class="form-control" name="addressOfoxygen" required>
+              <input type="text" class="form-control" id="address" name="addressOfoxygen" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Email" class="form-label">Email</label>
-              <input type="email" class="form-control" name="emailOfoxygen" required>
+              <input type="email" class="form-control" id="email" name="emailOfoxygen" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Phone Number" class="form-label">Phone Number</label>
-              <input type="number" class="form-control" name="phoneNoOfoxygen" required>
+              <input type="number" class="form-control"  id="ph_no" name="phoneNoOfoxygen" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Address" class="form-label">Description:</label>
@@ -228,7 +259,7 @@ function showmessage1()
             </div>
              <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <input type="submit" name="submit1" class="btn btn-primary" onclick="showmessage()">
+          <input type="submit" name="submit1" class="btn btn-primary" onclick="validateform()">
         </div>
           </form>
         </div>
@@ -236,6 +267,37 @@ function showmessage1()
       </div>
     </div>
   </div>
+
+<script>
+  function validateform()
+  {
+    var name=document.getElementById('name').value;
+    var add=document.getElementById('address').value;
+    var email=document.getElementById('email').value;
+    var ph_no=document.getElementById('ph_no').value;
+    var flag=1;
+    if(!name)
+      flag=0;
+    if(!add)
+      flag=0;
+      
+    if(!email)
+        flag=0;
+    if(!ph_no)
+        flag=0;
+
+      if(flag==0)
+             alert("fill up the fields");
+          
+      else
+        alert("Data received !");
+  }
+</script>
+
+
+
+
+
   <!--modal close-->
   <!--Query Modals -->
   <div class="modal fade" id="QueryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -246,29 +308,29 @@ function showmessage1()
           <button type="button" class=" btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
         </div>
         <div class="modal-body">
-          <form class="row" action="#" method="POST">
+          <form class="row" action="#" method="POST" onsubmit="return validateform1()">
             <div class="col-12 mt-1 ">
               <label for="Name of NGO" class="form-label">Name: </label>
-              <input type="text" class="form-control" name="nameOfoxygen" required>
+              <input type="text" class="form-control" id="nameofquery" name="nameOfoxygen" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Address" class="form-label">Address</label>
-              <input type="text" class="form-control" name="addressOfoxygen" required>
+              <input type="text" class="form-control" id="addressofquery" name="addressOfoxygen" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Email" class="form-label">Email</label>
-              <input type="email" class="form-control" name="emailOfoxygen" required>
+              <input type="email" class="form-control"  id="emailofquery" name="emailOfoxygen" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Phone Number" class="form-label">Phone Number</label>
-              <input type="number" class="form-control" name="phoneNoOfoxygen" required>
+              <input type="number" class="form-control" id="ph_noofquery" name="phoneNoOfoxygen" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Address" class="form-label">Description:</label>
               <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" placeholder="Enter Your Quries here"></textarea>            </div>
                <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <input type="submit"  name="submit2" class="btn btn-primary" onclick="showmessage()">
+          <input type="submit"  name="submit2" class="btn btn-primary" onclick="validateform1()">
         </div>
           </form>
         </div>
@@ -276,6 +338,34 @@ function showmessage1()
       </div>
     </div>
   </div>
+
+<script>
+  function validateform1()
+  {
+    var name=document.getElementById('nameofquery').value;
+    var add=document.getElementById('addressofquery').value;
+    var email=document.getElementById('emailofquery').value;
+    var ph_no=document.getElementById('ph_noofquery').value;
+    var flag=1;
+    if(!name)
+      flag=0;
+    if(!add)
+      flag=0;
+      
+    if(!email)
+        flag=0;
+    if(!ph_no)
+        flag=0;
+
+      if(flag==0)
+             alert("fill up the fields");
+          
+      else
+        alert(" data received !");
+  }
+</script>
+
+
   <!--modal close-->
   <div class="container mt-3 center">
     <div class="row center-center p-2">
