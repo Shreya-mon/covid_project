@@ -180,19 +180,29 @@ function showmessage1()
 
             <div class="col-12 mt-1">
               <label for="Address" class="form-label">Description:</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3" placeholder="Give Your Valuable Suggestions Here"></textarea>           
+              <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3" placeholder="Give Your Valuable Suggestions Here" required></textarea>           
             </div>
          
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <input type="submit" name="submit" class="btn btn-primary" value="Submit" onclick="validateform2()">
+          <input type="submit" name="submit" class="btn btn-primary" value="Submit" onclick="validateform2()" >
         </div>
       </div>
     </div>
     
+
+
+
+
+
   </div>
   </form>
+
+
+
+ 
+  
   <script>
   function validateform2()
   {
@@ -212,13 +222,15 @@ function showmessage1()
     if(!ph_no)
         flag=0;
       if(!rate)
-        { alert("Please Rate us !");flag=0;}
+        { flag=0;}
 
       if(flag==0)
              alert("fill up the fields !");
           
+          
       else
         alert("Data received !");
+    
   }
 </script>
 
@@ -638,7 +650,16 @@ if(isset($_POST['submit1'])){
     $rating = $_POST["rating"];
 
     $sql = "INSERT INTO `feedback_db` (`id`,`name`,`address`,`email`,`phno`,`rating`,`description`) VALUES ('','".$_REQUEST['name']."','".$_REQUEST['address']."','".$_REQUEST['email']."','".$_REQUEST['phno']."', '$rating','".$_REQUEST['description']."')";
-    $qry = mysqli_query($link, $sql);}}
+   
+    if (mysqli_query($link, $sql)) {
+        echo "<script>alert('Your form submitted successfully !')</script>";
+        
+      } else {
+        echo "<script>alert('Your form submiision failed !')</script>"; 
+        
+      }
+}
+}
 ?>
  
 </body>
