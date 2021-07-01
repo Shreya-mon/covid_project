@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 27, 2021 at 02:03 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.3
+-- Generation Time: Jul 01, 2021 at 06:43 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -41,8 +40,7 @@ CREATE TABLE `admin_details` (
 
 INSERT INTO `admin_details` (`id`, `name`, `email`, `password`) VALUES
 (1, 'SNEHA PAUL', 'snehapaul12182000@gmail.co', '1234'),
-(2, 'SUPRAVA KARMAKAR', 'suprava@gmail.com', '12345'),
-(3, '', '', '');
+(2, 'SUPRAVA KARMAKAR', 'suprava@gmail.com', '12345');
 
 -- --------------------------------------------------------
 
@@ -325,6 +323,33 @@ CREATE TABLE `oxygen_db` (
 
 INSERT INTO `oxygen_db` (`id`, `name`, `application type`, `address`, `district`, `email`, `phone number`, `proof`) VALUES
 (1, 'SNEHA PAUL', 'Individual person', '220/1 RAMCHANDRA PALLY PURBA BARISHA', 'Darjeeling', 'snehapaul12182000@gmail.com', '7003172952', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `query_db`
+--
+
+CREATE TABLE `query_db` (
+  `id` int(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `email` varchar(55) NOT NULL,
+  `ph_no` varchar(110) NOT NULL,
+  `description` varchar(111) NOT NULL,
+  `proof` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `query_db`
+--
+
+INSERT INTO `query_db` (`id`, `name`, `address`, `email`, `ph_no`, `description`, `proof`) VALUES
+(1, 'test', 'testtt', '88wd@gmail.com', '889766', '', ''),
+(2, 'test', 'testtt', '88wd@gmail.com', '889766', '', ''),
+(3, 'test', 'testtt', '88wd@gmail.com', '889766', '', ''),
+(4, 'testfor query', 'testtt', 'abc@gmail.com', '8900876', '', ''),
+(5, 'Shilpi Sarkar', '180/2/30, M.G.road Shantinagar,K.P.mission', 'sarkarshilpi789@gmail.com', '07003774436', 'hiiiii', '');
 
 -- --------------------------------------------------------
 
@@ -615,6 +640,12 @@ ALTER TABLE `oxygen_db`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `query_db`
+--
+ALTER TABLE `query_db`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `receiver_db`
 --
 ALTER TABLE `receiver_db`
@@ -744,6 +775,12 @@ ALTER TABLE `ngo_registration_individual`
 --
 ALTER TABLE `oxygen_db`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `query_db`
+--
+ALTER TABLE `query_db`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `receiver_db`
