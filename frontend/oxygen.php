@@ -252,6 +252,7 @@ include("connection.php");?>
                         else {  echo '<tr><td colspan="7" style="color:red; text-align:center;">No record found</td></tr>'; }
                   ?>
    
+
           </tbody>
         </table>
 
