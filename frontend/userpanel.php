@@ -7,7 +7,7 @@ $email= $_SESSION['email'];
 <?php 
 //Donor data insertion
 if(isset($_POST['submit'])){
-    $sql = "INSERT INTO `donor_db`(`id`,`name`,`address`,`phone number`,`date of birth`,`gender`,`blood group`,`district`,`frequency`,`proof`) VALUES('',
+    $sql = "INSERT INTO `donor_db`(`id`,`email`,`name`,`address`,`phone number`,`date of birth`,`gender`,`blood group`,`district`,`frequency`,`proof`) VALUES('','".$email."',
 '".$_REQUEST['name']."','".$_REQUEST['address']."','".$_REQUEST['phno']."','".$_REQUEST['dob']."','".$_REQUEST['gender']."',
 '".$_REQUEST['bgrp']."','".$_REQUEST['dist']."','".$_REQUEST['freq']."','".$_REQUEST['cert']."')";
     if (mysqli_query($link, $sql)) {
@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
 }
 //Receiver data insertion
 if(isset($_POST['submit1'])){
-    $sql = "INSERT INTO `receiver_db`(`id`,`name`,`address`,`phone number`,`date of birth`,`gender`,`blood group`,`district`,`proof`) VALUES('','".$_REQUEST['name']."',
+    $sql = "INSERT INTO `receiver_db`(`id`,`email`,`name`,`address`,`phone number`,`date of birth`,`gender`,`blood group`,`district`,`proof`) VALUES('','".$email."','".$_REQUEST['name']."',
 								 '".$_REQUEST['address']."','".$_REQUEST['phno']."','".$_REQUEST['dob']."','".$_REQUEST['gender']."','".$_REQUEST['bgrp']."','".$_REQUEST['dist']."',
 								 '".$_REQUEST['cert']."')";
 	
@@ -35,7 +35,7 @@ if(isset($_POST['submit1'])){
 //Oxygen data insertion
 if(isset($_POST['submit2'])){
     $sql = "INSERT INTO `oxygen_db`(`id`,`name`,`application type`,`address`,`district`,`email`,`phone number`,`proof`) VALUES('','".$_REQUEST['name']."',
-								 '".$_REQUEST['person']."','".$_REQUEST['address']."','".$_REQUEST['dist']."','".$_REQUEST['email']."','".$_REQUEST['phno']."',
+								 '".$_REQUEST['person']."','".$_REQUEST['address']."','".$_REQUEST['dist']."','".$email."','".$_REQUEST['phno']."',
 								 '".$_REQUEST['cert']."')";
     if (mysqli_query($link, $sql)) {
         $_SESSION['success'] = "Your form submitted successfully for oxygen supply!";
@@ -75,7 +75,7 @@ if(isset($_POST['submit7'])){
 //Child care data insertion
 if(isset($_POST['submit5'])){
 
-   $sql = "INSERT INTO `childcareprovider_db`(`id`,`name`,`address`,`district`,`phno`,`proof`) VALUES('',
+   $sql = "INSERT INTO `childcareprovider_db`(`id`,`email`,`name`,`address`,`district`,`phno`,`proof`) VALUES('','".$email."',
                                  '".$_REQUEST['nameOfNGO']."','".$_REQUEST['addressOfNGO']."','".$_REQUEST['dist']."',
                                  '".$_REQUEST['phoneNoOfNGO']."','".$_REQUEST['certificateOfNGO']."')";
     
@@ -89,8 +89,8 @@ if(isset($_POST['submit5'])){
 }
 //Health care data insertion
     if(isset($_POST['submit3'])){
-       $sql = "INSERT INTO `volunteer_db`(`id`,`name`,`user_type`,`address`,`district`,`email`,`phno`,`proof`)                                VALUES('',
-                                 '".$_REQUEST['nameOfvolunteer']."','".$_REQUEST['person']."','".$_REQUEST['addressOfvolunteer']."','".$_REQUEST['dist']."','".$_REQUEST['emailOfvolunteer']."',
+       $sql = "INSERT INTO `volunteer_db`(`id`,`name`,`user_type`,`address`,`district`,`email`,`phno`,`proof`) VALUES('',
+                                 '".$_REQUEST['nameOfvolunteer']."','".$_REQUEST['person']."','".$_REQUEST['addressOfvolunteer']."','".$_REQUEST['dist']."','".$email."',
                                  '".$_REQUEST['phoneOfvolunteer']."','".$_REQUEST['certificateOfvolunteer']."')";
    
      if (mysqli_query($link, $sql)) {
@@ -104,7 +104,7 @@ if(isset($_POST['submit5'])){
 //Meal Provider data insertion
     if(isset($_POST['submit4'])){
             $sql = "INSERT INTO `mealprovider_db`(`id`,`name`,`address`,`district`,`email`,`phno`,`proof`) VALUES('',
-                                 '".$_REQUEST['nameOfNGO']."','".$_REQUEST['addressOfNGO']."','".$_REQUEST['dist']."','".$_REQUEST['email']."',
+                                 '".$_REQUEST['nameOfNGO']."','".$_REQUEST['addressOfNGO']."','".$_REQUEST['dist']."','".$email."',
                                  '".$_REQUEST['phoneNoOfNGO']."','".$_REQUEST['certificateOfNGO']."')";
     if (mysqli_query($link, $sql)) {
         $_SESSION['success'] = "Your form submitted successfully for meal service!";
@@ -116,8 +116,8 @@ if(isset($_POST['submit5'])){
     }
     //NGO registration
      if(isset($_POST['submit8'])){
-$sql = " INSERT INTO `ngo_registration`( `name`, `address`, `district`, `ph_no`, `file`, `category`)
-                          VALUES('".$_REQUEST['nameOfNGO']."',
+$sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `district`, `ph_no`, `file`, `category`)
+                          VALUES('','".$email."','".$_REQUEST['nameOfNGO']."',
                                  '".$_REQUEST['addressOfNGO']."',
                                  '".$_REQUEST['dist']."',
                                  '".$_REQUEST['phoneNoOfNGO']."',
@@ -134,8 +134,8 @@ $sql = " INSERT INTO `ngo_registration`( `name`, `address`, `district`, `ph_no`,
     }
     //NGO individual registration
      if(isset($_POST['submit9'])){
-        $sql = " INSERT INTO `ngo_registration_individual`( `name`, `address`, `district`, `ph_no`, `file`, `category`)
-                          VALUES('".$_REQUEST['firstNameOfInd']."',
+        $sql = " INSERT INTO `ngo_registration_individual`(`id`,`email`, `name`, `address`, `district`, `ph_no`, `file`, `category`)
+                          VALUES('','".$email."','".$_REQUEST['firstNameOfInd']."',
                                  '".$_REQUEST['addressOfInd']."',
                                  '".$_REQUEST['dist']."',
                                  '".$_REQUEST['phoneNoOfInd']."',
@@ -152,8 +152,8 @@ $sql = " INSERT INTO `ngo_registration`( `name`, `address`, `district`, `ph_no`,
     }
 //Help
      if(isset($_POST['submit10'])){
-        $sql = "INSERT INTO `ngo_help_db`( `name`, `address`, `district`, `ph_no`, `file`, `description`, `category`)
-                          VALUES('".$_REQUEST['firstNameOfInd']."',
+        $sql = "INSERT INTO `ngo_help_db`(`id`,`email`, `name`, `address`, `district`, `ph_no`, `file`, `description`, `category`)
+                          VALUES('','".$email."','".$_REQUEST['firstNameOfInd']."',
                                  '".$_REQUEST['addressOfInd']."',
                                  '".$_REQUEST['dist']."',
                                  '".$_REQUEST['phoneNoOfInd']."',
@@ -474,10 +474,6 @@ $sql = " INSERT INTO `ngo_registration`( `name`, `address`, `district`, `ph_no`,
                             </select>
                         </div>
                         <div class="col-12 mt-1">
-                            <label for="Email" class="form-label">Email</label>
-                            <input type="email" class="form-control" name="email" required>
-                        </div>
-                        <div class="col-12 mt-1">
                             <label for="Phone Number" class="form-label">Phone Number</label>
                             <input type="text" class="form-control" name="phno" required>
                         </div>
@@ -511,8 +507,8 @@ $sql = " INSERT INTO `ngo_registration`( `name`, `address`, `district`, `ph_no`,
                             <input type="text" class="form-control" name="nameOfvolunteer" required>
                         </div>
                         <div class="col-12 mt-1">
-                            Applying as a: &nbsp;individual person <input type="radio" name="person"> Team <input
-                                type="radio" name="person">
+                            Applying as a: &nbsp;Individual person <input type="radio" name="person" value="Individual person"> Team <input
+                                type="radio" name="person" value="Team">
                         </div>
                         <div class="col-12 mt-1">
                             <label for="Address" class="form-label">Address</label>
@@ -521,6 +517,7 @@ $sql = " INSERT INTO `ngo_registration`( `name`, `address`, `district`, `ph_no`,
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
                             <select class="form-control" name="dist" id="dist">
+                                <option value="">Select</option>
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
                                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -545,10 +542,6 @@ $sql = " INSERT INTO `ngo_registration`( `name`, `address`, `district`, `ph_no`,
                                 <option value="South 24 Parganas">South 24 Parganas</option>
                                 <option value="Uttar Dinajpur">Uttar Dinajpur</option>
                             </select>
-                        </div>
-                        <div class="col-12 mt-1">
-                            <label for="Email" class="form-label">Email</label>
-                            <input type="email" class="form-control" name="emailOfvolunteer" required>
                         </div>
                         <div class="col-12 mt-1">
                             <label for="Phone Number" class="form-label">Phone Number</label>
@@ -594,6 +587,7 @@ $sql = " INSERT INTO `ngo_registration`( `name`, `address`, `district`, `ph_no`,
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
                             <select class="form-control" name="dist" id="dist">
+                                <option value="">Select</option>
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
                                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -618,10 +612,6 @@ $sql = " INSERT INTO `ngo_registration`( `name`, `address`, `district`, `ph_no`,
                                 <option value="South 24 Parganas">South 24 Parganas</option>
                                 <option value="Uttar Dinajpur">Uttar Dinajpur</option>
                             </select>
-                        </div>
-                        <div class="col-12 mt-1">
-                            <label for="Email" class="form-label">Email</label>
-                            <input type="email" class="form-control" name="emailOfvolunteer" required>
                         </div>
                         <div class="col-12 mt-1">
                             <label for="Phone Number" class="form-label">Phone Number</label>
@@ -665,6 +655,7 @@ $sql = " INSERT INTO `ngo_registration`( `name`, `address`, `district`, `ph_no`,
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
                             <select class="form-control" name="dist" id="dist">
+                                <option value="">Select</option>
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
                                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -742,10 +733,6 @@ $sql = " INSERT INTO `ngo_registration`( `name`, `address`, `district`, `ph_no`,
                         </div>
                         
                         <div class="col-12 mt-1">
-                            <label for="Phone Number" class="form-label">Phone Number</label>
-                            <input type="text" class="form-control" name="phno" required>
-                        </div>
-                        <div class="col-12 mt-1">
                             <label for="Share Your Experience" class="form-label">Share Your Experience</label><br>
                             <textarea name="experience" rows="5" class="form-control" required></textarea>
                         </div>
@@ -802,11 +789,6 @@ $sql = " INSERT INTO `ngo_registration`( `name`, `address`, `district`, `ph_no`,
                     <div class="col-12 mt-1">
                         <label for="District" class="form-label">District</label>
                         <input type="text" class="form-control" name="district" required>
-                    </div>
-                    
-                    <div class="col-12 mt-1">
-                        <label for="Phone Number" class="form-label">Phone Number</label>
-                        <input type="text" class="form-control" name="phno" required>
                     </div>
                     <div class="col-12 mt-1">
                         <label for="Share Your Experience" class="form-label">Share Your Experience</label><br>
@@ -954,7 +936,7 @@ $sql = " INSERT INTO `ngo_registration`( `name`, `address`, `district`, `ph_no`,
                     <form class="row" action="#" method="post"
                         name="insert_ngo_registraion_individual_frm">
                         <div class="col-12 mt-1 ">
-                            <label for="First Name" class="form-label">First Name</label>
+                            <label for="First Name" class="form-label">Name</label>
                             <input type="text" class="form-control" name="firstNameOfInd" required>
                         </div>
                         <div class="col-12 mt-1">
@@ -1169,7 +1151,7 @@ $sql = " INSERT INTO `ngo_registration`( `name`, `address`, `district`, `ph_no`,
                 <h3>WELCOME <?php echo $_SESSION['name']; ?></h2>
             </div>
             <div class="col-3 mt-5 d-flex justify-content-between align-items-center">
-                <a href="./usertable.html"><button class="btn btn-info">Your Submitted Data</button></a>
+                <a href="./usertable.php"><button class="btn btn-info">Your Submitted Data</button></a>
             </div>
             <div class="col-3 mt-5 d-flex justify-content-between align-items-center">
                 <a href="logout.php"><button class="btn btn-info">Log out</button></a>

@@ -28,6 +28,7 @@ a{
 <h3 style="color:darkgreen;"><center><a href="menu.html">Back to Home </a></center><br>
 <table width = "80%" border="1" cellspacing="2" cellpadding="5" align="center" style="background-color: darkSlategray; color: white;">
 	<tr>
+		<td><strong>Name</strong></td>
 		<td><strong>Email</strong></td>
 		<td><strong>Age</strong></td>
 		<td><strong>Profession</strong></td>
@@ -46,6 +47,7 @@ a{
 			while($row = mysqli_fetch_assoc($result))
 			{
 				echo "<tr>";
+				echo "<td>".$row["name"]."</td>";
 				echo "<td>".$row["email"]."</td>";
 				echo "<td>".$row["age"]."</td>";
 				echo "<td>".$row["profession"]."</td>";

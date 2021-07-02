@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 01, 2021 at 10:05 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
+-- Generation Time: Jul 02, 2021 at 04:57 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -40,7 +41,8 @@ CREATE TABLE `admin_details` (
 
 INSERT INTO `admin_details` (`id`, `name`, `email`, `password`) VALUES
 (1, 'SNEHA PAUL', 'snehapaul12182000@gmail.co', '1234'),
-(2, 'SUPRAVA KARMAKAR', 'suprava@gmail.com', '12345');
+(2, 'SUPRAVA KARMAKAR', 'suprava@gmail.com', '12345'),
+(3, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -69,6 +71,7 @@ INSERT INTO `admission_cell_db` (`id`, `district`, `phno`) VALUES
 
 CREATE TABLE `childcareprovider_db` (
   `id` int(10) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `district` varchar(255) NOT NULL,
@@ -80,8 +83,9 @@ CREATE TABLE `childcareprovider_db` (
 -- Dumping data for table `childcareprovider_db`
 --
 
-INSERT INTO `childcareprovider_db` (`id`, `name`, `address`, `district`, `phno`, `proof`) VALUES
-(1, 'Riya Mithia', 'Sahararhat,Falta, South 24 Parganas,743504, West Bengal', 'Alipurduar', '09002092950', '');
+INSERT INTO `childcareprovider_db` (`id`, `email`, `name`, `address`, `district`, `phno`, `proof`) VALUES
+(1, '', 'Riya Mithia', 'Sahararhat,Falta, South 24 Parganas,743504, West Bengal', 'Alipurduar', '09002092950', ''),
+(3, 'tina@gmail.com', 'Tina', '342, akashbani kolkata-700045', 'Kolkata', '6245678077', '');
 
 -- --------------------------------------------------------
 
@@ -135,6 +139,7 @@ INSERT INTO `doctor_db` (`id`, `cat_id`, `dname`, `phno`, `email`, `address`, `d
 
 CREATE TABLE `donor_db` (
   `id` int(10) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `phone number` varchar(255) NOT NULL,
@@ -150,8 +155,11 @@ CREATE TABLE `donor_db` (
 -- Dumping data for table `donor_db`
 --
 
-INSERT INTO `donor_db` (`id`, `name`, `address`, `phone number`, `date of birth`, `gender`, `blood group`, `district`, `frequency`, `proof`) VALUES
-(2, 'SNEHA PAUL', '220/1 RAMCHANDRA PALLY PURBA BARISHA', '7003172952', '2021-06-22', 'Female', 'A+', 'Alipurduar', 'Regular Donor', '');
+INSERT INTO `donor_db` (`id`, `email`, `name`, `address`, `phone number`, `date of birth`, `gender`, `blood group`, `district`, `frequency`, `proof`) VALUES
+(2, 'snehapaul12182000@gmail.com', 'SNEHA PAUL', '220/1 RAMCHANDRA PALLY PURBA BARISHA', '7003172952', '2021-06-22', 'Female', 'A+', 'Alipurduar', 'Regular Donor', ''),
+(5, 'lipi@gmail.com', 'Lipi', '365,ygevdhd', '5378291072', '2021-06-30', 'Female', 'AB+', 'Howrah', 'Yet to donate', ''),
+(6, 'tina@gmail.com', 'Tina', '23, S.N Roy Road Kolkata-700052', '5378291072', '2021-06-19', 'Female', 'AB-', 'Cooch Behar', 'On need basis', ''),
+(7, 'tom@gmail.com', 'Tom', 'Kolkata', '5378291072', '2021-07-01', 'Male', 'O+', 'Kolkata', 'On need basis', '');
 
 -- --------------------------------------------------------
 
@@ -228,7 +236,8 @@ CREATE TABLE `mealprovider_db` (
 --
 
 INSERT INTO `mealprovider_db` (`id`, `name`, `address`, `district`, `email`, `phno`, `proof`) VALUES
-(1, 'Riya Mithia', 'Sahararhat,Falta, South 24 Parganas,743504, West Bengal', 'Alipurduar', 'riya.mithia8167@gmail.com', '09002092950', '');
+(1, 'Riya Mithia', 'Sahararhat,Falta, South 24 Parganas,743504, West Bengal', 'Alipurduar', 'riya.mithia8167@gmail.com', '09002092950', ''),
+(3, 'Lipi', '342, akashbani kolkata-700045', 'Kolkata', 'lipi@gmail.com', '58976869798', '');
 
 -- --------------------------------------------------------
 
@@ -238,6 +247,7 @@ INSERT INTO `mealprovider_db` (`id`, `name`, `address`, `district`, `email`, `ph
 
 CREATE TABLE `ngo_help_db` (
   `id` int(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `name` varchar(45) NOT NULL,
   `address` varchar(255) NOT NULL,
   `district` varchar(40) NOT NULL,
@@ -251,8 +261,9 @@ CREATE TABLE `ngo_help_db` (
 -- Dumping data for table `ngo_help_db`
 --
 
-INSERT INTO `ngo_help_db` (`id`, `name`, `address`, `district`, `ph_no`, `file`, `description`, `category`) VALUES
-(3, 'test', 'ttttttttttttttttttttttttttttttttttt', 'Alipurduar', '000000000000000000000000', 'wallpaper.png', '', '');
+INSERT INTO `ngo_help_db` (`id`, `email`, `name`, `address`, `district`, `ph_no`, `file`, `description`, `category`) VALUES
+(3, '', 'test', 'ttttttttttttttttttttttttttttttttttt', 'Alipurduar', '000000000000000000000000', 'wallpaper.png', '', ''),
+(5, 'tina@gmail.com', 'Tina', '324, akashbani kolkata-700034', 'Kolkata', '5476687690', '', 'I need help', 'medicine');
 
 -- --------------------------------------------------------
 
@@ -262,6 +273,7 @@ INSERT INTO `ngo_help_db` (`id`, `name`, `address`, `district`, `ph_no`, `file`,
 
 CREATE TABLE `ngo_registration` (
   `id` int(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `district` varchar(30) NOT NULL,
@@ -274,8 +286,9 @@ CREATE TABLE `ngo_registration` (
 -- Dumping data for table `ngo_registration`
 --
 
-INSERT INTO `ngo_registration` (`id`, `name`, `address`, `district`, `ph_no`, `file`, `category`) VALUES
-(1, 'test', 'testtttttttttttttt', 'Alipurduar', '00000000000000', '', '');
+INSERT INTO `ngo_registration` (`id`, `email`, `name`, `address`, `district`, `ph_no`, `file`, `category`) VALUES
+(1, '', 'test', 'testtttttttttttttt', 'Alipurduar', '00000000000000', '', ''),
+(3, 'tina@gmail.com', 'Help india', '342, akashbani kolkata-700045', 'Jalpaiguri', '58976869798', '', 'books');
 
 -- --------------------------------------------------------
 
@@ -285,6 +298,7 @@ INSERT INTO `ngo_registration` (`id`, `name`, `address`, `district`, `ph_no`, `f
 
 CREATE TABLE `ngo_registration_individual` (
   `id` int(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `district` varchar(25) NOT NULL,
@@ -297,8 +311,9 @@ CREATE TABLE `ngo_registration_individual` (
 -- Dumping data for table `ngo_registration_individual`
 --
 
-INSERT INTO `ngo_registration_individual` (`id`, `name`, `address`, `district`, `ph_no`, `file`, `category`) VALUES
-(1, 'test', 'tesy667', 'Alipurduar', '000000000000', '', 'books');
+INSERT INTO `ngo_registration_individual` (`id`, `email`, `name`, `address`, `district`, `ph_no`, `file`, `category`) VALUES
+(1, '', 'test', 'tesy667', 'Alipurduar', '000000000000', '', 'books'),
+(3, 'tina@gmail.com', 'Tina', '324, akashbani kolkata-700034', 'Kolkata', '5476687690', '', 'food');
 
 -- --------------------------------------------------------
 
@@ -322,7 +337,9 @@ CREATE TABLE `oxygen_db` (
 --
 
 INSERT INTO `oxygen_db` (`id`, `name`, `application type`, `address`, `district`, `email`, `phone number`, `proof`) VALUES
-(1, 'SNEHA PAUL', 'Individual person', '220/1 RAMCHANDRA PALLY PURBA BARISHA', 'Darjeeling', 'snehapaul12182000@gmail.com', '7003172952', '');
+(1, 'SNEHA PAUL', 'Individual person', '220/1 RAMCHANDRA PALLY PURBA BARISHA', 'Darjeeling', 'snehapaul12182000@gmail.com', '7003172952', ''),
+(3, 'Lipi', 'Individual person', 'Kolkata', 'Kolkata', 'lipi@gmail.com', '5378291072', ''),
+(4, 'Tina', 'Organisation', '365,ygevdhd', 'Murshidabad', 'tina@gmail.com', '5378291072', '');
 
 -- --------------------------------------------------------
 
@@ -359,6 +376,7 @@ INSERT INTO `query_db` (`id`, `name`, `address`, `email`, `ph_no`, `description`
 
 CREATE TABLE `receiver_db` (
   `id` int(10) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `phone number` varchar(255) NOT NULL,
@@ -373,8 +391,10 @@ CREATE TABLE `receiver_db` (
 -- Dumping data for table `receiver_db`
 --
 
-INSERT INTO `receiver_db` (`id`, `name`, `address`, `phone number`, `date of birth`, `gender`, `blood group`, `district`, `proof`) VALUES
-(1, 'SNEHA PAUL', '220/1 RAMCHANDRA PALLY PURBA BARISHA', '9339285384', '2021-06-26', 'Female', 'A+', 'Alipurduar', '');
+INSERT INTO `receiver_db` (`id`, `email`, `name`, `address`, `phone number`, `date of birth`, `gender`, `blood group`, `district`, `proof`) VALUES
+(1, 'snehapaul12182000@gmail.com', 'SNEHA PAUL', '220/1 RAMCHANDRA PALLY PURBA BARISHA', '9339285384', '2021-06-26', 'Female', 'A+', 'Alipurduar', ''),
+(4, 'tina@gmail.com', 'Tina', '365,ygevdhd', '5378291072', '2021-06-30', 'Female', 'AB+', 'Howrah', ''),
+(5, 'tom@gmail.com', 'Tom', '365,ygevdhd', '7686897843', '2021-07-31', 'Male', 'O+', 'Kolkata', '');
 
 -- --------------------------------------------------------
 
@@ -397,7 +417,8 @@ CREATE TABLE `register_db` (
 INSERT INTO `register_db` (`id`, `uname`, `email`, `n_password`, `con_password`) VALUES
 (1, 'Tina', 'tina@gmail.com', 'dGluYQ==', 'tina'),
 (2, 'Lipi', 'lipi@gmail.com', 'bGlwaQ==', 'lipi'),
-(4, 'SNEHA PAUL', 'snehapaul12182000@gmail.com', 'MTIzNDU=', '12345');
+(12, 'SNEHA PAUL', 'snehapaul12182000@gmail.com', 'MTIzNDU=', '12345'),
+(13, 'Tom', 'tom@gmail.com', 'dG9t', 'tom');
 
 -- --------------------------------------------------------
 
@@ -441,11 +462,11 @@ CREATE TABLE `service` (
 --
 
 INSERT INTO `service` (`service_id`, `name`, `description`) VALUES
-(1, 'Oxygen Service', ''),
-(2, 'NGO and Charity', ''),
+(1, 'oxygen service', ''),
+(2, 'ngo and charity', ''),
 (6, 'Health-Care-Heroes', ''),
 (7, 'Meal Services', ''),
-(8, 'Child-Care Services', ''),
+(8, 'Child -Care Services', ''),
 (9, 'Blood Bank', '');
 
 -- --------------------------------------------------------
@@ -574,6 +595,7 @@ INSERT INTO `service_providers` (`id`, `service_id`, `name`, `contact`, `email`,
 
 CREATE TABLE `survivor_db` (
   `id` int(10) NOT NULL,
+  `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `age` varchar(30) NOT NULL,
   `profession` varchar(255) NOT NULL,
@@ -588,8 +610,9 @@ CREATE TABLE `survivor_db` (
 -- Dumping data for table `survivor_db`
 --
 
-INSERT INTO `survivor_db` (`id`, `email`, `age`, `profession`, `city`, `district`, `experience`, `title`, `video`) VALUES
-(2, 'lipi@gmail.com', '45', 'Student', 'Kolkata', 'Kolkata', 'Very bad..', 'My COVID Experience', '');
+INSERT INTO `survivor_db` (`id`, `name`, `email`, `age`, `profession`, `city`, `district`, `experience`, `title`, `video`) VALUES
+(1, 'Tina', 'tina@gmail.com', '30', 'Student', 'Kolkata', 'Kolkata', 'Worst Experience', 'My COVID Days', ''),
+(2, 'Lipi', 'lipi@gmail.com', '50', 'Employee', 'Kolkata', 'Kolkata', 'Worst', 'Hii', '');
 
 -- --------------------------------------------------------
 
@@ -613,7 +636,9 @@ CREATE TABLE `volunteer_db` (
 --
 
 INSERT INTO `volunteer_db` (`id`, `name`, `user_type`, `address`, `district`, `email`, `phno`, `proof`) VALUES
-(1, 'Riya Mithia', 'on', 'Sahararhat,Falta, South 24 Parganas,743504, West Bengal', 'Alipurduar', 'riya.mithia8167@gmail.com', '09002092950', '');
+(1, 'Riya Mithia', 'on', 'Sahararhat,Falta, South 24 Parganas,743504, West Bengal', 'Alipurduar', 'riya.mithia8167@gmail.com', '09002092950', ''),
+(6, 'Lipi', 'Team', 'Kolkata', 'Nadia', 'lipi@gmail.com', '5668646546', ''),
+(8, 'Tom', 'Individual person', '34, Station Rd Kharagpur-345634', 'Paschim Medinipur', 'tom@gmail.com', '8879878732', '');
 
 -- --------------------------------------------------------
 
@@ -623,6 +648,7 @@ INSERT INTO `volunteer_db` (`id`, `name`, `user_type`, `address`, `district`, `e
 
 CREATE TABLE `warrior_db` (
   `id` int(10) NOT NULL,
+  `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `age` varchar(30) NOT NULL,
   `profession` varchar(255) NOT NULL,
@@ -638,8 +664,9 @@ CREATE TABLE `warrior_db` (
 -- Dumping data for table `warrior_db`
 --
 
-INSERT INTO `warrior_db` (`id`, `email`, `age`, `profession`, `city`, `district`, `experience`, `title`, `photo`, `video`) VALUES
-(2, 'rina@gmail.com', '52', 'Nurse', 'Kolkata', 'Kolkata', 'Terrific Experience.', 'My experience as a Covid warrior', '', '');
+INSERT INTO `warrior_db` (`id`, `name`, `email`, `age`, `profession`, `city`, `district`, `experience`, `title`, `photo`, `video`) VALUES
+(1, 'Tina', 'tina@gmail.com', '30', 'Doctor', 'Kolkata', 'Kolkata', 'Very Bad..', 'My Experience', '', ''),
+(3, 'Lipi', 'lipi@gmail.com', '20', 'Nurse', 'Kolkata', 'Kolkata', 'Bad', 'Experience', '', '');
 
 --
 -- Indexes for dumped tables
@@ -799,7 +826,7 @@ ALTER TABLE `admission_cell_db`
 -- AUTO_INCREMENT for table `childcareprovider_db`
 --
 ALTER TABLE `childcareprovider_db`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `doctor_category`
@@ -811,19 +838,19 @@ ALTER TABLE `doctor_category`
 -- AUTO_INCREMENT for table `doctor_db`
 --
 ALTER TABLE `doctor_db`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `donor_db`
 --
 ALTER TABLE `donor_db`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `feedback_db`
 --
 ALTER TABLE `feedback_db`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `hospital_db`
@@ -835,31 +862,31 @@ ALTER TABLE `hospital_db`
 -- AUTO_INCREMENT for table `mealprovider_db`
 --
 ALTER TABLE `mealprovider_db`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `ngo_help_db`
 --
 ALTER TABLE `ngo_help_db`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `ngo_registration`
 --
 ALTER TABLE `ngo_registration`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `ngo_registration_individual`
 --
 ALTER TABLE `ngo_registration_individual`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `oxygen_db`
 --
 ALTER TABLE `oxygen_db`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `query_db`
@@ -871,13 +898,13 @@ ALTER TABLE `query_db`
 -- AUTO_INCREMENT for table `receiver_db`
 --
 ALTER TABLE `receiver_db`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `register_db`
 --
 ALTER TABLE `register_db`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `safehome_db`
@@ -907,13 +934,13 @@ ALTER TABLE `survivor_db`
 -- AUTO_INCREMENT for table `volunteer_db`
 --
 ALTER TABLE `volunteer_db`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `warrior_db`
 --
 ALTER TABLE `warrior_db`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

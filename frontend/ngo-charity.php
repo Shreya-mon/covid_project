@@ -248,13 +248,14 @@ include("connection.php");?>
       </div>
     </div>
 
-    <form action="#table">
+    <form action="#table" method="post">
     <div class="h3 mt-5 p-2">
           Search Here for your nearby NGO Services:</div>
         <!--Grid column-->
         <div class="col-md-6 mb-4">
           <div class="input-group md-form form-sm form-2 pl-0">
           <select class="form-control" name="district_choice">
+              <option value="">Select District</option>
               <option value="Alipurduar">Alipurduar</option>
                 <option value="Bankura">Bankura</option>
                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -291,10 +292,10 @@ include("connection.php");?>
 
     <div class="container  mt-5">
       <div class="row" style="text-align: center; align-items: center; justify-content: center;">
-        <h3>Some NGO List</h3>
+        <h3 id="table">Some NGO List</h3>
       </div>
       <div class="row mt-3">
-        <table class="table" id="table">
+        <table class="table">
           <thead class="thead-light">
             <tr>
              <th scope="col">Serial No.</th>

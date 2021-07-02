@@ -30,6 +30,7 @@ a{
 	<tr>
 		<td align="center"><strong>ID</strong></td>
 		<td><strong>Name</strong></td>
+		<td><strong>Email</strong></td>
 		<td><strong>Address</strong></td>
 		<td><strong>Phone Number</strong></td>
 		<td><strong>Date of Birth</strong></td>
@@ -50,6 +51,7 @@ a{
 				echo "<tr>";
 				echo "<td align = 'center'>".$row["id"]."</td>";
 				echo "<td>".$row["name"]."</td>";
+				echo "<td>".$row["email"]."</td>";
 				echo "<td>".$row["address"]."</td>";
 				echo "<td>".$row["phone number"]."</td>";
 				echo "<td>".$row["date of birth"]."</td>";

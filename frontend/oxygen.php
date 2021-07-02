@@ -141,14 +141,14 @@ include("connection.php");?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a type="button" href="../sign.php" class="btn btn-primary">Sign In</a>
+        <a type="button" href="sign.php" class="btn btn-primary">Sign In</a>
       </div>
     </div>
   </div>
 </div>
 
 
-  <form action="#table">
+  <form action="#table" method="post">
    <div class="container  pt-2">
     <div class="row mt-5">
       <div class="col-12 col-md-7 row">
@@ -165,6 +165,7 @@ include("connection.php");?>
         <div class="col-md-6 mb-4">
           <div class="input-group md-form form-sm form-2 pl-0">
           <select class="form-control" name="district_choice">
+              <option value="">Select District</option>
               <option value="Alipurduar">Alipurduar</option>
                 <option value="Bankura">Bankura</option>
                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -195,7 +196,7 @@ include("connection.php");?>
             </div>
           </div>
         </div>
-        <input type="submit" class="btn btn-primary" value="Search" name="submit">
+        <input type="submit" class="btn btn-primary ml-4 mb-5" value="Search" name="submit">
 
   </form>
         
@@ -207,7 +208,7 @@ include("connection.php");?>
     </div>
     <div class="container  mt-5">
       <div class="row" style="text-align: center; align-items: center; justify-content: center;">
-        <h3>Oxygen Supplier List</h3>
+        <h3 id="table">Oxygen Supplier List</h3>
       </div>
       <div class="row mt-3 mytable">
         <table class="table">
@@ -251,7 +252,6 @@ include("connection.php");?>
                         else {  echo '<tr><td colspan="7" style="color:red; text-align:center;">No record found</td></tr>'; }
                   ?>
    
-     ?>
           </tbody>
         </table>
 
