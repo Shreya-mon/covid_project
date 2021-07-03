@@ -63,6 +63,12 @@ function showmessage1()
     background-color: #148496;
   }
   
+
+
+
+
+
+
   </style>
 </head>
 
@@ -186,7 +192,7 @@ function showmessage1()
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <input type="submit" name="submit" class="btn btn-primary" value="Submit" onclick="validateform2()" >
+          <input type="submit" name="submit" class="btn btn-primary" value="Submit" >
         </div>
       </div>
     </div>
@@ -200,39 +206,10 @@ function showmessage1()
   </form>
 
 
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
  
   
-  <script>
-  function validateform2()
-  {
-    var name=document.getElementById('nameoffdbk').value;
-    var add=document.getElementById('addressoffdbk').value;
-    var email=document.getElementById('emailoffdbk').value;
-    var ph_no=document.getElementById('ph_nooffdbk').value;
-     var rate=document.getElementById('rating').value;
-    var flag=1;
-    if(!name)
-      flag=0;
-    if(!add)
-      flag=0;
-      
-    if(!email)
-        flag=0;
-    if(!ph_no)
-        flag=0;
-      if(!rate)
-        { flag=0;}
-
-      if(flag==0)
-             alert("fill up the fields !");
-          
-          
-      else
-        alert("Data received !");
-    
-  }
-</script>
+ 
 
   <!--modal close-->
   <!--Fake information Modals -->
@@ -259,7 +236,7 @@ function showmessage1()
             </div>
             <div class="col-12 mt-1">
               <label for="Phone Number" class="form-label">Phone Number</label>
-              <input type="number" class="form-control"  id="ph_no" name="phoneNoOfoxygen" required>
+              <input type="text" class="form-control"  id="ph_no" name="phoneNoOfoxygen" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Address" class="form-label">Description:</label>
@@ -271,7 +248,7 @@ function showmessage1()
             </div>
              <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <input type="submit" name="submit1" class="btn btn-primary" onclick="validateform()">
+          <input type="submit" name="submit1" class="btn btn-primary" value="Submit"  >
         </div>
           </form>
         </div>
@@ -280,31 +257,10 @@ function showmessage1()
     </div>
   </div>
 
-<script>
-  function validateform()
-  {
-    var name=document.getElementById('name').value;
-    var add=document.getElementById('address').value;
-    var email=document.getElementById('email').value;
-    var ph_no=document.getElementById('ph_no').value;
-    var flag=1;
-    if(!name)
-      flag=0;
-    if(!add)
-      flag=0;
-      
-    if(!email)
-        flag=0;
-    if(!ph_no)
-        flag=0;
 
-      if(flag==0)
-             alert("fill up the fields");
-          
-      else
-        alert("Data received !");
-  }
-</script>
+   
+
+
 
 
 
@@ -320,7 +276,7 @@ function showmessage1()
           <button type="button" class=" btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
         </div>
         <div class="modal-body">
-          <form class="row" action="#" method="POST" onsubmit="return validateform1()">
+          <form class="row" action="#" method="POST">
             <div class="col-12 mt-1 ">
               <label for="Name of NGO" class="form-label">Name: </label>
               <input type="text" class="form-control" id="nameofquery" name="nameOfoxygen" required>
@@ -335,14 +291,14 @@ function showmessage1()
             </div>
             <div class="col-12 mt-1">
               <label for="Phone Number" class="form-label">Phone Number</label>
-              <input type="number" class="form-control" id="ph_noofquery" name="phoneNoOfoxygen" required>
+              <input type="text" class="form-control" id="ph_noofquery" name="phoneNoOfoxygen" required>
             </div>
             <div class="col-12 mt-1">
               <label for="Address" class="form-label">Description:</label>
               <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" placeholder="Enter Your Quries here"></textarea>            </div>
                <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <input type="submit"  name="submit2" class="btn btn-primary" onclick="validateform1()">
+          <input type="submit"  name="submit2" class="btn btn-primary" value="Submit" >
         </div>
           </form>
         </div>
@@ -351,31 +307,6 @@ function showmessage1()
     </div>
   </div>
 
-<script>
-  function validateform1()
-  {
-    var name=document.getElementById('nameofquery').value;
-    var add=document.getElementById('addressofquery').value;
-    var email=document.getElementById('emailofquery').value;
-    var ph_no=document.getElementById('ph_noofquery').value;
-    var flag=1;
-    if(!name)
-      flag=0;
-    if(!add)
-      flag=0;
-      
-    if(!email)
-        flag=0;
-    if(!ph_no)
-        flag=0;
-
-      if(flag==0)
-             alert("fill up the fields");
-          
-      else
-        alert(" data received !");
-  }
-</script>
 
 
   <!--modal close-->
@@ -420,7 +351,7 @@ function showmessage1()
       </button>
     </div>
     <div class="row col-md-12">
-      <div class="col-md-6 ">
+      <div class="col-md-6 " id="demo">
         <img src="./images/help3.jpg" class=" w-100">
       </div>
       <div class="col-md-6 ">
@@ -609,6 +540,10 @@ function showmessage1()
 
 	});
   
+
+
+
+
 </script>
  
 <?php
@@ -620,7 +555,14 @@ if(isset($_POST['submit1'])){
   
     if (mysqli_query($link, $sql)) {
       
-        $_SESSION['success'] = "Your opinion is submitted successfully !";
+      ?>
+      <script>
+        swal("Are you sure to report data !")
+        .then((value) => {
+        swal(`Data is reported !`);
+        });
+      </script>
+      <?php
         
       } else {
         $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
@@ -636,31 +578,56 @@ if(isset($_POST['submit1'])){
   
     if (mysqli_query($link, $sql)) {
         
-        $flag=1;
-        
-      } else {
-        echo "Form submission failed " . mysqli_error($link);
+        ?>
+        <script>
+            swal({
+               title: "Your query is received!",
+            //text: "You clicked the button!",
+            icon: "success",
+            button: "Ok!",
+          });
+        </script>
+        <?php
         
       }
+       else echo "Form submission failed " . mysqli_error($link);
+        
+      
 }
 //feedback insertion
- if(isset($_POST['submit'])){
+
+ if(isset($_POST['submit']))
+ {
     if($_SERVER["REQUEST_METHOD"]=="POST")
   {
-    $rating = $_POST["rating"];
+      $rating = $_POST["rating"];
 
-    $sql = "INSERT INTO `feedback_db` (`id`,`name`,`address`,`email`,`phno`,`rating`,`description`) VALUES ('','".$_REQUEST['name']."','".$_REQUEST['address']."','".$_REQUEST['email']."','".$_REQUEST['phno']."', '$rating','".$_REQUEST['description']."')";
+      $sql = "INSERT INTO `feedback_db` (`id`,`name`,`address`,`email`,`phno`,`rating`,`description`) VALUES ('','".$_REQUEST['name']."','".$_REQUEST['address']."','".$_REQUEST['email']."','".$_REQUEST['phno']."', '$rating','".$_REQUEST['description']."')";
    
-    if (mysqli_query($link, $sql)) {
-        echo "<script>alert('Your form submitted successfully !')</script>";
+        if (mysqli_query($link, $sql))
+         {
+          ?>
+          <script>
+            swal({
+               title: "Thanks for your feedback!",
+            //text: "You clicked the button!",
+            icon: "success",
+            button: "Ok!",
+          });
+        </script>
         
-      } else {
-        echo "<script>alert('Your form submiision failed !')</script>"; 
-        
-      }
+      <?php
+       } 
+      else echo "<script>alert('Your form submiision failed !')</script>"; 
+  }      
+      
 }
-}
+
 ?>
+
+
+  
+
  
 </body>
 
