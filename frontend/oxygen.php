@@ -148,7 +148,7 @@ include("connection.php");?>
 </div>
 
 
-  <form action="#table" method="post">
+ 
    <div class="container  pt-2">
     <div class="row mt-5">
       <div class="col-12 col-md-7 row">
@@ -159,6 +159,7 @@ include("connection.php");?>
             Register Here
           </button>
         </div>
+        <form action="#table" method="post">
         <div class="h3 mt-5 p-2 ">
           Search Here for your nearby oxygen sources:</div>
         <!--Grid column-->
@@ -197,8 +198,7 @@ include("connection.php");?>
           </div>
         </div>
         <input type="submit" class="btn btn-primary ml-4 mb-5" value="Search" name="submit">
-
-  </form>
+      </form>
         
       </div>
 
@@ -261,7 +261,7 @@ include("connection.php");?>
     <div class="container">
       <div class="h3 mt-5 mb-5 ml-3">Found any fake data? Report here!! </div>
 
-      <a href="help.php #fake"><button class="btn btn-primary ml-4 mb-5">Register Here</button></a>
+      <a href="help.php #fake"><button class="btn btn-primary ml-4 mb-5">Report Here</button></a>
 
     </div>
   </div>

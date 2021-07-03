@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/signin.css">
+    <link rel="stylesheet" href="css/signin.css?V=<?php echo time(); ?>">
 
 </head>
 
@@ -60,15 +60,22 @@
                                         <span class="input-group-text"><i class="fas fa-key"></i></span>
                                     </div>
                                     <input type="password" name="password" id="password" class="form-control" placeholder="Enter a password" required>
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" class="eye" onclick="myfunction()">
+                                            <i id="hide1" class="fa fa-eye"></i>
+				                            <i id="hide2" class="fa fa-eye-slash"></i></span>
+                                    </div>
                                 </div>
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-lock"></i></span>
                                     </div>
                                     <input type="password" name="conpass" id="conpass" class="form-control" placeholder="Confirm password" required>
-                                </div>
-                                <div class="row align-items-center remember">
-                                    <input type="checkbox">Remember Me
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" class="eye" onclick="myfunction1()">
+                                            <i id="hide3" class="fa fa-eye"></i>
+				                            <i id="hide4" class="fa fa-eye-slash"></i></span>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="submit" value="Submit" name="submit" class="btn float-right submit_btn">
@@ -85,6 +92,40 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+		function myfunction(){
+			var x = document.getElementById("password");
+			var y = document.getElementById("hide1");
+			var z = document.getElementById("hide2");
+
+			if(x.type == 'password'){
+				x.type = "text";
+				y.style.display = "block";
+				z.style.display = "none";
+			}
+			else{
+				x.type = "password";
+				y.style.display = "none";
+				z.style.display = "block";
+			}
+		}
+        function myfunction1(){
+			var x = document.getElementById("conpass");
+			var y = document.getElementById("hide3");
+			var z = document.getElementById("hide4");
+
+			if(x.type == 'password'){
+				x.type = "text";
+				y.style.display = "block";
+				z.style.display = "none";
+			}
+			else{
+				x.type = "password";
+				y.style.display = "none";
+				z.style.display = "block";
+			}
+		}
+	</script>
 </body>
 
 </html>

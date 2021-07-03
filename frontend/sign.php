@@ -25,7 +25,7 @@
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="css/signin.css">
+    <link rel="stylesheet" href="css/signin.css?V=<?php echo time(); ?>">
 
 </head>
 
@@ -53,7 +53,12 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-key"></i></span>
                                     </div>
-                                    <input type="password" name="password" class="form-control" placeholder="Password">
+                                    <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" class="eye" onclick="myfunction()">
+                                            <i id="hide1" class="fa fa-eye"></i>
+				                            <i id="hide2" class="fa fa-eye-slash"></i></span>
+                                    </div>
                                 </div>
                                 <div class="row align-items-center remember">
                                     <input type="checkbox" name="remember" value="1">Remember Me
@@ -76,6 +81,24 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+		function myfunction(){
+			var x = document.getElementById("password");
+			var y = document.getElementById("hide1");
+			var z = document.getElementById("hide2");
+
+			if(x.type == 'password'){
+				x.type = "text";
+				y.style.display = "block";
+				z.style.display = "none";
+			}
+			else{
+				x.type = "password";
+				y.style.display = "none";
+				z.style.display = "block";
+			}
+		}
+    </script>
 </body>
 
 

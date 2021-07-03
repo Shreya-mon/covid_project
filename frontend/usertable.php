@@ -90,7 +90,7 @@ $id=$_SESSION['id'];
 				                            echo "<td>".$row["district"]."</td>";
 				                            echo "<td>".$row["frequency"]."</td>";
 				                            echo "<td>".$row["proof"]."</td>";
-                                            echo "<td><a href='#?id=".$row['id']."'><button class='btn btn-primary'>Update</button></a></td>";
+                                            echo "<td><a href='update_donor.php?id=".$row['id']."'><button class='btn btn-primary'>Update</button></a></td>";
                                             echo "</tr>";
                                         }
                             ?>
@@ -136,7 +136,7 @@ $id=$_SESSION['id'];
 				                            echo "<td>".$row["blood group"]."</td>";
 				                            echo "<td>".$row["district"]."</td>";
 				                            echo "<td>".$row["proof"]."</td>";
-                                            echo "<td><a href='#?id=".$row['id']."'><button class='btn btn-primary'>Update</button></a></td>";
+                                            echo "<td><a href='update_receiver.php?id=".$row['id']."'><button class='btn btn-primary'>Update</button></a></td>";
                                             echo "<td><a href='find_donor.php?district=".$row['district']."&id=".$row['id']."'><button class='btn btn-primary'>Find Donor</button></a></td>";
                                             echo "</tr>";
                                         }
@@ -179,7 +179,7 @@ $id=$_SESSION['id'];
                                             echo "<td>".$row["district"]."</td>";
                                             echo "<td>".$row["phone number"]."</td>";
                                             echo "<td>".$row["proof"]."</td>";
-                                            echo "<td><a href='#?id=".$row['id']."'><button class='btn btn-primary'>Update</button></a></td>";
+                                            echo "<td><a href='update_oxygen.php?id=".$row['id']."'><button class='btn btn-primary'>Update</button></a></td>";
                                             echo "</tr>";
                                         }
                             ?>
@@ -439,7 +439,7 @@ $id=$_SESSION['id'];
                                             echo "<td>".$row["ph_no"]."</td>";
                                             echo "<td>".$row["file"]."</td>";
                                             echo "<td>".$row["category"]."</td>";
-                                            echo "<td><a href='#?id=".$row['id']."'><button class='btn btn-primary'>Update</button></a></td>";
+                                            echo "<td><a href='update_ngo.php?id=".$row['id']."'><button class='btn btn-primary'>Update</button></a></td>";
                                             echo "</tr>";
                                         }
                             ?>
@@ -481,7 +481,7 @@ $id=$_SESSION['id'];
                                             echo "<td>".$row["ph_no"]."</td>";
                                             echo "<td>".$row["file"]."</td>";
                                             echo "<td>".$row["category"]."</td>";
-                                            echo "<td><a href='#?id=".$row['id']."'><button class='btn btn-primary'>Update</button></a></td>";
+                                            echo "<td><a href='update_individual.php?id=".$row['id']."'><button class='btn btn-primary'>Update</button></a></td>";
                                             echo "</tr>";
                                         }
                             ?>
@@ -525,7 +525,7 @@ $id=$_SESSION['id'];
                                             echo "<td>".$row["file"]."</td>";
                                             echo "<td>".$row["description"]."</td>";
                                             echo "<td>".$row["category"]."</td>";
-                                            echo "<td><a href='#?id=".$row['id']."'><button class='btn btn-primary'>Update</button></a></td>";
+                                            echo "<td><a href='update_helpseeker.php?id=".$row['id']."'><button class='btn btn-primary'>Update</button></a></td>";
                                             echo "</tr>";
                                         }
                             ?>
