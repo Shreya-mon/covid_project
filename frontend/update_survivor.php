@@ -15,6 +15,9 @@ $qry = mysqli_query($link, "UPDATE `survivor_db` SET `district`='".$_REQUEST['di
 $qry1 = mysqli_query($link, "UPDATE `survivor_db` SET `experience`='".$_REQUEST['experience']."' WHERE `id`='".$_REQUEST['id']."'");
 $qry2 = mysqli_query($link, "UPDATE `survivor_db` SET `title`='".$_REQUEST['title']."' WHERE `id`='".$_REQUEST['id']."'");
 $qry = mysqli_query($link, "UPDATE `survivor_db` SET `video`='".$_REQUEST['video']."' WHERE `id`='".$_REQUEST['id']."'");
+ $path = "upload/".$_FILES["video"]["name"];
+                                $tmp = $_FILES["video"]["tmp_name"];
+                                move_uploaded_file($tmp, $path); 
 if ($qry2) {
 		// echo "successfully Deleted";
 		header('location: usertable.php');
@@ -92,7 +95,7 @@ if ($qry2) {
             <h2 class="col-10">Update Your Record As Covid Survivor</h2>
         </div>
         <div class="row mt-5 center-center p-4">
-            <form class="col-12 row p-2" action="#" method="POST"
+            <form class="col-12 row p-2" action="#" method="POST" enctype="multipart/form-data"
                 style=" background-color:rgb(254, 247, 255); max-width: 500px; border: 1px solid black; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius: 12px;">
                 <input type="hidden" name="id" value="<?=$row['id']?>">
                 <div class="col-12 mt-1 ">
