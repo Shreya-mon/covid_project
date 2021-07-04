@@ -11,8 +11,8 @@ $qry = mysqli_query($link, "UPDATE `donor_db` SET `blood group`='".$_REQUEST['bg
 $qry = mysqli_query($link, "UPDATE `donor_db` SET `district`='".$_REQUEST['district']."' WHERE `id`='".$_REQUEST['id']."'");
 $qry = mysqli_query($link, "UPDATE `donor_db` SET `frequency`='".$_REQUEST['freq']."' WHERE `id`='".$_REQUEST['id']."'");
 $qry1 = mysqli_query($link, "UPDATE `donor_db` SET `proof`='".$_REQUEST['proof']."' WHERE `id`='".$_REQUEST['id']."'");
- $path = "upload/".$_FILES["photo"]["name"];
-                                $tmp = $_FILES["photo"]["tmp_name"];
+ $path = "upload/".$_FILES["proof"]["name"];
+                                $tmp = $_FILES["proof"]["tmp_name"];
                                 move_uploaded_file($tmp, $path); 
 if ($qry) {
     // echo "successfully Deleted";
