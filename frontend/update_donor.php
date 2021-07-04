@@ -171,8 +171,10 @@
                     </select>
                 </div>
                 <div class="col-12 mt-1">
-                    <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
-                    <input type="file" class="form-control" name="proof" id="formFile" value="<?=$row['proof']?>">
+                    <label for="Certificate as a proof" class="form-label">Certificate as a proof</label><br>
+                    <input type="file" class="form-control" name="newproof" id="formFile">
+                    <input type="hidden" class="form-control" name="oldproof" id="formFile" value="<?php echo $row['proof'];?>">
+                    
                 </div>
                 <div class="col-12 mt-3">
                     <input type="submit" class="btn btn-primary" name="submit" value="Update">

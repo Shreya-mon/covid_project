@@ -94,8 +94,9 @@ $id=$_SESSION['id'];
 				                            echo "<td>".$row["blood group"]."</td>";
 				                            echo "<td>".$row["district"]."</td>";
 				                            echo "<td>".$row["frequency"]."</td>";
-				                            echo "<td>".$row["proof"]."</td>";
-                                            echo "<td><a href='update_donor.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
+				                            ?>
+                                        <td><img src="<?php echo "upload/".$row['proof']; ?>" width="100px"></td>
+                                       <?php     echo "<td><a href='update_donor.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
                                         }
                             ?>

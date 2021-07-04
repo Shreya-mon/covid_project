@@ -77,7 +77,7 @@ $email= $_SESSION['email'];
 </style>
 
 <body>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="sweetalert.min.js"></script>
     <!--Donor Modals -->
     <div class="modal fade" id="DonorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -1208,9 +1208,21 @@ $email= $_SESSION['email'];
 <?php
 //Donor data insertion
 if(isset($_POST['submit'])){
+    $sql="SELECT * FROM `donor_db` WHERE `email`='$email'";
+    $result=mysqli_query($link, $sql);
+    if(mysqli_num_rows($result) > 0){?>
+        <script>
+            swal({
+            title: "You have already submitted data",
+            icon: "warning",
+            button: "Ok!",
+          });
+        </script>
+  <?php  }
+    else{
     $sql = "INSERT INTO `donor_db`(`id`,`email`,`name`,`address`,`phone number`,`date of birth`,`gender`,`blood group`,`district`,`frequency`,`proof`) VALUES('','".$email."',
 '".$_REQUEST['name']."','".$_REQUEST['address']."','".$_REQUEST['phno']."','".$_REQUEST['dob']."','".$_REQUEST['gender']."',
-'".$_REQUEST['bgrp']."','".$_REQUEST['dist']."','".$_REQUEST['freq']."','".$_REQUEST['cert']."')";
+'".$_REQUEST['bgrp']."','".$_REQUEST['dist']."','".$_REQUEST['freq']."','".$_FILES['cert']['name']."')";
      $path = "upload/".$_FILES["cert"]["name"];
                                 $tmp = $_FILES["cert"]["tmp_name"];
                                 move_uploaded_file($tmp, $path);
@@ -1219,6 +1231,7 @@ if(isset($_POST['submit'])){
         <script>
             swal({
                title: "Your data is submitted!",
+               text: "One time submission",
             text: " As a Blood Donor",
             icon: "success",
             button: "Ok!",
@@ -1230,12 +1243,26 @@ if(isset($_POST['submit'])){
         $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
         
       }
+    }
 }
 //Receiver data insertion
 if(isset($_POST['submit1'])){
+    $sql="SELECT * FROM `receiver_db` WHERE `email`='$email'";
+    $result=mysqli_query($link, $sql);
+    if(mysqli_num_rows($result) > 0){?>
+        <script>
+            swal({
+            title: "You have already submitted data",
+            text: "One time submission",
+            icon: "warning",
+            button: "Ok!",
+          });
+        </script>
+  <?php  }
+    else{
     $sql = "INSERT INTO `receiver_db`(`id`,`email`,`name`,`address`,`phone number`,`date of birth`,`gender`,`blood group`,`district`,`proof`) VALUES('','".$email."','".$_REQUEST['name']."',
                                  '".$_REQUEST['address']."','".$_REQUEST['phno']."','".$_REQUEST['dob']."','".$_REQUEST['gender']."','".$_REQUEST['bgrp']."','".$_REQUEST['dist']."',
-                                 '".$_REQUEST['cert']."')";
+                                 '".$_FILES["cert"]["name"]."')";
 
                                   $path = "upload/".$_FILES["cert"]["name"];
                                 $tmp = $_FILES["cert"]["tmp_name"];
@@ -1257,12 +1284,26 @@ if(isset($_POST['submit1'])){
         $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
         
       }
+    }
 }
 //Oxygen data insertion
 if(isset($_POST['submit2'])){
+    $sql="SELECT * FROM `oxygen_db` WHERE `email`='$email'";
+    $result=mysqli_query($link, $sql);
+    if(mysqli_num_rows($result) > 0){?>
+        <script>
+            swal({
+            title: "You have already submitted data",
+            text: "One time submission",
+            icon: "warning",
+            button: "Ok!",
+          });
+        </script>
+  <?php  }
+    else{
     $sql = "INSERT INTO `oxygen_db`(`id`,`name`,`application type`,`address`,`district`,`email`,`phone number`,`proof`) VALUES('','".$_REQUEST['name']."',
                                  '".$_REQUEST['person']."','".$_REQUEST['address']."','".$_REQUEST['dist']."','".$email."','".$_REQUEST['phno']."',
-                                 '".$_REQUEST['cert']."')";
+                                 '".$_FILES["cert"]["name"]."')";
 
                                    $path = "upload/".$_FILES["cert"]["name"];
                                 $tmp = $_FILES["cert"]["tmp_name"];
@@ -1284,45 +1325,67 @@ if(isset($_POST['submit2'])){
         $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
         
       }
-    
+    }
 }
 
 
 //Warrior data insertion
 if(isset($_POST['submit6'])){
-    if(mysqli_query($link,"INSERT INTO `warrior_db`(`id`,`name`,`email`,`age`,`profession`,`city`,`district`,`experience`,`title`,`photo`,`video`) VALUES('','".$_REQUEST['name']."','".$email."','".$_REQUEST['age']."',
-        '".$_REQUEST['profession']."','".$_REQUEST['city']."','".$_REQUEST['district']."','".$_REQUEST['experience']."','".$_REQUEST['title']."','".$_REQUEST['photo']."','".$_REQUEST['video']."')"))
-    {
-         $path = "upload/".$_FILES["photo"]["name"];
+    $sql="SELECT * FROM `warrior_db` WHERE `email`='$email'";
+    $result=mysqli_query($link, $sql);
+    if(mysqli_num_rows($result) > 0){?>
+        <script>
+            swal({
+            title: "You have already submitted data",
+            text: "One time submission",
+            icon: "warning",
+            button: "Ok!",
+          });
+        </script>
+    <?php  }
+    else{
+        if(mysqli_query($link,"INSERT INTO `warrior_db`(`id`,`name`,`email`,`age`,`profession`,`city`,`district`,`experience`,`title`,`photo`,`video`) VALUES('','".$_REQUEST['name']."','".$email."','".$_REQUEST['age']."',
+        '".$_REQUEST['profession']."','".$_REQUEST['city']."','".$_REQUEST['district']."','".$_REQUEST['experience']."','".$_REQUEST['title']."','".$_FILES["photo"]["name"]."','".$_FILES["video"]["name"]."')"))
+        {
+            $path = "upload/".$_FILES["photo"]["name"];
                                 $tmp = $_FILES["photo"]["tmp_name"];
                                 move_uploaded_file($tmp, $path); 
                                       $path = "upload/".$_FILES["video"]["name"];
                                 $tmp = $_FILES["video"]["tmp_name"];
-                                move_uploaded_file($tmp, $path); 
+                                move_uploaded_file($tmp, $path); ?>
        
-                  ?>
-        <script>
-            swal({
-               title: "Your data is submitted!",
-            text: "for covid worrior",
-            icon: "success",
-            button: "Ok!",
-          });
-        </script>
-<?php
-        
-    }
-     
-
-                                else {
+                
+             <script>
+                swal({
+                 title: "Your data is submitted!",
+                 text: "for covid worrior",
+                icon: "success",
+                button: "Ok!",
+                });
+            </script><?php
+ }
+        else {
       $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
-      
+      }
     }
 }
 //Survivor data insertion
 if(isset($_POST['submit7'])){
+    $sql="SELECT * FROM `survivor_db` WHERE `email`='$email'";
+    $result=mysqli_query($link, $sql);
+    if(mysqli_num_rows($result) > 0){?>
+        <script>
+            swal({
+            title: "You have already submitted data",
+            text: "One time submission",
+            icon: "warning",
+            button: "Ok!",
+          });
+        </script>
+  <?php  }
+    else{
     if(mysqli_query($link,"INSERT INTO `survivor_db`(`id`,`name`,`email`,`age`,`profession`,`city`,`district`,`experience`,`title`,`video`) VALUES('','".$_REQUEST['name']."','".$email."','".$_REQUEST['age']."',
-        '".$_REQUEST['profession']."','".$_REQUEST['city']."','".$_REQUEST['district']."','".$_REQUEST['experience']."','".$_REQUEST['title']."','".$_REQUEST['video']."')"))
+        '".$_REQUEST['profession']."','".$_REQUEST['city']."','".$_REQUEST['district']."','".$_REQUEST['experience']."','".$_REQUEST['title']."','".$_FILES["video"]["name"]."')"))
     {
          $path = "upload/".$_FILES["video"]["name"];
                                 $tmp = $_FILES["video"]["tmp_name"];
@@ -1344,14 +1407,27 @@ if(isset($_POST['submit7'])){
         $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
         
       }
+    }
 }
 
 //Child care data insertion
 if(isset($_POST['submit5'])){
-
+    $sql="SELECT * FROM `childcareprovider_db` WHERE `email`='$email'";
+    $result=mysqli_query($link, $sql);
+    if(mysqli_num_rows($result) > 0){?>
+        <script>
+            swal({
+            title: "You have already submitted data",
+            text: "One time submission",
+            icon: "warning",
+            button: "Ok!",
+          });
+        </script>
+  <?php  }
+    else{
    $sql = "INSERT INTO `childcareprovider_db`(`id`,`email`,`name`,`address`,`district`,`phno`,`proof`) VALUES('','".$email."',
                                  '".$_REQUEST['nameOfNGO']."','".$_REQUEST['addressOfNGO']."','".$_REQUEST['dist']."',
-                                 '".$_REQUEST['phoneNoOfNGO']."','".$_REQUEST['certificateOfNGO']."')";
+                                 '".$_REQUEST['phoneNoOfNGO']."','".$_FILES["certificateOfNGO"]["name"]."')";
                                    $path = "upload/".$_FILES["certificateOfNGO"]["name"];
                                 $tmp = $_FILES["certificateOfNGO"]["tmp_name"];
                                 move_uploaded_file($tmp, $path);
@@ -1373,12 +1449,26 @@ if(isset($_POST['submit5'])){
         $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
         
       }
+    }
 }
 //Health care data insertion
     if(isset($_POST['submit3'])){
+        $sql="SELECT * FROM `volunteer_db` WHERE `email`='$email'";
+    $result=mysqli_query($link, $sql);
+    if(mysqli_num_rows($result) > 0){?>
+        <script>
+            swal({
+            title: "You have already submitted data",
+            text: "One time submission",
+            icon: "warning",
+            button: "Ok!",
+          });
+        </script>
+  <?php  }
+    else{
        $sql = "INSERT INTO `volunteer_db`(`id`,`name`,`user_type`,`address`,`district`,`email`,`phno`,`proof`) VALUES('',
                                  '".$_REQUEST['nameOfvolunteer']."','".$_REQUEST['person']."','".$_REQUEST['addressOfvolunteer']."','".$_REQUEST['dist']."','".$email."',
-                                 '".$_REQUEST['phoneOfvolunteer']."','".$_REQUEST['certificateOfvolunteer']."')";
+                                 '".$_REQUEST['phoneOfvolunteer']."','".$_FILES["certificateOfvolunteer"]["name"]."')";
 
                                   $path = "upload/".$_FILES["certificateOfvolunteer"]["name"];
                                 $tmp = $_FILES["certificateOfvolunteer"]["tmp_name"];
@@ -1401,11 +1491,25 @@ if(isset($_POST['submit5'])){
         
       }
     }
+    }
 //Meal Provider data insertion
     if(isset($_POST['submit4'])){
+        $sql="SELECT * FROM `mealprovider_db` WHERE `email`='$email'";
+    $result=mysqli_query($link, $sql);
+    if(mysqli_num_rows($result) > 0){?>
+        <script>
+            swal({
+            title: "You have already submitted data",
+            text: "One time submission",
+            icon: "warning",
+            button: "Ok!",
+          });
+        </script>
+  <?php  }
+    else{
             $sql = "INSERT INTO `mealprovider_db`(`id`,`name`,`address`,`district`,`email`,`phno`,`proof`) VALUES('',
                                  '".$_REQUEST['nameOfNGO']."','".$_REQUEST['addressOfNGO']."','".$_REQUEST['dist']."','".$email."',
-                                 '".$_REQUEST['phoneNoOfNGO']."','".$_REQUEST['certificateOfNGO']."')";
+                                 '".$_REQUEST['phoneNoOfNGO']."','".$_FILES["certificateOfNGO"]["name"]."')";
 
                                         $path = "upload/".$_FILES["certificateOfNGO"]["name"];
                                 $tmp = $_FILES["certificateOfNGO"]["tmp_name"];
@@ -1427,14 +1531,28 @@ if(isset($_POST['submit5'])){
         
       }
     }
+    }
     //NGO registration
      if(isset($_POST['submit8'])){
+        $sql="SELECT * FROM `ngo_registration` WHERE `email`='$email'";
+        $result=mysqli_query($link, $sql);
+        if(mysqli_num_rows($result) > 0){?>
+            <script>
+                swal({
+                title: "You have already submitted data",
+                text: "One time submission",
+                icon: "warning",
+                button: "Ok!",
+              });
+            </script>
+      <?php  }
+        else{
 $sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `district`, `ph_no`, `file`, `category`)
                           VALUES('','".$email."','".$_REQUEST['nameOfNGO']."',
                                  '".$_REQUEST['addressOfNGO']."',
                                  '".$_REQUEST['dist']."',
                                  '".$_REQUEST['phoneNoOfNGO']."',
-                                 '".$_REQUEST['certificateOfNGO']."',
+                                 '".$_FILES["certificateOfNGO"]["name"]."',
                                  
                                  '".$_REQUEST['helpingCategoriesOfNGO']."')";
 
@@ -1459,14 +1577,28 @@ $sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `distri
         
       }
     }
+    }
     //NGO individual registration
      if(isset($_POST['submit9'])){
+        $sql="SELECT * FROM `ngo_registration_individual` WHERE `email`='$email'";
+        $result=mysqli_query($link, $sql);
+        if(mysqli_num_rows($result) > 0){?>
+            <script>
+                swal({
+                title: "You have already submitted data",
+                text: "One time submission",
+                icon: "warning",
+                button: "Ok!",
+              });
+            </script>
+      <?php  }
+        else{
         $sql = " INSERT INTO `ngo_registration_individual`(`id`,`email`, `name`, `address`, `district`, `ph_no`, `file`, `category`)
                           VALUES('','".$email."','".$_REQUEST['firstNameOfInd']."',
                                  '".$_REQUEST['addressOfInd']."',
                                  '".$_REQUEST['dist']."',
                                  '".$_REQUEST['phoneNoOfInd']."',
-                                 '".$_REQUEST['certificateOfInd']."',
+                                 '".$_FILES["certificateOfInd"]["name"]."',
                                  
                                  '".$_REQUEST['helpingCategoriesOfInd']."')";
                                     $path = "upload/".$_FILES["certificateOfInd"]["name"];
@@ -1490,14 +1622,28 @@ $sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `distri
         
       }
     }
+    }
 //Help
      if(isset($_POST['submit10'])){
+        $sql="SELECT * FROM `ngo_help_db` WHERE `email`='$email'";
+        $result=mysqli_query($link, $sql);
+        if(mysqli_num_rows($result) > 0){?>
+            <script>
+                swal({
+                title: "You have already submitted data",
+                text: "One time submission",
+                icon: "warning",
+                button: "Ok!",
+              });
+            </script>
+      <?php  }
+        else{
         $sql = "INSERT INTO `ngo_help_db`(`id`,`email`, `name`, `address`, `district`, `ph_no`, `file`, `description`, `category`)
                           VALUES('','".$email."','".$_REQUEST['firstNameOfInd']."',
                                  '".$_REQUEST['addressOfInd']."',
                                  '".$_REQUEST['dist']."',
                                  '".$_REQUEST['phoneNoOfInd']."',
-                                 '".$_REQUEST['certificateOfInd']."',
+                                 '".$_FILES["helpingCategoriesOfInd"]["name"]."',
                                  
                                  '".$_REQUEST['description']."',
                                  '".$_REQUEST['helpingCategoriesOfInd']."')";
@@ -1515,6 +1661,7 @@ $sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `distri
         $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
         
       }
+    }
     }
 
 ?>
