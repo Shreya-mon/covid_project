@@ -5,49 +5,6 @@
 	$qry = mysqli_query($link, "SELECT * FROM `warrior_db` WHERE `id` = '".$_REQUEST['id']."'");
 		$row = mysqli_fetch_array($qry);
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" href="../style2.css">
-</head>
-<body>
-	<center>
-	<h1>Update Your Record As Warrior</h1>
-	<a href="usertable.php">Back</a></center>
-	<br><br>
-	<form action="#" method="post">
-		<div class='container'>
-			<div class='window'>
-				<div class='overlay'>
-				</div>
-				<div class='content'>
-					<div class='input-fields'>
-						<br>
-        <input type="hidden" name="id" value="<?=$row['id']?>"><br><br>
-		Name: <input type="text" name="name" value="<?=$row['name']?>"><br><br>
-		Age:<input type="text" name="age" value="<?=$row['age']?>"><br><br>
-		Profession: <input type="text" name="profession" value="<?=$row['profession']?>"><br><br>
-		City: <input type="text" name="city" value="<?=$row['city']?>"><br><br>
-        District: <input type="text" name="district" value="<?=$row['district']?>"><br><br>
-		Share Your Experience: <br>
-        <textarea name="experience" rows="5" name="experience"><?=$row['experience']?></textarea><br><br>
-		Add A Title: <br>
-        <textarea name="title" rows="5" name="title"><?=$row['title']?></textarea><br><br>
-		Upload Photo: <input type="file" name="photo" value="<?=$row['photo']?>"><br><br>
-		Upload Video: <input type="file" name="video" value="<?=$row['video']?>"><br><br>
-		
-
-		<input type="submit" name= "submit" value="Update">
-	
-						
-					</div>
-				</div>
-			</div>
-		</div>
-	</form>
-</body>
-</html>
 <?php
 if(isset($_POST['submit'])){
 $qry = mysqli_query($link, "UPDATE `warrior_db` SET `name`='".$_REQUEST['name']."' WHERE `id`='".$_REQUEST['id']."'");
@@ -68,3 +25,119 @@ if ($qry2) {
 }
 
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+<!-- <link rel="stylesheet" href="../style2.css">  -->
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid-19</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css"
+        integrity="sha512-apX8rFN/KxJW8rniQbkvzrshQ3KvyEH+4szT3Sno5svdr6E/CP0QE862yEeLBMUnCqLko8QaugGkzvWS7uNfFQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+        crossorigin="anonymous"></script>
+    <style>
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .center-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-control {
+            background-color: transparent;
+        }
+
+        body {
+            background-image: url("./images/update.png");
+        }
+    </style>
+</head>
+<body>
+<div class="container pt-5 pb-5">
+        <div class="row pt-3 pb-3 text-center" style="background-color: #c368ff; color: #FFFFFF">
+            <div class="col-1">
+                <a href="usertable.php" style="width: 20%;" class="mb-2 pb-2"><i class="fas fa-arrow-circle-left fa-3x "
+                        style="color: rgb(8, 1, 15);"></i></a>
+            </div>
+            <h2 class="col-10">Update Your Record As Covid Warrior</h2>
+        </div>
+        <div class="row mt-5 center-center p-4">
+            <form class="col-12 row p-2" action="#" method="POST"
+                style=" background-color:rgb(254, 247, 255); max-width: 500px; border: 1px solid black; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius: 12px;">
+                <input type="hidden" name="id" value="<?=$row['id']?>">
+                <div class="col-12 mt-1 ">
+                    <label for="Name" class="form-label">Name</label>
+                    <input type="text" class="form-control" name="name" value="<?=$row['name']?>" required>
+                </div>
+                <div class="col-12 mt-1 ">
+                            <label for="Age" class="form-label">Age</label>
+                            <input type="text" class="form-control" name="age" value="<?=$row['age']?>" required>
+                        </div>
+                        <div class="col-12 mt-1">
+                            <label for="Profession" class="form-label">Profession</label>
+                            <input type="text" class="form-control" name="profession" value="<?=$row['profession']?>" required>
+                        </div>
+                        <div class="col-12 mt-1">
+                            <label for="City" class="form-label">City</label>
+                            <input type="text" class="form-control" name="city" value="<?=$row['city']?>" required>
+                        </div>
+                        <div class="col-12 mt-1">
+                            <label for="District" class="form-label">District</label>
+                            <input type="text" class="form-control" name="district" value="<?=$row['district']?>" required>
+                        </div>
+                        
+                        <div class="col-12 mt-1">
+                            <label for="Share Your Experience" class="form-label">Share Your Experience</label><br>
+                            <textarea name="experience" rows="5" class="form-control" required><?=$row['experience']?></textarea>
+                        </div>
+                        <div class="col-12 mt-1">
+                            <label for="Add A Title" class="form-label">Add A Title</label><br>
+                            <textarea name="title" rows="5" class="form-control" required><?=$row['title']?></textarea>
+                        </div>
+
+                        <div class="col-12 mt-1">
+                            <label for="Upload Photo" class="form-label">Upload Photo</label>
+                            <input type="file" class="form-control" name="photo" id="formFile" value="<?=$row['photo']?>">
+                        </div>
+                        <div class="col-12 mt-1">
+                            <label for="Upload Video" class="form-label">Upload Video</label>
+                            <input type="file" class="form-control" name="video" id="formFile" value="<?=$row['video']?>">
+                        </div>
+                        <div class="col-12 mt-3">
+                            <input type="submit" class="btn btn-primary" name="submit" value="Update">
+                        </div> 
+                    </form>
+                </div>
+            </div>
+	    </body>
+</html>

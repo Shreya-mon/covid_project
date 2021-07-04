@@ -3,6 +3,7 @@ include("connection.php");
 session_start();
 $email= $_SESSION['email'];
 $id=$_SESSION['id'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,9 +59,11 @@ $id=$_SESSION['id'];
                     $sql="SELECT * FROM `donor_db` WHERE `email`= '$email' ";
                     if(mysqli_num_rows(mysqli_query($link,$sql)) > 0)
                     {
-                    ?>
-                    <div class="row mt-3">
+                ?>
+                    <div class="row" style="text-align: center; align-items: center; justify-content: center;">
                         <h4>Information As Donor</h4>
+                    </div>
+                    <div class="row mt-3 mytable p-4">
                         <table class="table">
                             <thead class="thead-light">
                                     <tr>
@@ -73,6 +76,8 @@ $id=$_SESSION['id'];
 		                                <th scope="col">District</th>
 		                                <th scope="col">Frequency</th>
 		                                <th scope="col">Proof</th>
+                                        <th scope="col">Edit your Data</th>
+
                                     </tr>
                             </thead>
                             <tbody>
@@ -90,7 +95,7 @@ $id=$_SESSION['id'];
 				                            echo "<td>".$row["district"]."</td>";
 				                            echo "<td>".$row["frequency"]."</td>";
 				                            echo "<td>".$row["proof"]."</td>";
-                                            echo "<td><a href='update_donor.php?id=".$row['id']."'><button class='btn btn-primary'>Update</button></a></td>";
+                                            echo "<td><a href='update_donor.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
                                         }
                             ?>
@@ -107,8 +112,10 @@ $id=$_SESSION['id'];
                     if(mysqli_num_rows(mysqli_query($link,$sql)) > 0)
                     {
                     ?>
-                    <div class="row mt-3">
-                    <h4>Information As Receiver</h4>
+                    <div class="row" style="text-align: center; align-items: center; justify-content: center;">
+                      <h4>Information As Receiver</h4>
+                    </div>
+                    <div class="row mt-3 mytable p-4">
                         <table class="table">
                             <thead class="thead-light">
                                     <tr>
@@ -120,6 +127,8 @@ $id=$_SESSION['id'];
 		                                <th scope="col">Blood Group</th>
 		                                <th scope="col">District</th>
 		                                <th scope="col">Proof</th>
+                                        <th scope="col">Edit your Data</th>
+                                        <th scope="col">Find Nearby Donor</th>
                                     </tr>
                             </thead>
                             <tbody>
@@ -136,7 +145,7 @@ $id=$_SESSION['id'];
 				                            echo "<td>".$row["blood group"]."</td>";
 				                            echo "<td>".$row["district"]."</td>";
 				                            echo "<td>".$row["proof"]."</td>";
-                                            echo "<td><a href='update_receiver.php?id=".$row['id']."'><button class='btn btn-primary'>Update</button></a></td>";
+                                            echo "<td><a href='update_receiver.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "<td><a href='find_donor.php?district=".$row['district']."&id=".$row['id']."'><button class='btn btn-primary'>Find Donor</button></a></td>";
                                             echo "</tr>";
                                         }
@@ -154,8 +163,10 @@ $id=$_SESSION['id'];
                     if(mysqli_num_rows(mysqli_query($link,$sql)) > 0)
                     {
                     ?>
-                    <div class="row mt-3">
-                    <h4>Information As Oxygen Supplier</h4>
+                    <div class="row" style="text-align: center; align-items: center; justify-content: center;">
+                      <h4>Information As Oxygen Supplier</h4>
+                    </div>
+                    <div class="row mt-3 mytable p-4">
                         <table class="table">
                             <thead class="thead-light">
                                     <tr>
@@ -165,6 +176,7 @@ $id=$_SESSION['id'];
                                         <th scope="col">District</th>
 		                                <th scope="col">Phone Number</th>
 		                                <th scope="col">Proof</th>
+                                        <th scope="col">Edit your Data</th>
                                     </tr>
                             </thead>
                             <tbody>
@@ -179,7 +191,7 @@ $id=$_SESSION['id'];
                                             echo "<td>".$row["district"]."</td>";
                                             echo "<td>".$row["phone number"]."</td>";
                                             echo "<td>".$row["proof"]."</td>";
-                                            echo "<td><a href='update_oxygen.php?id=".$row['id']."'><button class='btn btn-primary'>Update</button></a></td>";
+                                            echo "<td><a href='update_oxygen.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
                                         }
                             ?>
@@ -196,8 +208,10 @@ $id=$_SESSION['id'];
                     if(mysqli_num_rows(mysqli_query($link,$sql)) > 0)
                     {
                     ?>
-                    <div class="row mt-3">
-                    <h4>Information As Healthcare Volunteer</h4>
+                    <div class="row" style="text-align: center; align-items: center; justify-content: center;">
+                      <h4>Information As Healthcare Volunteer</h4>
+                    </div>
+                    <div class="row mt-3 mytable p-4">
                         <table class="table">
                             <thead class="thead-light">
                                     <tr>
@@ -207,6 +221,7 @@ $id=$_SESSION['id'];
                                         <th scope="col">District</th>
 		                                <th scope="col">Phone Number</th>
 		                                <th scope="col">Proof</th>
+                                        <th scope="col">Edit your Data</th>
                                     </tr>
                             </thead>
                             <tbody>
@@ -221,7 +236,7 @@ $id=$_SESSION['id'];
                                             echo "<td>".$row["district"]."</td>";
                                             echo "<td>".$row["phno"]."</td>";
                                             echo "<td>".$row["proof"]."</td>";
-                                            echo "<td><a href='update_volunteer.php?id=".$row['id']."'><button class='btn btn-primary'>Update</button></a></td>";
+                                            echo "<td><a href='update_volunteer.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
                                         }
                             ?>
@@ -238,8 +253,10 @@ $id=$_SESSION['id'];
                     if(mysqli_num_rows(mysqli_query($link,$sql)) > 0)
                     {
                     ?>
-                    <div class="row mt-3">
-                    <h4>Information As Meal Provider</h4>
+                    <div class="row" style="text-align: center; align-items: center; justify-content: center;">
+                      <h4>Information As Meal Provider</h4>
+                    </div>
+                    <div class="row mt-3 mytable p-4">
                         <table class="table">
                             <thead class="thead-light">
                                     <tr>
@@ -248,6 +265,7 @@ $id=$_SESSION['id'];
                                         <th scope="col">District</th>
 		                                <th scope="col">Phone Number</th>
 		                                <th scope="col">Proof</th>
+                                        <th scope="col">Edit your Data</th>
                                     </tr>
                             </thead>
                             <tbody>
@@ -261,7 +279,7 @@ $id=$_SESSION['id'];
 				                            echo "<td>".$row["district"]."</td>";
 				                            echo "<td>".$row["phno"]."</td>";
 				                            echo "<td>".$row["proof"]."</td>";
-                                            echo "<td><a href='update_mealprovider.php?id=".$row['id']."'><button class='btn btn-primary'>Update</button></a></td>";
+                                            echo "<td><a href='update_mealprovider.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
                                         }
                             ?>
@@ -278,8 +296,10 @@ $id=$_SESSION['id'];
                     if(mysqli_num_rows(mysqli_query($link,$sql)) > 0)
                     {
                     ?>
-                    <div class="row mt-3">
-                    <h4>Information As Childcare Provider</h4>
+                    <div class="row" style="text-align: center; align-items: center; justify-content: center;">
+                      <h4>Information As Childcare Provider</h4>
+                    </div>
+                    <div class="row mt-3 mytable p-4">
                         <table class="table">
                             <thead class="thead-light">
                                     <tr>
@@ -288,6 +308,7 @@ $id=$_SESSION['id'];
                                         <th scope="col">District</th>
 		                                <th scope="col">Phone Number</th>
 		                                <th scope="col">Proof</th>
+                                        <th scope="col">Edit your Data</th>
                                     </tr>
                             </thead>
                             <tbody>
@@ -303,7 +324,7 @@ $id=$_SESSION['id'];
                                             
                                             echo "<td>".$row["phno"]."</td>";
                                             echo "<td>".$row["proof"]."</td>";
-                                            echo "<td><a href='update_childcareprovider.php?id=".$row['id']."'><button class='btn btn-primary'>Update</button></a></td>";
+                                            echo "<td><a href='update_childcareprovider.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
                                         }
                             ?>
@@ -320,8 +341,10 @@ $id=$_SESSION['id'];
                     if(mysqli_num_rows(mysqli_query($link,$sql)) > 0)
                     {
                     ?>
-                    <div class="row mt-3">
-                    <h4>Your Post As Warrior</h4>
+                    <div class="row" style="text-align: center; align-items: center; justify-content: center;">
+                      <h4>Your Post As Warrior</h4>
+                    </div>
+                    <div class="row mt-3 mytable p-4">
                         <table class="table">
                             <thead class="thead-light">
                                     <tr>
@@ -334,6 +357,7 @@ $id=$_SESSION['id'];
                                         <th scope="col">Title</th>
 		                                <th scope="col">Posted Photos</th>
 		                                <th scope="col">Posted Videos</th>
+                                        <th scope="col">Edit your Data</th>
                                     </tr>
                             </thead>
                             <tbody>
@@ -351,7 +375,7 @@ $id=$_SESSION['id'];
 				                            echo "<td>".$row["title"]."</td>";
                                             echo "<td>".$row["photo"]."</td>";
 				                            echo "<td>".$row["video"]."</td>";
-                                            echo "<td><a href='update_warrior.php?id=".$row['id']."'><button class='btn btn-primary'>Update</button></a></td>";
+                                            echo "<td><a href='update_warrior.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
                                         }
                             ?>
@@ -368,8 +392,10 @@ $id=$_SESSION['id'];
                     if(mysqli_num_rows(mysqli_query($link,$sql)) > 0)
                     {
                     ?>
-                    <div class="row mt-3">
-                    <h4>Your Post As Survivor</h4>
+                    <div class="row" style="text-align: center; align-items: center; justify-content: center;">
+                      <h4>Your Post As Survivor</h4>
+                    </div>
+                    <div class="row mt-3 mytable p-4">
                         <table class="table">
                             <thead class="thead-light">
                                     <tr>
@@ -381,6 +407,7 @@ $id=$_SESSION['id'];
                                         <th scope="col">Experience As COVID Survivor</th>
                                         <th scope="col">Title</th>
 		                                <th scope="col">Posted Videos</th>
+                                        <th scope="col">Edit your Data</th>
                                     </tr>
                             </thead>
                             <tbody>
@@ -397,7 +424,7 @@ $id=$_SESSION['id'];
                                             echo "<td>".$row["experience"]."</td>";
                                             echo "<td>".$row["title"]."</td>";
                                             echo "<td>".$row["video"]."</td>";
-                                            echo "<td><a href='update_survivor.php?id=".$row['id']."'><button class='btn btn-primary'>Update</button></a></td>";
+                                            echo "<td><a href='update_survivor.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
                                         }
                             ?>
@@ -414,8 +441,10 @@ $id=$_SESSION['id'];
                     if(mysqli_num_rows(mysqli_query($link,$sql)) > 0)
                     {
                     ?>
-                    <div class="row mt-3">
-                    <h4>Information As NGO</h4>
+                    <div class="row" style="text-align: center; align-items: center; justify-content: center;">
+                      <h4>Information As NGO</h4>
+                    </div>
+                    <div class="row mt-3 mytable p-4">
                         <table class="table">
                             <thead class="thead-light">
                                     <tr>
@@ -425,6 +454,7 @@ $id=$_SESSION['id'];
                                         <th scope="col">Phone number</th>
                                         <th scope="col">Proof Certificate</th>
 		                                <th scope="col">Category</th>
+                                        <th scope="col">Edit your Data</th>
                                     </tr>
                             </thead>
                             <tbody>
@@ -439,7 +469,7 @@ $id=$_SESSION['id'];
                                             echo "<td>".$row["ph_no"]."</td>";
                                             echo "<td>".$row["file"]."</td>";
                                             echo "<td>".$row["category"]."</td>";
-                                            echo "<td><a href='update_ngo.php?id=".$row['id']."'><button class='btn btn-primary'>Update</button></a></td>";
+                                            echo "<td><a href='update_ngo.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
                                         }
                             ?>
@@ -456,8 +486,10 @@ $id=$_SESSION['id'];
                     if(mysqli_num_rows(mysqli_query($link,$sql)) > 0)
                     {
                     ?>
-                    <div class="row mt-3">
-                    <h4>Information As Individual Helper</h4>
+                    <div class="row" style="text-align: center; align-items: center; justify-content: center;">
+                       <h4>Information As Individual Helper</h4>
+                    </div>
+                    <div class="row mt-3 mytable p-4">
                         <table class="table">
                             <thead class="thead-light">
                                     <tr>
@@ -467,6 +499,7 @@ $id=$_SESSION['id'];
                                         <th scope="col">Phone number</th>
                                         <th scope="col">Proof Certificate</th>
 		                                <th scope="col">Category</th>
+                                        <th scope="col">Edit your Data</th>
                                     </tr>
                             </thead>
                             <tbody>
@@ -481,7 +514,7 @@ $id=$_SESSION['id'];
                                             echo "<td>".$row["ph_no"]."</td>";
                                             echo "<td>".$row["file"]."</td>";
                                             echo "<td>".$row["category"]."</td>";
-                                            echo "<td><a href='update_individual.php?id=".$row['id']."'><button class='btn btn-primary'>Update</button></a></td>";
+                                            echo "<td><a href='update_individual.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
                                         }
                             ?>
@@ -498,8 +531,10 @@ $id=$_SESSION['id'];
                     if(mysqli_num_rows(mysqli_query($link,$sql)) > 0)
                     {
                     ?>
-                    <div class="row mt-3">
-                    <h4>Information As Help Seeker</h4>
+                    <div class="row" style="text-align: center; align-items: center; justify-content: center;">
+                      <h4>Information As Help Seeker</h4>
+                    </div>
+                    <div class="row mt-3 mytable p-4">
                         <table class="table">
                             <thead class="thead-light">
                                     <tr>
@@ -510,6 +545,7 @@ $id=$_SESSION['id'];
                                         <th scope="col">Proof Certificate</th>
                                         <th scope="col">Description</th>
 		                                <th scope="col">Category</th>
+                                        <th scope="col">Edit your Data</th>
                                     </tr>
                             </thead>
                             <tbody>
@@ -525,7 +561,7 @@ $id=$_SESSION['id'];
                                             echo "<td>".$row["file"]."</td>";
                                             echo "<td>".$row["description"]."</td>";
                                             echo "<td>".$row["category"]."</td>";
-                                            echo "<td><a href='update_helpseeker.php?id=".$row['id']."'><button class='btn btn-primary'>Update</button></a></td>";
+                                            echo "<td><a href='update_helpseeker.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
                                         }
                             ?>
