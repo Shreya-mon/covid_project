@@ -4,173 +4,7 @@ session_start();
 $email= $_SESSION['email'];
 // $_SESSION['success'] ="FORM SUBMITTED!";
 ?>
-<?php 
-//Donor data insertion
-if(isset($_POST['submit'])){
-    $sql = "INSERT INTO `donor_db`(`id`,`email`,`name`,`address`,`phone number`,`date of birth`,`gender`,`blood group`,`district`,`frequency`,`proof`) VALUES('','".$email."',
-'".$_REQUEST['name']."','".$_REQUEST['address']."','".$_REQUEST['phno']."','".$_REQUEST['dob']."','".$_REQUEST['gender']."',
-'".$_REQUEST['bgrp']."','".$_REQUEST['dist']."','".$_REQUEST['freq']."','".$_REQUEST['cert']."')";
-    if (mysqli_query($link, $sql)) {
-        $_SESSION['success'] = "Your form submitted successfully for donate blood!";
-        
-      } else {
-        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
-        
-      }
-}
-//Receiver data insertion
-if(isset($_POST['submit1'])){
-    $sql = "INSERT INTO `receiver_db`(`id`,`email`,`name`,`address`,`phone number`,`date of birth`,`gender`,`blood group`,`district`,`proof`) VALUES('','".$email."','".$_REQUEST['name']."',
-								 '".$_REQUEST['address']."','".$_REQUEST['phno']."','".$_REQUEST['dob']."','".$_REQUEST['gender']."','".$_REQUEST['bgrp']."','".$_REQUEST['dist']."',
-								 '".$_REQUEST['cert']."')";
-	
-    if (mysqli_query($link, $sql)) {
-        $_SESSION['success'] = "Your form submitted successfully for request for blood!";
-        
-      } else {
-        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
-        
-      }
-}
-//Oxygen data insertion
-if(isset($_POST['submit2'])){
-    $sql = "INSERT INTO `oxygen_db`(`id`,`name`,`application type`,`address`,`district`,`email`,`phone number`,`proof`) VALUES('','".$_REQUEST['name']."',
-								 '".$_REQUEST['person']."','".$_REQUEST['address']."','".$_REQUEST['dist']."','".$email."','".$_REQUEST['phno']."',
-								 '".$_REQUEST['cert']."')";
-    if (mysqli_query($link, $sql)) {
-        $_SESSION['success'] = "Your form submitted successfully for oxygen supply!";
-        
-      } else {
-        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
-        
-      }
-    
-}
 
-
-//Warrior data insertion
-if(isset($_POST['submit6'])){
-    if(mysqli_query($link,"INSERT INTO `warrior_db`(`id`,`name`,`email`,`age`,`profession`,`city`,`district`,`experience`,`title`,`photo`,`video`) VALUES('','".$_REQUEST['name']."','".$email."','".$_REQUEST['age']."',
-        '".$_REQUEST['profession']."','".$_REQUEST['city']."','".$_REQUEST['district']."','".$_REQUEST['experience']."','".$_REQUEST['title']."','".$_REQUEST['photo']."','".$_REQUEST['video']."')"))
-    {
-        $_SESSION['success'] = "Your form submitted successfully for Covid warrior!";
-        
-    } else {
-      $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
-      
-    }
-}
-//Survivor data insertion
-if(isset($_POST['submit7'])){
-    if(mysqli_query($link,"INSERT INTO `survivor_db`(`id`,`name`,`email`,`age`,`profession`,`city`,`district`,`experience`,`title`,`video`) VALUES('','".$_REQUEST['name']."','".$email."','".$_REQUEST['age']."',
-        '".$_REQUEST['profession']."','".$_REQUEST['city']."','".$_REQUEST['district']."','".$_REQUEST['experience']."','".$_REQUEST['title']."','".$_REQUEST['video']."')"))
-    {
-        $_SESSION['success'] = "Your form submitted successfully for Covid survivor!";
-    } else {
-        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
-        
-      }
-}
-
-//Child care data insertion
-if(isset($_POST['submit5'])){
-
-   $sql = "INSERT INTO `childcareprovider_db`(`id`,`email`,`name`,`address`,`district`,`phno`,`proof`) VALUES('','".$email."',
-                                 '".$_REQUEST['nameOfNGO']."','".$_REQUEST['addressOfNGO']."','".$_REQUEST['dist']."',
-                                 '".$_REQUEST['phoneNoOfNGO']."','".$_REQUEST['certificateOfNGO']."')";
-    
-    if (mysqli_query($link, $sql)) {
-        $_SESSION['success'] = "Your form submitted successfully for childcare service!";
-        
-      } else {
-        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
-        
-      }
-}
-//Health care data insertion
-    if(isset($_POST['submit3'])){
-       $sql = "INSERT INTO `volunteer_db`(`id`,`name`,`user_type`,`address`,`district`,`email`,`phno`,`proof`) VALUES('',
-                                 '".$_REQUEST['nameOfvolunteer']."','".$_REQUEST['person']."','".$_REQUEST['addressOfvolunteer']."','".$_REQUEST['dist']."','".$email."',
-                                 '".$_REQUEST['phoneOfvolunteer']."','".$_REQUEST['certificateOfvolunteer']."')";
-   
-     if (mysqli_query($link, $sql)) {
-        $_SESSION['success'] = "Your form submitted successfully for health care service!";
-        
-      } else {
-        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
-        
-      }
-    }
-//Meal Provider data insertion
-    if(isset($_POST['submit4'])){
-            $sql = "INSERT INTO `mealprovider_db`(`id`,`name`,`address`,`district`,`email`,`phno`,`proof`) VALUES('',
-                                 '".$_REQUEST['nameOfNGO']."','".$_REQUEST['addressOfNGO']."','".$_REQUEST['dist']."','".$email."',
-                                 '".$_REQUEST['phoneNoOfNGO']."','".$_REQUEST['certificateOfNGO']."')";
-    if (mysqli_query($link, $sql)) {
-        $_SESSION['success'] = "Your form submitted successfully for meal service!";
-        
-      } else {
-        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
-        
-      }
-    }
-    //NGO registration
-     if(isset($_POST['submit8'])){
-$sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `district`, `ph_no`, `file`, `category`)
-                          VALUES('','".$email."','".$_REQUEST['nameOfNGO']."',
-                                 '".$_REQUEST['addressOfNGO']."',
-                                 '".$_REQUEST['dist']."',
-                                 '".$_REQUEST['phoneNoOfNGO']."',
-                                 '".$_REQUEST['certificateOfNGO']."',
-                                 
-                                 '".$_REQUEST['helpingCategoriesOfNGO']."')";
-    if (mysqli_query($link, $sql)) {
-        $_SESSION['success'] = "Your form submitted successfully for NGO service!";
-        
-      } else {
-        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
-        
-      }
-    }
-    //NGO individual registration
-     if(isset($_POST['submit9'])){
-        $sql = " INSERT INTO `ngo_registration_individual`(`id`,`email`, `name`, `address`, `district`, `ph_no`, `file`, `category`)
-                          VALUES('','".$email."','".$_REQUEST['firstNameOfInd']."',
-                                 '".$_REQUEST['addressOfInd']."',
-                                 '".$_REQUEST['dist']."',
-                                 '".$_REQUEST['phoneNoOfInd']."',
-                                 '".$_REQUEST['certificateOfInd']."',
-                                 
-                                 '".$_REQUEST['helpingCategoriesOfInd']."')";
-    if (mysqli_query($link, $sql)) {
-        $_SESSION['success'] = "Your form submitted successfully for individual helper!";
-        
-      } else {
-        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
-        
-      }
-    }
-//Help
-     if(isset($_POST['submit10'])){
-        $sql = "INSERT INTO `ngo_help_db`(`id`,`email`, `name`, `address`, `district`, `ph_no`, `file`, `description`, `category`)
-                          VALUES('','".$email."','".$_REQUEST['firstNameOfInd']."',
-                                 '".$_REQUEST['addressOfInd']."',
-                                 '".$_REQUEST['dist']."',
-                                 '".$_REQUEST['phoneNoOfInd']."',
-                                 '".$_REQUEST['certificateOfInd']."',
-                                 
-                                 '".$_REQUEST['description']."',
-                                 '".$_REQUEST['helpingCategoriesOfInd']."')";
-    if (mysqli_query($link, $sql)) {
-        $_SESSION['success'] = "Your form submitted successfully for help seeker!";
-        
-      } else {
-        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
-        
-      }
-    }
-
-?>
 <!DOCTYPE html>
 <html>
 
@@ -243,6 +77,7 @@ $sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `distri
 </style>
 
 <body>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!--Donor Modals -->
     <div class="modal fade" id="DonorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -273,11 +108,11 @@ $sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `distri
                         <div class="col-12 mt-1">
                             Gender: &nbsp;Male <input type="radio" value="Male" name="gender"> Female <input
                                 type="radio" value="Female" name="gender"> Other <input type="radio" value="Other"
-                                name="gender">
+                                name="gender" required>
                         </div>
                         <div class="col-12 mt-1">
                             <label for="">Blood Group</label>
-                            <select class="form-control" name="bgrp">
+                            <select class="form-control" name="bgrp" required>
                                 <option value="A+">A+</option>
                                 <option value="B+">B+</option>
                                 <option value="AB+">AB+</option>
@@ -290,7 +125,7 @@ $sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `distri
                         </div>
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
-                            <select class="form-control" name="dist" id="dist">
+                            <select class="form-control" name="dist" id="dist" required>
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
                                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -318,7 +153,7 @@ $sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `distri
                         </div>
                         <div class="col-12 mt-1">
                             <label for="">Frequency of blood donation</label>
-                            <select class="form-control" name="freq">
+                            <select class="form-control" name="freq" required>
                                 <option value="Regular Donor">Regular Donor</option>
                                 <option value="On need basis">On need basis</option>
                                 <option value="Yet to donate">Yet to donate</option>
@@ -367,11 +202,11 @@ $sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `distri
                         <div class="col-12 mt-1">
                             Gender: &nbsp;Male <input type="radio" value="Male" name="gender"> Female <input
                                 type="radio" value="Female" name="gender"> Other <input type="radio" value="Other"
-                                name="gender">
+                                name="gender" required>
                         </div>
                         <div class="col-12 mt-1">
                             <label for="">Blood Group</label>
-                            <select class="form-control" name="bgrp">
+                            <select class="form-control" name="bgrp" required>
                                 <option value="A+">A+</option>
                                 <option value="B+">B+</option>
                                 <option value="AB+">AB+</option>
@@ -384,7 +219,7 @@ $sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `distri
                         </div>
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
-                            <select class="form-control" name="dist" id="dist">
+                            <select class="form-control" name="dist" id="dist" required>
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
                                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -422,6 +257,7 @@ $sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `distri
             </div>
         </div>
     </div>
+
     <!-- Oxygen Modals -->
     <div class="modal fade" id="oxygenModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -1082,7 +918,7 @@ $sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `distri
                         <div class="col-12 mt-1">
                             <label for="Phone Number" class="form-label">Phone Number</label>
                             <input type="text" class="form-control" name="phoneNoOfInd" required>
-                        </div>
+                        </div> 
                         <div class="col-12 mt-1">
                             <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
                             <input type="file" class="form-control" name="certificateOfInd" id="formFile">
@@ -1096,14 +932,14 @@ $sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `distri
                             <label for="Helping Categories" class="form-label">What Kind Of Help You Need: </label>
                             <div class="mt-1 ml-3 form-check">
                                 <input class="form-check-input" name="helpingCategoriesOfInd" type="checkbox"
-                                    value="food">
+                                    value="food" required>
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Food
                                 </label>
                             </div>
                             <div class="mt-1 ml-3 form-check">
                                 <input class="form-check-input" name="helpingCategoriesOfInd" type="checkbox"
-                                    value="books">
+                                    value="books" required>
                                 <label class="form-check-label" for="flexCheckChecked">
                                     Books
                                 </label>
@@ -1117,7 +953,7 @@ $sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `distri
                             </div>
                             <div class="mt-1 ml-3 form-check">
                                 <input class="form-check-input" name="helpingCategoriesOfInd" type="checkbox"
-                                    value="financially">
+                                    value="financially" required>
                                 <label class="form-check-label" for="flexCheckChecked">
                                     Financially
                                 </label>
@@ -1361,6 +1197,281 @@ $sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `distri
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
+<?php
+//Donor data insertion
+if(isset($_POST['submit'])){
+    $sql = "INSERT INTO `donor_db`(`id`,`email`,`name`,`address`,`phone number`,`date of birth`,`gender`,`blood group`,`district`,`frequency`,`proof`) VALUES('','".$email."',
+'".$_REQUEST['name']."','".$_REQUEST['address']."','".$_REQUEST['phno']."','".$_REQUEST['dob']."','".$_REQUEST['gender']."',
+'".$_REQUEST['bgrp']."','".$_REQUEST['dist']."','".$_REQUEST['freq']."','".$_REQUEST['cert']."')";
+    if (mysqli_query($link, $sql)) {
+        ?>
+        <script>
+            swal({
+               title: "Your data is submitted!",
+            text: " As a Blood Donor",
+            icon: "success",
+            button: "Ok!",
+          });
+        </script>
+        <?php
+        
+      } else {
+        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
+        
+      }
+}
+//Receiver data insertion
+if(isset($_POST['submit1'])){
+    $sql = "INSERT INTO `receiver_db`(`id`,`email`,`name`,`address`,`phone number`,`date of birth`,`gender`,`blood group`,`district`,`proof`) VALUES('','".$email."','".$_REQUEST['name']."',
+                                 '".$_REQUEST['address']."','".$_REQUEST['phno']."','".$_REQUEST['dob']."','".$_REQUEST['gender']."','".$_REQUEST['bgrp']."','".$_REQUEST['dist']."',
+                                 '".$_REQUEST['cert']."')";
+    
+    if (mysqli_query($link, $sql)) {
+        ?>
+        <script>
+            swal({
+               title: "Your data is submitted!",
+            text: " For request of Blood ",
+            icon: "success",
+            button: "Ok!",
+          });
+        </script>
+        <?php
+        
+      } else {
+        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
+        
+      }
+}
+//Oxygen data insertion
+if(isset($_POST['submit2'])){
+    $sql = "INSERT INTO `oxygen_db`(`id`,`name`,`application type`,`address`,`district`,`email`,`phone number`,`proof`) VALUES('','".$_REQUEST['name']."',
+                                 '".$_REQUEST['person']."','".$_REQUEST['address']."','".$_REQUEST['dist']."','".$email."','".$_REQUEST['phno']."',
+                                 '".$_REQUEST['cert']."')";
+    if (mysqli_query($link, $sql)) {
+      
+                  ?>
+        <script>
+            swal({
+               title: "Your data is submitted!",
+            text: "for oxygen suuply",
+            icon: "success",
+            button: "Ok!",
+          });
+        </script>
+<?php
+        
+      } else {
+        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
+        
+      }
+    
+}
+
+
+//Warrior data insertion
+if(isset($_POST['submit6'])){
+    if(mysqli_query($link,"INSERT INTO `warrior_db`(`id`,`name`,`email`,`age`,`profession`,`city`,`district`,`experience`,`title`,`photo`,`video`) VALUES('','".$_REQUEST['name']."','".$email."','".$_REQUEST['age']."',
+        '".$_REQUEST['profession']."','".$_REQUEST['city']."','".$_REQUEST['district']."','".$_REQUEST['experience']."','".$_REQUEST['title']."','".$_REQUEST['photo']."','".$_REQUEST['video']."')"))
+    {
+       
+                  ?>
+        <script>
+            swal({
+               title: "Your data is submitted!",
+            text: "for covid worrior",
+            icon: "success",
+            button: "Ok!",
+          });
+        </script>
+<?php
+        
+    } else {
+      $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
+      
+    }
+}
+//Survivor data insertion
+if(isset($_POST['submit7'])){
+    if(mysqli_query($link,"INSERT INTO `survivor_db`(`id`,`name`,`email`,`age`,`profession`,`city`,`district`,`experience`,`title`,`video`) VALUES('','".$_REQUEST['name']."','".$email."','".$_REQUEST['age']."',
+        '".$_REQUEST['profession']."','".$_REQUEST['city']."','".$_REQUEST['district']."','".$_REQUEST['experience']."','".$_REQUEST['title']."','".$_REQUEST['video']."')"))
+    {
+       
+              ?>
+        <script>
+            swal({
+               title: "Your data is submitted!",
+            text: "for covid survivor",
+            icon: "success",
+            button: "Ok!",
+          });
+        </script>
+<?php
+    } else {
+        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
+        
+      }
+}
+
+//Child care data insertion
+if(isset($_POST['submit5'])){
+
+   $sql = "INSERT INTO `childcareprovider_db`(`id`,`email`,`name`,`address`,`district`,`phno`,`proof`) VALUES('','".$email."',
+                                 '".$_REQUEST['nameOfNGO']."','".$_REQUEST['addressOfNGO']."','".$_REQUEST['dist']."',
+                                 '".$_REQUEST['phoneNoOfNGO']."','".$_REQUEST['certificateOfNGO']."')";
+    
+    if (mysqli_query($link, $sql)) {
+        
+        ?>
+        <script>
+            swal({
+               title: "Your data is submitted!",
+            text: "for child-care service",
+            icon: "success",
+            button: "Ok!",
+          });
+        </script>
+<?php
+        
+      } else {
+        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
+        
+      }
+}
+//Health care data insertion
+    if(isset($_POST['submit3'])){
+       $sql = "INSERT INTO `volunteer_db`(`id`,`name`,`user_type`,`address`,`district`,`email`,`phno`,`proof`) VALUES('',
+                                 '".$_REQUEST['nameOfvolunteer']."','".$_REQUEST['person']."','".$_REQUEST['addressOfvolunteer']."','".$_REQUEST['dist']."','".$email."',
+                                 '".$_REQUEST['phoneOfvolunteer']."','".$_REQUEST['certificateOfvolunteer']."')";
+   
+     if (mysqli_query($link, $sql)) {
+         ?>
+        <script>
+            swal({
+               title: "Your data is submitted!",
+            text: "for health-care service",
+            icon: "success",
+            button: "Ok!",
+          });
+        </script>
+<?php
+        
+      } else {
+        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
+        
+      }
+    }
+//Meal Provider data insertion
+    if(isset($_POST['submit4'])){
+            $sql = "INSERT INTO `mealprovider_db`(`id`,`name`,`address`,`district`,`email`,`phno`,`proof`) VALUES('',
+                                 '".$_REQUEST['nameOfNGO']."','".$_REQUEST['addressOfNGO']."','".$_REQUEST['dist']."','".$email."',
+                                 '".$_REQUEST['phoneNoOfNGO']."','".$_REQUEST['certificateOfNGO']."')";
+    if (mysqli_query($link, $sql)) {
+              ?>
+        <script>
+            swal({
+               title: "Your data is submitted!",
+            text: " for meal service",
+            icon: "success",
+            button: "Ok!",
+          });
+        </script>
+<?php
+        
+      } else {
+        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
+        
+      }
+    }
+    //NGO registration
+     if(isset($_POST['submit8'])){
+$sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `district`, `ph_no`, `file`, `category`)
+                          VALUES('','".$email."','".$_REQUEST['nameOfNGO']."',
+                                 '".$_REQUEST['addressOfNGO']."',
+                                 '".$_REQUEST['dist']."',
+                                 '".$_REQUEST['phoneNoOfNGO']."',
+                                 '".$_REQUEST['certificateOfNGO']."',
+                                 
+                                 '".$_REQUEST['helpingCategoriesOfNGO']."')";
+    if (mysqli_query($link, $sql)) {
+        
+               ?>
+        <script>
+            swal({
+               title: "Your data is submitted!",
+            text: " for NGO service",
+            icon: "success",
+            button: "Ok!",
+          });
+        </script>
+<?php
+        
+      } else {
+        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
+        
+      }
+    }
+    //NGO individual registration
+     if(isset($_POST['submit9'])){
+        $sql = " INSERT INTO `ngo_registration_individual`(`id`,`email`, `name`, `address`, `district`, `ph_no`, `file`, `category`)
+                          VALUES('','".$email."','".$_REQUEST['firstNameOfInd']."',
+                                 '".$_REQUEST['addressOfInd']."',
+                                 '".$_REQUEST['dist']."',
+                                 '".$_REQUEST['phoneNoOfInd']."',
+                                 '".$_REQUEST['certificateOfInd']."',
+                                 
+                                 '".$_REQUEST['helpingCategoriesOfInd']."')";
+    if (mysqli_query($link, $sql)) {
+       
+            ?>
+        <script>
+            swal({
+               title: "Your data is submitted!",
+            text: "for individual helper!",
+            icon: "success",
+            button: "Ok!",
+          });
+        </script>
+<?php
+        
+      } else {
+        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
+        
+      }
+    }
+//Help
+     if(isset($_POST['submit10'])){
+        $sql = "INSERT INTO `ngo_help_db`(`id`,`email`, `name`, `address`, `district`, `ph_no`, `file`, `description`, `category`)
+                          VALUES('','".$email."','".$_REQUEST['firstNameOfInd']."',
+                                 '".$_REQUEST['addressOfInd']."',
+                                 '".$_REQUEST['dist']."',
+                                 '".$_REQUEST['phoneNoOfInd']."',
+                                 '".$_REQUEST['certificateOfInd']."',
+                                 
+                                 '".$_REQUEST['description']."',
+                                 '".$_REQUEST['helpingCategoriesOfInd']."')";
+    if (mysqli_query($link, $sql)) {
+        ?><script>
+        swal("Your help request is submitted!")
+        .then((value) => {
+        swal(`You will be informed soon !!!`);
+});</script><?php
+        
+      } else {
+        $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
+        
+      }
+    }
+
+?>
 </body>
 
 </html>

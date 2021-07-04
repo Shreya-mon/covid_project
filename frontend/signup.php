@@ -54,7 +54,6 @@
                                     </div>
                                     <input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email" required>
                                 </div>
-                               
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-key"></i></span>
@@ -77,6 +76,7 @@
 				                            <i id="hide4" class="fa fa-eye-slash"></i></span>
                                     </div>
                                 </div>
+                                <div id="showErrorcPwd"></div>
                                 <div class="form-group">
                                     <input type="submit" value="Submit" name="submit" class="btn float-right submit_btn">
                                 </div>
@@ -126,40 +126,75 @@
 			}
 		}
 	</script>
-</body>
-
-</html>
-<?php
+    <script src="sweetalert.min.js"></script>
+     <script>
+        $(document).ready(function(){
+            $('#conpass').keyup(function(){
+                var pwd = $('#password').val();
+                var cpwd = $('#conpass').val();
+                if(cpwd!=pwd){
+                    $('#showErrorcPwd').html('**Password are not matching.');
+                    $('#showErrorcPwd').css('color','white');
+                    return false;
+                }
+                else{
+                    $('#showErrorcPwd').html('Password matches');
+                    $('#showErrorcPwd').css('color','white');
+                    return true;
+                }
+            });
+        });
+    </script>
+    <?php
 include("connection.php");
 if(isset($_POST['submit'])){
     extract($_POST);
     if($password != $conpass){
-        echo "<script>alert( 'Passwords do not match.');</script>";
         $error[]='Passwords do not match.';
     }
     if($conpass == ''){
-        echo "<script>alert('Please confirm the password.');</script>";
         $error[]='Please confirm the password.';
     }
-
     $sql="SELECT * FROM `register_db` WHERE `email`='$email'";
     $res = mysqli_query($link, $sql);
-    if(mysqli_num_rows($res)>0){
-        $row = mysqli_fetch_assoc($res);
-        if($email == $row['email']){
-            echo "<script>alert('Email Already Exists.');</script>";
-            $error[]='Email Already Exists.'; 
-        }
+    if(mysqli_num_rows($res)>0){?>
+                <script>
+                    swal({
+                        title:"Email Already Exist",
+                        //text:"Here",
+                        icon:"warning",
+                        button:"OK",
+                     });
+                </script>
+            
+      <?php      $error[]='Email Already Exists.'; 
     }
     if(!isset($error)){
     $result = mysqli_query($link,"INSERT INTO `register_db`(`id`,`uname`,`email`,`n_password`,`con_password`) VALUES('',
 '".$_REQUEST['name']."','".$_REQUEST['email']."','".base64_encode($password)."','".$_REQUEST['conpass']."')");
-    if ($result){
-        echo "<script>alert('data saved successfully');</script>";
-    }
-    else{
-        echo "<script>alert('data insertion failed');</script>";
-    }
+    if ($result){?>
+        <script>
+            swal({
+                title:"Registration Sucessful.",
+                //text:"Here",
+                icon:"success",
+                button:"OK",
+            });
+        </script>
+  <?php  }
+    else{?>
+        <script>
+            swal({
+                title:"Registration Failed",
+                //text:"Here",
+                icon:"error",
+                button:"OK",
+            });
+        </script>";
+ <?php   }
 }
 }
 ?>
+</body>
+
+</html>

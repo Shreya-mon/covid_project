@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -47,13 +48,13 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                                     </div>
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email" required>
+                                    <input type="email" value="<?php if(isset($_COOKIE["email"])){echo $_COOKIE["email"]; }?>" name="email" id="email" class="form-control" placeholder="Enter your Email" required>
                                 </div>
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-key"></i></span>
                                     </div>
-                                    <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+                                    <input type="password" value="<?php if(isset($_COOKIE["password"])){echo $_COOKIE["password"]; }?>" name="password" id="password" class="form-control" placeholder="Password" required>
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" class="eye" onclick="myfunction()">
                                             <i id="hide1" class="fa fa-eye"></i>
@@ -61,7 +62,7 @@
                                     </div>
                                 </div>
                                 <div class="row align-items-center remember">
-                                    <input type="checkbox" name="remember" value="1">Remember Me
+                                    <input type="checkbox" name="remember" value="1" <?php if(isset($_COOKIE["email"])){echo "checked";}?>>Remember Me
                                 </div>
                                 <div class="form-group">
                                     <input type="submit" name="submit" value="Login" class="btn float-right login_btn">
@@ -81,6 +82,7 @@
             </div>
         </div>
     </div>
+    <script src="sweetalert.min.js"></script>
     <script type="text/javascript">
 		function myfunction(){
 			var x = document.getElementById("password");
@@ -99,6 +101,35 @@
 			}
 		}
     </script>
+<?php
+if(isset($_SESSION['errorPass']) && $_SESSION['errorPass']!='')
+{?>
+<script>
+            swal({
+                title:"<?php echo $_SESSION['errorPass']; ?>",
+                text:"Try Again",
+                icon:"error",
+                button:"OK",
+            });
+</script>
+<?php
+    unset($_SESSION['errorPass']);
+}
+if(isset($_SESSION['errorEmail']) && $_SESSION['errorEmail']!='')
+{
+?>
+<script>
+            swal({
+                title:"<?php echo $_SESSION['errorEmail']; ?>",
+                text:"Try Again Or Sign Up",
+                icon:"error",
+                button:"OK",
+            });
+</script>
+<?php
+    unset($_SESSION['errorEmail']);
+}
+?>
 </body>
 
 
