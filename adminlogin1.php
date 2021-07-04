@@ -1,6 +1,7 @@
 <?php
 
 include("connection.php");
+session_start();
   ?>
 
 <style>
@@ -24,34 +25,34 @@ a{
 			color: floralwhite; font-size: 42px;}
 </style>
 
-
 <?php
-$name = $_POST['name'];
+$email = $_POST['email'];
 //$id = $_POST['id'];
 $password = $_POST['pass'];
 
-$sql ="select * from admin_details where name = '$name' and password = '$password'";
+$sql ="SELECT * FROM `admin_details` WHERE `email` = '$email' AND `password` = '$password'";
 $result = mysqli_query($link,$sql);
 $row=mysqli_fetch_array($result);
 if(mysqli_num_rows($result)>0)
 {
-	if($row['name']==$name && $row['password']==$password)
+	if($row['email']==$email && $row['password']==$password)
  		{  
-    		echo "<div align='center'>Welcome ".$row['name']." to Menu Page</div><br><br>";
+    		echo "<div align='center'>Welcome ".$row['name']." to Admin Panel</div><br><br>";
     		echo "<div align='center'>";
     		echo '<a href="menu.html">Click Here To Go To Menu!!</a><br><br><br><br>';
-			echo '<a href="admin.html">Log out</a>';
 			echo "</div>";
 		}
 
 
  	else {
-    		echo "You are not an authourized user. ";
-		}
+		$_SESSION['error'] = "You are not an authourized user.";
+		header('Location:admin.php');
+	 	}
 }
 	
  	else {
-    		echo "You are not an authourized user. ";
+		 $_SESSION['error'] = "You are not an authourized user.";
+		header('Location:admin.php');
 		}
 
 ?>

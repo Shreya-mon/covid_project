@@ -1,3 +1,8 @@
+<?php
+
+include("connection.php");
+session_start();
+  ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +35,7 @@
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <link rel="stylesheet" href="frontend/css/styles.css">
+  <link rel="stylesheet" href="frontend/css/styles.css?V=<?php echo time(); ?>">
     <style>
     
             html, body {
@@ -62,7 +67,23 @@
     color: #8D8D8D;
 
 }
+.fa{
+    color:black;
+}
+.fas{
+    color:black;
+}
+    .eye{
+        position: absolute;
+        margin-top:-8vmin;
+        margin-left:37vmin;
 
+}
+
+#hide1 {
+    display: none;
+
+}
 
     </style>
      <div class="col-1">
@@ -79,16 +100,21 @@
 
         
         <label for="email"></label><br>
+        <span class="email"><i class="fas fa-envelope"></i></span>
         <input type="text" id="name" name="email" placeholder="Email" style="background-color: darkslategray;
-  color: black; font-size: 20px; font: bold;"><br><br>
+  color: white; font-size: 20px; font: bold;" required><br><br>
 
 
  
 
 
-        <label for="email"></label><br>
+        <label for="password"></label><br>
+        <span class="email"><i class="fas fa-key"></i></span>
         <input type="password" id="pass" name="pass" placeholder="Password" style="background-color: darkslategray;
-  color: white; font-size: 20px; font: bold;"><br><br>
+  color: white; font-size: 20px; font: bold;" required><br><br>
+        <span class="eye" onclick="myfunction()">
+                                            <i id="hide1" class="fa fa-eye"></i>
+				                            <i id="hide2" class="fa fa-eye-slash"></i></span>
   
   
         <input type="submit" class="button" value="Log In">
@@ -97,7 +123,38 @@
     <br><br><br>
 </form>
 </div>
+<script type="text/javascript">
+		function myfunction(){
+			var x = document.getElementById("pass");
+			var y = document.getElementById("hide1");
+			var z = document.getElementById("hide2");
+
+			if(x.type == 'password'){
+				x.type = "text";
+				y.style.display = "block";
+				z.style.display = "none";
+			}
+			else{
+				x.type = "password";
+				y.style.display = "none";
+				z.style.display = "block";
+			}
+		}
+    </script>
 <script src="frontend/sweetalert.min.js"></script>
+<?php
+if(isset($_SESSION['error']) && $_SESSION['error']!='')
+{?>
+<script>
+            swal({
+                title:"<?php echo $_SESSION['error']; ?>",
+                icon:"error",
+                button:"OK",
+            });
+</script>
+<?php
+    unset($_SESSION['error']);
+}?>
 
 
 </body>

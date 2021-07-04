@@ -71,7 +71,7 @@ include("connection.php");?>
         </li>
         <div class="d-flex ml-auto">
           <li class="nav-item ">
-            <a class="nav-link" aria-current="page" href="../admin.html">Admin Login</a>
+            <a class="nav-link" aria-current="page" href="../admin.php">Admin Login</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="help.php">Help Desk</a>
