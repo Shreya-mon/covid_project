@@ -88,7 +88,7 @@ $email= $_SESSION['email'];
                         aria-label="Close"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="modal-body">
-                    <form class="row" action="#" method="POST">
+                    <form class="row" action="#" method="POST" enctype="multipart/form-data">
                         <div class="col-12 mt-1 ">
                             <label for="Name" class="form-label">Name</label>
                             <input type="text" class="form-control" name="name" required>
@@ -182,7 +182,7 @@ $email= $_SESSION['email'];
                         aria-label="Close"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="modal-body">
-                    <form class="row" action="#" method="POST">
+                    <form class="row" action="#" method="POST" enctype="multipart/form-data">
                         <div class="col-12 mt-1 ">
                             <label for="Name of NGO" class="form-label">Name</label>
                             <input type="text" class="form-control" name="name" required>
@@ -268,7 +268,7 @@ $email= $_SESSION['email'];
                         aria-label="Close"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="modal-body">
-                    <form class="row" action="#" method="POST">
+                    <form class="row" action="#" method="POST" enctype="multipart/form-data">
                         <div class="col-12 mt-1 ">
                             <label for="Name" class="form-label">Name: </label>
                             <input type="text" class="form-control" name="name" required>
@@ -337,7 +337,7 @@ $email= $_SESSION['email'];
                         aria-label="Close"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="modal-body">
-                    <form class="row" action="#" method="POST">
+                    <form class="row" action="#" method="POST" enctype="multipart/form-data">
                         <div class="col-12 mt-1 ">
                             <label for="Name of volunteer" class="form-label">Name: </label>
                             <input type="text" class="form-control" name="nameOfvolunteer" required>
@@ -352,7 +352,7 @@ $email= $_SESSION['email'];
                         </div>
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
-                            <select class="form-control" name="dist" id="dist">
+                            <select class="form-control" name="dist" id="dist" required>
                                 <option value="">Select</option>
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
@@ -411,7 +411,7 @@ $email= $_SESSION['email'];
                         aria-label="Close"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="modal-body">
-                    <form class="row" action="#" method="POST">
+                    <form class="row" action="#" method="POST" enctype="multipart/form-data">
                         <div class="col-12 mt-1 ">
                             <label for="Name of NGO" class="form-label">Name: </label>
                             <input type="text" class="form-control" name="nameOfNGO" required>
@@ -422,7 +422,7 @@ $email= $_SESSION['email'];
                         </div>
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
-                            <select class="form-control" name="dist" id="dist">
+                            <select class="form-control" name="dist" id="dist" required>
                                 <option value="">Select</option>
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
@@ -479,7 +479,7 @@ $email= $_SESSION['email'];
                         aria-label="Close"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="modal-body">
-                    <form class="row" action="#" method="POST">
+                    <form class="row" action="#" method="POST" enctype="multipart/form-data">
                         <div class="col-12 mt-1 ">
                             <label for="Name of NGO" class="form-label">Name</label>
                             <input type="text" class="form-control" name="nameOfNGO" required>
@@ -490,7 +490,7 @@ $email= $_SESSION['email'];
                         </div>
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
-                            <select class="form-control" name="dist" id="dist">
+                            <select class="form-control" name="dist" id="dist" required>
                                 <option value="">Select</option>
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
@@ -546,7 +546,7 @@ $email= $_SESSION['email'];
                         aria-label="Close"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="modal-body">
-                    <form class="row" action="#" method="POST">
+                    <form class="row" action="#" method="POST" enctype="multipart/form-data">
                         <div class="col-12 mt-1 ">
                             <label for="Name" class="form-label">Name</label>
                             <input type="text" class="form-control" name="name" required>
@@ -605,7 +605,7 @@ $email= $_SESSION['email'];
                     aria-label="Close"><i class="fas fa-times"></i></button>
             </div>
             <div class="modal-body">
-                <form class="row" action="#" method="POST">
+                <form class="row" action="#" method="POST" enctype="multipart/form-data">
                     <div class="col-12 mt-1 ">
                             <label for="Name" class="form-label">Name</label>
                             <input type="text" class="form-control" name="name" required>
@@ -663,8 +663,8 @@ $email= $_SESSION['email'];
                 <div class="modal-body">
 
 
-                    <form class="row" action="#" method="post"
-                        name="insert_ngo_registraion_frm">
+                    <form class="row" action="#" method="post" name="insert_ngo_registraion_frm" 
+                    enctype="multipart/form-data">
                         <div class="col-12 mt-1 ">
                             <label for="Name of NGO" class="form-label">Name of NGO</label>
                             <input type="text" class="form-control" name="nameOfNGO" required>
@@ -675,7 +675,7 @@ $email= $_SESSION['email'];
                         </div>
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
-                            <select class="form-control" name="dist" id="dist" class="form-control">
+                            <select class="form-control" name="dist" id="dist" class="form-control" required>
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
                                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -707,7 +707,7 @@ $email= $_SESSION['email'];
                         </div>
                         <div class="col-12 mt-1">
                             <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
-                            <input type="file" class="form-control" name="certificateOfNGO" id="formFile">
+                            <input type="file" class="form-control" name="certificateOfNGO" id="formFile" required>
                         </div>
                         <div class="col-12 mt-1">
                             <label for="Helping Categories" class="form-label">Helping Categories</label>
@@ -770,7 +770,7 @@ $email= $_SESSION['email'];
                 <div class="modal-body">
 
                     <form class="row" action="#" method="post"
-                        name="insert_ngo_registraion_individual_frm">
+                        name="insert_ngo_registraion_individual_frm" enctype="multipart/form-data">
                         <div class="col-12 mt-1 ">
                             <label for="First Name" class="form-label">Name</label>
                             <input type="text" class="form-control" name="firstNameOfInd" required>
@@ -781,7 +781,7 @@ $email= $_SESSION['email'];
                         </div>
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
-                            <select class="form-control" name="dist" id="dist" class="form-control">
+                            <select class="form-control" name="dist" id="dist" class="form-control" required>
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
                                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -813,7 +813,7 @@ $email= $_SESSION['email'];
                         </div>
                         <div class="col-12 mt-1">
                             <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
-                            <input type="file" class="form-control" name="certificateOfInd" id="formFile">
+                            <input type="file" class="form-control" name="certificateOfInd" id="formFile" required>
                         </div>
                         <div class="col-12 mt-1">
                             <label for="Helping Categories" class="form-label">Helping Categories</label>
@@ -878,7 +878,7 @@ $email= $_SESSION['email'];
                 <div class="modal-body">
 
 
-                    <form class="row" action="#" method="post">
+                    <form class="row" action="#" method="post" enctype="multipart/form-data">
                         <div class="col-12 mt-1 ">
                             <label for="First Name" class="form-label">Name</label>
                             <input type="text" class="form-control" name="firstNameOfInd" required>
@@ -889,7 +889,7 @@ $email= $_SESSION['email'];
                         </div>
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
-                            <select class="form-control" name="dist" class="form-control" id="dist">
+                            <select class="form-control" name="dist" class="form-control" id="dist" required>
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
                                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -921,7 +921,7 @@ $email= $_SESSION['email'];
                         </div> 
                         <div class="col-12 mt-1">
                             <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
-                            <input type="file" class="form-control" name="certificateOfInd" id="formFile">
+                            <input type="file" class="form-control" name="certificateOfInd" id="formFile" required>
                         </div>
                         <div class="col-12 mt-1">
                             <label for="description" class="form-label">Description:</label><br>
@@ -939,7 +939,7 @@ $email= $_SESSION['email'];
                             </div>
                             <div class="mt-1 ml-3 form-check">
                                 <input class="form-check-input" name="helpingCategoriesOfInd" type="checkbox"
-                                    value="books" required>
+                                    value="books">
                                 <label class="form-check-label" for="flexCheckChecked">
                                     Books
                                 </label>
@@ -953,7 +953,7 @@ $email= $_SESSION['email'];
                             </div>
                             <div class="mt-1 ml-3 form-check">
                                 <input class="form-check-input" name="helpingCategoriesOfInd" type="checkbox"
-                                    value="financially" required>
+                                    value="financially">
                                 <label class="form-check-label" for="flexCheckChecked">
                                     Financially
                                 </label>
@@ -1211,6 +1211,9 @@ if(isset($_POST['submit'])){
     $sql = "INSERT INTO `donor_db`(`id`,`email`,`name`,`address`,`phone number`,`date of birth`,`gender`,`blood group`,`district`,`frequency`,`proof`) VALUES('','".$email."',
 '".$_REQUEST['name']."','".$_REQUEST['address']."','".$_REQUEST['phno']."','".$_REQUEST['dob']."','".$_REQUEST['gender']."',
 '".$_REQUEST['bgrp']."','".$_REQUEST['dist']."','".$_REQUEST['freq']."','".$_REQUEST['cert']."')";
+     $path = "upload/".$_FILES["cert"]["name"];
+                                $tmp = $_FILES["cert"]["tmp_name"];
+                                move_uploaded_file($tmp, $path);
     if (mysqli_query($link, $sql)) {
         ?>
         <script>
@@ -1233,6 +1236,10 @@ if(isset($_POST['submit1'])){
     $sql = "INSERT INTO `receiver_db`(`id`,`email`,`name`,`address`,`phone number`,`date of birth`,`gender`,`blood group`,`district`,`proof`) VALUES('','".$email."','".$_REQUEST['name']."',
                                  '".$_REQUEST['address']."','".$_REQUEST['phno']."','".$_REQUEST['dob']."','".$_REQUEST['gender']."','".$_REQUEST['bgrp']."','".$_REQUEST['dist']."',
                                  '".$_REQUEST['cert']."')";
+
+                                  $path = "upload/".$_FILES["cert"]["name"];
+                                $tmp = $_FILES["cert"]["tmp_name"];
+                                move_uploaded_file($tmp, $path);
     
     if (mysqli_query($link, $sql)) {
         ?>
@@ -1256,6 +1263,10 @@ if(isset($_POST['submit2'])){
     $sql = "INSERT INTO `oxygen_db`(`id`,`name`,`application type`,`address`,`district`,`email`,`phone number`,`proof`) VALUES('','".$_REQUEST['name']."',
                                  '".$_REQUEST['person']."','".$_REQUEST['address']."','".$_REQUEST['dist']."','".$email."','".$_REQUEST['phno']."',
                                  '".$_REQUEST['cert']."')";
+
+                                   $path = "upload/".$_FILES["cert"]["name"];
+                                $tmp = $_FILES["cert"]["tmp_name"];
+                                move_uploaded_file($tmp, $path);
     if (mysqli_query($link, $sql)) {
       
                   ?>
@@ -1282,6 +1293,12 @@ if(isset($_POST['submit6'])){
     if(mysqli_query($link,"INSERT INTO `warrior_db`(`id`,`name`,`email`,`age`,`profession`,`city`,`district`,`experience`,`title`,`photo`,`video`) VALUES('','".$_REQUEST['name']."','".$email."','".$_REQUEST['age']."',
         '".$_REQUEST['profession']."','".$_REQUEST['city']."','".$_REQUEST['district']."','".$_REQUEST['experience']."','".$_REQUEST['title']."','".$_REQUEST['photo']."','".$_REQUEST['video']."')"))
     {
+         $path = "upload/".$_FILES["photo"]["name"];
+                                $tmp = $_FILES["photo"]["tmp_name"];
+                                move_uploaded_file($tmp, $path); 
+                                      $path = "upload/".$_FILES["video"]["name"];
+                                $tmp = $_FILES["video"]["tmp_name"];
+                                move_uploaded_file($tmp, $path); 
        
                   ?>
         <script>
@@ -1294,7 +1311,10 @@ if(isset($_POST['submit6'])){
         </script>
 <?php
         
-    } else {
+    }
+     
+
+                                else {
       $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
       
     }
@@ -1304,6 +1324,9 @@ if(isset($_POST['submit7'])){
     if(mysqli_query($link,"INSERT INTO `survivor_db`(`id`,`name`,`email`,`age`,`profession`,`city`,`district`,`experience`,`title`,`video`) VALUES('','".$_REQUEST['name']."','".$email."','".$_REQUEST['age']."',
         '".$_REQUEST['profession']."','".$_REQUEST['city']."','".$_REQUEST['district']."','".$_REQUEST['experience']."','".$_REQUEST['title']."','".$_REQUEST['video']."')"))
     {
+         $path = "upload/".$_FILES["video"]["name"];
+                                $tmp = $_FILES["video"]["tmp_name"];
+                                move_uploaded_file($tmp, $path); 
        
               ?>
         <script>
@@ -1315,7 +1338,9 @@ if(isset($_POST['submit7'])){
           });
         </script>
 <?php
-    } else {
+    }
+         
+    else {
         $_SESSION['error'] = "Form submission failed " . mysqli_error($link);
         
       }
@@ -1327,6 +1352,9 @@ if(isset($_POST['submit5'])){
    $sql = "INSERT INTO `childcareprovider_db`(`id`,`email`,`name`,`address`,`district`,`phno`,`proof`) VALUES('','".$email."',
                                  '".$_REQUEST['nameOfNGO']."','".$_REQUEST['addressOfNGO']."','".$_REQUEST['dist']."',
                                  '".$_REQUEST['phoneNoOfNGO']."','".$_REQUEST['certificateOfNGO']."')";
+                                   $path = "upload/".$_FILES["certificateOfNGO"]["name"];
+                                $tmp = $_FILES["certificateOfNGO"]["tmp_name"];
+                                move_uploaded_file($tmp, $path);
     
     if (mysqli_query($link, $sql)) {
         
@@ -1351,6 +1379,10 @@ if(isset($_POST['submit5'])){
        $sql = "INSERT INTO `volunteer_db`(`id`,`name`,`user_type`,`address`,`district`,`email`,`phno`,`proof`) VALUES('',
                                  '".$_REQUEST['nameOfvolunteer']."','".$_REQUEST['person']."','".$_REQUEST['addressOfvolunteer']."','".$_REQUEST['dist']."','".$email."',
                                  '".$_REQUEST['phoneOfvolunteer']."','".$_REQUEST['certificateOfvolunteer']."')";
+
+                                  $path = "upload/".$_FILES["certificateOfvolunteer"]["name"];
+                                $tmp = $_FILES["certificateOfvolunteer"]["tmp_name"];
+                                move_uploaded_file($tmp, $path);
    
      if (mysqli_query($link, $sql)) {
          ?>
@@ -1374,6 +1406,10 @@ if(isset($_POST['submit5'])){
             $sql = "INSERT INTO `mealprovider_db`(`id`,`name`,`address`,`district`,`email`,`phno`,`proof`) VALUES('',
                                  '".$_REQUEST['nameOfNGO']."','".$_REQUEST['addressOfNGO']."','".$_REQUEST['dist']."','".$email."',
                                  '".$_REQUEST['phoneNoOfNGO']."','".$_REQUEST['certificateOfNGO']."')";
+
+                                        $path = "upload/".$_FILES["certificateOfNGO"]["name"];
+                                $tmp = $_FILES["certificateOfNGO"]["tmp_name"];
+                                move_uploaded_file($tmp, $path);
     if (mysqli_query($link, $sql)) {
               ?>
         <script>
@@ -1401,6 +1437,10 @@ $sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `distri
                                  '".$_REQUEST['certificateOfNGO']."',
                                  
                                  '".$_REQUEST['helpingCategoriesOfNGO']."')";
+
+                                 $path = "upload/".$_FILES["certificateOfNGO"]["name"];
+                                $tmp = $_FILES["certificateOfNGO"]["tmp_name"];
+                                move_uploaded_file($tmp, $path);
     if (mysqli_query($link, $sql)) {
         
                ?>
@@ -1429,6 +1469,9 @@ $sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `distri
                                  '".$_REQUEST['certificateOfInd']."',
                                  
                                  '".$_REQUEST['helpingCategoriesOfInd']."')";
+                                    $path = "upload/".$_FILES["certificateOfInd"]["name"];
+                                $tmp = $_FILES["certificateOfInd"]["tmp_name"];
+                                move_uploaded_file($tmp, $path);
     if (mysqli_query($link, $sql)) {
        
             ?>
@@ -1458,6 +1501,9 @@ $sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `distri
                                  
                                  '".$_REQUEST['description']."',
                                  '".$_REQUEST['helpingCategoriesOfInd']."')";
+                                      $path = "upload/".$_FILES["helpingCategoriesOfInd"]["name"];
+                                $tmp = $_FILES["helpingCategoriesOfInd"]["tmp_name"];
+                                move_uploaded_file($tmp, $path);
     if (mysqli_query($link, $sql)) {
         ?><script>
         swal("Your help request is submitted!")
