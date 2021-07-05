@@ -7,6 +7,10 @@
 ?>
 <?php
 if(isset($_POST['submit'])){
+    $old_photo=$_POST['oldphoto'];
+    $new_photo=$_FILES["photo"]["name"];
+    $old_video=$_POST['oldvideo'];
+    $new_video=$_FILES["video"]["name"];
 $qry = mysqli_query($link, "UPDATE `warrior_db` SET `name`='".$_REQUEST['name']."' WHERE `id`='".$_REQUEST['id']."'");
 $qry = mysqli_query($link, "UPDATE `warrior_db` SET `age`='".$_REQUEST['age']."' WHERE `id`='".$_REQUEST['id']."'");
 $qry = mysqli_query($link, "UPDATE `warrior_db` SET `profession`='".$_REQUEST['profession']."' WHERE `id`='".$_REQUEST['id']."'");
@@ -14,14 +18,45 @@ $qry = mysqli_query($link, "UPDATE `warrior_db` SET `city`='".$_REQUEST['city'].
 $qry = mysqli_query($link, "UPDATE `warrior_db` SET `district`='".$_REQUEST['district']."' WHERE `id`='".$_REQUEST['id']."'");
 $qry1 = mysqli_query($link, "UPDATE `warrior_db` SET `experience`='".$_REQUEST['experience']."' WHERE `id`='".$_REQUEST['id']."'");
 $qry2 = mysqli_query($link, "UPDATE `warrior_db` SET `title`='".$_REQUEST['title']."' WHERE `id`='".$_REQUEST['id']."'");
-$qry = mysqli_query($link, "UPDATE `warrior_db` SET `photo`='".$_REQUEST['photo']."' WHERE `id`='".$_REQUEST['id']."'");
-$qry = mysqli_query($link, "UPDATE `warrior_db` SET `video`='".$_REQUEST['video']."' WHERE `id`='".$_REQUEST['id']."'");
- $path = "upload/".$_FILES["photo"]["name"];
+if($new_photo != ''){
+    $update_file = $_FILES["photo"]["name"];
+}
+else{
+    $update_file = $old_photo;
+}
+if(file_exists("upload/".$_FILES["photo"]["name"])){
+    $filename=$_FILES["photo"]["name"];
+    header('location: usertable.php');
+}
+else{
+    $qry = mysqli_query($link, "UPDATE `warrior_db` SET `photo`='$update_file' WHERE `id`='".$_REQUEST['id']."'");
+    if($_FILES["photo"]["name"] != ''){
+    $path = "upload/".$_FILES["photo"]["name"];
                                 $tmp = $_FILES["photo"]["tmp_name"];
                                 move_uploaded_file($tmp, $path); 
-                                 $path = "upload/".$_FILES["video"]["name"];
+                                unlink("upload/".$old_photo);
+    }
+}
+if($new_video != ''){
+    $update_file = $_FILES["video"]["name"];
+}
+else{
+    $update_file = $old_video;
+}
+if(file_exists("upload/".$_FILES["video"]["name"])){
+    $filename=$_FILES["video"]["name"];
+    header('location: usertable.php');
+}
+else{
+        $qry = mysqli_query($link, "UPDATE `warrior_db` SET `video`='$update_file' WHERE `id`='".$_REQUEST['id']."'");
+        if($_FILES["video"]["name"] != ''){
+            $path = "upload/".$_FILES["video"]["name"];
                                 $tmp = $_FILES["video"]["tmp_name"];
                                 move_uploaded_file($tmp, $path); 
+                                unlink("upload/".$old_video);
+        }
+}
+
 if ($qry2) {
 		// echo "successfully Deleted";
 		header('location: usertable.php');
@@ -133,11 +168,15 @@ if ($qry2) {
 
                         <div class="col-12 mt-1">
                             <label for="Upload Photo" class="form-label">Upload Photo</label>
-                            <input type="file" class="form-control" name="photo" id="formFile" value="<?=$row['photo']?>">
+                            <input type="file" class="form-control" name="photo" id="formFile">
+                            <input type="hidden" class="form-control" name="oldphoto" id="formFile" value="<?php echo $row['photo'];?>">
+                
                         </div>
                         <div class="col-12 mt-1">
                             <label for="Upload Video" class="form-label">Upload Video</label>
-                            <input type="file" class="form-control" name="video" id="formFile" value="<?=$row['video']?>">
+                            <input type="file" class="form-control" name="video" id="formFile">
+                            <input type="hidden" class="form-control" name="oldvideo" id="formFile" value="<?php echo $row['video'];?>">
+                
                         </div>
                         <div class="col-12 mt-3">
                             <input type="submit" class="btn btn-primary" name="submit" value="Update">

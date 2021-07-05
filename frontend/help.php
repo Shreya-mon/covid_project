@@ -214,7 +214,7 @@ function showmessage1()
           <button type="button" class=" btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
         </div>
         <div class="modal-body">
-          <form class="row" action="#" method="POST" onsubmit="return validateform()">
+          <form class="row" action="#" method="POST" onsubmit="return validateform()" enctype="multipart/form-data">
             <div class="col-12 mt-1 ">
               <label for="Name" class="form-label">Name: </label>
               <input type="text" class="form-control"  id="name" name="nameOfoxygen" required>
@@ -542,9 +542,13 @@ function showmessage1()
 <?php
 //Fake data insertion
 if(isset($_POST['submit1'])){
+  $file=$_FILES["certificateOfoxygen"]["name"];
     $sql = "INSERT INTO `query_db`(`id`, `name`, `address`, `email`, `ph_no`, `description`, `proof`) VALUES('','".$_REQUEST['nameOfoxygen']."',
                  '".$_REQUEST['addressOfoxygen']."','".$_REQUEST['emailOfoxygen']."','".$_REQUEST['phoneNoOfoxygen']."','".$_REQUEST['description']."',
-                 '".$_REQUEST['certificateOfoxygen']."')";
+                 '$file')";
+                 $path = "upload/".$_FILES["certificateOfoxygen"]["name"];
+                 $tmp = $_FILES["certificateOfoxygen"]["tmp_name"];
+                 move_uploaded_file($tmp, $path);
   
     if (mysqli_query($link, $sql)) {
       
@@ -565,8 +569,8 @@ if(isset($_POST['submit1'])){
 
 //query insertion
  if(isset($_POST['submit2'])){
-    $sql = "INSERT INTO `query_db`(`id`, `name`, `address`, `email`, `ph_no`, `description`) VALUES('','".$_REQUEST['nameOfoxygen']."',
-                 '".$_REQUEST['addressOfoxygen']."','".$_REQUEST['emailOfoxygen']."','".$_REQUEST['phoneNoOfoxygen']."','".$_REQUEST['description']."')";
+    $sql = "INSERT INTO `query_db`(`id`, `name`, `address`, `email`, `ph_no`, `description`,`proof`) VALUES('','".$_REQUEST['nameOfoxygen']."',
+                 '".$_REQUEST['addressOfoxygen']."','".$_REQUEST['emailOfoxygen']."','".$_REQUEST['phoneNoOfoxygen']."','".$_REQUEST['description']."','')";
                  
   
     if (mysqli_query($link, $sql)) {

@@ -55,8 +55,10 @@ a{
 				echo "<td>".$row["district"]."</td>";
 				echo "<td>".$row["experience"]."</td>";
 				echo "<td>".$row["title"]."</td>";
-                echo "<td>".$row["photo"]."</td>";
-				echo "<td>".$row["video"]."</td>";
+				?>
+                <td><img src="<?php echo "frontend/upload/".$row['photo']; ?>" width="100px"></td>
+                <td><img src="<?php echo "frontend/upload/".$row['video']; ?>" width="100px"></td>
+                <?php 
 		
 				echo "<td><a href='delete_warrior.php?id=".$row['id']."'>Delete</a></td>";
 				echo "</tr>";

@@ -53,7 +53,9 @@ a{
 				echo "<td>".$row["district"]."</td>";
 				echo "<td>".$row["email"]."</td>";
 				echo "<td>".$row["phone number"]."</td>";
-				echo "<td>".$row["proof"]."</td>";
+				?>
+                <td><img src="<?php echo "frontend/upload/".$row['proof']; ?>" width="100px"></td>
+                <?php 
 				
 				
 				echo "<td><a href='delete_oxygen_regt_data.php?id=".$row['id']."'>Delete</a></td>";

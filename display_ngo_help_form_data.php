@@ -53,7 +53,9 @@ a{
 				echo "<td>".$row["address"]."</td>";
 				echo "<td>".$row["district"]."</td>";
 				echo "<td>".$row["ph_no"]."</td>";
-				echo "<td>".$row["file"]."</td>";
+				?>
+                <td><img src="<?php echo "frontend/upload/".$row['file']; ?>" width="100px"></td>
+                <?php 
 				echo "<td>".$row["description"]."</td>";
 				echo "<td>".$row["category"]."</td>";
 				

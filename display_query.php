@@ -48,7 +48,9 @@ a{
 				echo "<td>".$row["email"]."</td>";
 				echo "<td>".$row["ph_no"]."</td>";
 				echo "<td>".$row["description"]."</td>";
-                echo "<td>".$row["proof"]."</td>";
+				?>
+                <td><img src="<?php echo "frontend/upload/".$row['proof']; ?>" width="100px"></td>
+                <?php 
 		
 				echo "<td><a href='delete_query.php?id=".$row['id']."'>Delete</a></td>";
 				echo "</tr>";

@@ -145,7 +145,9 @@ $id=$_SESSION['id'];
 				                            echo "<td>".$row["gender"]."</td>";
 				                            echo "<td>".$row["blood group"]."</td>";
 				                            echo "<td>".$row["district"]."</td>";
-				                            echo "<td>".$row["proof"]."</td>";
+				                            ?>
+                                        <td><img src="<?php echo "upload/".$row['proof']; ?>" width="100px"></td>
+                                       <?php 
                                             echo "<td><a href='update_receiver.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "<td><a href='find_donor.php?district=".$row['district']."&id=".$row['id']."'><button class='btn btn-primary'>Find Donor</button></a></td>";
                                             echo "</tr>";
@@ -191,7 +193,9 @@ $id=$_SESSION['id'];
                                             echo "<td>".$row["address"]."</td>";
                                             echo "<td>".$row["district"]."</td>";
                                             echo "<td>".$row["phone number"]."</td>";
-                                            echo "<td>".$row["proof"]."</td>";
+                                            ?>
+                                            <td><img src="<?php echo "upload/".$row['proof']; ?>" width="100px"></td>
+                                           <?php 
                                             echo "<td><a href='update_oxygen.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
                                         }
@@ -236,7 +240,9 @@ $id=$_SESSION['id'];
                                             echo "<td>".$row["address"]."</td>";
                                             echo "<td>".$row["district"]."</td>";
                                             echo "<td>".$row["phno"]."</td>";
-                                            echo "<td>".$row["proof"]."</td>";
+                                            ?>
+                                            <td><img src="<?php echo "upload/".$row['proof']; ?>" width="100px"></td>
+                                           <?php 
                                             echo "<td><a href='update_volunteer.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
                                         }
@@ -279,7 +285,9 @@ $id=$_SESSION['id'];
 				                            echo "<td>".$row["address"]."</td>";
 				                            echo "<td>".$row["district"]."</td>";
 				                            echo "<td>".$row["phno"]."</td>";
-				                            echo "<td>".$row["proof"]."</td>";
+				                            ?>
+                                            <td><img src="<?php echo "upload/".$row['proof']; ?>" width="100px"></td>
+                                           <?php 
                                             echo "<td><a href='update_mealprovider.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
                                         }
@@ -324,7 +332,9 @@ $id=$_SESSION['id'];
                                             echo "<td>".$row["district"]."</td>";
                                             
                                             echo "<td>".$row["phno"]."</td>";
-                                            echo "<td>".$row["proof"]."</td>";
+                                            ?>
+                                            <td><img src="<?php echo "upload/".$row['proof']; ?>" width="100px"></td>
+                                           <?php 
                                             echo "<td><a href='update_childcareprovider.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
                                         }
@@ -374,8 +384,10 @@ $id=$_SESSION['id'];
 				                            echo "<td>".$row["district"]."</td>";
 				                            echo "<td>".$row["experience"]."</td>";
 				                            echo "<td>".$row["title"]."</td>";
-                                            echo "<td>".$row["photo"]."</td>";
-				                            echo "<td>".$row["video"]."</td>";
+                                            ?>
+                                            <td><img src="<?php echo "upload/".$row['photo']; ?>" width="100px"></td>
+                                            <td><img src="<?php echo "upload/".$row['video']; ?>" width="100px"></td>
+                                           <?php 
                                             echo "<td><a href='update_warrior.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
                                         }
@@ -424,7 +436,9 @@ $id=$_SESSION['id'];
                                             echo "<td>".$row["district"]."</td>";
                                             echo "<td>".$row["experience"]."</td>";
                                             echo "<td>".$row["title"]."</td>";
-                                            echo "<td>".$row["video"]."</td>";
+                                            ?>
+                                            <td><img src="<?php echo "upload/".$row['video']; ?>" width="100px"></td>
+                                           <?php 
                                             echo "<td><a href='update_survivor.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
                                         }
@@ -468,7 +482,9 @@ $id=$_SESSION['id'];
                                             echo "<td>".$row["address"]."</td>";
                                             echo "<td>".$row["district"]."</td>";
                                             echo "<td>".$row["ph_no"]."</td>";
-                                            echo "<td>".$row["file"]."</td>";
+                                            ?>
+                                            <td><img src="<?php echo "upload/".$row['file']; ?>" width="100px"></td>
+                                           <?php
                                             echo "<td>".$row["category"]."</td>";
                                             echo "<td><a href='update_ngo.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
@@ -513,7 +529,9 @@ $id=$_SESSION['id'];
                                             echo "<td>".$row["address"]."</td>";
                                             echo "<td>".$row["district"]."</td>";
                                             echo "<td>".$row["ph_no"]."</td>";
-                                            echo "<td>".$row["file"]."</td>";
+                                            ?>
+                                            <td><img src="<?php echo "upload/".$row['file']; ?>" width="100px"></td>
+                                           <?php
                                             echo "<td>".$row["category"]."</td>";
                                             echo "<td><a href='update_individual.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
@@ -559,7 +577,9 @@ $id=$_SESSION['id'];
                                             echo "<td>".$row["address"]."</td>";
                                             echo "<td>".$row["district"]."</td>";
                                             echo "<td>".$row["ph_no"]."</td>";
-                                            echo "<td>".$row["file"]."</td>";
+                                            ?>
+                                            <td><img src="<?php echo "upload/".$row['file']; ?>" width="100px"></td>
+                                           <?php
                                             echo "<td>".$row["description"]."</td>";
                                             echo "<td>".$row["category"]."</td>";
                                             echo "<td><a href='update_helpseeker.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
