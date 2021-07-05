@@ -178,6 +178,10 @@ session_start();
             margin-left: 45vmin;
 
         }
+        #hide1 {
+            display: none;
+
+        }   
     </style>
 </head>
 <body>
