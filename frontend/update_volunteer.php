@@ -9,16 +9,33 @@
 ?>
 <?php
 if(isset($_POST['submit'])){
+    $old_proof=$_POST['oldproof'];
+    $new_proof=$_FILES["newproof"]["name"];
 $qry = mysqli_query($link, "UPDATE `volunteer_db` SET `name`='".$_REQUEST['name']."' WHERE `id`='".$_REQUEST['id']."'");
 $qry = mysqli_query($link, "UPDATE `volunteer_db` SET `user_type`='".$_REQUEST['person']."' WHERE `id`='".$_REQUEST['id']."'");
 $qry = mysqli_query($link, "UPDATE `volunteer_db` SET `address`='".$_REQUEST['address']."' WHERE `id`='".$_REQUEST['id']."'");
 $qry = mysqli_query($link, "UPDATE `volunteer_db` SET `district`='".$_REQUEST['district']."' WHERE `id`='".$_REQUEST['id']."'");
 $qry = mysqli_query($link, "UPDATE `volunteer_db` SET `phno`='".$_REQUEST['phno']."' WHERE `id`='".$_REQUEST['id']."'");
-$qry1 = mysqli_query($link, "UPDATE `volunteer_db` SET `proof`='".$_REQUEST['proof']."' WHERE `id`='".$_REQUEST['id']."'");
-$path = "upload/".$_FILES["proof"]["name"];
-                                $tmp = $_FILES["proof"]["tmp_name"];
-                                move_uploaded_file($tmp, $path);
-if ($qry) {
+    if($new_proof != ''){
+        $update_file = $_FILES["newproof"]["name"];
+    }
+    else{
+        $update_file = $old_proof;
+    }
+    if(file_exists("upload/".$_FILES["newproof"]["name"])){
+        $filename=$_FILES["newproof"]["name"];
+        header('location: usertable.php');
+    }
+    else{
+        $qry1 = mysqli_query($link, "UPDATE `volunteer_db` SET `proof`='$update_file' WHERE `id`='".$_REQUEST['id']."'");
+        if($_FILES["newproof"]["name"] != ''){
+            $path = "upload/".$_FILES["newproof"]["name"];
+                    $tmp = $_FILES["newproof"]["tmp_name"];
+                    move_uploaded_file($tmp, $path); 
+            unlink("upload/".$old_proof);
+        }
+    }
+    if ($qry) {
 		// echo "successfully Deleted";
 		header('location: usertable.php');
 	} else {
@@ -158,7 +175,9 @@ if ($qry) {
                 </div>
                 <div class="col-12 mt-1">
                     <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
-                    <input type="file" class="form-control" name="proof" id="formFile" value="<?=$row['proof']?>">
+                    <input type="file" class="form-control" name="newproof" id="formFile">
+                    <input type="hidden" class="form-control" name="oldproof" id="formFile" value="<?php echo $row['proof'];?>">
+                
                 </div>
                 <div class="col-12 mt-3">
                     <input type="submit" class="btn btn-primary" name="submit" value="Update">

@@ -9,12 +9,33 @@
 ?>
 <?php
 if(isset($_POST['submit'])){
+    $old_proof=$_POST['oldproof'];
+    $new_proof=$_FILES["newproof"]["name"];
 $qry = mysqli_query($link, "UPDATE `ngo_registration` SET `name`='".$_REQUEST['name']."' WHERE `id`='".$_REQUEST['id']."'");
 $qry = mysqli_query($link, "UPDATE `ngo_registration` SET `address`='".$_REQUEST['address']."' WHERE `id`='".$_REQUEST['id']."'");
 $qry = mysqli_query($link, "UPDATE `ngo_registration` SET `district`='".$_REQUEST['district']."' WHERE `id`='".$_REQUEST['id']."'");
 $qry = mysqli_query($link, "UPDATE `ngo_registration` SET `ph_no`='".$_REQUEST['phno']."' WHERE `id`='".$_REQUEST['id']."'");
-$qry1 = mysqli_query($link, "UPDATE `ngo_registration` SET `file`='".$_REQUEST['proof']."' WHERE `id`='".$_REQUEST['id']."'");
 $qry = mysqli_query($link, "UPDATE `ngo_registration` SET `category`='".$_REQUEST['helpingCategoriesOfNGO']."' WHERE `id`='".$_REQUEST['id']."'");
+if($new_proof != ''){
+    $update_file = $_FILES["newproof"]["name"];
+}
+else{
+    $update_file = $old_proof;
+}
+if(file_exists("upload/".$_FILES["newproof"]["name"])){
+    $filename=$_FILES["newproof"]["name"];
+    header('location: usertable.php');
+}
+else{
+    $qry1 = mysqli_query($link, "UPDATE `ngo_registration` SET `file`='$update_file' WHERE `id`='".$_REQUEST['id']."'");
+    if($_FILES["newproof"]["name"] != ''){
+        $path = "upload/".$_FILES["newproof"]["name"];
+                $tmp = $_FILES["newproof"]["tmp_name"];
+                move_uploaded_file($tmp, $path); 
+        unlink("upload/".$old_proof);
+    }
+}
+
 if ($qry) {
 		// echo "successfully Deleted";
 		header('location: usertable.php');
@@ -152,7 +173,9 @@ if ($qry) {
                 </div>
                 <div class="col-12 mt-1">
                     <label for="Certificate as a proof" class="form-label">Certificate as a proof</label>
-                    <input type="file" class="form-control" name="proof" id="formFile" value="<?=$row['file']?>">
+                    <input type="file" class="form-control" name="newproof" id="formFile">
+                    <input type="hidden" class="form-control" name="oldproof" id="formFile" value="<?php echo $row['file'];?>">
+                
                 </div>
                 <div class="col-12 mt-1">
                             <label for="Helping Categories" class="form-label">Helping Categories</label>

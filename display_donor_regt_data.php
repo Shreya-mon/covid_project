@@ -59,7 +59,9 @@ a{
 				echo "<td>".$row["blood group"]."</td>";
 				echo "<td>".$row["district"]."</td>";
 				echo "<td>".$row["frequency"]."</td>";
-				echo "<td>".$row["proof"]."</td>";
+				?>
+                <td><img src="<?php echo "frontend/upload/".$row['proof']; ?>" width="100px"></td>
+                <?php 
 				
 				
 				echo "<td><a href='delete_donor_regt_data.php?id=".$row['id']."'>Delete</a></td>";

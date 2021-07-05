@@ -57,7 +57,9 @@ a{
 				echo "<td>".$row["gender"]."</td>";
 				echo "<td>".$row["blood group"]."</td>";
 				echo "<td>".$row["district"]."</td>";
-				echo "<td>".$row["proof"]."</td>";
+				?>
+                <td><img src="<?php echo "frontend/upload/".$row['proof']; ?>" width="100px"></td>
+                <?php 
 				
 				
 				echo "<td><a href='delete_receiver_regt_data.php?id=".$row['id']."'>Delete</a></td>";
