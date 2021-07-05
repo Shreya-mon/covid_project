@@ -41,6 +41,7 @@ if(mysqli_num_rows($result)>0)
     		echo "<div align='center'>";
     		echo '<a href="menu.html">Click Here To Go To Menu!!</a><br><br><br><br>';
 			echo "</div>";
+			// header('Location:menu.html');
 		}
 
 
