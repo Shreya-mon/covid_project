@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Flexbox</title>
+</head>
+
+<body>
+	<h1>Covid data</h1>
+
+	<p>State: <span id="state"></span></p>
+	<p>Total Beds: <span id="totalBeds"></span></p>
+	<p>Total Hospital: <span id="totalHospitals"></span></p>
+	<!-- https://api.covid19india.org/data.json   -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function () {
+
+
+			//getting api data
+			$.ajax({
+				url: "https://api.rootnet.in/covid19-in/hospitals/beds",
+				method: 'GET',
+				cache: false,
+				success: function (response) {
+					console.log(response.data.regional[28]);
+
+					$('#totalBeds').html(response.data.regional[28].totalBeds);
+					$('#state').html(response.data.regional[28].state);
+					$('#totalHospitals').html(response.data.regional[28].totalHospitals);
+
+				}
+				
+			});
+
+		});
+	</script>
+</body>
+
+</html>

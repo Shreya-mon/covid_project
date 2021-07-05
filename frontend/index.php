@@ -49,8 +49,9 @@ include("connection.php");?>
 .carousel-caption{
   position: absolute;
   right: 15%;
-  bottom: 20px;
+  top: 50%;
   left: 15%;
+  height: 115px;
   z-index: 10;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -120,13 +121,13 @@ include("connection.php");?>
             <a class="nav-link " aria-current="page" href="ngo-charity.php">NGO and Charity</a>
           </li>
           <li class="nav-item d-sm-flex d-lg-none">
-            <a class="nav-link" aria-current="page" href="index.php">Help Desk</a>
+            <a class="nav-link" aria-current="page" href="help.php">Help Desk</a>
           </li>
           <li class="nav-item d-sm-flex d-lg-none">
             <a class="nav-link" aria-current="page" href="sign.php">Sign in/Sign up</a>
           </li>
           <li class="nav-item d-sm-flex d-lg-none">
-            <a class="nav-link" aria-current="page" href="index.php">Admin Login</a>
+            <a class="nav-link" aria-current="page" href="../admin.php">Admin Login</a>
           </li>
         </ul>
       </div>

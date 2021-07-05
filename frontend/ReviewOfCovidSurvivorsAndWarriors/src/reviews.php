@@ -63,7 +63,7 @@
         </li>
         <div class="d-flex ml-auto">
           <li class="nav-item ">
-            <a class="nav-link" aria-current="page" href="../../../admin.html">Admin Login</a>
+            <a class="nav-link" aria-current="page" href="../../../admin.php">Admin Login</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="../../help.php">Help Desk</a>
@@ -112,13 +112,13 @@
             <a class="nav-link " aria-current="page" href="../../ngo-charity.php" style="font-size:15px">NGO and Charity</a>
           </li>
           <li class="nav-item d-sm-flex d-lg-none">
-            <a class="nav-link" aria-current="page" href="../../index.php" style="font-size:16px">Help Desk</a>
+            <a class="nav-link" aria-current="page" href="../../help.php" style="font-size:16px">Help Desk</a>
           </li>
           <li class="nav-item d-sm-flex d-lg-none">
             <a class="nav-link" aria-current="page" href="../../sign.php" style="font-size:16px">Sign in/Sign up</a>
           </li>
           <li class="nav-item d-sm-flex d-lg-none">
-            <a class="nav-link" aria-current="page" href="../../../admin.html" style="font-size:16px">Admin Login</a>
+            <a class="nav-link" aria-current="page" href="../../../admin.php" style="font-size:16px">Admin Login</a>
           </li>
         </ul>
       </div>

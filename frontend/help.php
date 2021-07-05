@@ -62,13 +62,6 @@ function showmessage1()
     color: black;
     background-color: #148496;
   }
-  
-
-
-
-
-
-
   </style>
 </head>
 
@@ -86,7 +79,7 @@ function showmessage1()
         </li>
         <div class="d-flex ml-auto">
           <li class="nav-item ">
-            <a class="nav-link" aria-current="page" href="../admin.html">Admin Login</a>
+            <a class="nav-link" aria-current="page" href="../admin.php">Admin Login</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="help.php">Help Desk</a>
@@ -135,13 +128,13 @@ function showmessage1()
             <a class="nav-link " aria-current="page" href="ngo-charity.php">NGO and Charity</a>
           </li>
           <li class="nav-item d-sm-flex d-lg-none">
-            <a class="nav-link active" aria-current="page" href="index.php">Help Desk</a>
+            <a class="nav-link active" aria-current="page" href="help.php">Help Desk</a>
           </li>
           <li class="nav-item d-sm-flex d-lg-none">
             <a class="nav-link" aria-current="page" href="sign.php">Sign in/Sign up</a>
           </li>
           <li class="nav-item d-sm-flex d-lg-none">
-            <a class="nav-link" aria-current="page" href="index.php">Admin Login</a>
+            <a class="nav-link" aria-current="page" href="../admin.php">Admin Login</a>
           </li>
         </ul>
       </div>
