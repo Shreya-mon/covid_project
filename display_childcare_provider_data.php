@@ -24,7 +24,7 @@ a{
 <body>
 
 
-<h2 style="font-size: 39px;"><center> Records of Meal Provider  </center></h2><br>
+<h2 style="font-size: 39px;"><center> Records of Childcare Provider  </center></h2><br>
 <h3 style="color:darkgreen;"><center><a href="menu.html">Back to Home </a></center><br>
 <table width = "80%" border="1" cellspacing="2" cellpadding="5" align="center" style="background-color: darkSlategray; color: white;">
 	<tr>

@@ -57,59 +57,46 @@
 </head>
 
 <body>
-
 	<div class="container pt-5 pb-5">
 		<div class="row pt-3 pb-3 text-center" style="background-color: #c368ff; color: #FFFFFF">
 			<div class="col-1">
 				<a href="menu.html" style="width: 20%;" class="mb-2 pb-2"><i class="fas fa-arrow-circle-left fa-3x "
 						style="color: rgb(8, 1, 15);"></i></a>
 			</div>
-			<h2 class="col-10">Insert Records of Admission Cell</h2>
+			<h2 class="col-10">Insert Records to Doctor Category</h2>
 		</div>
 		<div class="row mt-5 center-center p-4">
-			<form class="col-12 row p-2" action="insert_admissioncell_data.php" method="POST" name="insert_frm"
-				enctype="multipart/form-data"
+			<form class="col-12 row p-2" action="insert_doctor_category.php" method="POST"
+				name="insert_doctor_category_form" enctype="multipart/form-data"
 				style=" background-color:rgb(254, 247, 255); max-width: 500px; border: 1px solid black; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius: 12px;">
 				<div class="col-12 mt-1 ">
-					<label for="Name" class="form-label">District : </label>
-					<input type="text" class="form-control" name="district" placeholder="District" required>
+					<label for="Name" class="form-label">Category ID : </label>
+					<input type="text" class="form-control" name="cat_id" placeholder="ID" required>
 				</div>
 				<div class="col-12 mt-1 ">
-					<label for="Name" class="form-label">Contact Number : </label>
-					<input type="text" class="form-control" name="phno" placeholder="Contact Number" required>
+					<label for="Name" class="form-label">Category Name : </label>
+					<input type="text" class="form-control" name="cat_name" placeholder="Name" required>
 				</div>
 				<div class="col-12 mt-3">
 					<input type="submit" class="btn btn-primary" name="submit" value="Submit">
 				</div>
 			</form>
-
-
-
-
-
-
-
-			<!--
-	<center>
-	<h1>Insert Records of Admission Cell</h1>
-	<a href="menu.html">Back to Menu</a></center>
-	<br><br>
-	<form action="insert_admissioncell_data.php" method="post" name="insert_frm">
-		<div class='container'>
-			<div class='window'>
-				<div class='overlay'>
-				</div>
-				<div class='content'>
-					<div class='input-fields'>
-						<br>
-						District : <input type="text" name="district" placeholder="District"><br><br>
-						Phone number : <input type="text" name="phno" placeholder="Phone no."><br><br>
-						<center><input type="submit" name="submit" value="Submit"></center>
-					</div>
-				</div>
-			</div>
 		</div>
-	</form>-->
+
+	</div>
+
+
+	<!--
+	<h1><center>Insert Records to Doctor Category</center></h1>
+	<center>
+	<br>
+	<a href="menu.html">Back to Menu</a>
+	<form action="insert_doctor_category.php" method="post" name="insert_doctor_category_form">
+		<label>Category ID : </label><input type="text" name="cat_id" placeholder="ID"><br><br>
+		<label>Category Name : </label><input type="text" name="cat_name" placeholder="Name"><br><br>
+		<input type="submit" value="Submit">
+	</form>
+	</center>-->
 </body>
 
 </html>
