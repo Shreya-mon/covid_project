@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid-19</title>
+    <link rel="icon" href="./images/project_logo.png" type="image/png">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css"
+        integrity="sha512-apX8rFN/KxJW8rniQbkvzrshQ3KvyEH+4szT3Sno5svdr6E/CP0QE862yEeLBMUnCqLko8QaugGkzvWS7uNfFQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+
+</style>
+
+<body>
+    <div class="container-fluid mt-2 mb-5" style="padding: 0% 5%">
+        <a href="index.php" style="width: 20%;" class="mb-2 pb-2"><i class="fas fa-arrow-circle-left fa-2x "
+                style="color: rgb(8, 1, 15);"></i></a>
+
+        <h1 class="text-center" style="color: rgb(151, 28, 19); text-shadow: 3px 3px rgb(253, 221, 221);">Cases
+            According the
+            District</h1>
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="table-responsive">
+
+                    <table class="table table-striped p-2" id="myTable">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="background-color: rgb(251, 218, 252); ">
+                                    District Name</th>
+                                <th scope="col" style="background-color: #ff7c7c; ">Total Cases</th>
+                                <th scope="col" style="background-color: #a2e5ff; ">Active Cases
+                                </th>
+                                <th scope="col" style="background-color: #b5ffb5; ">Recovery</th>
+                                <th scope="col" style="background-color: #d8d8d8; ">Deaths</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+    let data = {}
+    $(document).ready(function () {
+        //getting api data
+        $.ajax({
+            url: "https://api.covid19india.org/state_district_wise.json",
+            method: 'GET',
+            cache: false,
+            success: function (response) {
+                // console.log("RESPONSE", response)
+                data = response //storing response in data object
+                showData() //calling showData function after retriving data
+            }
+        });
+    });
+
+    // showData function renders all the rows in the table
+    function showData() {
+
+        let table = document.getElementById("myTable")      // get myTable by ID and stored in table variable
+
+        let state = data["West Bengal"].districtData        // Getting only West Bengal data
+        // console.log("STATE", state)
+        const tableClasses = ["table-primary", "table-secondary", "table-success", "table-danger", "table-warning", "table-info", "table-light"] // classes for design
+        let i = 0;      //iteration variable for design
+
+        for (let district in state) {       // loops through all the keys of state object
+            console.log(district)
+            console.log("CONFIRMED", state[district].confirmed);
+
+            var row = table.insertRow()     // insert row in the table 
+            row.classList.add(tableClasses[i])  // adding classes for design
+
+            // inserting coloums (td)
+            row.insertCell(0).innerHTML = district                          // district name
+            row.insertCell(1).innerHTML = state[district].confirmed         // total confirmed
+            row.insertCell(2).innerHTML = state[district].active            // active
+            row.insertCell(3).innerHTML = state[district].recovered         // recovered
+            row.insertCell(4).innerHTML = state[district].deceased          // deaths
+
+            i = (i + 1) % 7  // modular incrementing iteration variable for designning
+        }
+    }
+</script>
+
+</html>

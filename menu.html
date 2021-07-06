@@ -1,226 +1,562 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Covid-19</title>
+	<link rel="icon" href="./images/project_logo.png" type="image/png">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css"
+		integrity="sha512-apX8rFN/KxJW8rniQbkvzrshQ3KvyEH+4szT3Sno5svdr6E/CP0QE862yEeLBMUnCqLko8QaugGkzvWS7uNfFQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<!--<link rel="stylesheet" href="style.css">-->
+
+	<style>
+		body {
+			background-image: url("https://us.123rf.com/450wm/studiobarcelona/studiobarcelona2002/studiobarcelona200200083/140963977-dark-blue-gradient-background-vector-illustration-.jpg?ver=6");
+			background-position: center;
+			background-size: cover;
+			height: 700px;
+			margin-left: 10%;
+			margin-right: 10%;
+		}
+
+		h1 {
+			font-family: Elephant;
+			font-weight: bold;
+			color: #ffccff;
+			text-shadow: 2px 2px 3px red;
+			margin-top: 3%;
+		}
+	</style>
 </head>
+
 <body>
-<center><h1>MENU</h1></center>
-<a href="frontend/logout.php"><button class="btn btn-info" style="margin-left:150vmin; margin-top: -8vmin; margin-bottom: 10vmin;">Log out</button></a>
-<br>
-<div class="responsive">
-	<div class="gallery">
-		<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat" width="200" height="120"><br>
-		<div class="desc"><b><u>Registered User Database</u></b><br>
+	<div class="container pt-5">
+		<div class="row pt-5 d-flex justify-content-center align-items-center">
+			<div class="col-12 text-center">
+				<h1>MENU</h1>
+			</div>
+			<div class="col-3 mt-5">
+				<a href="frontend/logout.php"><button class="btn btn-info">Log out</button></a>
+			</div>
+		</div>
+		<div class="row d-flex justify-content-around mt-5">
+			<div class="col-12 col-md-3">
+				<div class="card w-100">
+					<img src="https://quicklaunch.io/wp-content/uploads/2019/10/user-registration.png"
+						class="card-img-top" alt="blood donor">
+					<div class="card-body">
+						<h5 class="card-title">Registered User Database</h5>
+						<p class="card-text"><a href="display_registeredUser.php">Display and Delete the Records</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-3">
+				<div class="card w-100">
+					<img src="https://img.freepik.com/free-vector/cartoon-doctors-nurses_52683-59918.jpg?size=626&ext=jpg"
+						class="card-img-top" alt="blood receiver">
+					<div class="card-body">
+						<h5 class="card-title">Doctor Category</h5>
+						<p class="card-text"><a href="insert_doctor_category.php">Insert Data</a><br>
+							<a href="display_doctor_catergory.php">Display , Update & Delete the Records</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-3">
+				<div class="card w-100">
+					<img src="https://c8.alamy.com/comp/2E3RJBP/doctor-in-mask-with-stethoscope-coronavirus-covid-19-control-concept-vector-illustration-in-flat-style-2E3RJBP.jpg"" class="
+						card-img-top" alt="blood donor">
+					<div class="card-body">
+						<h5 class="card-title">Doctor Consultation</h5>
+						<p class="card-text"><a href="Insert_doctors_data.php">Insert Data</a><br>
+							<a href="display_doctor_data.php">Display , Update and Delete the Records</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-3">
+				<div class="card w-100">
+					<img src="https://img.freepik.com/free-vector/people-walking-sitting-hospital-building-city-clinic-glass-exterior-flat-vector-illustration-medical-help-emergency-architecture-healthcare-concept_74855-10130.jpg?size=626&ext=jpg"
+						class="card-img-top" alt="blood receiver">
+					<div class="card-body">
+						<h5 class="card-title">Hospital Database</h5>
+						<p class="card-text"><a href="insert_hospital_data.html">Insert Data</a><br>
 
-			<a href="display_registeredUser.php">Display and Delete the Records  <br><br><br></a>
+							<a href="display_hospital.php">Display , Update and Delete the Records</a>
+						</p>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
-</div>
-<div class="responsive">
-	<div class="gallery">
-		<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat" width="200" height="120"><br>
-		<div class="desc"><b><u>DOCTOR CATEGORY</u></b><br>
-			<a href="insert_doctor_category.html">Insert Data</a><br>
-			
-			<a href="display_doctor_catergory.php">Display , Update & Delete the Records</a>
-		</div>
-	</div>
-</div>
-<div class="responsive">
-	<div class="gallery">
-		<img src="   https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_consult" width="200" height="120"><br>
+		<div class="row d-flex justify-content-around mt-5">
+			<div class="col-12 col-md-3">
+				<div class="card w-100">
+					<img src="https://c8.alamy.com/comp/2BAJ7EH/covid-19-coronavirus-pandemic-female-doctor-in-consultation-patient-in-home-vector-illustration-2BAJ7EH.jpg"
+						class="card-img-top" alt="blood donor">
+					<div class="card-body">
+						<h5 class="card-title">Safe Home Database</h5>
+						<p class="card-text"><a href="insert_safehome.html">Insert Data</a><br>
 
-		<div class="desc"><b><u>DOCTOR CONSULTATION</u></b><br>
-			<a href="Insert_doctors_data.php">Insert Data</a><br>
-			<a href="display_doctor_data.php">Display , Update and Delete the Records</a>
-		</div>
-	</div>
-</div>
-<div class="responsive">
-	<div class="gallery">
-		<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="hospital" width="200" height="120"><br>
-		<div class="desc"><b><u>HOSPITAL DATABASE</u></b><br>
-			<a href="insert_hospital_data.html">Insert Data</a><br>
-			
-			<a href="display_hospital.php">Display , Update and Delete the Records</a>
-		</div>
-	</div>
-</div>
-<p><br>--------------------------------------------------------------------------------------</p>
+							<a href="display_safehome_data.php">Display , Update and Delete the Records</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-3">
+				<div class="card w-100">
+					<img src="https://lh3.googleusercontent.com/proxy/HeD0d2QNvcx0rlLb2V2QfBR-5VOPFzIMnTeDs6ufn59__hmIH85EOVwIBUFo4UezkU66mEPBUSgYZWFFLVPGMU5sVP0mkz36r2IhDrGw6zLU7BKIYQqri4z0ochTHvIPAw"
+						class="card-img-top" alt="blood receiver">
+					<div class="card-body">
+						<h5 class="card-title">Admission Cell Database</h5>
+						<p class="card-text"><a href="insert_admissioncell.html">Insert Data</a><br>
 
-<div class="responsive">
-	<div class="gallery">
-		<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat" width="200" height="120"><br>
-		<div class="desc"><b><u>SAFEHOME DATABASE</u></b><br>
-			<a href="insert_safehome.html">Insert Data</a><br>
-			
-			<a href="display_safehome_data.php">Display , Update and Delete the Records</a>
+							<a href="display_admissioncell.php">Display , Update and Delete the Records</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-3">
+				<div class="card w-100">
+					<img src="https://img.freepik.com/free-vector/chatbot-customer-service-abstract-concept_335657-3037.jpg?size=338&ext=jpg"
+						class="card-img-top" alt="blood donor">
+					<div class="card-body">
+						<h5 class="card-title">Service</h5>
+						<p class="card-text"><a href="insert_service_data.html">Insert Data</a><br>
+							<a href="display_service.php">Display , Update and Delete the Records</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-3">
+				<div class="card w-100">
+					<img src="https://img.freepik.com/free-vector/modern-network-data-center-hosting-servers-illustration_82574-4854.jpg?size=626&ext=jpg"
+						class="card-img-top" alt="blood receiver">
+					<div class="card-body">
+						<h5 class="card-title">Service Provider</h5>
+						<p class="card-text"><a href="insert_service_provider_form.php">Insert Data</a><br>
+
+							<a href="display_service_provider.php">Display , Update and Delete the Records</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row d-flex justify-content-around mt-5">
+			<div class="col-12 col-md-3">
+				<div class="card w-100">
+					<img src="https://thumbs.dreamstime.com/z/blood-donor-sitting-chair-clinic-donating-covid-colorful-vector-illustration-man-hospital-wearing-face-mask-185170901.jpg"
+						class="card-img-top" alt="blood donor">
+					<div class="card-body">
+						<h5 class="card-title">Donor Database</h5>
+						<p class="card-text"><a href="display_donor_regt_data.php">Display and Delete the
+								Records<br><br></a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-3">
+				<div class="card w-100">
+					<img src="https://c8.alamy.com/comp/2D6N38T/blood-donation-transfusion-vector-flat-cartoon-illustration-volunteer-female-donor-donating-blood-in-medical-hospital-laboratory-world-blood-donor-2D6N38T.jpg"
+						class="card-img-top" alt="blood receiver">
+					<div class="card-body">
+						<h5 class="card-title">Receiver Database</h5>
+						<p class="card-text"><a href="display_receiver_regt_data.php">Display and Delete the
+								Records<br><br></a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-3">
+				<div class="card w-100">
+					<img src="https://media.istockphoto.com/vectors/man-with-oxygen-tank-illustration-vector-id502347987"
+						class="card-img-top" alt="blood donor">
+					<div class="card-body">
+						<h5 class="card-title">Oxygen Supplier Database</h5>
+						<p class="card-text"><a href="display_oxygen_regt_data.php">Display and Delete the
+								Records<br><br></a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-3">
+				<div class="card w-100">
+					<img src="https://image.freepik.com/free-vector/thanks-doctors-nurses-physicians-with-medical-mask-protection_24640-62397.jpg"
+						class="card-img-top" alt="blood receiver">
+					<div class="card-body">
+						<h5 class="card-title">Health Care Volunteer Database</h5>
+						<p class="card-text"><a href="display_volunteer_data.php">Display and delete the Records</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row d-flex justify-content-around mt-5">
+			<div class="col-12 col-md-3">
+				<div class="card w-100">
+					<img src="https://cdn2.vectorstock.com/i/1000x1000/31/71/groceries-and-food-delivery-for-elderly-people-vector-30353171.jpg"
+						class="card-img-top" alt="blood donor">
+					<div class="card-body">
+						<h5 class="card-title">Meal Provider Database</h5>
+						<p class="card-text"><a href="display_meal_provider_data.php">Display and Delete the Records</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-3">
+				<div class="card w-100">
+					<img src="https://image.freepik.com/free-vector/babysitting-services-abstract-concept-vector-illustration-nanny-app-personal-childcare-services-reliable-sitter-safe-babysitting-during-quarantine-24-hour-help-with-kids-abstract-metaphor_335657-1705.jpg"
+						class="card-img-top" alt="blood receiver">
+					<div class="card-body">
+						<h5 class="card-title">Childcare Provider Database</h5>
+						<p class="card-text"><a href="display_childcare_provider_data.php">Display and Delete the
+								Records</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-3">
+				<div class="card w-100">
+					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Xt3mN4ufLE8dRy7OrKz9SozepdYsBfVNpQ&usqp=CAU"
+						class="card-img-top" alt="blood donor">
+					<div class="card-body">
+						<h5 class="card-title">Warrior's Post</h5>
+						<p class="card-text"><a href="display_warrior.php">Display and Delete the Records</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-3">
+				<div class="card w-100">
+					<img src="data:image/jpeg;base64,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"
+						class="card-img-top" alt="blood receiver">
+					<div class="card-body">
+						<h5 class="card-title">Survivor's Post</h5>
+						<p class="card-text"><a href="display_survivor.php">Display and Delete the Records</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row d-flex justify-content-around mt-5">
+			<div class="col-12 col-md-3">
+				<div class="card w-100">
+					<img src="https://image.shutterstock.com/image-vector/stickman-illustration-kids-conducting-donation-260nw-417352732.jpg"
+						class="card-img-top" alt="blood donor">
+					<div class="card-body">
+						<h5 class="card-title">NGO Database</h5>
+						<p class="card-text"><a href="display_ngo_registration_form_data.php">Display and Delete the
+								Records<br><br></a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-3">
+				<div class="card w-100">
+					<img src="https://us.123rf.com/450wm/ntlstudio/ntlstudio2101/ntlstudio210100020/161661624-arabian-couple-help-homeless-person-2d-vector-web-banner-poster-support-poor-man-indian-people-flat-.jpg?ver=6"
+						class="card-img-top" alt="blood receiver">
+					<div class="card-body">
+						<h5 class="card-title">Help As An Individual Database</h5>
+						<p class="card-text"><a href="display_ngo_registration_form_individual_data.php">Display and
+								Delete the Records</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-3">
+				<div class="card w-100">
+					<img src="https://image.freepik.com/free-vector/homeless-poor-man-sitting-street-near-box-illustration-cartoon-desperate-dirty-hungry-person-near-trash-charity-need-concept_179970-2296.jpg"
+						class="card-img-top" alt="blood donor">
+					<div class="card-body">
+						<h5 class="card-title">Help Seeker Database</h5>
+						<p class="card-text"><a href="display_ngo_help_form_data.php">Display and Delete the
+								Records<br><br></a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-3">
+				<div class="card w-100">
+					<img src="https://img.freepik.com/free-vector/organic-flat-feedback-concept_52683-62653.jpg?size=626&ext=jpg"
+						class="card-img-top" alt="blood receiver">
+					<div class="card-body">
+						<h5 class="card-title">Feedback Records</h5>
+						<p class="card-text"><a href="display_feedback.php">Display and Delete the Records<br><br></a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row d-flex justify-content-around mt-5">
+			<div class="col-12 col-md-3">
+				<div class="card w-100">
+					<img src="https://img.freepik.com/free-vector/website-faq-section-user-help-desk-customer-support-frequently-asked-questions-problem-solution-quiz-game-confused-man-cartoon-character_335657-1602.jpg?size=338&ext=jpg"
+						class="card-img-top" alt="blood donor">
+					<div class="card-body">
+						<h5 class="card-title">User's Query</h5>
+						<p class="card-text"><a href="display_query.php">Display and Delete the Records</a></p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="responsive">
-	<div class="gallery">
-		<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat" width="200" height="120"><br>
-		<div class="desc"><b><u>ADMISSION CELL DATABASE</u></b><br>
-			<a href="insert_admissioncell.html">Insert Data</a><br>
-			
-			<a href="display_admissioncell.php">Display , Update and Delete the Records</a>
-		</div>
-	</div>
-</div>
-<div class="responsive">
-	<div class="gallery">
-		<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" width="200" height="120"><br>
-		<div class="desc"><b><u>SERVICE</u></b><br>
-			<a href="insert_service_data.html">Insert Data</a><br>
-			<a href="display_service.php">Display , Update and Delete the Records</a>
-		</div>
-	</div>
-</div>
 
 
-<div class="responsive">
-	<div class="gallery">
-		<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat" width="200" height="120"><br>
-		<div class="desc"><b><u>SERVICE PROVIDER</u></b><br>
-			<a href="insert_service_provider_form.php">Insert Data</a><br>
-			
-			<a href="display_service_provider.php">Display , Update and Delete the Records</a>
-		</div>
-	</div>
-</div>
+	<!--
+	<center>
+		<h1>MENU</h1>
+	</center>
+	<a href="frontend/logout.php"><button class="btn btn-info"
+			style="margin-left:150vmin; margin-top: -8vmin; margin-bottom: 10vmin;">Log out</button></a>
+	<br>
+	<div class="responsive">
+		<div class="gallery">
+			<img src="https://quicklaunch.io/wp-content/uploads/2019/10/user-registration.png" alt="doc_cat" width="200"
+				height="120"><br>
+			<div class="desc"><b><u>Registered User Database</u></b><br>
 
-<p><br>--------------------------------------------------------------------------------------</p>
-<div class="responsive">
-	<div class="gallery">
-		<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat" width="200" height="120"><br>
-		<div class="desc"><b><u>DONOR DATABASE</u></b><br>
-			
-			<a href="display_donor_regt_data.php">Display and Delete the Records<br><br></a>
+				<a href="display_registeredUser.php">Display and Delete the Records <br><br><br></a>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="responsive">
-	<div class="gallery">
-		<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat" width="200" height="120"><br>
-		<div class="desc"><b><u>RECEIVER DATABASE</u></b><br>
-			
-			<a href="display_receiver_regt_data.php">Display and Delete the Records<br><br></a>
+	<div class="responsive">
+		<div class="gallery">
+			<img src="https://img.freepik.com/free-vector/cartoon-doctors-nurses_52683-59918.jpg?size=626&ext=jpg"
+				alt="doc_cat" width="200" height="120"><br>
+			<div class="desc"><b><u>DOCTOR CATEGORY</u></b><br>
+				<a href="insert_doctor_category.html">Insert Data</a><br>
+
+				<a href="display_doctor_catergory.php">Display , Update & Delete the Records</a>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="responsive">
-	<div class="gallery">
-		<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat" width="200" height="120"><br>
-		<div class="desc"><b><u>OXYGEN SUPPLIER DATABASE</u></b><br>
-			
-			<a href="display_oxygen_regt_data.php">Display and Delete the Records<br><br></a>
+	<div class="responsive">
+		<div class="gallery">
+			<img src="https://c8.alamy.com/comp/2E3RJBP/doctor-in-mask-with-stethoscope-coronavirus-covid-19-control-concept-vector-illustration-in-flat-style-2E3RJBP.jpg"
+				alt="doc_consult" width="200" height="120"><br>
+
+			<div class="desc"><b><u>DOCTOR CONSULTATION</u></b><br>
+				<a href="Insert_doctors_data.php">Insert Data</a><br>
+				<a href="display_doctor_data.php">Display , Update and Delete the Records</a>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="responsive">
-	<div class="gallery">
-		<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat" width="200" height="120"><br>
-		<div class="desc"><b><u>HEALTHCARE VOLUNTEER DATABASE</u></b><br>
-			
-			<a href="display_volunteer_data.php">Display and delete the Records</a>
+	<div class="responsive">
+		<div class="gallery">
+			<img src="https://img.freepik.com/free-vector/people-walking-sitting-hospital-building-city-clinic-glass-exterior-flat-vector-illustration-medical-help-emergency-architecture-healthcare-concept_74855-10130.jpg?size=626&ext=jpg"
+				alt="hospital" width="200" height="120"><br>
+			<div class="desc"><b><u>HOSPITAL DATABASE</u></b><br>
+				<a href="insert_hospital_data.html">Insert Data</a><br>
+
+				<a href="display_hospital.php">Display , Update and Delete the Records</a>
+			</div>
 		</div>
 	</div>
-</div>
-<p><br>--------------------------------------------------------------------------------------</p>
-<div class="responsive">
-	<div class="gallery">
-		<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat" width="200" height="120"><br>
-		<div class="desc"><b><u>MEAL PROVIDER DATABASE</u></b><br>
-			
-			<a href="display_meal_provider_data.php">Display and Delete the Records</a>
+	<p><br>--------------------------------------------------------------------------------------</p>
+
+	<div class="responsive">
+		<div class="gallery">
+			<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat"
+				width="200" height="120"><br>
+			<div class="desc"><b><u>SAFEHOME DATABASE</u></b><br>
+				<a href="insert_safehome.html">Insert Data</a><br>
+
+				<a href="display_safehome_data.php">Display , Update and Delete the Records</a>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="responsive">
-	<div class="gallery">
-		<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat" width="200" height="120"><br>
-		<div class="desc"><b><u>CHILDCARE PROVIDER DATABASE</u></b><br>
-			
-			<a href="display_childcare_provider_data.php">Display and Delete the Records</a>
+	<div class="responsive">
+		<div class="gallery">
+			<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat"
+				width="200" height="120"><br>
+			<div class="desc"><b><u>ADMISSION CELL DATABASE</u></b><br>
+				<a href="insert_admissioncell.html">Insert Data</a><br>
+
+				<a href="display_admissioncell.php">Display , Update and Delete the Records</a>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="responsive">
-	<div class="gallery">
-		<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat" width="200" height="120"><br>
-		<div class="desc"><b><u>WARRIOR'S POST</u></b><br>
-			
-			<a href="display_warrior.php">Display and Delete the Records</a>
+	<div class="responsive">
+		<div class="gallery">
+			<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" width="200"
+				height="120"><br>
+			<div class="desc"><b><u>SERVICE</u></b><br>
+				<a href="insert_service_data.html">Insert Data</a><br>
+				<a href="display_service.php">Display , Update and Delete the Records</a>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="responsive">
-	<div class="gallery">
-		<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat" width="200" height="120"><br>
-		<div class="desc"><b><u>SURVIVOR'S POST</u></b><br>
-			
-			<a href="display_survivor.php">Display and Delete the Records</a>
-		</div>
-	</div>
-</div>
-<p><br>--------------------------------------------------------------------------------------</p>
-<div class="responsive">
-	<div class="gallery">
-		<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat" width="200" height="120"><br>
-		<div class="desc"><b><u>NGO DATABASE</u></b><br>
-			
-			<a href="display_ngo_registration_form_data.php">Display and Delete the Records<br><br></a>
-		</div>
-	</div>
-</div>
-<div class="responsive">
-	<div class="gallery">
-		<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat" width="200" height="120"><br>
-		<div class="desc"><b><u>HELP AS AN INDIVIDUAL DATABASE</u></b><br>
-			
-			<a href="display_ngo_registration_form_individual_data.php">Display and Delete the Records</a>
-		</div>
-	</div>
-</div>
-<div class="responsive">
-	<div class="gallery">
-		<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat" width="200" height="120"><br>
-		<div class="desc"><b><u>HELPSEEKER DATABASE</u></b><br>
-			
-			<a href="display_ngo_help_form_data.php">Display and Delete the Records<br><br></a>
-		</div>
-	</div>
-</div>
-<div class="responsive">
-	<div class="gallery">
-		<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat" width="200" height="120"><br>
-		<div class="desc"><b><u>FEEDBACK RECORDS</u></b><br>
-			
-			<a href="display_feedback.php">Display and Delete the Records<br><br></a>
-		</div>
-	</div>
-</div>
-<p><br>--------------------------------------------------------------------------------------</p>
-<div class="responsive">
-	<div class="gallery">
-		<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat" width="200" height="120"><br>
-		<div class="desc"><b><u>USER'S QUERY</u></b><br>
-			
-			<a href="display_query.php">Display and Delete the Records</a>
-		</div>
-	</div>
-</div>
 
 
+	<div class="responsive">
+		<div class="gallery">
+			<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat"
+				width="200" height="120"><br>
+			<div class="desc"><b><u>SERVICE PROVIDER</u></b><br>
+				<a href="insert_service_provider_form.php">Insert Data</a><br>
 
+				<a href="display_service_provider.php">Display , Update and Delete the Records</a>
+			</div>
+		</div>
+	</div>
+
+	<p><br>--------------------------------------------------------------------------------------</p>
+	<div class="responsive">
+		<div class="gallery">
+			<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat"
+				width="200" height="120"><br>
+			<div class="desc"><b><u>DONOR DATABASE</u></b><br>
+
+				<a href="display_donor_regt_data.php">Display and Delete the Records<br><br></a>
+			</div>
+		</div>
+	</div>
+	<div class="responsive">
+		<div class="gallery">
+			<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat"
+				width="200" height="120"><br>
+			<div class="desc"><b><u>RECEIVER DATABASE</u></b><br>
+
+				<a href="display_receiver_regt_data.php">Display and Delete the Records<br><br></a>
+			</div>
+		</div>
+	</div>
+	<div class="responsive">
+		<div class="gallery">
+			<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat"
+				width="200" height="120"><br>
+			<div class="desc"><b><u>OXYGEN SUPPLIER DATABASE</u></b><br>
+
+				<a href="display_oxygen_regt_data.php">Display and Delete the Records<br><br></a>
+			</div>
+		</div>
+	</div>
+	<div class="responsive">
+		<div class="gallery">
+			<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat"
+				width="200" height="120"><br>
+			<div class="desc"><b><u>HEALTHCARE VOLUNTEER DATABASE</u></b><br>
+
+				<a href="display_volunteer_data.php">Display and delete the Records</a>
+			</div>
+		</div>
+	</div>
+	<p><br>--------------------------------------------------------------------------------------</p>
+	<div class="responsive">
+		<div class="gallery">
+			<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat"
+				width="200" height="120"><br>
+			<div class="desc"><b><u>MEAL PROVIDER DATABASE</u></b><br>
+
+				<a href="display_meal_provider_data.php">Display and Delete the Records</a>
+			</div>
+		</div>
+	</div>
+	<div class="responsive">
+		<div class="gallery">
+			<img src="https://image.freepik.com/free-vector/babysitting-services-abstract-concept-vector-illustration-nanny-app-personal-childcare-services-reliable-sitter-safe-babysitting-during-quarantine-24-hour-help-with-kids-abstract-metaphor_335657-1705.jpg"
+				alt="doc_cat" width="200" height="120"><br>
+			<div class="desc"><b><u>CHILDCARE PROVIDER DATABASE</u></b><br>
+
+				<a href="display_childcare_provider_data.php">Display and Delete the Records</a>
+			</div>
+		</div>
+	</div>
+	<div class="responsive">
+		<div class="gallery">
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Xt3mN4ufLE8dRy7OrKz9SozepdYsBfVNpQ&usqp=CAU"
+				alt="doc_cat" width="200" height="120"><br>
+			<div class="desc"><b><u>WARRIOR'S POST</u></b><br>
+
+				<a href="display_warrior.php">Display and Delete the Records</a>
+			</div>
+		</div>
+	</div>
+	<div class="responsive">
+		<div class="gallery">
+			<img src="data:image/jpeg;base64,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"
+				alt="doc_cat" width="200" height="120"><br>
+			<div class="desc"><b><u>SURVIVOR'S POST</u></b><br>
+
+				<a href="display_survivor.php">Display and Delete the Records</a>
+			</div>
+		</div>
+	</div>
+	<p><br>--------------------------------------------------------------------------------------</p>
+	<div class="responsive">
+		<div class="gallery">
+			<img src="https://www.healtheuropa.eu/wp-content/uploads/2020/09/iStock-elenabs-696x392.jpg" alt="doc_cat"
+				width="200" height="120"><br>
+			<div class="desc"><b><u>NGO DATABASE</u></b><br>
+
+				<a href="display_ngo_registration_form_data.php">Display and Delete the Records<br><br></a>
+			</div>
+		</div>
+	</div>
+	<div class="responsive">
+		<div class="gallery">
+			<img src="https://us.123rf.com/450wm/ntlstudio/ntlstudio2101/ntlstudio210100020/161661624-arabian-couple-help-homeless-person-2d-vector-web-banner-poster-support-poor-man-indian-people-flat-.jpg?ver=6"
+				alt="doc_cat" width="200" height="120"><br>
+			<div class="desc"><b><u>HELP AS AN INDIVIDUAL DATABASE</u></b><br>
+
+				<a href="display_ngo_registration_form_individual_data.php">Display and Delete the Records</a>
+			</div>
+		</div>
+	</div>
+	<div class="responsive">
+		<div class="gallery">
+			<img src="https://image.freepik.com/free-vector/homeless-poor-man-sitting-street-near-box-illustration-cartoon-desperate-dirty-hungry-person-near-trash-charity-need-concept_179970-2296.jpg"
+				alt="doc_cat" width="200" height="120"><br>
+			<div class="desc"><b><u>HELPSEEKER DATABASE</u></b><br>
+
+				<a href="display_ngo_help_form_data.php">Display and Delete the Records<br><br></a>
+			</div>
+		</div>
+	</div>
+	<div class="responsive">
+		<div class="gallery">
+			<img src="https://img.freepik.com/free-vector/organic-flat-feedback-concept_52683-62653.jpg?size=626&ext=jpg"
+				alt="doc_cat" width="200" height="120"><br>
+			<div class="desc"><b><u>FEEDBACK RECORDS</u></b><br>
+
+				<a href="display_feedback.php">Display and Delete the Records<br><br></a>
+			</div>
+		</div>
+	</div>
+	<p><br>--------------------------------------------------------------------------------------</p>
+	<div class="responsive">
+		<div class="gallery">
+			<img src="https://img.freepik.com/free-vector/website-faq-section-user-help-desk-customer-support-frequently-asked-questions-problem-solution-quiz-game-confused-man-cartoon-character_335657-1602.jpg?size=338&ext=jpg"
+				alt="doc_cat" width="200" height="120"><br>
+			<div class="desc"><b><u>USER'S QUERY</u></b><br>
+
+				<a href="display_query.php">Display and Delete the Records</a>
+			</div>
+		</div>
+	</div>
+
+
+-->
 
 
 
 </body>
+
 </html>

@@ -185,6 +185,8 @@ session_start();
     </style>
 </head>
 <body>
+<a href="frontend/index.php" style="width: 20%;" class="mb-1"><i class="fas fa-arrow-circle-left fa-2x "
+           style="color: white;margin-top: 5vh;margin-left: 10vmin;"></i></a>
 <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
     <div class="container">
       <div class="card login-card">

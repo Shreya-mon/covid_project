@@ -20,18 +20,18 @@
 
 			//getting api data
 			$.ajax({
-				url: "https://api.rootnet.in/covid19-in/hospitals/beds",
+				url: "https://api.covid19india.org/state_district_wise.json",
 				method: 'GET',
 				cache: false,
 				success: function (response) {
-					console.log(response.data.regional[28]);
+					console.log(response);
 
 					$('#totalBeds').html(response.data.regional[28].totalBeds);
 					$('#state').html(response.data.regional[28].state);
 					$('#totalHospitals').html(response.data.regional[28].totalHospitals);
 
 				}
-				
+
 			});
 
 		});
