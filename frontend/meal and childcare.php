@@ -142,7 +142,7 @@ include("connection.php");?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a type="button" href="../sign.php" class="btn btn-primary">SignIn</a>
+        <a type="button" href="sign.php" class="btn btn-primary">SignIn</a>
       </div>
     </div>
   </div>
