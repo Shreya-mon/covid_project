@@ -8,7 +8,7 @@
 
 	if ($qry) {
 		// echo "successfully Deleted";
-		header('location:display.php');
+		header('location:display_hospital.php');
 	} else {
 		echo "Failed";
 	}

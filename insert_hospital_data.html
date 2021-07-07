@@ -67,7 +67,7 @@
 			<h2 class="col-10">Insert Records of COVID Hospital</h2>
 		</div>
 		<div class="row mt-5 center-center p-4">
-			<form class="col-12 row p-2" action="insert_data.php" method="POST" name="insert_frm"
+			<form class="col-12 row p-2" action="insertdata.php" method="POST" name="insert_frm"
 				enctype="multipart/form-data"
 				style=" background-color:rgb(254, 247, 255); max-width: 500px; border: 1px solid black; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius: 12px;">
 				<div class="col-12 mt-1 ">
@@ -79,12 +79,16 @@
 					<input type="text" class="form-control" name="name" placeholder="Name" required>
 				</div>
 				<div class="col-12 mt-1">
-					Hospital type : &nbsp; Government Hospital <input type="radio" name="type" class="type"
-						value="Government Hospital">
-					Govt.
-					Requisitioned Pvt. Hospital <input type="radio" value="Organisation" name="type" class="type"
-						value="Govt. Requisitioned Pvt. Hospital">
-					Private Hospital <input type="radio" name="type" class="type" value="Private Hospital">
+					Hospital type : &nbsp;
+
+					<input type="radio" name="type" class="type" value="Government Hospital"
+					style="margin-left: 1vmin;">&nbsp;Government Hospital<br>
+				<input type="radio" name="type" class="type" value="Govt. Requisitioned Pvt. Hospital" style="margin-left: 18.5vmin;">&nbsp;Govt.
+				Requisitioned Pvt. Hospital<br>
+				<input type="radio" name="type" class="type" value="Private Hospital"  style="margin-left: 18.5vmin;">&nbsp;Private Hospital
+				
+
+
 				</div>
 				<div class="col-12 mt-1 ">
 					<label for="Name" class="form-label">Hospital Bed Capacity : </label>
