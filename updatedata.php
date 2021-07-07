@@ -14,7 +14,7 @@ $qry = mysqli_query($link, "UPDATE `hospital_db` SET `district`='".$_REQUEST['di
 $qry = mysqli_query($link, "UPDATE `hospital_db` SET `additional_info`='".$_REQUEST['hospital_additional_info']."' WHERE `id`='".$_REQUEST['id']."'");
 if ($qry2) {
 		// echo "successfully Deleted";
-		header('location: display.php');
+		header('location: display_hospital.php');
 	} else {
 		echo "Failed";
 	}

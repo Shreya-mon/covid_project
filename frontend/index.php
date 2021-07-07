@@ -62,6 +62,47 @@ include("connection.php");?>
     color: #fff;
     text-align: center;
   }
+
+
+  .link{
+    text-align: center;
+    padding: 5px 10px;
+    font-size: 1.1rem;
+    border-radius: 20px;
+    transition: .40s linear;
+  }
+  .link:hover{
+    text-decoration: none;
+    background-color: rgba(200, 239, 255, 0.5);
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .myCard{
+    font-size: 1.4rem;
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .myCard:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: scale(1.02);
+    transition: .40s linear;
+  }
+  .card-text-heading{
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  .center-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .delta-text{
+    font-size: 1.1rem;
+  }
+
 </style>
 
 <body>
@@ -207,7 +248,42 @@ include("connection.php");?>
       <h1 class="center" style="color: rgb(151, 28, 19); text-shadow: 3px 3px rgb(253, 221, 221);">Daily Updates Of
         Covid Cases</h1>
       <h2 class="text-left">West Bengal</h2>
-      <div class="row mt-2 center mb-1">
+
+      <div class="row mt-3 text-center">
+        <div class="col-12 col-sm-6 col-md-3 p-2 mt-2" >
+          <div class="p-2 myCard" style="color: rgb(255, 0, 0); border-radius: 12px;background-color: rgba(255, 200, 200, 0.5); border-radius: 12px">
+            <div class="card-text-heading mb-2">Total Cases</div>
+            <div id="deltatotalcases" class="delta-text mb-1"></div>
+            <div id="totalcases"></div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 p-2 mt-2" >
+          <div class="p-2 myCard" style="color: rgb(65, 65, 255); border-radius: 12px;background-color: rgba(200, 239, 255, 0.5); border-radius: 12px">
+            <div class="card-text-heading">Active Cases</div>
+            <div id="deltatotalactivecases" class="delta-text"></div>
+            <div id="totalactivecases"></div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 p-2 mt-2" >
+          <div class="p-2 myCard" style="color: rgb(0, 219, 0); border-radius: 12px;background-color: rgba(200, 255, 200, 0.788); border-radius: 12px">
+            <div class="card-text-heading">Recovery</div>
+            <div id="deltatotalrecovery" class="delta-text"></div>
+            <div id="totalrecovery"></div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 p-2 mt-2" >
+          <div class="p-2 myCard" style="color: rgb(80, 80, 80); border-radius: 12px;background-color: rgba(228, 228, 228, 0.5); border-radius: 12px">
+            <div class="card-text-heading">Deaths</div>
+            <div id="deltatotaldeaths" class="delta-text"></div>
+            <div id="totaldeaths"></div>
+          </div>
+        </div>
+        <div class="col-12 text-right">
+          Last update on: <span id="last-update"></span>
+        </div>
+      </div>
+
+      <!-- <div class="row mt-2 center mb-1">
         <div class="col-12 col-sm-6 col-md-3 p-2 mt-2 " style="background-color: #ff7c7c; border-radius: 12px">
           <b>Total Cases</b>
           <div id="totalcases">
@@ -233,6 +309,44 @@ include("connection.php");?>
           </div>
         </div>
       </div>
+      -->
+      <!-- <div class="row mt-2 center mb-1">
+        <div class="col-12 text-left">
+          <h2 color="pink">[icon] Daily cases of Covid19</h2>
+        </div>
+        <div class="col-12 row mt-2 ">
+          <div class="col-10">
+            <select class="form-control" id="myStateList" onchange="showData()">
+              <option value=37>West Bengal</option>
+            </select>
+          </div>
+          <div class="col-2">Show Details</div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 p-2 mt-2 " style="background-color: #ff7c7c; border-radius: 12px">
+          <b>Total Cases</b>
+          <div id="totalcases">
+
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 p-2 mt-2" style="background-color: #a2e5ff; border-radius: 10px">
+          <b>Active Cases</b>
+          <div id="totalactivecases">
+
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 p-2 mt-2" style="background-color: #b5ffb5; border-radius: 12px">
+          <b style="font-size: 1rem;">Recovery</b>
+          <div id="totalrecovery">
+
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 p-2 mt-2" style="background-color: #d8d8d8; border-radius: 12px">
+          <b>Deaths</b>
+          <div id="totaldeaths">
+        
+          </div>
+        </div>
+      </div> -->
       <div class="row" >
         <div class="col align-self-end">
           <a class="link" href="./district_data.html">Show Details</a>
@@ -482,8 +596,7 @@ include("connection.php");?>
   <script src="./js/scroller.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-  <script>
+    <script>
     $(document).ready(function () {
 
 
@@ -494,18 +607,78 @@ include("connection.php");?>
         cache: false,
         success: function (response) {
           // console.log("RESPONSE => ", response);
-          // console.log("response.statewise[37] => ", response.statewise[37]);
+          console.log("response.statewise[37] => ", response.statewise[37]);
 
-          $('#totalcases').html(response.statewise[37].confirmed);
-          $('#totalactivecases').html(response.statewise[37].active);
-          $('#totalrecovery').html(response.statewise[37].recovered);
-          $('#totaldeaths').html(response.statewise[37].deaths);
-        }
+        response.statewise[37].deltaconfirmed > 0 && 
+          $('#deltatotalcases').html('<i class="fas fa-arrow-up"></i>  ' + response.statewise[37].deltaconfirmed)
+        $('#totalcases').html(response.statewise[37].confirmed);
+          
+        response.statewise[37].deltaactive > 0 &&
+          $('#deltatotalactivecases').html('<i class="fas fa-arrow-up"></i>  ' + response.statewise[37].deltaactive)
+        $('#totalactivecases').html(response.statewise[37].active);
+          
+          response.statewise[37].deltarecovered > 0 &&
+            $('#deltatotalrecovery').html('<i class="fas fa-arrow-up"></i>  ' + response.statewise[37].deltarecovered)
+        $('#totalrecovery').html(response.statewise[37].recovered);
+          
+          response.statewise[37].deltadeaths > 0 &&
+            $('#deltatotaldeaths').html('<i class="fas fa-arrow-up"></i>  ' + response.statewise[37].deltadeaths)
+        $('#totaldeaths').html(response.statewise[37].deaths);
+        
+        $('#last-update').html(response.statewise[37].lastupdatedtime)
+
+      }
 
       });
 
     });
   </script>
+
+
+
+  <!-- <script>
+
+  let data = {}
+    $(document).ready(function () {
+      //getting api data
+      $.ajax({
+        url: "https://api.covid19india.org/data.json",
+        method: 'GET',
+        cache: false,
+        success: function (response) {
+            // console.log("RESPONSE => ", response);
+            // console.log("response.statewise[37] => ", response.statewise[37]);
+          data = response
+          createStateList()
+          showData()
+        }
+        
+      });
+      
+    });
+    
+    function createStateList(){
+      let stateList = document.getElementById("myStateList");
+      data.statewise.map((state, index) => {
+        // console.log(index, state.state, " = ", state.statecode)
+        let option = document.createElement("option")
+        option.text = index != 0 ? state.state : "India"
+        option.value = index
+        stateList.add(option)
+      })
+    }
+
+    function showData(){
+      let x = document.getElementById("myStateList").selectedIndex
+      stateIndex = document.getElementsByTagName("option")[x].value
+      console.log(x,stateIndex)
+      $('#totalcases').html(data.statewise[stateIndex].confirmed)
+      $('#totalactivecases').html(data.statewise[stateIndex].active)
+      $('#totalrecovery').html(data.statewise[stateIndex].recovered)
+      $('#totaldeaths').html(data.statewise[stateIndex].deaths)
+      
+    }
+  </script> -->
 
 </body>
 

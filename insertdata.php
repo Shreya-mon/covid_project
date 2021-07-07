@@ -46,5 +46,5 @@ align-items: center;
 	<br>
 	<a href="insert_hospital_data.html">Back</a>
 	<br>
-	<a href="display.php">Click here to display records</a>
+	<a href="display_hospital.php">Click here to display records</a>
 </html>
