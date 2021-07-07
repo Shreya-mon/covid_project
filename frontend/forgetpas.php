@@ -68,7 +68,7 @@ if(!empty($_POST['submit_otp']))
 {
     $otp1=$_POST["otp"];
     $sql=mysqli_query($link,"SELECT * FROM `reset_pass` WHERE  `otp`='$otp1' AND `is_expired`!=1 AND 
-        NOW() <= DATE_ADD(`create_at`, INTERVAL 1 MINUTE) ");
+        NOW() <= DATE_ADD(`create_at`, INTERVAL 10 MINUTE) ");
     if(mysqli_num_rows($sql)>0)
     {
         $result=mysqli_query($link,"UPDATE `reset_pass` SET `is_expired`=1 WHERE `otp`='$otp1'");
@@ -153,7 +153,16 @@ if(!empty($_POST['submit_pass']))
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="css/signin.css">
+<style>
+ #hide1 {
+            display: none;
 
+        }   
+ #hide3 {
+            display: none;
+
+        }   
+</style>
 
 </head>
 
@@ -186,7 +195,7 @@ if(!empty($_POST['submit_pass']))
                         </div>
                         <div class="card-footer">
                             <div class="d-flex justify-content-center links">
-                                Don't have an account?<a href="signup.html">Sign Up</a>
+                                Don't have an account?<a href="signup.php">Sign Up</a>
                             </div>
                         </div>
                     </div>
@@ -209,9 +218,6 @@ else if($sucess==1)
                         <div class="card-body">
                             <form action="#" method="POST">
                                 <div class="input-group form-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                                    </div>
                                     <input type="text" name="otp" class="form-control" placeholder="Enter OTP" required>
                                 </div>
                                 <div class="form-group">
@@ -274,6 +280,40 @@ else if($sucess==2)
                     </div>
                 </div>
             </div>
+            <script type="text/javascript">
+		function myfunction(){
+			var x = document.getElementById("password");
+			var y = document.getElementById("hide1");
+			var z = document.getElementById("hide2");
+
+			if(x.type == 'password'){
+				x.type = "text";
+				y.style.display = "block";
+				z.style.display = "none";
+			}
+			else{
+				x.type = "password";
+				y.style.display = "none";
+				z.style.display = "block";
+			}
+		}
+        function myfunction1(){
+			var x = document.getElementById("conpass");
+			var y = document.getElementById("hide3");
+			var z = document.getElementById("hide4");
+
+			if(x.type == 'password'){
+				x.type = "text";
+				y.style.display = "block";
+				z.style.display = "none";
+			}
+			else{
+				x.type = "password";
+				y.style.display = "none";
+				z.style.display = "block";
+			}
+		}
+	</script>
  <script>
         $(document).ready(function(){
             $('#conpass').keyup(function(){
