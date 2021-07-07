@@ -74,7 +74,7 @@
                                 Don't have an account?<a href="signup.php">Sign Up</a>
                             </div>
                             <div class="d-flex justify-content-center">
-                                <a href="./forgetpas.html">Forgot your password?</a>
+                                <a href="./forgetpas.php">Forgot your password?</a>
                             </div>
                         </div>
                     </div>
