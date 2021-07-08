@@ -193,28 +193,28 @@ include("connection.php");?>
           <img src="./images/desk1.jpg" class="d-block carousel-img" alt="image not found">
           <div class="carousel-caption">
             <h3>Covid Care</h3>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p>Stay Home, Raise Hope.</p>
           </div>
         </div>
         <div class="carousel-item">
           <img src="./images/desk2.jpg" class="d-block carousel-img" alt="image not found">
           <div class="carousel-caption">
             <h3>Covid Care</h3>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p>Stay Home, Raise Hope.</p>
           </div>
         </div>
         <div class="carousel-item">
           <img src="./images/desk3.jpg" class="d-block carousel-img" alt="image not found">
           <div class="carousel-caption">
             <h3>Covid Care</h3>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p>Stay Home, Raise Hope.</p>
           </div>
         </div>
         <div class="carousel-item">
           <img src="./images/desk4.png" class="d-block carousel-img" alt="image not found">
           <div class="carousel-caption">
             <h3>Covid Care</h3>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p>Stay Home, Raise Hope.</p>
           </div>
         </div>
       </div>
@@ -282,71 +282,6 @@ include("connection.php");?>
           Last update on: <span id="last-update"></span>
         </div>
       </div>
-
-      <!-- <div class="row mt-2 center mb-1">
-        <div class="col-12 col-sm-6 col-md-3 p-2 mt-2 " style="background-color: #ff7c7c; border-radius: 12px">
-          <b>Total Cases</b>
-          <div id="totalcases">
-
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-3 p-2 mt-2" style="background-color: #a2e5ff; border-radius: 10px">
-          <b>Active Cases</b>
-          <div id="totalactivecases">
-
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-3 p-2 mt-2" style="background-color: #b5ffb5; border-radius: 12px">
-          <b style="font-size: 1rem;">Recovery</b>
-          <div id="totalrecovery">
-
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-3 p-2 mt-2" style="background-color: #d8d8d8; border-radius: 12px">
-          <b>Deaths</b>
-          <div id="totaldeaths">
-        
-          </div>
-        </div>
-      </div>
-      -->
-      <!-- <div class="row mt-2 center mb-1">
-        <div class="col-12 text-left">
-          <h2 color="pink">[icon] Daily cases of Covid19</h2>
-        </div>
-        <div class="col-12 row mt-2 ">
-          <div class="col-10">
-            <select class="form-control" id="myStateList" onchange="showData()">
-              <option value=37>West Bengal</option>
-            </select>
-          </div>
-          <div class="col-2">Show Details</div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-3 p-2 mt-2 " style="background-color: #ff7c7c; border-radius: 12px">
-          <b>Total Cases</b>
-          <div id="totalcases">
-
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-3 p-2 mt-2" style="background-color: #a2e5ff; border-radius: 10px">
-          <b>Active Cases</b>
-          <div id="totalactivecases">
-
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-3 p-2 mt-2" style="background-color: #b5ffb5; border-radius: 12px">
-          <b style="font-size: 1rem;">Recovery</b>
-          <div id="totalrecovery">
-
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-3 p-2 mt-2" style="background-color: #d8d8d8; border-radius: 12px">
-          <b>Deaths</b>
-          <div id="totaldeaths">
-        
-          </div>
-        </div>
-      </div> -->
       <div class="row" >
         <div class="col align-self-end">
           <a class="link" href="./district_data.html">Show Details</a>
@@ -633,53 +568,6 @@ include("connection.php");?>
 
     });
   </script>
-
-
-
-  <!-- <script>
-
-  let data = {}
-    $(document).ready(function () {
-      //getting api data
-      $.ajax({
-        url: "https://api.covid19india.org/data.json",
-        method: 'GET',
-        cache: false,
-        success: function (response) {
-            // console.log("RESPONSE => ", response);
-            // console.log("response.statewise[37] => ", response.statewise[37]);
-          data = response
-          createStateList()
-          showData()
-        }
-        
-      });
-      
-    });
-    
-    function createStateList(){
-      let stateList = document.getElementById("myStateList");
-      data.statewise.map((state, index) => {
-        // console.log(index, state.state, " = ", state.statecode)
-        let option = document.createElement("option")
-        option.text = index != 0 ? state.state : "India"
-        option.value = index
-        stateList.add(option)
-      })
-    }
-
-    function showData(){
-      let x = document.getElementById("myStateList").selectedIndex
-      stateIndex = document.getElementsByTagName("option")[x].value
-      console.log(x,stateIndex)
-      $('#totalcases').html(data.statewise[stateIndex].confirmed)
-      $('#totalactivecases').html(data.statewise[stateIndex].active)
-      $('#totalrecovery').html(data.statewise[stateIndex].recovered)
-      $('#totaldeaths').html(data.statewise[stateIndex].deaths)
-      
-    }
-  </script> -->
-
 </body>
 
 
