@@ -111,9 +111,58 @@ session_start();
        object-fit: cover; }
   .login-card .card-body {
     padding: 85px 60px 60px; }
+    .eye {
+            position: absolute;
+            margin-top: -2vmin;
+            margin-left: 45vmin;
+
+        }
+        #hide1 {
+            display: none;
+
+        }   
+
+    @media (max-width: 1024px) {
+      .eye {
+            margin-top: -9vmin;
+            margin-left: 50vmin;
+        }
+    }
+    @media (max-width: 767px) {
+      .login-card-footer-text {
+        margin-bottom: 24px; } }
+  .login-card-footer-nav a {
+    font-size: 14px;
+    color: #919aa3; }
+
+.footer-link {
+  position: absolute;
+  bottom: 1rem;
+  text-align: center;
+  width: 100%; }
+  .eye {
+            margin-top: -9vmin;
+            margin-left: 45vmin;
+        }
     @media (max-width: 422px) {
       .login-card .card-body {
-        padding: 35px 24px; } }
+        padding: 35px 24px; }
+        .eye {
+            margin-top: -12vmin;
+            margin-left: 70vmin;
+        }
+     }
+     @media (max-width: 375px) {
+      .eye {
+            margin-top: -14vmin;
+        }
+     }
+     @media (max-width: 320px) {
+      .eye {
+            margin-top: -16vmin;
+            margin-left: 65vmin;
+        }
+     }
   .login-card-description {
     font-size: 25px;
     color: #000;
@@ -160,28 +209,8 @@ session_start();
     font-size: 16px;
     color: #0d2366;
     margin-bottom: 60px; }
-    @media (max-width: 767px) {
-      .login-card-footer-text {
-        margin-bottom: 24px; } }
-  .login-card-footer-nav a {
-    font-size: 14px;
-    color: #919aa3; }
-
-.footer-link {
-  position: absolute;
-  bottom: 1rem;
-  text-align: center;
-  width: 100%; }
-  .eye {
-            position: absolute;
-            margin-top: -8vmin;
-            margin-left: 45vmin;
-
-        }
-        #hide1 {
-            display: none;
-
-        }   
+   
+    
     </style>
 </head>
 <body>
@@ -203,11 +232,11 @@ session_start();
               <form action="adminlogin1.php" method="POST" class="form-content">
                   <div class="form-group">
                     <label for="email" class="sr-only">Email</label>
-                    <input type="email" id="name" name="email" placeholder="abc@xyz.com" class="form-control">
+                    <input type="email" id="name" name="email" placeholder="abc@xyz.com" class="form-control" required>
                   </div>
                   <div class="form-group mb-4">
                     <label for="password" class="sr-only">Password</label>
-                    <input type="password" id="pass" name="pass" placeholder="Password" class="form-control">
+                    <input type="password" id="pass" name="pass" placeholder="Password" class="form-control" required>
                     
                     <div class="input-group-addon eye" onclick="myfunction()">
                       <i id="hide1" class="fa fa-eye"></i>

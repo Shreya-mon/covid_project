@@ -49,18 +49,49 @@
 			text-shadow: 2px 2px 3px red;
 			margin-top: 3%;
 		}
+		.btn{
+			margin-left: 80vmin;
+			margin-top: -30vmin;
+		}
+		.menu{
+			margin-top: -20vmin;
+		}
+		@media only screen and (max-width: 768px){
+			.btn{
+				margin-left: 50vmin;
+			}
+		}
+		@media only screen and (max-width: 425px){
+			.btn{
+				margin-top: -50vmin;
+				margin-left: 30vmin;
+			}
+		}
+		@media only screen and (max-width: 375px){
+			.btn{
+				margin-top: -60vmin;
+				margin-left: 25vmin;
+			}
+		}
+		@media only screen and (max-width: 320px){
+			.btn{
+				margin-top: -70vmin;
+				margin-left: 20vmin;
+			}
+		}
 	</style>
 </head>
 
 <body>
 	<div class="container pt-5">
 		<div class="row pt-5 d-flex justify-content-center align-items-center">
-			<div class="col-12 text-center">
-				<h1>MENU</h1>
-			</div>
 			<div class="col-3 mt-5">
 				<a href="frontend/logout.php"><button class="btn btn-info">Log out</button></a>
 			</div>
+			<div class="col-12 text-center menu">
+				<h1>MENU</h1>
+			</div>
+			
 		</div>
 		<div class="row d-flex justify-content-around mt-5">
 			<div class="col-12 col-md-3">
@@ -312,6 +343,16 @@
 					<div class="card-body">
 						<h5 class="card-title">User's Query</h5>
 						<p class="card-text"><a href="display_query.php">Display and Delete the Records</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-3">
+				<div class="card w-100">
+					<img src="https://img.freepik.com/free-vector/website-faq-section-user-help-desk-customer-support-frequently-asked-questions-problem-solution-quiz-game-confused-man-cartoon-character_335657-1602.jpg?size=338&ext=jpg"
+						class="card-img-top" alt="blood donor">
+					<div class="card-body">
+						<h5 class="card-title">Notice Board Management</h5>
+						<p class="card-text"><a href="display_notice.php">Display and Delete Notice</a></p>
 					</div>
 				</div>
 			</div>

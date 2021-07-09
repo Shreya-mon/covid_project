@@ -4,7 +4,10 @@ include("connection.php");?>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title></title>
+	<title>User's Query</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="frontend/jqueryV3.6.0.min.js"></script>
 	<style>
 		body	
 {
@@ -49,7 +52,11 @@ a{
 				echo "<td>".$row["ph_no"]."</td>";
 				echo "<td>".$row["description"]."</td>";
 				?>
-                <td><img src="<?php echo "frontend/upload/".$row['proof']; ?>" width="100px"></td>
+                <td>
+					<a href="<?php echo "frontend/upload/".$row['proof']; ?>" class="fancybox" data-fancybox="gallery1">
+						<img src="<?php echo "frontend/upload/".$row['proof']; ?>" width="100px">
+				    </a>
+				</td>
                 <?php 
 		
 				echo "<td><a href='delete_query.php?id=".$row['id']."'>Delete</a></td>";

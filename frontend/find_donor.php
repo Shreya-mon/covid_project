@@ -47,8 +47,10 @@
         <a href="usertable.php" style="width: 20%;" class="mb-2 pb-2"><i class="fas fa-arrow-circle-left fa-3x "
                     style="color: blueviolet;"></i></a>
         <div class="container  mt-5">
+                <div class="row" style="text-align: center; align-items: center; justify-content: center;">
+                    <h3>Your Nearby Donor</h3>
+                </div><br>
                     <div class="row mt-3">
-                        <h4>Your Nearby Donor</h4><br>
                         <table class="table">
                             <thead class="thead-light">
                                     <tr>

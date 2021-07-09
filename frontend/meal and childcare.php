@@ -160,7 +160,7 @@ include("connection.php");?>
       </div>
       <div class="col-md-8 ml-md-2 mb-5 ">
         <div class="container m-0 p-0 ">
-          <h2 class="center" id="healthcare">Healthcare volunteers Services
+          <h2 class="center" id="healthcare">Healthcare Volunteer Services
           </h2>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore provident veniam numquam deserunt porro
             aliquid autem corrupti! Magnam, mollitia aut voluptates facere ut maxime earum voluptatem vitae iusto vero

@@ -372,13 +372,33 @@ include("connection.php");?>
         </div>
 
         <div class="col mt-5 ">
-          <h2 class="center">NOTICE BOARD</h2>
-
-          <form action="post" class="row pt-3 pb-3 notice">
+          <h2 class="center" id="help">NOTICE BOARD</h2>
+     <?php 
+     include("connection.php");
+     if(isset($_REQUEST['submit'])){
+        $sql = "INSERT INTO `notice_board`(`id`,`notice`, `date`)
+						  VALUES('','".$_REQUEST['help']."','".date("Y-m-d")."')";
+	      $result= mysqli_query($link, $sql);
+     }
+     ?>
+          <form action="#help" class="row pt-3 pb-3 notice" method="POST">
             <div class="col">
               <label class="form-label" for="URGENT">ENTER ANY URGENT</label></br>
-              <input type="text" class="form-control" placeholder="Help">
-              <button type="submit">SUBMIT</button>
+              <input type="text" class="form-control" placeholder="Help" name="help"><br>
+              <input type="submit" name="submit" value="SUBMIT"><br><br>
+              <?php
+               $sql=mysqli_query($link,"SELECT * FROM `notice_board`");
+               if(mysqli_num_rows($sql)>0){
+                 $count=1;
+                while($row = mysqli_fetch_assoc($sql))
+                {
+                  echo $count.". ";
+                  echo "<b>".$row["notice"]."</b> ".$row["date"]."<br>";
+                  $count++;
+                }
+               }
+
+              ?>
             </div>
           </form>
         </div>

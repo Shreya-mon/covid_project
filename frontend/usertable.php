@@ -95,7 +95,11 @@ $id=$_SESSION['id'];
 				                            echo "<td>".$row["district"]."</td>";
 				                            echo "<td>".$row["frequency"]."</td>";
 				                            ?>
-                                        <td><img src="<?php echo "upload/".$row['proof']; ?>" width="100px"></td>
+                                        <td>
+                                        <a href="<?php echo "upload/".$row['proof']; ?>" class="fancybox" data-fancybox="gallery1">
+					                        <img src="<?php echo "upload/".$row['proof']; ?>" width="100px">
+				                        </a>
+                                        </td>
                                        <?php     echo "<td><a href='update_donor.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
                                         }
@@ -146,7 +150,11 @@ $id=$_SESSION['id'];
 				                            echo "<td>".$row["blood group"]."</td>";
 				                            echo "<td>".$row["district"]."</td>";
 				                            ?>
-                                        <td><img src="<?php echo "upload/".$row['proof']; ?>" width="100px"></td>
+                                        <td>
+                                            <a href="<?php echo "upload/".$row['proof']; ?>" class="fancybox" data-fancybox="gallery1">
+					                        <img src="<?php echo "upload/".$row['proof']; ?>" width="100px">
+				                            </a>
+                                        </td>
                                        <?php 
                                             echo "<td><a href='update_receiver.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "<td><a href='find_donor.php?district=".$row['district']."&id=".$row['id']."'><button class='btn btn-primary'>Find Donor</button></a></td>";
@@ -194,7 +202,11 @@ $id=$_SESSION['id'];
                                             echo "<td>".$row["district"]."</td>";
                                             echo "<td>".$row["phone number"]."</td>";
                                             ?>
-                                            <td><img src="<?php echo "upload/".$row['proof']; ?>" width="100px"></td>
+                                            <td>
+                                            <a href="<?php echo "upload/".$row['proof']; ?>" class="fancybox" data-fancybox="gallery1">
+					                        <img src="<?php echo "upload/".$row['proof']; ?>" width="100px">
+				                            </a>
+                                            </td>
                                            <?php 
                                             echo "<td><a href='update_oxygen.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
@@ -241,7 +253,11 @@ $id=$_SESSION['id'];
                                             echo "<td>".$row["district"]."</td>";
                                             echo "<td>".$row["phno"]."</td>";
                                             ?>
-                                            <td><img src="<?php echo "upload/".$row['proof']; ?>" width="100px"></td>
+                                            <td>
+                                            <a href="<?php echo "upload/".$row['proof']; ?>" class="fancybox" data-fancybox="gallery1">
+					                        <img src="<?php echo "upload/".$row['proof']; ?>" width="100px">
+				                            </a>
+                                            </td>
                                            <?php 
                                             echo "<td><a href='update_volunteer.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
@@ -286,7 +302,11 @@ $id=$_SESSION['id'];
 				                            echo "<td>".$row["district"]."</td>";
 				                            echo "<td>".$row["phno"]."</td>";
 				                            ?>
-                                            <td><img src="<?php echo "upload/".$row['proof']; ?>" width="100px"></td>
+                                            <td>
+                                            <a href="<?php echo "upload/".$row['proof']; ?>" class="fancybox" data-fancybox="gallery1">
+					                        <img src="<?php echo "upload/".$row['proof']; ?>" width="100px">
+				                            </a>
+                                            </td>
                                            <?php 
                                             echo "<td><a href='update_mealprovider.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
@@ -333,7 +353,11 @@ $id=$_SESSION['id'];
                                             
                                             echo "<td>".$row["phno"]."</td>";
                                             ?>
-                                            <td><img src="<?php echo "upload/".$row['proof']; ?>" width="100px"></td>
+                                            <td>
+                                            <a href="<?php echo "upload/".$row['proof']; ?>" class="fancybox" data-fancybox="gallery1">
+					                        <img src="<?php echo "upload/".$row['proof']; ?>" width="100px">
+				                            </a>
+                                            </td>
                                            <?php 
                                             echo "<td><a href='update_childcareprovider.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
@@ -385,8 +409,16 @@ $id=$_SESSION['id'];
 				                            echo "<td>".$row["experience"]."</td>";
 				                            echo "<td>".$row["title"]."</td>";
                                             ?>
-                                            <td><img src="<?php echo "upload/".$row['photo']; ?>" width="100px"></td>
-                                            <td><img src="<?php echo "upload/".$row['video']; ?>" width="100px"></td>
+                                            <td>
+                                            <a href="<?php echo "upload/".$row['photo']; ?>" class="fancybox" data-fancybox="gallery1">
+					                        <img src="<?php echo "upload/".$row['photo']; ?>" width="100px">
+				                            </a>
+                                            </td>
+                                            <td>
+                                            <a href="<?php echo "upload/".$row['video']; ?>" class="fancybox" data-fancybox="gallery1">
+					                        <img src="<?php echo "upload/".$row['video']; ?>" width="100px">
+				                            </a>
+                                            </td>
                                            <?php 
                                             echo "<td><a href='update_warrior.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
@@ -437,7 +469,11 @@ $id=$_SESSION['id'];
                                             echo "<td>".$row["experience"]."</td>";
                                             echo "<td>".$row["title"]."</td>";
                                             ?>
-                                            <td><img src="<?php echo "upload/".$row['video']; ?>" width="100px"></td>
+                                            <td>
+                                            <a href="<?php echo "upload/".$row['video']; ?>" class="fancybox" data-fancybox="gallery1">
+					                        <img src="<?php echo "upload/".$row['video']; ?>" width="100px">
+				                            </a>
+                                            </td>
                                            <?php 
                                             echo "<td><a href='update_survivor.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
                                             echo "</tr>";
@@ -483,7 +519,11 @@ $id=$_SESSION['id'];
                                             echo "<td>".$row["district"]."</td>";
                                             echo "<td>".$row["ph_no"]."</td>";
                                             ?>
-                                            <td><img src="<?php echo "upload/".$row['file']; ?>" width="100px"></td>
+                                            <td>
+                                            <a href="<?php echo "upload/".$row['file']; ?>" class="fancybox" data-fancybox="gallery1">
+					                        <img src="<?php echo "upload/".$row['file']; ?>" width="100px">
+				                            </a>
+                                            </td>
                                            <?php
                                             echo "<td>".$row["category"]."</td>";
                                             echo "<td><a href='update_ngo.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
@@ -530,7 +570,11 @@ $id=$_SESSION['id'];
                                             echo "<td>".$row["district"]."</td>";
                                             echo "<td>".$row["ph_no"]."</td>";
                                             ?>
-                                            <td><img src="<?php echo "upload/".$row['file']; ?>" width="100px"></td>
+                                            <td>
+                                            <a href="<?php echo "upload/".$row['file']; ?>" class="fancybox" data-fancybox="gallery1">
+					                        <img src="<?php echo "upload/".$row['file']; ?>" width="100px">
+				                            </a>
+                                            </td>
                                            <?php
                                             echo "<td>".$row["category"]."</td>";
                                             echo "<td><a href='update_individual.php?id=".$row['id']."'><button class='btn btn-primary'>Edit</button></a></td>";
@@ -578,7 +622,11 @@ $id=$_SESSION['id'];
                                             echo "<td>".$row["district"]."</td>";
                                             echo "<td>".$row["ph_no"]."</td>";
                                             ?>
-                                            <td><img src="<?php echo "upload/".$row['file']; ?>" width="100px"></td>
+                                            <td>
+                                            <a href="<?php echo "upload/".$row['file']; ?>" class="fancybox" data-fancybox="gallery1">
+					                        <img src="<?php echo "upload/".$row['file']; ?>" width="100px">
+				                            </a>
+                                            </td>
                                            <?php
                                             echo "<td>".$row["description"]."</td>";
                                             echo "<td>".$row["category"]."</td>";
@@ -595,7 +643,7 @@ $id=$_SESSION['id'];
                     </div>
 
                     <?php
-                    if($count==11){ echo 'No record found';
+                    if($count==11){ echo '<h4 style="text-align:center;margin-top:5vmin;">No record found</h4>';
                     }?>
             </div>
         </div>
