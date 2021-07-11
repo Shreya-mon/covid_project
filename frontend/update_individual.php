@@ -5,17 +5,20 @@
 	$qry = mysqli_query($link, "SELECT * FROM `ngo_registration_individual` WHERE `id` = '".$_REQUEST['id']."'");
 		$row = mysqli_fetch_array($qry);
         $dist = isset($row['district']) ? $row['district']:'';
-        $cat = isset($row['category']) ? $row['category']:'';
+        //$cat = isset($row['category']) ? $row['category']:'';
+        $chkbox = $row['category'];
+		$cat = explode(", ",$chkbox);
 ?>
 <?php
 if(isset($_POST['submit'])){
     $old_proof=$_POST['oldproof'];
     $new_proof=$_FILES["newproof"]["name"];
+    $cate = implode(", ",isset($_REQUEST['helpingCategoriesOfNGO'])?$_REQUEST['helpingCategoriesOfNGO']:'');
 $qry = mysqli_query($link, "UPDATE `ngo_registration_individual` SET `name`='".$_REQUEST['name']."' WHERE `id`='".$_REQUEST['id']."'");
 $qry = mysqli_query($link, "UPDATE `ngo_registration_individual` SET `address`='".$_REQUEST['address']."' WHERE `id`='".$_REQUEST['id']."'");
 $qry = mysqli_query($link, "UPDATE `ngo_registration_individual` SET `district`='".$_REQUEST['district']."' WHERE `id`='".$_REQUEST['id']."'");
 $qry = mysqli_query($link, "UPDATE `ngo_registration_individual` SET `ph_no`='".$_REQUEST['phno']."' WHERE `id`='".$_REQUEST['id']."'");
-$qry = mysqli_query($link, "UPDATE `ngo_registration_individual` SET `category`='".$_REQUEST['helpingCategoriesOfNGO']."' WHERE `id`='".$_REQUEST['id']."'");
+$qry = mysqli_query($link, "UPDATE `ngo_registration_individual` SET `category`='".$cate."' WHERE `id`='".$_REQUEST['id']."'");
 if($new_proof != ''){
     $update_file = $_FILES["newproof"]["name"];
 }
@@ -179,36 +182,36 @@ if ($qry) {
                 <div class="col-12 mt-1">
                             <label for="Helping Categories" class="form-label">Helping Categories</label>
                             <div class="mt-1 ml-3 form-check">
-                                <input class="form-check-input" name="helpingCategoriesOfNGO" type="checkbox"
-                                    value="food" <?php if($cat == "food"){echo "checked";} ?>>
+                                <input class="form-check-input" name="helpingCategoriesOfNGO[]" type="checkbox"
+                                    value="food" <?php if(in_array("food",$cat)){echo "checked";}?>>
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Food
                                 </label>
                             </div>
                             <div class="mt-1 ml-3 form-check">
-                                <input class="form-check-input" name="helpingCategoriesOfNGO" type="checkbox"
-                                    value="books" <?php if($cat == "books"){echo "checked";} ?>>
+                                <input class="form-check-input" name="helpingCategoriesOfNGO[]" type="checkbox"
+                                    value="books" <?php if(in_array("books",$cat)){echo "checked";}?>>
                                 <label class="form-check-label" for="flexCheckChecked">
                                     Books
                                 </label>
                             </div>
                             <div class="mt-1 ml-3 form-check">
-                                <input class="form-check-input" name="helpingCategoriesOfNGO" type="checkbox"
-                                    value="medicine" <?php if($cat == "medicine"){echo "checked";} ?>>
+                                <input class="form-check-input" name="helpingCategoriesOfNGO[]" type="checkbox"
+                                    value="medicine" <?php if(in_array("medicine",$cat)){echo "checked";}?>>
                                 <label class="form-check-label" for="flexCheckChecked">
                                     Medicine
                                 </label>
                             </div>
                             <div class="mt-1 ml-3 form-check">
-                                <input class="form-check-input" name="helpingCategoriesOfNGO" type="checkbox"
-                                    value="financially" <?php if($cat == "financially"){echo "checked";} ?>>
+                                <input class="form-check-input" name="helpingCategoriesOfNGO[]" type="checkbox"
+                                    value="financially" <?php if(in_array("financially",$cat)){echo "checked";}?>>
                                 <label class="form-check-label" for="flexCheckChecked">
                                     Financially
                                 </label>
                             </div>
                             <div class="mt-1 ml-3 form-check">
-                                <input class="form-check-input" name="helpingCategoriesOfNGO" type="checkbox"
-                                    value="other" <?php if($cat == "other"){echo "checked";} ?>>
+                                <input class="form-check-input" name="helpingCategoriesOfNGO[]" type="checkbox"
+                                    value="other" <?php if(in_array("other",$cat)){echo "checked";}?>>
                                 <label class="form-check-label" for="flexCheckChecked">
                                     Other
                                 </label>

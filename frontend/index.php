@@ -376,8 +376,8 @@ include("connection.php");?>
      <?php 
      include("connection.php");
      if(isset($_REQUEST['submit'])){
-        $sql = "INSERT INTO `notice_board`(`id`,`notice`, `date`)
-						  VALUES('','".$_REQUEST['help']."','".date("Y-m-d")."')";
+        $sql = "INSERT INTO `notice_board`(`id`,`notice`,`phno`, `date`)
+						  VALUES('','".$_REQUEST['help']."','".$_REQUEST['phno']."','".date("Y-m-d")."')";
 	      $result= mysqli_query($link, $sql);
      }
      ?>
@@ -385,6 +385,7 @@ include("connection.php");?>
             <div class="col">
               <label class="form-label" for="URGENT">ENTER ANY URGENT</label></br>
               <input type="text" class="form-control" placeholder="Help" name="help"><br>
+              <input type="text" class="form-control" placeholder="Enter Phone Number" name="phno"><br>
               <input type="submit" name="submit" value="SUBMIT"><br><br>
               <?php
                $sql=mysqli_query($link,"SELECT * FROM `notice_board`");

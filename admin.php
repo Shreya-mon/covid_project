@@ -209,8 +209,6 @@ session_start();
     font-size: 16px;
     color: #0d2366;
     margin-bottom: 60px; }
-   
-    
     </style>
 </head>
 <body>

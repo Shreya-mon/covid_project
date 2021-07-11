@@ -30,6 +30,7 @@ a{
 	<tr>
 		<td align="center"><strong>ID</strong></td>
 		<td><strong>Notice</strong></td>
+		<td><strong>Phone Number</strong></td>
 		<td><strong>Date</strong></td>
 	</tr>
     <?php
@@ -42,6 +43,7 @@ a{
 				echo "<tr>";
 				echo "<td align = 'center'>".$row["id"]."</td>";
 				echo "<td>".$row["notice"]."</td>";
+				echo "<td>".$row["phno"]."</td>";
 				echo "<td>".$row["date"]."</td>";
 				echo "<td><a href='delete_notice.php?id=".$row['id']."'>Delete</a></td>";
 				echo "</tr>";

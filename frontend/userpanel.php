@@ -126,6 +126,7 @@ $email= $_SESSION['email'];
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
                             <select class="form-control" name="dist" id="dist" required>
+                                <option value="">Select</option>
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
                                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -220,6 +221,7 @@ $email= $_SESSION['email'];
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
                             <select class="form-control" name="dist" id="dist" required>
+                                <option value="">Select</option>
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
                                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -284,6 +286,7 @@ $email= $_SESSION['email'];
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
                             <select class="form-control" name="dist" id="dist">
+                                <option value="">Select</option>
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
                                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -676,6 +679,7 @@ $email= $_SESSION['email'];
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
                             <select class="form-control" name="dist" id="dist" class="form-control" required>
+                                <option value="">Select</option>
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
                                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -712,35 +716,35 @@ $email= $_SESSION['email'];
                         <div class="col-12 mt-1">
                             <label for="Helping Categories" class="form-label">Helping Categories</label>
                             <div class="mt-1 ml-3 form-check">
-                                <input class="form-check-input" name="helpingCategoriesOfNGO" type="checkbox"
+                                <input class="form-check-input" name="helpingCategoriesOfNGO[]" type="checkbox"
                                     value="food">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Food
                                 </label>
                             </div>
                             <div class="mt-1 ml-3 form-check">
-                                <input class="form-check-input" name="helpingCategoriesOfNGO" type="checkbox"
+                                <input class="form-check-input" name="helpingCategoriesOfNGO[]" type="checkbox"
                                     value="books">
                                 <label class="form-check-label" for="flexCheckChecked">
                                     Books
                                 </label>
                             </div>
                             <div class="mt-1 ml-3 form-check">
-                                <input class="form-check-input" name="helpingCategoriesOfNGO" type="checkbox"
+                                <input class="form-check-input" name="helpingCategoriesOfNGO[]" type="checkbox"
                                     value="medicine">
                                 <label class="form-check-label" for="flexCheckChecked">
                                     Medicine
                                 </label>
                             </div>
                             <div class="mt-1 ml-3 form-check">
-                                <input class="form-check-input" name="helpingCategoriesOfNGO" type="checkbox"
+                                <input class="form-check-input" name="helpingCategoriesOfNGO[]" type="checkbox"
                                     value="financially">
                                 <label class="form-check-label" for="flexCheckChecked">
                                     Financially
                                 </label>
                             </div>
                             <div class="mt-1 ml-3 form-check">
-                                <input class="form-check-input" name="helpingCategoriesOfNGO" type="checkbox"
+                                <input class="form-check-input" name="helpingCategoriesOfNGO[]" type="checkbox"
                                     value="other">
                                 <label class="form-check-label" for="flexCheckChecked">
                                     Other
@@ -782,6 +786,7 @@ $email= $_SESSION['email'];
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
                             <select class="form-control" name="dist" id="dist" class="form-control" required>
+                                <option value="">Select</option>
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
                                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -818,35 +823,35 @@ $email= $_SESSION['email'];
                         <div class="col-12 mt-1">
                             <label for="Helping Categories" class="form-label">Helping Categories</label>
                             <div class="mt-1 ml-3 form-check">
-                                <input class="form-check-input" name="helpingCategoriesOfInd" type="checkbox"
+                                <input class="form-check-input" name="helpingCategoriesOfInd[]" type="checkbox"
                                     value="food">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Food
                                 </label>
                             </div>
                             <div class="mt-1 ml-3 form-check">
-                                <input class="form-check-input" name="helpingCategoriesOfInd" type="checkbox"
+                                <input class="form-check-input" name="helpingCategoriesOfInd[]" type="checkbox"
                                     value="books">
                                 <label class="form-check-label" for="flexCheckChecked">
                                     Books
                                 </label>
                             </div>
                             <div class="mt-1 ml-3 form-check">
-                                <input class="form-check-input" name="helpingCategoriesOfInd" type="checkbox"
+                                <input class="form-check-input" name="helpingCategoriesOfInd[]" type="checkbox"
                                     value="medicine">
                                 <label class="form-check-label" for="flexCheckChecked">
                                     Medicine
                                 </label>
                             </div>
                             <div class="mt-1 ml-3 form-check">
-                                <input class="form-check-input" name="helpingCategoriesOfInd" type="checkbox"
+                                <input class="form-check-input" name="helpingCategoriesOfInd[]" type="checkbox"
                                     value="financially">
                                 <label class="form-check-label" for="flexCheckChecked">
                                     Financially
                                 </label>
                             </div>
                             <div class="mt-1 ml-3 form-check">
-                                <input class="form-check-input" name="helpingCategoriesOfInd" type="checkbox"
+                                <input class="form-check-input" name="helpingCategoriesOfInd[]" type="checkbox"
                                     value="other">
                                 <label class="form-check-label" for="flexCheckChecked">
                                     Other
@@ -890,6 +895,7 @@ $email= $_SESSION['email'];
                         <div class="col-12 mt-1">
                             <label for="district">District</label>
                             <select class="form-control" name="dist" class="form-control" id="dist" required>
+                                <option value="">Select</option>
                                 <option value="Alipurduar">Alipurduar</option>
                                 <option value="Bankura">Bankura</option>
                                 <option value="Paschim Bardhaman">Paschim Bardhaman</option>
@@ -931,35 +937,35 @@ $email= $_SESSION['email'];
                         <div class="col-12 mt-1">
                             <label for="Helping Categories" class="form-label">What Kind Of Help You Need: </label>
                             <div class="mt-1 ml-3 form-check">
-                                <input class="form-check-input" name="helpingCategoriesOfInd" type="checkbox"
+                                <input class="form-check-input" name="helpingCategoriesOfInd[]" type="checkbox"
                                     value="food" required>
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Food
                                 </label>
                             </div>
                             <div class="mt-1 ml-3 form-check">
-                                <input class="form-check-input" name="helpingCategoriesOfInd" type="checkbox"
+                                <input class="form-check-input" name="helpingCategoriesOfInd[]" type="checkbox"
                                     value="books">
                                 <label class="form-check-label" for="flexCheckChecked">
                                     Books
                                 </label>
                             </div>
                             <div class="mt-1 ml-3 form-check">
-                                <input class="form-check-input" name="helpingCategoriesOfInd" type="checkbox"
+                                <input class="form-check-input" name="helpingCategoriesOfInd[]" type="checkbox"
                                     value="medicine">
                                 <label class="form-check-label" for="flexCheckChecked">
                                     Medicine
                                 </label>
                             </div>
                             <div class="mt-1 ml-3 form-check">
-                                <input class="form-check-input" name="helpingCategoriesOfInd" type="checkbox"
+                                <input class="form-check-input" name="helpingCategoriesOfInd[]" type="checkbox"
                                     value="financially">
                                 <label class="form-check-label" for="flexCheckChecked">
                                     Financially
                                 </label>
                             </div>
                             <div class="mt-1 ml-3 form-check">
-                                <input class="form-check-input" name="helpingCategoriesOfInd" type="checkbox"
+                                <input class="form-check-input" name="helpingCategoriesOfInd[]" type="checkbox"
                                     value="other">
                                 <label class="form-check-label" for="flexCheckChecked">
                                     Other
@@ -1547,6 +1553,8 @@ if(isset($_POST['submit5'])){
             </script>
       <?php  }
         else{
+            $checkbox1 = $_POST['helpingCategoriesOfNGO'];
+		    $chk = implode(", ",$checkbox1);
 $sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `district`, `ph_no`, `file`, `category`)
                           VALUES('','".$email."','".$_REQUEST['nameOfNGO']."',
                                  '".$_REQUEST['addressOfNGO']."',
@@ -1554,7 +1562,7 @@ $sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `distri
                                  '".$_REQUEST['phoneNoOfNGO']."',
                                  '".$_FILES["certificateOfNGO"]["name"]."',
                                  
-                                 '".$_REQUEST['helpingCategoriesOfNGO']."')";
+                                 '$chk')";
 
                                  $path = "upload/".$_FILES["certificateOfNGO"]["name"];
                                 $tmp = $_FILES["certificateOfNGO"]["tmp_name"];
@@ -1593,6 +1601,8 @@ $sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `distri
             </script>
       <?php  }
         else{
+            $checkbox1 = $_POST['helpingCategoriesOfInd'];
+		    $chk = implode(", ",$checkbox1);
         $sql = " INSERT INTO `ngo_registration_individual`(`id`,`email`, `name`, `address`, `district`, `ph_no`, `file`, `category`)
                           VALUES('','".$email."','".$_REQUEST['firstNameOfInd']."',
                                  '".$_REQUEST['addressOfInd']."',
@@ -1600,7 +1610,7 @@ $sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `distri
                                  '".$_REQUEST['phoneNoOfInd']."',
                                  '".$_FILES["certificateOfInd"]["name"]."',
                                  
-                                 '".$_REQUEST['helpingCategoriesOfInd']."')";
+                                 '$chk')";
                                     $path = "upload/".$_FILES["certificateOfInd"]["name"];
                                 $tmp = $_FILES["certificateOfInd"]["tmp_name"];
                                 move_uploaded_file($tmp, $path);
@@ -1638,17 +1648,19 @@ $sql = " INSERT INTO `ngo_registration`(`id`,`email`, `name`, `address`, `distri
             </script>
       <?php  }
         else{
+            $checkbox1 = $_POST['helpingCategoriesOfInd'];
+		    $chk = implode(", ",$checkbox1);
         $sql = "INSERT INTO `ngo_help_db`(`id`,`email`, `name`, `address`, `district`, `ph_no`, `file`, `description`, `category`)
                           VALUES('','".$email."','".$_REQUEST['firstNameOfInd']."',
                                  '".$_REQUEST['addressOfInd']."',
                                  '".$_REQUEST['dist']."',
                                  '".$_REQUEST['phoneNoOfInd']."',
-                                 '".$_FILES["helpingCategoriesOfInd"]["name"]."',
+                                 '".$_FILES["certificateOfInd"]["name"]."',
                                  
                                  '".$_REQUEST['description']."',
-                                 '".$_REQUEST['helpingCategoriesOfInd']."')";
-                                      $path = "upload/".$_FILES["helpingCategoriesOfInd"]["name"];
-                                $tmp = $_FILES["helpingCategoriesOfInd"]["tmp_name"];
+                                 '$chk')";
+                                      $path = "upload/".$_FILES["certificateOfInd"]["name"];
+                                $tmp = $_FILES["certificateOfInd"]["tmp_name"];
                                 move_uploaded_file($tmp, $path);
     if (mysqli_query($link, $sql)) {
         ?><script>

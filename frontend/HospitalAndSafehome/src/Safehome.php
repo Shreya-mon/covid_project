@@ -54,7 +54,7 @@ include("connection.php");
                                         <option value="jalpaiguri">JALPAIGURI</option>
                                         <option value="jhargram">JHARGRAM</option>
                                         <option value="kalimpong">KALIMPONG</option>
-                                        <option value="kolkata">KOLKATA</option>
+                                        <option value="kolkata metropolitan area">KOLKATA METROPOLITAN AREA</option>
                                         <option value="malda">MALDA</option>
                                         <option value="murshidabad">MURSHIDABAD</option>
                                         <option value="nadia">NADIA</option>
