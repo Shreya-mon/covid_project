@@ -17,7 +17,10 @@ function showmessage1()
 </script>
 
 
-  <meta charset="UTF-8">
+   <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Covid Care</title>
@@ -72,19 +75,20 @@ function showmessage1()
   <header>
     <!-- Top Navbar -->
     <nav class="navbar navbar-light navbar-expand-lg pb-0" style="background-color: #17a2b8;">
-      <a class="navbar-brand" href="index.html"><img class="logo w-100" src="./images/logo.jpg" /></a>
+      <a class="navbar-brand" href="index.php"><img class="logo w-100 rounded-circle" src="./images/logo.jpg" /></a>
+      <span class="navbar-text w-100 d-none d-lg-inline"  style="font-family: Lobster, cursive; font-size: 1.6rem; color: #d6fffa;">
+        Covid Care
+      </span>
       <ul class="nav navbar-nav d-none d-lg-flex w-100">
-        <li class="nav-item">
+        <li class="nav-item ml-auto">
           <a class="nav-link" aria-current="page" href="sign.php">Sign in/Sign up</a>
         </li>
-        <div class="d-flex ml-auto">
           <li class="nav-item ">
             <a class="nav-link" aria-current="page" href="../admin.php">Admin Login</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="help.php">Help Desk</a>
           </li>
-        </div>
       </ul>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

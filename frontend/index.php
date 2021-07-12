@@ -6,7 +6,11 @@ include("connection.php");?>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+   <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Covid Care</title>
@@ -31,10 +35,6 @@ include("connection.php");?>
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="css/styles.css">
-
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 </head>
 <style>
   .nav-link {
@@ -109,7 +109,7 @@ include("connection.php");?>
 <body>
   <header>
     <!-- Navbar -->
-
+    
     <!-- Top Navbar -->
     <nav class="navbar navbar-light navbar-expand-lg pb-0" style="background-color: #17a2b8;">
       <a class="navbar-brand" href="index.php"><img class="logo w-100 rounded-circle" src="./images/logo.jpg" /></a>
@@ -126,14 +126,6 @@ include("connection.php");?>
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="help.php">Help Desk</a>
         </li>
-        <!-- <div class="d-flex ml-auto">
-          <li class="nav-item ">
-            <a class="nav-link" aria-current="page" href="../admin.php">Admin Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="help.php">Help Desk</a>
-          </li>
-        </div> -->
       </ul>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
