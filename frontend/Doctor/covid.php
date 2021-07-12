@@ -4,11 +4,14 @@ include("../connection.php");?>
 <html>
 
 <head>
-  <meta charset="UTF-8">
+   <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Covid-19</title>
-
+  <title>Covid Care</title>
+  <link rel="icon" href="../images/logo.jpg" type="image/png">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
@@ -49,15 +52,15 @@ include("../connection.php");?>
       <div class="col-12 col-md-6 s6">
         <center><img src="doc5.png" alt="image" style="width:80%;"></center>
         <h5>Covid Consultation</h5>
-        <p style="font-size:14px;">COVID-19 is a disease caused by SARS-CoV-2 that can trigger what doctors call a
+        <p style="font-size:14px;">Covid Care is a disease caused by SARS-CoV-2 that can trigger what doctors call a
           respiratory tract infection. It can affect your upper respiratory tract
-          (sinuses, nose, and throat) or lower respiratory tract (windpipe and lungs). COVID-19 is caused by a new
+          (sinuses, nose, and throat) or lower respiratory tract (windpipe and lungs). Covid Care is caused by a new
           strain
           of coronavirus. ‘CO’ stands for corona,
           ‘VI’ for virus, and ‘D’ for disease. This disease was earlier referred to as ‘2019 novel coronavirus’. India
           is
           currently experiencing a second wave of
-          COVID-19 cases. The death toll of COVID-19 in India is the second highest in the world. Consider an online
+          Covid Care cases. The death toll of Covid Care in India is the second highest in the world. Consider an online
           COVID
           consultation with an expert Doctor
           if your symptoms persist.</p>

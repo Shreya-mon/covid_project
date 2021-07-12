@@ -8,7 +8,8 @@ session_start();
 
 <head>
     <meta charset="utf-8">
-    <title>Covid-19</title>
+    <title>Covid Care</title>
+    <link rel="icon" href="./frontend/images/logo.jpg" type="image/png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

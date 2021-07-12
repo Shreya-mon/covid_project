@@ -6,11 +6,15 @@ include("connection.php");?>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+   <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Covid-19</title>
-  <link rel="icon" href="./images/project_logo.png" type="image/png">
+  <title>Covid Care</title>
+  <link rel="icon" href="./images/logo.jpg" type="image/png">
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -31,9 +35,6 @@ include("connection.php");?>
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="css/styles.css">
-
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
 </head>
 <style>
   .nav-link {
@@ -108,22 +109,23 @@ include("connection.php");?>
 <body>
   <header>
     <!-- Navbar -->
-
+    
     <!-- Top Navbar -->
     <nav class="navbar navbar-light navbar-expand-lg pb-0" style="background-color: #17a2b8;">
-      <a class="navbar-brand" href="index.html"><img class="logo w-100" src="./images/project_logo.png" /></a>
-      <ul class="nav navbar-nav d-none d-lg-flex w-100">
-        <li class="nav-item">
+      <a class="navbar-brand" href="index.php"><img class="logo w-100 rounded-circle" src="./images/logo.jpg" /></a>
+      <span class="navbar-text w-100 d-none d-lg-inline"  style="font-family: Lobster, cursive; font-size: 1.6rem; color: #d6fffa;">
+        Covid Care
+      </span>
+      <ul class="nav navbar-nav d-none d-lg-flex w-100 ">
+        <li class="nav-item ml-auto">
           <a class="nav-link" aria-current="page" href="sign.php">Sign in/Sign up</a>
         </li>
-        <div class="d-flex ml-auto">
-          <li class="nav-item ">
-            <a class="nav-link" aria-current="page" href="../admin.php">Admin Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="help.php">Help Desk</a>
-          </li>
-        </div>
+        <li class="nav-item ">
+          <a class="nav-link" aria-current="page" href="../admin.php">Admin Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="help.php">Help Desk</a>
+        </li>
       </ul>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -421,7 +423,7 @@ include("connection.php");?>
 
         <!-- Grid column -->
         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h6 class="text-uppercase mb-4 font-weight-bold">Covid-19</h6>
+          <h6 class="text-uppercase mb-4 font-weight-bold">Covid Care</h6>
           <p>Our team tried to do as much as they can to help you out in this pandemic situation. If this page is
             benifical for you at some point then we will be very thankfull. Give us a review if you like it.</p>
         </div>
@@ -501,7 +503,7 @@ include("connection.php");?>
           <!--Copyright-->
           <p class="text-center text-md-left">© 2021 Copyright:
             <a href="https://mdbootstrap.com/">
-              <strong> Covid-19.com</strong>
+              <strong> Covid Care.com</strong>
             </a>
           </p>
 

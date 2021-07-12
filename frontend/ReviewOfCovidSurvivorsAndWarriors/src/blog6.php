@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+     <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <title>Covid Care</title>
+    
+    <link rel="icon" href="../../images/logo.jpg" type="image/png">
     <link href="../css/all.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link  rel="stylesheet" href="../css/blog6.css?V=<?php echo time(); ?>">
@@ -13,7 +18,7 @@
     <a href="reviews.php" class="previous"><i class="arrow left"></i></a>
     <div class="container">
         <div class="description-container">
-            <h1>Anxiety and solitude were worse than getting COVID-19 symptoms</h1>
+            <h1>Anxiety and solitude were worse than getting Covid Care symptoms</h1>
                 <div class="banner">
                     <img src="../assets/survivor1.png" alt="photo" class="img-responsive floating-image left1">
                     <h4 class="heading">COVID Survivor Amrita Jha </h4>
@@ -37,7 +42,7 @@ true.Family/friends/anyone can't share your pain. It's only you who has to fight
 Thankfully, the worst time passed and we started to feel better in a few days and we have stable health now.<br>
 It is the anxiety, solitude, and negative thoughts that affect more than the virus. Things are gradually returning to normal. Besides home remedies, we continue to take all other precautions.<br>
 My diet consisted mostly of easily digestible and less oily and spicy food for several days, a lot of veggies, sprouts, nuts, dates, water, and plenty of homemade juices and fruits.<br>
-We are relieved that we recovered at home rather than being admitted to the hospital with severe symptoms and complications. However, this experience taught me that even a minor COVID-19 infection can be frightening. It's not like the common flu. It shatters your body. We were exhausted as a result of excruciating fatigue. Even if you test negative, the body takes a long time to recover from exhaustion and symptoms. According to the doctors, it will take a month to get back to our normal routine and yoga routine.<br>
+We are relieved that we recovered at home rather than being admitted to the hospital with severe symptoms and complications. However, this experience taught me that even a minor Covid Care infection can be frightening. It's not like the common flu. It shatters your body. We were exhausted as a result of excruciating fatigue. Even if you test negative, the body takes a long time to recover from exhaustion and symptoms. According to the doctors, it will take a month to get back to our normal routine and yoga routine.<br>
 Unless you are in critical condition, the best place to recover is at home. Individuals can recover at home with the help of proper nutrition and medication taken on time. In today's world, early detection of symptoms and prompt action can save many lives. Covid is an entirely unpredictable occurrence. The impact it has had on everyone's life is undeniable, and it will undoubtedly be the topic of conversation for the rest of the year, or through life.<br>
 This, too, shall pass, and we shall rise to a better tomorrow!
             </p>

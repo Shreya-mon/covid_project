@@ -5,11 +5,14 @@ include("../connection.php");?>
 <html>
 
 <head>
-  <meta charset="UTF-8">
+   <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Covid-19</title>
-
+  <title>Covid Care</title>
+  <link rel="icon" href="../images/logo.jpg" type="image/png">
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -52,19 +55,20 @@ include("../connection.php");?>
   <header>
     <!-- Top Navbar -->
     <nav class="navbar navbar-light navbar-expand-lg pb-0" style="background-color: #17a2b8;">
-      <a class="navbar-brand" href="index.html"><img class="logo w-100" src="../images/project_logo.png" /></a>
+      <a class="navbar-brand" href="index.php"><img class="logo w-100 rounded-circle" src="../images/logo.jpg" /></a>
+      <span class="navbar-text w-100 d-none d-lg-inline"  style="font-family: Lobster, cursive; font-size: 1.6rem; color: #d6fffa;">
+        Covid Care
+      </span>
       <ul class="nav navbar-nav d-none d-lg-flex w-100">
-        <li class="nav-item">
+       <li class="nav-item ml-auto">
           <a class="nav-link" aria-current="page" href="../sign.php">Sign in/Sign up</a>
         </li>
-        <div class="d-flex ml-auto">
-          <li class="nav-item ">
+         <li class="nav-item ">
             <a class="nav-link" aria-current="page" href="../../admin.php">Admin Login</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="../help.php">Help Desk</a>
           </li>
-        </div>
       </ul>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -403,7 +407,7 @@ include("../connection.php");?>
       <div class="row" style="text-align: center; align-items: center; justify-content: center;">
         <h3>Blood Bank List</h3>
       </div>
-      <div class="row mt-3 mytable">
+      <div class="row mt-3" style="height: 350px; overflow: auto;">
         <table class="table">
           <thead class="thead-light">
             <tr>
@@ -955,10 +959,10 @@ include("../connection.php");?>
         <h6 style="font-weight:bold;">8. Can I still donate if I have high blood pressure ?</h6>
         <p><b>=></b> Yes, if your blood pressure falls within the limits set by FDA regulations.</p>
         <h6 style="font-weight:bold;">9. Can I donate if I've tested positive for coronavirus disease 2019
-          (COVID-19) ?</h6>
+          (Covid Care) ?</h6>
         <p><b>=></b> The Food and Drug Administration suggests waiting to donate blood for at least 14 days
-          after a positive diagnostic test for COVID-19 without symptoms or for at least 14
-          days after symptoms of COVID-19 have completely cleared up. Those who have tested positive for
+          after a positive diagnostic test for Covid Care without symptoms or for at least 14
+          days after symptoms of Covid Care have completely cleared up. Those who have tested positive for
           COIVD-19 antibodies but didn't have a diagnostic test and never developed
           symptoms can donate without a waiting period or having a diagnostic test done before donation.</p>
         <h6 style="font-weight:bold;">10. What do I get in return for my blood donation?</h6>

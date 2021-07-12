@@ -4,10 +4,14 @@ include("connection.php");
 <!DOCTYPE html> <!--2nd page or 1st subpage-->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+     <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nearby COVID Hospital</title>
+    <title>Covid Care</title>
+    <link rel="icon" href="../../images/logo.jpg" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS/NearbyHospital.css?V=<?php echo time(); ?>">
@@ -30,7 +34,7 @@ include("connection.php");
                         <div class="panel1"> <!--1st panel-->
                             <h1>COVID Hospitals of West Bengal</h1>
                               <p>
-                                This is the list the COVID-19 hospitals in West Bengal, that are treating coronavirus patients with the number of beds and ventilations.
+                                This is the list the Covid Care hospitals in West Bengal, that are treating coronavirus patients with the number of beds and ventilations.
                                 These hospitals are designated specifically for dealing with coronavirus patients. However, any person is encouraged to contact other private hospitals if they are more comfortable with those options.
                               </p>
                               <p>
