@@ -15,12 +15,18 @@ include_once "connection.php";
 date_default_timezone_set("Asia/Kolkata");
 session_start();
 $sucess="";
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require 'vendor/autoload.php';
+  
+
 ?>
   
 <?php
 
 if(isset($_REQUEST['submit']))
 {
+    $mail = new PHPMailer(true);
     $sql=mysqli_query($link,"SELECT * FROM `register_db` WHERE `email`='".$_REQUEST['email']."'");
     if(mysqli_num_rows($sql)>0)
     {
@@ -30,12 +36,41 @@ if(isset($_REQUEST['submit']))
 
              
             $to_email = $_REQUEST['email'];
-            $subject = 'Reset password ';
+            /*$subject = 'Reset password ';
             $message = 'OTP to reset password : '.$otp;
             $headers = 'OTP authentication';
             mail($to_email,$subject,$message,$headers);
             $_SESSION['email']=$_REQUEST['email'];
-            $email=$_SESSION['email'];
+            $email=$_SESSION['email'];*/
+
+
+            try {
+    $mail->SMTPDebug = 2;                                       
+    $mail->isSMTP();                                            
+    $mail->Host       = 'smtp.gmail.com;';                    
+    $mail->SMTPAuth   = true;                             
+    $mail->Username   = 'monshreya123@gmail.com';                 
+    $mail->Password   = 'gokuspn69';
+    $mail->SMTPSecure = 'tls';
+    $mail->Port       = 587;
+  
+    $mail->setFrom('monshreya123@gmail.com', 'Shreya Mondal');           
+    $mail->addAddress($to_email);
+     //$mail->addAddress('indrajitmishra261@gmail.com', 'Name');
+       
+    $mail->isHTML(true);                                  
+    $mail->Subject = 'Reset password';
+    $mail->Body    = 'OTP to reset password : '.$otp;
+    $mail->AltBody = 'Body in plain text for non-HTML mail clients';
+    
+         $mail->send();
+    //echo "Mail has been sent successfully!";
+    
+   
+} catch (Exception $e) {
+    //echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
+
 
 
 
