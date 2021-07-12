@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Covid-19</title>
+    <title>Covid Care</title>
+    
+    <link rel="icon" href="../../images/logo.jpg" type="image/png">
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -56,7 +58,7 @@
 
 <body>
 <nav class="navbar navbar-light navbar-expand-lg pb-0" style="background-color: #17a2b8;">
-      <a class="navbar-brand" href="index.html"><img class="logo w-100" src="../../images/project_logo.png" /></a>
+      <a class="navbar-brand" href="index.html"><img class="logo w-100" src="../../images/logo.jpg" /></a>
       <ul class="nav navbar-nav d-none d-lg-flex w-100">
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="../../sign.php">Sign in/Sign up</a>
@@ -213,7 +215,7 @@
                                 <span>Physician/Internal Medicine/COVID Consult</span>
                                 <span class="msg">
                                     Protecting health care personnel is an urgent focus of the nation's response to
-                                    COVID-19.
+                                    Covid Care.
                                 </span>
                             </div>
                         </div>
@@ -272,9 +274,9 @@
                         <div class="post-title">
                             <a href="#">Never locked up for so many days at my home</a>
                             <p>Gurjeet Singh Bawa is a 24 years old man at Patiala. He and his father were diagnosed
-                                positive for Covid-19. He said, “I got a call from one of my friends who suggested to me
-                                to get myself tested for Covid-19 because he came to my house before diagnosing positive
-                                for Covid-19.” </p>
+                                positive for Covid Care. He said, “I got a call from one of my friends who suggested to me
+                                to get myself tested for Covid Care because he came to my house before diagnosing positive
+                                for Covid Care.” </p>
                             <a href="blog2.php"><button class="btn post-btn">Read More &nbsp;<i
                                         class="fas fa-arrow-right"></i></button></a>
                         </div>
@@ -320,7 +322,7 @@
                                 </div>
                             </div><br><br>
                             <div class="post-title">
-                                <a href="blog4.php">We Can Win COVID-19 Battle By Taking Precautions</a>
+                                <a href="blog4.php">We Can Win Covid Care Battle By Taking Precautions</a>
                             </div>
                         </div>
                         <div class="post-content" data-aos="flip-up" data-aos-delay="400">
@@ -351,7 +353,7 @@
                                 </div>
                             </div><br><br>
                             <div class="post-title">
-                                <a href="blog6.php">Anxiety and solitude were worse than getting COVID-19 symptoms</a>
+                                <a href="blog6.php">Anxiety and solitude were worse than getting Covid Care symptoms</a>
                             </div>
                         </div>
                     </div>
@@ -371,7 +373,7 @@
 
     <!-- Grid column -->
     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-      <h6 class="text-uppercase mb-4 font-weight-bold">Covid-19</h6>
+      <h6 class="text-uppercase mb-4 font-weight-bold">Covid Care</h6>
       <p>Our team tried to do as much as they can to help you out in this pandemic situation. If this page is
         benifical for you at some point then we will be very thankfull. Give us a review if you like it.</p>
     </div>
@@ -451,7 +453,7 @@
       <!--Copyright-->
       <p class="text-center text-md-left">© 2021 Copyright:
         <a href="https://mdbootstrap.com/">
-          <strong> Covid-19.com</strong>
+          <strong> Covid Care.com</strong>
         </a>
       </p>
 

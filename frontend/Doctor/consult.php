@@ -9,8 +9,8 @@ include("../connection.php");?>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Covid-19</title>
-
+  <title>Covid Care</title>
+  <link rel="icon" href="../images/logo.jpg" type="image/png">
 
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
@@ -49,7 +49,7 @@ include("../connection.php");?>
   <header class="">
     <!-- Top Navbar -->
     <nav class="navbar navbar-light navbar-expand-lg pb-0" style="background-color: #17a2b8;">
-      <a class="navbar-brand" href="index.html"><img class="logo w-100" src="../images/project_logo.png" /></a>
+      <a class="navbar-brand" href="index.html"><img class="logo w-100" src="../images/logo.jpg" /></a>
       <ul class="nav navbar-nav d-none d-lg-flex w-100">
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="../sign.php">Sign in/Sign up</a>

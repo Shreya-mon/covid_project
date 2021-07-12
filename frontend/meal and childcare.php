@@ -9,7 +9,8 @@ include("connection.php");?>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Covid-19</title>
+  <title>Covid Care</title>
+  <link rel="icon" href="./images/logo.jpg" type="image/png">
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -29,7 +30,9 @@ include("connection.php");?>
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
     crossorigin="anonymous"></script>
@@ -57,19 +60,20 @@ include("connection.php");?>
   <header>
     <!-- Top Navbar -->
     <nav class="navbar navbar-light navbar-expand-lg pb-0" style="background-color: #17a2b8;">
-      <a class="navbar-brand" href="index.html"><img class="logo w-100" src="./images/project_logo.png" /></a>
+      <a class="navbar-brand" href="index.html"><img class="logo w-100 rounded-circle" src="./images/logo.jpg" /></a>
+      <span class="navbar-text w-100 d-none d-lg-inline"  style="font-family: Lobster, cursive; font-size: 1.6rem; color: #d6fffa;">
+        Covid Care
+      </span>
       <ul class="nav navbar-nav d-none d-lg-flex w-100">
-        <li class="nav-item">
+        <li class="nav-item ml-auto">
           <a class="nav-link" aria-current="page" href="sign.php">Sign in/Sign up</a>
         </li>
-        <div class="d-flex ml-auto">
           <li class="nav-item ">
             <a class="nav-link" aria-current="page" href="../admin.php">Admin Login</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="help.php">Help Desk</a>
           </li>
-        </div>
       </ul>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -162,9 +166,12 @@ include("connection.php");?>
         <div class="container m-0 p-0 ">
           <h2 class="center" id="healthcare">Healthcare Volunteer Services
           </h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore provident veniam numquam deserunt porro
-            aliquid autem corrupti! Magnam, mollitia aut voluptates facere ut maxime earum voluptatem vitae iusto vero
-            expedita aperiam nisi modi quisquam quis delectus obcaecati voluptas? Recusandae, ab!</p>
+          <p>Healthcare Service Means a service that provides medical treatment and care to the public or to a particular group.
+            In this pandemic situation where everyone is afraid to stay in touch of other peoples there are many volunteers whether 
+            as a team or as an individual they are helping many poor, needy or old age peoples by serving them medicines or foods and
+            other urgent requirements. We are providing you some of their details in the below list. If you are also suffering any kind
+            of health issues or need any kind of help n this situation please contact them. 
+          </p>
           <img src="./images/health1.gif" class="setphoto w-100">
           <div class="h3 col-12 mt-1">
             <div class="h3 mt-5 mb-5 ml-3">Register as a Healthcare volunteer team/ an individual: </div>
@@ -273,7 +280,7 @@ include("connection.php");?>
               establishments have started offering tiffin services for COVID patients across the country. These services
               especially come to the aid of the patients with no help at home.
               If you’re living in Kolkata and are isolating at home or don’t have a caregiver and access to fresh, daily
-              meals while you’re recovering from COVID-19, here’s a list of meal service providers that are delivering
+              meals while you’re recovering from Covid Care, here’s a list of meal service providers that are delivering
               across the city. These have been independently verified.
               Here is a list of the various tiffin and meal services in Kolkata that are delivering home-style food to
               quarantined patients:</p>
@@ -382,25 +389,9 @@ include("connection.php");?>
             <p>Child care, otherwise known as day care, is the care and supervision
               of a child or multiple children at a time, whose ages range from two weeks to eighteen years. Early child
               care is an equally important and often overlooked component of child development.
-              Professional caregivers work within the context of a center-based care (including crèches, daycare,
-              preschools and schools) or a home-based care (nannies or family daycare). The majority of child care
-              institutions available require child care providers to have extensive training in first aid and be CPR
-              certified. In addition, background checks, drug testing at all centers, and reference verification are
-              normally a requirement. Child care can consist of advanced learning environments that include early
-              childhood education or elementary education. "The objective of the program of daily activities should be
-              to foster incremental developmental progress in a healthy and safe environment and should be flexible to
-              capture the interests of the children and the individual abilities of the children." In many cases the
-              appropriate child care provider is a teacher or person with educational background in child development,
-              which requires a more focused training aside from the common core skills typical of a child caregiver.
-
-              As well as these licensed options, parents may also choose to find their own caregiver or arrange
-              childcare exchanges/swaps with another family.
-              India has a system of universal childcare which is free and provided
-              by the state through the Integrated Child Development Services. It provides food, preschool education,
-              primary healthcare, immunization, contraceptive counselling, health check-up and referral services to
-              children under 6 years of age and their mothers.
-              Additionally, private childcare services also exist in the country
-              for wealthier families.</p>
+              In this pandemic childcare centers is more required because many parents who have 2 3 month babies got affected
+            by covid virus. At this time it is not safe to keep babies with them. So we are providing some child care centers 
+          where you can contact.</p>
             <img src="./images/health3.jpg" class="w-100">
             <div class="h3 col-12 mt-1">
               <div class="h3 mt-5 mb-5 ml-3">Register as a Childcare Organisation/ an individual:</div>
@@ -521,7 +512,7 @@ include("connection.php");?>
 
         <!-- Grid column -->
         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h6 class="text-uppercase mb-4 font-weight-bold">Covid-19</h6>
+          <h6 class="text-uppercase mb-4 font-weight-bold">Covid Care</h6>
           <p>Our team tried to do as much as they can to help you out in this pandemic situation. If this page
             is
             benifical for you at some point then we will be very thankfull. Give us a review if you like it.</p>
@@ -602,7 +593,7 @@ include("connection.php");?>
           <!--Copyright-->
           <p class="text-center text-md-left">© 2021 Copyright:
             <a href="https://mdbootstrap.com/">
-              <strong> Covid-19.com</strong>
+              <strong> Covid Care.com</strong>
             </a>
           </p>
 

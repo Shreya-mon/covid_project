@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Video gallery</title>
+	<title>Covid Care</title>
+	
+    <link rel="icon" href="../../images/logo.jpg" type="image/png">
 	<link rel="stylesheet" href="../css/video.css">
 	<link rel="stylesheet" href="../css/all.css">
 	<script src="../js/jqueryV3.6.0.min.js"></script>
@@ -26,9 +28,9 @@
 			<div class="col pic">
 				<div class="feature-img">
 					<img src="../assets/mumbai.png" width="100%">
-					<span><i class="fas fa-play fa-2x play-btn" onclick="playVideo('Mumbai Staff Nurse Story Who Tested COVID-19 Positive.mp4')"></i></span>
+					<span><i class="fas fa-play fa-2x play-btn" onclick="playVideo('Mumbai Staff Nurse Story Who Tested Covid Care Positive.mp4')"></i></span>
 				</div>
-				<p>Mumbai Staff Nurse Story Who Tested COVID-19 Positive</p>
+				<p>Mumbai Staff Nurse Story Who Tested Covid Care Positive</p>
 			</div>
 			<div class="col">
 				<div class="small-img-row">
@@ -48,16 +50,16 @@
 				<div class="small-img-row">
 					<div class="small-img">
 						<img src="../assets/mumbai1.png">
-						<span><i class="fas fa-play play-btn" onclick="playVideo('21 Year Old Mumbai Boys Story Of COVID-19 Recovery.mp4')"></i></span>
+						<span><i class="fas fa-play play-btn" onclick="playVideo('21 Year Old Mumbai Boys Story Of Covid Care Recovery.mp4')"></i></span>
 					</div>
-					<p>21 Year Old Mumbai Boys Story Of COVID-19 Recovery</p>
+					<p>21 Year Old Mumbai Boys Story Of Covid Care Recovery</p>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="video-player" id="videoPlayer">
 		<video width="1000px" controls id="myVideo">
-			<source src="Mumbai Staff Nurse Story Who Tested COVID-19 Positive.mp4" type="video/mp4">
+			<source src="Mumbai Staff Nurse Story Who Tested Covid Care Positive.mp4" type="video/mp4">
 		</video>
 		<span><i class="fas fa-times-circle fa-2x close-btn" onclick="stopVideo()"></i></span>
 	</div>
