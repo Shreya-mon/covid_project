@@ -1,3 +1,6 @@
+<?php
+include("connection.php");
+?>
 <!DOCTYPE html>
 <!--main page or 1st page-->
 <html lang="en">
@@ -194,15 +197,30 @@
       <div class="container-fluid text-center">
         <div class="numbers d-flex flex-md-row flex-wrap justify-content-center">
           <div class="rect">
-            <h1>563</h1>
+            <?php 
+              $sql="SELECT `id` FROM `hospital_db` ORDER BY `id`";
+              $result=mysqli_query($link,$sql);
+              $row=mysqli_num_rows($result);
+            ?>
+            <h1><?php echo $row;?></h1>
             <p>Total COVID Hospitals</p>
           </div>
           <div class="rect">
-            <h1>36623</h1>
+            <?php 
+              $sql="SELECT SUM(bed_capacity) as `capacity` FROM `hospital_db`";
+              $result=mysqli_query($link,$sql);
+              $row=mysqli_fetch_array($result);
+            ?>
+            <h1><?php echo $row['capacity']; ?></h1>
             <p>Total COVID Bed Capacity</p>
           </div>
           <div class="rect">
-            <h1>14435</h1>
+            <?php 
+              $sql="SELECT SUM(bed_available) as `available` FROM `hospital_db`";
+              $result=mysqli_query($link,$sql);
+              $row=mysqli_fetch_array($result);
+            ?>
+            <h1><?php echo $row['available']; ?></h1>
             <p>Total COVID Bed Avilable</p>
           </div>
         </div>
