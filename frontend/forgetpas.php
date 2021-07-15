@@ -16,6 +16,8 @@ include_once "connection.php";
 date_default_timezone_set("Asia/Kolkata");
 session_start();
 $sucess="";
+
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
@@ -46,12 +48,12 @@ if(isset($_REQUEST['submit']))
 
 
             try {
-    $mail->SMTPDebug = 2;                                       
+    $mail->SMTPDebug = 0;                                       
     $mail->isSMTP();                                            
     $mail->Host       = 'smtp.gmail.com;';                    
     $mail->SMTPAuth   = true;                             
-    $mail->Username   = '';                 
-    $mail->Password   = '';
+    $mail->Username   = 'monshreya123@gmail.com';                 
+    $mail->Password   = 'gokuspn69';
     $mail->SMTPSecure = 'tls';
     $mail->Port       = 587;
   
@@ -66,6 +68,7 @@ if(isset($_REQUEST['submit']))
     
          $mail->send();
     //echo "Mail has been sent successfully!";
+         $_SESSION['useremail']=$_REQUEST['email'];
     
    
 } catch (Exception $e) {
@@ -124,6 +127,7 @@ if(!empty($_POST['submit_otp']))
      <?php
     }
 }
+//
 
 if(!empty($_POST['submit_pass']))
 {
@@ -136,7 +140,7 @@ if(!empty($_POST['submit_pass']))
     }
     
     $sql = mysqli_query($link,"UPDATE `register_db`  SET  `n_password`='$password', `con_password`='$conpass'  WHERE
-     `email`='".$_SESSION['email']."'");
+     `email`='".$_SESSION['useremail']."' ");
     if(isset($sql))
     {
         ?>
