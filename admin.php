@@ -225,7 +225,7 @@ session_start();
           <div class="col-md-7">
             <div class="card-body">
               <div class="brand-wrapper">
-                <img src="./frontend/images/project_logo.png" alt="logo" class="logo">
+                <img src="./frontend/images/logo.jpg" alt="logo" class="logo">
               </div>
               <p class="login-card-description">Sign into your account</p>
               <form action="adminlogin1.php" method="POST" class="form-content">
