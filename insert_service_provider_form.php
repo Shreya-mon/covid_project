@@ -90,7 +90,7 @@
                 </div>
 				<div class="col-12 mt-1 ">
                     <label for="Name" class="form-label">Email-id : </label>
-                    <input type="email" class="form-control" name="email" placeholder="Email" required>
+                    <input type="email" class="form-control" name="email" placeholder="Email">
                 </div>
                 <div class="col-12 mt-1 ">
                     <label for="Name" class="form-label">Contact Number : </label>
@@ -102,7 +102,7 @@
                 </div>
 				<div class="col-12 mt-1 ">
                     <label for="Name" class="form-label">Address : </label>
-                    <input type="text" class="form-control" name="address" placeholder="Address" required>
+                    <input type="text" class="form-control" name="address" placeholder="Address">
                 </div>
 				<div class="col-12 mt-1 ">
                     <label for="Name" class="form-label">Description : </label>

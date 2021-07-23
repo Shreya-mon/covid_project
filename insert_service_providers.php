@@ -51,7 +51,7 @@ include("connection.php");
 	<br>
 	<br>
 	<br>
-	<a href="insert_service_provider_form.html">Back</a>
+	<a href="insert_service_provider_form.php">Back</a>
 	<br>
 	<br>
 	<br>
