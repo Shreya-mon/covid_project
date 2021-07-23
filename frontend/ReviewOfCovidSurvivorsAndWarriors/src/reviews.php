@@ -389,16 +389,16 @@
     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
       <h6 class="text-uppercase mb-4 font-weight-bold">About More information</h6>
       <p>
-        <a href="#!">Covishield®</a>
+         <a href="https://www.seruminstitute.com/health_faq_covishield.php" target="_blank">Covishield®</a>
       </p>
       <p>
-        <a href="#!">Covaxin®</a>
+         <a href="https://www.bharatbiotech.com/covaxin.html" target="_blank">Covaxin®</a>
       </p>
       <p>
-        <a href="#!">Mucormycosis disease</a>
+        <a href="https://www.cdc.gov/fungal/diseases/mucormycosis/index.html" target="_blank">Mucormycosis disease</a>
       </p>
       <p>
-        <a href="#!">W.H.O</a>
+        <a href="https://www.who.int/" target="_blank">W.H.O</a>
       </p>
     </div>
     <!-- Grid column -->
