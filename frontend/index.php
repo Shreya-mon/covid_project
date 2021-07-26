@@ -375,35 +375,70 @@ include("connection.php");?>
 
         <div class="col mt-5 ">
           <h2 class="center" id="help">NOTICE BOARD</h2>
-     <?php 
-     include("connection.php");
-     if(isset($_REQUEST['submit'])){
-        $sql = "INSERT INTO `notice_board`(`id`,`notice`,`phno`, `date`)
-						  VALUES('','".$_REQUEST['help']."','".$_REQUEST['phno']."','".date("Y-m-d")."')";
+    <?php 
+    include("connection.php");
+    if(isset($_POST['submit'])){
+        $sql = "INSERT INTO notice_board(name, urgency, location, whatsAppNo, date)
+						      VALUES('".$_POST['name']."', '".$_POST['urgency']."', '".$_POST['location']."','".$_POST['whatsAppNo']."', '".date("Y-m-d")."')";
 	      $result= mysqli_query($link, $sql);
-     }
-     ?>
-          <form action="#help" class="row pt-3 pb-3 notice" method="POST">
+    }
+    ?>
+    <!-- <a href="https://api.whatsapp.com/send?phone=+919804638036&amp;text=Hi,%20I%20need%20some%20more%20information%20about%20StarsDigi." class="float" target="_blank">
+        <i class="mdi mdi-whatsapp my-float"></i>
+    </a> -->
+
+    <!-- name, urgency, location, whatsAppNo -->
+        <div class="notice p-2">
+          <form action="#help" class="row pt-3 pb-3 " method="POST">
             <div class="col">
-              <label class="form-label" for="URGENT">ENTER ANY URGENT</label></br>
-              <input type="text" class="form-control" placeholder="Help" name="help"><br>
-              <input type="text" class="form-control" placeholder="Enter Phone Number" name="phno"><br>
-              <input type="submit" name="submit" value="SUBMIT"><br><br>
+              <label class="form-label" for="URGENT">Enter Your Name:</label>
+              <input type="text" class="form-control" placeholder="Name" name="name"><br>
+              
+              <label class="form-label" for="Urgency">Enter Your Urgency:</label>
+              <input type="text" class="form-control" placeholder="Help" name="urgency"><br>
+              
+              <label class="form-label" for="Location">Enter Your Urgency Location:</label>
+              <textarea class="form-control" rows="3" name="location" placeholder="your required help Location"></textarea></br>
+              
+              <label class="form-label" for="WhatsApp Number">Enter Your WhatsApp Number:</label>
+              <input type="number" class="form-control" placeholder="9876543210" name="whatsAppNo"><br>
+              <button type="submit" class="btn btn-primary" name="submit" value="SUBMIT">Submit</button></br>
+          
               <?php
-               $sql=mysqli_query($link,"SELECT * FROM `notice_board`");
-               if(mysqli_num_rows($sql)>0){
-                 $count=1;
-                while($row = mysqli_fetch_assoc($sql))
-                {
-                  echo $count.". ";
-                  echo "<b>".$row["notice"]."</b> ".$row["date"]."<br>";
-                  $count++;
+                $sql=mysqli_query($link,"SELECT * FROM `notice_board`");
+                if(mysqli_num_rows($sql)>0){
+                $count=1;
+                while($row = mysqli_fetch_assoc($sql)){
+              ?>
+                <div class="row p-2" >
+                  <div class="col-12">
+                    <b><?= $row['urgency'] ?></b> Location: <?= $row['location'] ?>
+                    <a href="https://api.whatsapp.com/send?phone=+91<?= $row['whatsAppNo'] ?>&amp;text=Hi,%20I%20can%20provide%20you%20some%20help." target="_blank">
+                      <i class="fab fa-whatsapp fa-2x" color="green"></i>
+                    </a>
+                    Date: <?= $row['date'] ?>
+                  </div>
+                </div>
+              <?php
+
+                  }
                 }
-               }
 
               ?>
+              
             </div>
           </form>
+          </div>
+          <!-- <div class="row">
+            <div class="col-12 row">
+              <div class="col-8">URGENCY</div>
+              <div class="col-4">2021-07-11</div>
+            </div>
+            <div class="col-12 row">
+              <div class="col-8">Location</div>
+              <div class="col-4">WhatsApp</div>
+            </div>
+          </div> -->
         </div>
       </div>
 
