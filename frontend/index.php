@@ -247,7 +247,7 @@ include("connection.php");?>
       </figcaption>
     </figure>
     <div class="container mt-5 mb-5">
-      <h1 class="center" style="color: rgb(151, 28, 19); text-shadow: 3px 3px rgb(253, 221, 221);">Daily Updates Of
+      <h1 class="center" style="color: rgb(151, 28, 19); text-shadow: 3px 3px rgb(253, 221, 221);">Updates Of
         Covid Cases</h1>
       <h2 class="text-left">West Bengal</h2>
 
